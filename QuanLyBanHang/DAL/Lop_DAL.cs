@@ -5,11 +5,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace DAL
 {
-    class Lop_DTO
+    public class Lop_DAL
     {
+        
         public SqlConnection getConnect()
         {
             return new SqlConnection(@"Data Source=DESKTOP-G3PG01C\NHATNGUYEN;Initial Catalog=QLBH;Integrated Security=True");
@@ -19,7 +19,7 @@ namespace DAL
         {
             SqlConnection conn = getConnect();
             conn.Open();
-            SqlDataAdapter ad = new SqlDataAdapter(sql,conn);
+            SqlDataAdapter ad = new SqlDataAdapter(sql, conn);
             DataTable dt = new DataTable();
             dt.Clear();
             ad.Fill(dt);
