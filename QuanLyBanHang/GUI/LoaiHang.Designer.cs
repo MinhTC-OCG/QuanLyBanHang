@@ -34,7 +34,7 @@
             this.txtMaL = new System.Windows.Forms.TextBox();
             this.txtTenL = new System.Windows.Forms.TextBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvLoaiHang = new System.Windows.Forms.DataGridView();
             this.MaL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,7 +45,7 @@
             this.btnTim = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnXem = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiHang)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -96,21 +96,23 @@
             this.txtGhiChu.Size = new System.Drawing.Size(262, 20);
             this.txtGhiChu.TabIndex = 5;
             // 
-            // dataGridView1
+            // dgvLoaiHang
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvLoaiHang.AllowUserToAddRows = false;
+            this.dgvLoaiHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLoaiHang.BackgroundColor = System.Drawing.Color.White;
+            this.dgvLoaiHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLoaiHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaL,
             this.TenL,
             this.GhiChu});
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 172);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(636, 217);
-            this.dataGridView1.TabIndex = 6;
+            this.dgvLoaiHang.EnableHeadersVisualStyles = false;
+            this.dgvLoaiHang.Location = new System.Drawing.Point(12, 172);
+            this.dgvLoaiHang.Name = "dgvLoaiHang";
+            this.dgvLoaiHang.RowHeadersVisible = false;
+            this.dgvLoaiHang.Size = new System.Drawing.Size(636, 217);
+            this.dgvLoaiHang.TabIndex = 6;
+            this.dgvLoaiHang.Click += new System.EventHandler(this.dgvLoaiHang_Click);
             // 
             // MaL
             // 
@@ -139,6 +141,7 @@
             this.btnThem.TabIndex = 7;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -148,6 +151,7 @@
             this.btnSua.TabIndex = 8;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -157,6 +161,7 @@
             this.btnXoa.TabIndex = 9;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnNhapLai
             // 
@@ -166,6 +171,7 @@
             this.btnNhapLai.TabIndex = 10;
             this.btnNhapLai.Text = "Nhập lại";
             this.btnNhapLai.UseVisualStyleBackColor = true;
+            this.btnNhapLai.Click += new System.EventHandler(this.btnNhapLai_Click);
             // 
             // btnTim
             // 
@@ -175,6 +181,7 @@
             this.btnTim.TabIndex = 11;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // button6
             // 
@@ -184,6 +191,7 @@
             this.button6.TabIndex = 12;
             this.button6.Text = "Thoát";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // btnXem
             // 
@@ -193,6 +201,7 @@
             this.btnXem.TabIndex = 13;
             this.btnXem.Text = "Xem";
             this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // LoaiHang
             // 
@@ -207,7 +216,7 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvLoaiHang);
             this.Controls.Add(this.txtGhiChu);
             this.Controls.Add(this.txtTenL);
             this.Controls.Add(this.txtMaL);
@@ -217,7 +226,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loại hàng";
             this.Load += new System.EventHandler(this.LoaiHang_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiHang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,7 +240,7 @@
         private System.Windows.Forms.TextBox txtMaL;
         private System.Windows.Forms.TextBox txtTenL;
         private System.Windows.Forms.TextBox txtGhiChu;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvLoaiHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaL;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenL;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
