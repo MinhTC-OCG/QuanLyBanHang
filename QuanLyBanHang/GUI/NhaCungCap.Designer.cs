@@ -53,14 +53,19 @@
             // 
             // dgvNCC
             // 
+            this.dgvNCC.AllowUserToAddRows = false;
+            this.dgvNCC.AllowUserToDeleteRows = false;
+            this.dgvNCC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNCC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNCC,
             this.TenNCC,
             this.DiaChi,
             this.SoDT});
+            this.dgvNCC.EnableHeadersVisualStyles = false;
             this.dgvNCC.Location = new System.Drawing.Point(12, 231);
             this.dgvNCC.Name = "dgvNCC";
+            this.dgvNCC.RowHeadersVisible = false;
             this.dgvNCC.RowHeadersWidth = 51;
             this.dgvNCC.RowTemplate.Height = 24;
             this.dgvNCC.Size = new System.Drawing.Size(954, 283);
@@ -199,7 +204,6 @@
             this.MaNCC.HeaderText = "Mã NCC";
             this.MaNCC.MinimumWidth = 6;
             this.MaNCC.Name = "MaNCC";
-            this.MaNCC.Width = 125;
             // 
             // TenNCC
             // 
@@ -207,7 +211,6 @@
             this.TenNCC.HeaderText = "Tên NCC";
             this.TenNCC.MinimumWidth = 6;
             this.TenNCC.Name = "TenNCC";
-            this.TenNCC.Width = 125;
             // 
             // DiaChi
             // 
@@ -215,7 +218,6 @@
             this.DiaChi.HeaderText = "Địa chỉ";
             this.DiaChi.MinimumWidth = 6;
             this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 125;
             // 
             // SoDT
             // 
@@ -223,7 +225,6 @@
             this.SoDT.HeaderText = "Số ĐT";
             this.SoDT.MinimumWidth = 6;
             this.SoDT.Name = "SoDT";
-            this.SoDT.Width = 125;
             // 
             // NhaCungCap
             // 

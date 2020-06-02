@@ -200,6 +200,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNV,
@@ -207,8 +210,10 @@
             this.DiaChi,
             this.SoDT,
             this.MaTD});
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(12, 260);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1147, 267);
@@ -220,7 +225,6 @@
             this.MaNV.HeaderText = "Mã NV";
             this.MaNV.MinimumWidth = 6;
             this.MaNV.Name = "MaNV";
-            this.MaNV.Width = 125;
             // 
             // HoTen
             // 
@@ -228,7 +232,6 @@
             this.HoTen.HeaderText = "Họ Tên";
             this.HoTen.MinimumWidth = 6;
             this.HoTen.Name = "HoTen";
-            this.HoTen.Width = 125;
             // 
             // DiaChi
             // 
@@ -236,7 +239,6 @@
             this.DiaChi.HeaderText = "Địa chỉ";
             this.DiaChi.MinimumWidth = 6;
             this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 125;
             // 
             // SoDT
             // 
@@ -244,7 +246,6 @@
             this.SoDT.HeaderText = "Số ĐT";
             this.SoDT.MinimumWidth = 6;
             this.SoDT.Name = "SoDT";
-            this.SoDT.Width = 125;
             // 
             // MaTD
             // 
@@ -252,7 +253,6 @@
             this.MaTD.HeaderText = "Mã TD";
             this.MaTD.MinimumWidth = 6;
             this.MaTD.Name = "MaTD";
-            this.MaTD.Width = 125;
             // 
             // NhanVien
             // 
