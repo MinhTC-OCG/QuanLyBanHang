@@ -12,6 +12,7 @@ namespace GUI
 {
     public partial class HoaDon : Form
     {
+        //Ngọc
         public HoaDon()
         {
             InitializeComponent();
