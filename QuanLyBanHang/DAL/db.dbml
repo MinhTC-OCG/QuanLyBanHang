@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLBH" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-G3PG01C\NHATNGUYEN;Initial Catalog=QLBH;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QLBHConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Hang12" Member="Hang12s">
+    <Type Name="Hang12">
+      <Column Name="MaH" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DonVT" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="DonG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaL" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MaNCC" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="SLC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Hang12_HoaDonChiTiet12" Member="HoaDonChiTiet12s" ThisKey="MaH" OtherKey="MaH" Type="HoaDonChiTiet12" />
+      <Association Name="Hang12_LichSuGia12" Member="LichSuGia12s" ThisKey="MaH" OtherKey="MaH" Type="LichSuGia12" />
+      <Association Name="LoaiHang12_Hang12" Member="LoaiHang12" ThisKey="MaL" OtherKey="MaL" Type="LoaiHang12" IsForeignKey="true" />
+      <Association Name="NhaCungCap12_Hang12" Member="NhaCungCap12" ThisKey="MaNCC" OtherKey="MaNCC" Type="NhaCungCap12" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoaDon12" Member="HoaDon12s">
+    <Type Name="HoaDon12">
+      <Column Name="MaHD" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaKH" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="NgayLap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaNV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="HoaDon12_HoaDonChiTiet12" Member="HoaDonChiTiet12s" ThisKey="MaHD" OtherKey="MaHD" Type="HoaDonChiTiet12" />
+      <Association Name="KhachHang12_HoaDon12" Member="KhachHang12" ThisKey="MaKH" OtherKey="MaKH" Type="KhachHang12" IsForeignKey="true" />
+      <Association Name="NhanVien12_HoaDon12" Member="NhanVien12" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien12" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoaDonChiTiet12" Member="HoaDonChiTiet12s">
+    <Type Name="HoaDonChiTiet12">
+      <Column Name="MaHD" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaH" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Hang12_HoaDonChiTiet12" Member="Hang12" ThisKey="MaH" OtherKey="MaH" Type="Hang12" IsForeignKey="true" />
+      <Association Name="HoaDon12_HoaDonChiTiet12" Member="HoaDon12" ThisKey="MaHD" OtherKey="MaHD" Type="HoaDon12" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhachHang12" Member="KhachHang12s">
+    <Type Name="KhachHang12">
+      <Column Name="MaKH" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoDT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="KhachHang12_HoaDon12" Member="HoaDon12s" ThisKey="MaKH" OtherKey="MaKH" Type="HoaDon12" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LichSuGia12" Member="LichSuGia12s">
+    <Type Name="LichSuGia12">
+      <Column Name="MaH" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NgayBD" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NgayKT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DonG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayCN" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Hang12_LichSuGia12" Member="Hang12" ThisKey="MaH" OtherKey="MaH" Type="Hang12" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiHang12" Member="LoaiHang12s">
+    <Type Name="LoaiHang12">
+      <Column Name="MaL" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="LoaiHang12_Hang12" Member="Hang12s" ThisKey="MaL" OtherKey="MaL" Type="Hang12" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhaCungCap12" Member="NhaCungCap12s">
+    <Type Name="NhaCungCap12">
+      <Column Name="MaNCC" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenNCC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoDT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="NhaCungCap12_Hang12" Member="Hang12s" ThisKey="MaNCC" OtherKey="MaNCC" Type="Hang12" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhanVien12" Member="NhanVien12s">
+    <Type Name="NhanVien12">
+      <Column Name="MaNV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoDT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaTD" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="NhanVien12_HoaDon12" Member="HoaDon12s" ThisKey="MaNV" OtherKey="MaNV" Type="HoaDon12" />
+      <Association Name="TrinhDo12_NhanVien12" Member="TrinhDo12" ThisKey="MaTD" OtherKey="MaTD" Type="TrinhDo12" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TrinhDo12" Member="TrinhDo12s">
+    <Type Name="TrinhDo12">
+      <Column Name="MaTD" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TrinhDo12_NhanVien12" Member="NhanVien12s" ThisKey="MaTD" OtherKey="MaTD" Type="NhanVien12" />
+    </Type>
+  </Table>
+</Database>
