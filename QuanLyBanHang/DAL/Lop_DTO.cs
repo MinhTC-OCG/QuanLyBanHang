@@ -15,10 +15,25 @@ namespace DAL
             return new SqlConnection(@"Data Source=DESKTOP-G3PG01C\NHATNGUYEN;Initial Catalog=QLBH;Integrated Security=True");
         }
 
-        public DataTable getTable()
+        public DataTable getTable(string sql)
         {
+            SqlConnection conn = getConnect();
+            conn.Open();
+            SqlDataAdapter ad = new SqlDataAdapter(sql,conn);
             DataTable dt = new DataTable();
+            dt.Clear();
+            ad.Fill(dt);
             return dt;
+        }
+
+        public void ExecuteNonQuery(string sql)
+        {
+            SqlConnection conn = getConnect();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            cmd.Clone();
         }
     }
 }
