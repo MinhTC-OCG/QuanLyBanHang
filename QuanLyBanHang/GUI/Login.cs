@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class Login : Form
+    public partial class txtUsername : Form
     {
-        public Login()
+        public txtUsername()
         {
             InitializeComponent();
         }
@@ -21,5 +21,4 @@ namespace GUI
             //nhat
         }
     }
-    //lol nhat
 }
