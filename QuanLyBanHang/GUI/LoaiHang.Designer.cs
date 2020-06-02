@@ -105,9 +105,9 @@
             this.TenL,
             this.GhiChu});
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 146);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 172);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(636, 243);
+            this.dataGridView1.Size = new System.Drawing.Size(636, 217);
             this.dataGridView1.TabIndex = 6;
             // 
             // MaL
