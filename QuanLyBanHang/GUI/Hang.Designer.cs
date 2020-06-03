@@ -41,7 +41,7 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.cboMaL = new System.Windows.Forms.ComboBox();
             this.txtSLC = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.cboMaNCC = new System.Windows.Forms.ComboBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -81,6 +81,7 @@
             this.dgvHang.RowHeadersVisible = false;
             this.dgvHang.Size = new System.Drawing.Size(964, 281);
             this.dgvHang.TabIndex = 0;
+            this.dgvHang.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHang_RowEnter);
             // 
             // MaH
             // 
@@ -132,7 +133,7 @@
             this.panel1.Controls.Add(this.btnSua);
             this.panel1.Controls.Add(this.cboMaL);
             this.panel1.Controls.Add(this.txtSLC);
-            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Controls.Add(this.cboMaNCC);
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.label7);
@@ -190,15 +191,15 @@
             this.txtSLC.Size = new System.Drawing.Size(317, 20);
             this.txtSLC.TabIndex = 2;
             // 
-            // button6
+            // btnThoat
             // 
-            this.button6.Location = new System.Drawing.Point(891, 172);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(73, 23);
-            this.button6.TabIndex = 20;
-            this.button6.Text = "Thoát";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnThoat.Location = new System.Drawing.Point(891, 172);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(73, 23);
+            this.btnThoat.TabIndex = 20;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // cboMaNCC
             // 
@@ -381,7 +382,7 @@
         private System.Windows.Forms.TextBox txtSLC;
         private System.Windows.Forms.TextBox txtTenH;
         private System.Windows.Forms.TextBox txtMaH;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Button btnNhapLai;
