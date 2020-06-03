@@ -12,7 +12,7 @@ namespace BUS
     public class LoaiHang_BUS
     {
         Lop_DAL dal = new Lop_DAL();
-
+        
         public DataTable ShowLoaiHang()
         {
             string sql = "SELECT * FROM LoaiHang12";
