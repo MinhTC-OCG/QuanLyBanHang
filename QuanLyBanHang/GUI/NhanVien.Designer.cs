@@ -158,7 +158,7 @@
             // bnThoat
             // 
             this.bnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnThoat.Location = new System.Drawing.Point(1074, 219);
+            this.bnThoat.Location = new System.Drawing.Point(1084, 219);
             this.bnThoat.Name = "bnThoat";
             this.bnThoat.Size = new System.Drawing.Size(75, 35);
             this.bnThoat.TabIndex = 11;
@@ -168,7 +168,7 @@
             // bnXem
             // 
             this.bnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnXem.Location = new System.Drawing.Point(467, 219);
+            this.bnXem.Location = new System.Drawing.Point(1003, 219);
             this.bnXem.Name = "bnXem";
             this.bnXem.Size = new System.Drawing.Size(75, 35);
             this.bnXem.TabIndex = 12;
