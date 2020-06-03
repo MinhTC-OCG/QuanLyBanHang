@@ -7,15 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTO;
 using DAL;
+using DTO;
 using BUS;
 namespace GUI
 {
     public partial class LoaiHang : Form
     {
         LoaiHang_BUS bus = new LoaiHang_BUS();
+        LoaiHang_DTO lh = new LoaiHang_DTO();
+
         DataTable dtLoaiHang, dtTimKiem;
+
         public LoaiHang()
         {
             InitializeComponent();
@@ -79,29 +82,32 @@ namespace GUI
         {
             try
             {
-                int dem = 0;
-                foreach (DataRow row in dtLoaiHang.Rows)
-                {
-                    foreach (DataColumn c in dtLoaiHang.Columns)
-                    {
-                        var check = row[c].ToString();
-                        if (txtMaL.Text == check)
-                        {
-                            dem++;
-                            break;
-                        }
-                    }
-
-                }
                 if (txtMaL.Text == "")
                     MessageBox.Show("Bạn chưa nhập mã loại, nhập lại!");
                 else if (txtTenL.Text == "")
                     MessageBox.Show("Bạn chưa nhập tên loại, nhập lại!");
                 else
                 {
+                    lh.Maloai = txtMaL.Text;
+                    lh.Tenloai = txtTenL.Text;
+                    lh.Ghichu = txtGhiChu.Text;
+                    int dem = 0;
+                    foreach (DataRow row in dtLoaiHang.Rows)
+                    {
+                        foreach (DataColumn c in dtLoaiHang.Columns)
+                        {
+                            var check = row[c].ToString().Trim();
+                            if (txtMaL.Text.Trim() == check)
+                            {
+                                dem++;
+                                break;
+                            }
+                        }
+
+                    }
                     if (dem != 0)
                     {
-                        bus.UpdateLoaiHang(txtMaL.Text, txtTenL.Text, txtGhiChu.Text);
+                        bus.UpdateLoaiHang(lh.Maloai,lh.Tenloai,lh.Ghichu);
                         LoaiHang_Load(sender, e);
                         MessageBox.Show("Cập nhập loại hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -122,16 +128,12 @@ namespace GUI
         {
             DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtTenL.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
+            {
                 bus.DeleteLoaiHang(txtMaL.Text);
-        }
+                MessageBox.Show("Xóa thành công");
+                LoadData();
+            }
 
-        private void dgvLoaiHang_Click(object sender, EventArgs e)
-        {
-            dgvLoaiHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            int r = dgvLoaiHang.CurrentCell.RowIndex;
-            txtMaL.Text = dgvLoaiHang.Rows[r].Cells[0].Value.ToString();
-            txtTenL.Text = dgvLoaiHang.Rows[r].Cells[1].Value.ToString();
-            txtGhiChu.Text = dgvLoaiHang.Rows[r].Cells[2].Value.ToString();
         }
 
         private void btnXem_Click(object sender, EventArgs e)
@@ -152,6 +154,15 @@ namespace GUI
             txtTenL.Text = "";
             txtGhiChu.Text = "";
             txtMaL.Focus();
+        }
+
+        private void dgvLoaiHang_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvLoaiHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            int r = e.RowIndex;
+            txtMaL.Text = dgvLoaiHang.Rows[r].Cells[0].Value.ToString();
+            txtTenL.Text = dgvLoaiHang.Rows[r].Cells[1].Value.ToString();
+            txtGhiChu.Text = dgvLoaiHang.Rows[r].Cells[2].Value.ToString();
         }
 
         private void btnTim_Click(object sender, EventArgs e)

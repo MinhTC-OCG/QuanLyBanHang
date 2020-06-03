@@ -44,7 +44,7 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnNhapLai = new System.Windows.Forms.Button();
             this.btnTim = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.btnXem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiHang)).BeginInit();
             this.SuspendLayout();
@@ -119,7 +119,7 @@
             this.dgvLoaiHang.RowHeadersVisible = false;
             this.dgvLoaiHang.Size = new System.Drawing.Size(636, 240);
             this.dgvLoaiHang.TabIndex = 6;
-            this.dgvLoaiHang.Click += new System.EventHandler(this.dgvLoaiHang_Click);
+            this.dgvLoaiHang.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiHang_RowEnter);
             // 
             // MaL
             // 
@@ -143,13 +143,13 @@
             // 
             this.btnThem.AutoSize = true;
             this.btnThem.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnThem.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(373, 8);
+            this.btnThem.Location = new System.Drawing.Point(373, 14);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(74, 36);
+            this.btnThem.Size = new System.Drawing.Size(74, 30);
             this.btnThem.TabIndex = 7;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -163,9 +163,9 @@
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(373, 50);
+            this.btnSua.Location = new System.Drawing.Point(373, 58);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(74, 35);
+            this.btnSua.Size = new System.Drawing.Size(74, 27);
             this.btnSua.TabIndex = 8;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -179,9 +179,9 @@
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(373, 98);
+            this.btnXoa.Location = new System.Drawing.Point(373, 99);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(74, 35);
+            this.btnXoa.Size = new System.Drawing.Size(74, 27);
             this.btnXoa.TabIndex = 9;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -195,7 +195,7 @@
             this.btnNhapLai.ForeColor = System.Drawing.Color.White;
             this.btnNhapLai.Location = new System.Drawing.Point(476, 99);
             this.btnNhapLai.Name = "btnNhapLai";
-            this.btnNhapLai.Size = new System.Drawing.Size(73, 23);
+            this.btnNhapLai.Size = new System.Drawing.Size(73, 27);
             this.btnNhapLai.TabIndex = 10;
             this.btnNhapLai.Text = "Nhập lại";
             this.btnNhapLai.UseVisualStyleBackColor = false;
@@ -206,33 +206,33 @@
             this.btnTim.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTim.ForeColor = System.Drawing.Color.White;
-            this.btnTim.Location = new System.Drawing.Point(476, 12);
+            this.btnTim.Location = new System.Drawing.Point(476, 14);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(73, 23);
+            this.btnTim.Size = new System.Drawing.Size(73, 30);
             this.btnTim.TabIndex = 11;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
-            // button6
+            // btnThoat
             // 
-            this.button6.BackColor = System.Drawing.Color.Red;
-            this.button6.Location = new System.Drawing.Point(575, 12);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(73, 23);
-            this.button6.TabIndex = 12;
-            this.button6.Text = "Thoát";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnThoat.BackColor = System.Drawing.Color.Red;
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(607, 14);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(41, 30);
+            this.btnThoat.TabIndex = 12;
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.button6_Click);
             // 
             // btnXem
             // 
             this.btnXem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXem.ForeColor = System.Drawing.Color.White;
-            this.btnXem.Location = new System.Drawing.Point(476, 56);
+            this.btnXem.Location = new System.Drawing.Point(476, 58);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(73, 23);
+            this.btnXem.Size = new System.Drawing.Size(73, 27);
             this.btnXem.TabIndex = 13;
             this.btnXem.Text = "Xem";
             this.btnXem.UseVisualStyleBackColor = false;
@@ -245,7 +245,7 @@
             this.ClientSize = new System.Drawing.Size(660, 391);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnXem);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.btnNhapLai);
             this.Controls.Add(this.btnXoa);
@@ -283,7 +283,7 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnNhapLai;
         private System.Windows.Forms.Button btnTim;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.Button btnThem;
     }

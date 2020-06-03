@@ -48,8 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hang_BUS.cs" />
+    <Compile Include="KhachHang_BUS.cs" />
+    <Compile Include="LichSuGia_BUS.cs" />
     <Compile Include="LoaiHang_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrinhDo_BUS.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
