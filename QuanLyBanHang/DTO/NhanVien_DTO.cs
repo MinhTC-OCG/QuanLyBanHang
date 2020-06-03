@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class NhanVien_DTO
+    public class NhanVien_DTO
     {
         string MaNV_, HoTen_, DiaChi_,MaTD_;
         int SoDT_;

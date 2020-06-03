@@ -190,6 +190,7 @@
             this.bnThem.TabIndex = 10;
             this.bnThem.Text = "Thêm";
             this.bnThem.UseVisualStyleBackColor = true;
+            this.bnThem.Click += new System.EventHandler(this.bnThem_Click);
             // 
             // bnSua
             // 

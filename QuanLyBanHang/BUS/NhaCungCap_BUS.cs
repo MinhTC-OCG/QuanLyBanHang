@@ -8,7 +8,7 @@ using DAL;
 using DTO;
 namespace BUS
 {
-    class NhaCungCap_BUS
+    public class NhaCungCap_BUS
     {
         Lop_DAL dal = new Lop_DAL();
 
