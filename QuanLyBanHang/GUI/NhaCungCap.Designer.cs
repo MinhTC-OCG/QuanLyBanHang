@@ -180,6 +180,7 @@
             this.bnNhapLai.TabIndex = 9;
             this.bnNhapLai.Text = "Nhập lại";
             this.bnNhapLai.UseVisualStyleBackColor = true;
+            this.bnNhapLai.Click += new System.EventHandler(this.bnNhapLai_Click);
             // 
             // bnThem
             // 
