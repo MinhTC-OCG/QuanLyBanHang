@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class NhaCungCap_DTO
+    public class NhaCungCap_DTO
     {
-        string MaNCC_,TenNCC_,DiaChi_;
-        int SoDT_;
+        string mancc, tenncc, diachi;
+        string sodt;
 
-        public string MaNCC { get => MaNCC_; set => MaNCC_ = value; }
-        public string TenNCC { get => TenNCC_; set => TenNCC_ = value; }
-        public string DiaChi { get => DiaChi_; set => DiaChi_ = value; }
-        public int SoDT { get => SoDT; set => SoDT = value; }
+        public string Mancc { get => mancc; set => mancc = value; }
+        public string Tenncc { get => tenncc; set => tenncc = value; }
+        public string Diachi { get => diachi; set => diachi = value; }
+        public string Sodt { get => sodt; set => sodt = value; }
     }
 }
