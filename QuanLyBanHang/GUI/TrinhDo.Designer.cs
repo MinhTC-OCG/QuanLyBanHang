@@ -42,8 +42,8 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.txtMatrinhdo = new System.Windows.Forms.TextBox();
             this.txtTim = new System.Windows.Forms.TextBox();
-            this.TenTrinhDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaTrinhDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrinhdo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,8 +137,8 @@
             this.dgvTrinhdo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTrinhdo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTrinhdo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TenTrinhDo,
-            this.MaTrinhDo});
+            this.TenTD,
+            this.MaTD});
             this.dgvTrinhdo.EnableHeadersVisualStyles = false;
             this.dgvTrinhdo.Location = new System.Drawing.Point(81, 339);
             this.dgvTrinhdo.Name = "dgvTrinhdo";
@@ -147,6 +147,7 @@
             this.dgvTrinhdo.RowTemplate.Height = 24;
             this.dgvTrinhdo.Size = new System.Drawing.Size(541, 150);
             this.dgvTrinhdo.TabIndex = 9;
+            this.dgvTrinhdo.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrinhdo_RowEnter);
             // 
             // txtTrinhdo
             // 
@@ -178,17 +179,19 @@
             this.txtTim.Size = new System.Drawing.Size(122, 22);
             this.txtTim.TabIndex = 14;
             // 
-            // TenTrinhDo
+            // TenTD
             // 
-            this.TenTrinhDo.HeaderText = "Trình độ";
-            this.TenTrinhDo.MinimumWidth = 6;
-            this.TenTrinhDo.Name = "TenTrinhDo";
+            this.TenTD.DataPropertyName = "TenTD";
+            this.TenTD.HeaderText = "Trình độ";
+            this.TenTD.MinimumWidth = 6;
+            this.TenTD.Name = "TenTD";
             // 
-            // MaTrinhDo
+            // MaTD
             // 
-            this.MaTrinhDo.HeaderText = "Mã trình độ";
-            this.MaTrinhDo.MinimumWidth = 6;
-            this.MaTrinhDo.Name = "MaTrinhDo";
+            this.MaTD.DataPropertyName = "MaTD";
+            this.MaTD.HeaderText = "Mã trình độ";
+            this.MaTD.MinimumWidth = 6;
+            this.MaTD.Name = "MaTD";
             // 
             // TrinhDo
             // 
@@ -211,6 +214,7 @@
             this.Controls.Add(this.label1);
             this.Name = "TrinhDo";
             this.Text = "TrinhDo";
+            this.Load += new System.EventHandler(this.TrinhDo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrinhdo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -233,7 +237,7 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.TextBox txtMatrinhdo;
         private System.Windows.Forms.TextBox txtTim;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenTrinhDo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaTrinhDo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaTD;
     }
 }
