@@ -39,7 +39,7 @@ namespace GUI
                 else
                 {
                     int dem = 0;
-                    foreach (DataRow row in dtLoaiHang.Rows)
+                    foreach (DataRow row in dtHang.Rows)
                     {
                         var check = row["MaH"].ToString().Trim();
                         if (txtMaH.Text.Trim() == check)
@@ -53,12 +53,13 @@ namespace GUI
                     {
                         string mahang = txtMaH.Text;
                         string tenhang = txtTenH.Text;
-                        string dongia = txtDonVT.Text;
-                        int dongia = txtDonG.Text;
+                        string donvt = txtDonVT.Text;
+                        int dongia = Int32.Parse(txtDonG.Text);
                         string maloai = cboMaL.SelectedValue.ToString();
                         string mancc = cboMaNCC.SelectedValue.ToString();
-                        int soluongco = txtSLC.Text;
-                        bus.InsertHang(txtMaL.Text, txtTenL.Text, txtGhiChu.Text);
+                        int soluongco = Int32.Parse(txtSLC.Text);
+                        bus.InsertHang();
+                        //nhat
                         MessageBox.Show("Thêm loại hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
                     }
