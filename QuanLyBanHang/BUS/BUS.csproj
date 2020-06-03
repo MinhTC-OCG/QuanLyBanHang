@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="LoaiHang_BUS.cs" />
     <Compile Include="NhaCungCap_BUS.cs" />
+    <Compile Include="NhanVien_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

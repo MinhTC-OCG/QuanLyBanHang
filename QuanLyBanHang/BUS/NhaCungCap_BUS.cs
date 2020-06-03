@@ -41,7 +41,7 @@ namespace BUS
 
         public DataTable SearchNhaCungCap(string mancc)
         {
-            string sql = "SELECT *FROM LoaiHang12 WHERE mancc like '%" + mancc + "'";
+            string sql = "SELECT *FROM Nhacungcap12 WHERE mancc like '%" + mancc + "'";
             DataTable dt = new DataTable();
             dt = dal.getTable(sql);
             return dt;
