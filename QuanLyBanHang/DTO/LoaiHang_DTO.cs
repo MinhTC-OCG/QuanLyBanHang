@@ -9,7 +9,6 @@ namespace DTO
     public class LoaiHang_DTO
     {
         string maloai, tenloai, ghichu;
-
         public string Maloai { get => maloai; set => maloai = value; }
         public string Tenloai { get => tenloai; set => tenloai = value; }
         public string Ghichu { get => ghichu; set => ghichu = value; }
