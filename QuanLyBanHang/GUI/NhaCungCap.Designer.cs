@@ -102,79 +102,70 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 20);
+            this.label1.Size = new System.Drawing.Size(127, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã Nhà Cung Cấp:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 89);
+            this.label2.Location = new System.Drawing.Point(9, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 20);
+            this.label2.Size = new System.Drawing.Size(133, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên Nhà Cung Cấp:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(524, 37);
+            this.label3.Location = new System.Drawing.Point(545, 37);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 20);
+            this.label3.Size = new System.Drawing.Size(55, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Địa chỉ:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(524, 94);
+            this.label4.Location = new System.Drawing.Point(545, 84);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 20);
+            this.label4.Size = new System.Drawing.Size(95, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "Số điện thoại:";
             // 
             // txtMaNCC
             // 
-            this.txtMaNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNCC.Location = new System.Drawing.Point(166, 34);
+            this.txtMaNCC.Location = new System.Drawing.Point(144, 32);
             this.txtMaNCC.Name = "txtMaNCC";
-            this.txtMaNCC.Size = new System.Drawing.Size(322, 27);
+            this.txtMaNCC.Size = new System.Drawing.Size(310, 22);
             this.txtMaNCC.TabIndex = 5;
             // 
             // txtTenNCC
             // 
-            this.txtTenNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNCC.Location = new System.Drawing.Point(166, 86);
+            this.txtTenNCC.Location = new System.Drawing.Point(144, 74);
             this.txtTenNCC.Name = "txtTenNCC";
-            this.txtTenNCC.Size = new System.Drawing.Size(322, 27);
+            this.txtTenNCC.Size = new System.Drawing.Size(310, 22);
             this.txtTenNCC.TabIndex = 6;
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Location = new System.Drawing.Point(642, 34);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(317, 27);
+            this.txtDiaChi.Size = new System.Drawing.Size(317, 22);
             this.txtDiaChi.TabIndex = 7;
             // 
             // txtSoDT
             // 
-            this.txtSoDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoDT.Location = new System.Drawing.Point(642, 91);
+            this.txtSoDT.Location = new System.Drawing.Point(642, 81);
             this.txtSoDT.Name = "txtSoDT";
-            this.txtSoDT.Size = new System.Drawing.Size(317, 27);
+            this.txtSoDT.Size = new System.Drawing.Size(317, 22);
             this.txtSoDT.TabIndex = 8;
             // 
             // bnNhapLai
             // 
-            this.bnNhapLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnNhapLai.Location = new System.Drawing.Point(13, 190);
+            this.bnNhapLai.Location = new System.Drawing.Point(33, 172);
             this.bnNhapLai.Name = "bnNhapLai";
             this.bnNhapLai.Size = new System.Drawing.Size(75, 35);
             this.bnNhapLai.TabIndex = 9;
@@ -183,8 +174,7 @@
             // 
             // bnThem
             // 
-            this.bnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnThem.Location = new System.Drawing.Point(104, 190);
+            this.bnThem.Location = new System.Drawing.Point(141, 172);
             this.bnThem.Name = "bnThem";
             this.bnThem.Size = new System.Drawing.Size(75, 35);
             this.bnThem.TabIndex = 10;
@@ -193,8 +183,7 @@
             // 
             // bnSua
             // 
-            this.bnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnSua.Location = new System.Drawing.Point(195, 190);
+            this.bnSua.Location = new System.Drawing.Point(254, 172);
             this.bnSua.Name = "bnSua";
             this.bnSua.Size = new System.Drawing.Size(75, 35);
             this.bnSua.TabIndex = 11;
@@ -203,8 +192,7 @@
             // 
             // bnXoa
             // 
-            this.bnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnXoa.Location = new System.Drawing.Point(286, 190);
+            this.bnXoa.Location = new System.Drawing.Point(362, 172);
             this.bnXoa.Name = "bnXoa";
             this.bnXoa.Size = new System.Drawing.Size(75, 35);
             this.bnXoa.TabIndex = 12;
@@ -213,8 +201,7 @@
             // 
             // bnXem
             // 
-            this.bnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnXem.Location = new System.Drawing.Point(806, 190);
+            this.bnXem.Location = new System.Drawing.Point(609, 172);
             this.bnXem.Name = "bnXem";
             this.bnXem.Size = new System.Drawing.Size(75, 35);
             this.bnXem.TabIndex = 13;
@@ -223,8 +210,7 @@
             // 
             // bnThoat
             // 
-            this.bnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnThoat.Location = new System.Drawing.Point(887, 190);
+            this.bnThoat.Location = new System.Drawing.Point(887, 172);
             this.bnThoat.Name = "bnThoat";
             this.bnThoat.Size = new System.Drawing.Size(75, 35);
             this.bnThoat.TabIndex = 14;
@@ -233,8 +219,7 @@
             // 
             // bnTim
             // 
-            this.bnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnTim.Location = new System.Drawing.Point(377, 190);
+            this.bnTim.Location = new System.Drawing.Point(501, 172);
             this.bnTim.Name = "bnTim";
             this.bnTim.Size = new System.Drawing.Size(75, 35);
             this.bnTim.TabIndex = 15;

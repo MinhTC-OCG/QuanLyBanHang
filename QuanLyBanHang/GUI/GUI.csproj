@@ -120,11 +120,23 @@
     <EmbeddedResource Include="Hang.resx">
       <DependentUpon>Hang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HoaDon.resx">
+      <DependentUpon>HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhachHang.resx">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LichSuGia.resx">
+      <DependentUpon>LichSuGia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoaiHang.resx">
       <DependentUpon>LoaiHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhaCungCap.resx">
       <DependentUpon>NhaCungCap.cs</DependentUpon>
@@ -141,6 +153,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TrinhDo.resx">
+      <DependentUpon>TrinhDo.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

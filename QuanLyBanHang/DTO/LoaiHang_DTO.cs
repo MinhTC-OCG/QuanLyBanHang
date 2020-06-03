@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class LoaiHang_DTO
+    public class LoaiHang_DTO
     {
         string maloai, tenloai, ghichu;
         public string Maloai { get => maloai; set => maloai = value; }
