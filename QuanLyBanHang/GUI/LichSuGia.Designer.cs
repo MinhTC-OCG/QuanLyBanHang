@@ -138,8 +138,9 @@
             // txtDonGia
             // 
             this.txtDonGia.Location = new System.Drawing.Point(78, 126);
+            this.txtDonGia.Multiline = true;
             this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(197, 20);
+            this.txtDonGia.Size = new System.Drawing.Size(197, 23);
             this.txtDonGia.TabIndex = 30;
             // 
             // dtpNgayCapNhat
@@ -168,6 +169,8 @@
             // 
             // dgvLichSuGia
             // 
+            this.dgvLichSuGia.AllowUserToAddRows = false;
+            this.dgvLichSuGia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLichSuGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLichSuGia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmahang,
@@ -175,8 +178,10 @@
             this.clngaykt,
             this.cldongia,
             this.clngaycapnhat});
+            this.dgvLichSuGia.EnableHeadersVisualStyles = false;
             this.dgvLichSuGia.Location = new System.Drawing.Point(12, 253);
             this.dgvLichSuGia.Name = "dgvLichSuGia";
+            this.dgvLichSuGia.RowHeadersVisible = false;
             this.dgvLichSuGia.Size = new System.Drawing.Size(890, 271);
             this.dgvLichSuGia.TabIndex = 26;
             // 
@@ -184,31 +189,26 @@
             // 
             this.clmahang.HeaderText = "Mã hàng";
             this.clmahang.Name = "clmahang";
-            this.clmahang.Width = 200;
             // 
             // clngaybd
             // 
             this.clngaybd.HeaderText = "Ngày bắt đầu";
             this.clngaybd.Name = "clngaybd";
-            this.clngaybd.Width = 150;
             // 
             // clngaykt
             // 
             this.clngaykt.HeaderText = "Ngày kết thúc";
             this.clngaykt.Name = "clngaykt";
-            this.clngaykt.Width = 150;
             // 
             // cldongia
             // 
             this.cldongia.HeaderText = "Đơn giá";
             this.cldongia.Name = "cldongia";
-            this.cldongia.Width = 150;
             // 
             // clngaycapnhat
             // 
             this.clngaycapnhat.HeaderText = "Ngày cập nhật";
             this.clngaycapnhat.Name = "clngaycapnhat";
-            this.clngaycapnhat.Width = 150;
             // 
             // label6
             // 
