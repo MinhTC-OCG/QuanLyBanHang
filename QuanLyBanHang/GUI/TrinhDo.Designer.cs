@@ -185,6 +185,7 @@
             this.TenTD.HeaderText = "Trình độ";
             this.TenTD.MinimumWidth = 6;
             this.TenTD.Name = "TenTD";
+            this.TenTD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // MaTD
             // 
@@ -192,6 +193,7 @@
             this.MaTD.HeaderText = "Mã trình độ";
             this.MaTD.MinimumWidth = 6;
             this.MaTD.Name = "MaTD";
+            this.MaTD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // TrinhDo
             // 

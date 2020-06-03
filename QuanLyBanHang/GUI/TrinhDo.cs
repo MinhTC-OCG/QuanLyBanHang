@@ -30,7 +30,7 @@ namespace GUI
         private void dgvTrinhdo_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             int dong = e.RowIndex;
-            txtTrinhdo.Text = dgvTrinhdo.Rows[dong].Cells[0].Value.ToString();
+            txtTrinhdo.Text = dgvTrinhdo.Rows[dong].Cells[0].Value.ToString().Trim();
             txtMatrinhdo.Text = dgvTrinhdo.Rows[dong].Cells[1].Value.ToString();
         }
     }
