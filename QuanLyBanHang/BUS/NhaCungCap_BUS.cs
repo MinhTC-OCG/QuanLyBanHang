@@ -20,14 +20,14 @@ namespace BUS
             return dt;
         }
 
-        public void InsertNhaCungCap(string mancc, string tenncc, string diachi, int sodt)
+        public void InsertNhaCungCap(string mancc, string tenncc, string diachi, string sodt)
         {
             string sql = "INSERT INTO NhaCungCap12 VALUES ('" + mancc + "',N'" + tenncc + "',N'" + diachi + "',N'" + sodt + "')";
             dal.ExecuteNonQuery(sql);
         }
 
 
-        public void UpdateNhaCungCap(string mancc, string tenncc, string diachi, int sodt)
+        public void UpdateNhaCungCap(string mancc, string tenncc, string diachi, string sodt)
         {
             string sql = "UPDATE NhaCungCap12 SET TenNCC = N'" + tenncc + "',diachi = N'" + diachi + "',sodt = N'" + sodt + "' WHERE mancc = '" + mancc + "'";
             dal.ExecuteNonQuery(sql);

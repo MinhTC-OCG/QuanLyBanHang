@@ -14,7 +14,7 @@ namespace GUI
     public partial class Hang : Form
     {
         Hang_BUS bus = new Hang_BUS();
-        Hang_DTO dto;
+        Hang_DTO dto = new Hang_DTO();
 
         DataTable dtHang, dtLoaiHang, dtNhaCungCap, dtTimKiemHang;
         public Hang()
