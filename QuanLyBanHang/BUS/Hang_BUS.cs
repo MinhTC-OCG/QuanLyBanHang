@@ -46,7 +46,7 @@ namespace BUS
 
         public void UpdateHang(string mahang, string tenhang, string donvt, int dongia, string maloai, string mancc, int soluongco)
         {
-            string sql = "UPDATE Hang12 SET TenH =N'"+tenhang+"',DonVT=N'"+donvt+"',DonG="+dongia+",MaL='"+maloai+"', MaNCC= '"+mancc+"', SLC="+soluongco+"' WHERE MaH ='"+mahang;
+            string sql = "UPDATE Hang12 SET TenH =N'"+tenhang+"',DonVT=N'"+donvt+"',DonG='"+dongia+"',MaL='"+maloai+"', MaNCC= '"+mancc+"', SLC='"+soluongco+"' WHERE MaH ='"+mahang+"'";
             dal.ExecuteNonQuery(sql);
         }
 

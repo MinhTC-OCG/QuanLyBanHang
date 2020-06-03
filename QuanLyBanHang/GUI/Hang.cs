@@ -96,12 +96,16 @@ namespace GUI
                     int dem = 0;
                     foreach (DataRow row in dtHang.Rows)
                     {
-                        var check = row["MaH"].ToString().Trim();
-                        if (txtMaH.Text.Trim() == check)
+                        foreach(DataColumn c in dtHang.Columns)
                         {
-                            dem++;
-                            break;
+                            var check = row[c].ToString().Trim();
+                            if (txtMaH.Text.Trim() == check)
+                            {
+                                dem++;
+                                break;
+                            }
                         }
+                        
 
                     }
                     if (dem != 0)
@@ -114,7 +118,7 @@ namespace GUI
                         dto.Mancc = cboMaNCC.SelectedValue.ToString();
                         dto.Soluongco = Int32.Parse(txtSLC.Text);
              
-                        bus.InsertHang(dto.Mahang, dto.Tenhang, dto.Donvt, dto.Dongia, dto.Maloai, dto.Mancc, dto.Soluongco);
+                        bus.UpdateHang(dto.Mahang, dto.Tenhang, dto.Donvt, dto.Dongia, dto.Maloai, dto.Mancc, dto.Soluongco);
                         MessageBox.Show("Sửa hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
                     }

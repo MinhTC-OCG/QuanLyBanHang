@@ -52,6 +52,7 @@
     <Compile Include="KhachHang_BUS.cs" />
     <Compile Include="LichSuGia_BUS.cs" />
     <Compile Include="LoaiHang_BUS.cs" />
+    <Compile Include="DangNhap_BUS.cs" />
     <Compile Include="NhaCungCap_BUS.cs" />
     <Compile Include="NhanVien_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
