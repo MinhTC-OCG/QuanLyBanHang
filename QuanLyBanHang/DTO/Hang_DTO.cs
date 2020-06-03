@@ -13,6 +13,10 @@ namespace DTO
         string maloai;
         string mancc;
         int soluongco;
+        public Hang_DTO()
+        {
+
+        }
 
         public Hang_DTO(string mahang, string tenhang, string donvt, int dongia, string maloai, string mancc, int soluongco)
         {
