@@ -58,7 +58,7 @@ namespace GUI
                         string maloai = cboMaL.SelectedValue.ToString();
                         string mancc = cboMaNCC.SelectedValue.ToString();
                         int soluongco = Int32.Parse(txtSLC.Text);
-                        bus.InsertHang();
+                        //bus.InsertHang();
                         //nhat
                         MessageBox.Show("Thêm loại hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
