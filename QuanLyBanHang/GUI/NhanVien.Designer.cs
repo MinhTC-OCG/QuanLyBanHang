@@ -148,9 +148,9 @@
             // bnNhapLai
             // 
             this.bnNhapLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnNhapLai.Location = new System.Drawing.Point(12, 202);
+            this.bnNhapLai.Location = new System.Drawing.Point(12, 219);
             this.bnNhapLai.Name = "bnNhapLai";
-            this.bnNhapLai.Size = new System.Drawing.Size(85, 35);
+            this.bnNhapLai.Size = new System.Drawing.Size(75, 35);
             this.bnNhapLai.TabIndex = 10;
             this.bnNhapLai.Text = "Nhập lại";
             this.bnNhapLai.UseVisualStyleBackColor = true;
@@ -158,9 +158,9 @@
             // bnThoat
             // 
             this.bnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnThoat.Location = new System.Drawing.Point(1074, 202);
+            this.bnThoat.Location = new System.Drawing.Point(1074, 219);
             this.bnThoat.Name = "bnThoat";
-            this.bnThoat.Size = new System.Drawing.Size(85, 35);
+            this.bnThoat.Size = new System.Drawing.Size(75, 35);
             this.bnThoat.TabIndex = 11;
             this.bnThoat.Text = "Thoát";
             this.bnThoat.UseVisualStyleBackColor = true;
@@ -168,9 +168,9 @@
             // bnXem
             // 
             this.bnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnXem.Location = new System.Drawing.Point(467, 202);
+            this.bnXem.Location = new System.Drawing.Point(467, 219);
             this.bnXem.Name = "bnXem";
-            this.bnXem.Size = new System.Drawing.Size(85, 35);
+            this.bnXem.Size = new System.Drawing.Size(75, 35);
             this.bnXem.TabIndex = 12;
             this.bnXem.Text = "Xem";
             this.bnXem.UseVisualStyleBackColor = true;
@@ -178,9 +178,9 @@
             // bnTim
             // 
             this.bnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnTim.Location = new System.Drawing.Point(376, 202);
+            this.bnTim.Location = new System.Drawing.Point(376, 219);
             this.bnTim.Name = "bnTim";
-            this.bnTim.Size = new System.Drawing.Size(85, 35);
+            this.bnTim.Size = new System.Drawing.Size(75, 35);
             this.bnTim.TabIndex = 13;
             this.bnTim.Text = "Tìm";
             this.bnTim.UseVisualStyleBackColor = true;
@@ -188,9 +188,9 @@
             // bnXoa
             // 
             this.bnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnXoa.Location = new System.Drawing.Point(285, 202);
+            this.bnXoa.Location = new System.Drawing.Point(285, 219);
             this.bnXoa.Name = "bnXoa";
-            this.bnXoa.Size = new System.Drawing.Size(85, 35);
+            this.bnXoa.Size = new System.Drawing.Size(75, 35);
             this.bnXoa.TabIndex = 14;
             this.bnXoa.Text = "Xóa";
             this.bnXoa.UseVisualStyleBackColor = true;
@@ -198,9 +198,9 @@
             // bnSua
             // 
             this.bnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnSua.Location = new System.Drawing.Point(194, 202);
+            this.bnSua.Location = new System.Drawing.Point(194, 219);
             this.bnSua.Name = "bnSua";
-            this.bnSua.Size = new System.Drawing.Size(85, 35);
+            this.bnSua.Size = new System.Drawing.Size(75, 35);
             this.bnSua.TabIndex = 15;
             this.bnSua.Text = "Sửa";
             this.bnSua.UseVisualStyleBackColor = true;
@@ -208,9 +208,9 @@
             // bnThem
             // 
             this.bnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnThem.Location = new System.Drawing.Point(103, 202);
+            this.bnThem.Location = new System.Drawing.Point(103, 219);
             this.bnThem.Name = "bnThem";
-            this.bnThem.Size = new System.Drawing.Size(85, 35);
+            this.bnThem.Size = new System.Drawing.Size(75, 35);
             this.bnThem.TabIndex = 16;
             this.bnThem.Text = "Thêm";
             this.bnThem.UseVisualStyleBackColor = true;
