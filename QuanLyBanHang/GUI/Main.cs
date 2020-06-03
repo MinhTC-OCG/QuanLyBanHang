@@ -52,5 +52,17 @@ namespace GUI
             NhanVien nv = new NhanVien();
             nv.Show();
         }
+
+        private void lịchSửGiáToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LichSuGia lsg = new LichSuGia();
+            lsg.Show();
+        }
+
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KhachHang kh = new KhachHang();
+            kh.Show();
+        }
     }
 }

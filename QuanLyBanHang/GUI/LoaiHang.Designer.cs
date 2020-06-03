@@ -114,10 +114,10 @@
             this.TenL,
             this.GhiChu});
             this.dgvLoaiHang.EnableHeadersVisualStyles = false;
-            this.dgvLoaiHang.Location = new System.Drawing.Point(12, 139);
+            this.dgvLoaiHang.Location = new System.Drawing.Point(12, 179);
             this.dgvLoaiHang.Name = "dgvLoaiHang";
             this.dgvLoaiHang.RowHeadersVisible = false;
-            this.dgvLoaiHang.Size = new System.Drawing.Size(636, 240);
+            this.dgvLoaiHang.Size = new System.Drawing.Size(636, 200);
             this.dgvLoaiHang.TabIndex = 6;
             this.dgvLoaiHang.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiHang_RowEnter);
             // 
@@ -142,60 +142,46 @@
             // btnThem
             // 
             this.btnThem.AutoSize = true;
-            this.btnThem.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(373, 14);
+            this.btnThem.Location = new System.Drawing.Point(12, 138);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(74, 30);
+            this.btnThem.Size = new System.Drawing.Size(75, 35);
             this.btnThem.TabIndex = 7;
             this.btnThem.Text = "Thêm";
-            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
-            this.btnSua.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(373, 58);
+            this.btnSua.Location = new System.Drawing.Point(93, 138);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(74, 27);
+            this.btnSua.Size = new System.Drawing.Size(75, 35);
             this.btnSua.TabIndex = 8;
             this.btnSua.Text = "Sửa";
-            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.BackColor = System.Drawing.Color.IndianRed;
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(373, 99);
+            this.btnXoa.Location = new System.Drawing.Point(177, 138);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(74, 27);
+            this.btnXoa.Size = new System.Drawing.Size(75, 35);
             this.btnXoa.TabIndex = 9;
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnNhapLai
             // 
-            this.btnNhapLai.BackColor = System.Drawing.Color.Silver;
-            this.btnNhapLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhapLai.ForeColor = System.Drawing.Color.White;
-            this.btnNhapLai.Location = new System.Drawing.Point(476, 99);
+            this.btnNhapLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhapLai.Location = new System.Drawing.Point(258, 138);
             this.btnNhapLai.Name = "btnNhapLai";
-            this.btnNhapLai.Size = new System.Drawing.Size(73, 27);
+            this.btnNhapLai.Size = new System.Drawing.Size(75, 35);
             this.btnNhapLai.TabIndex = 10;
             this.btnNhapLai.Text = "Nhập lại";
             this.btnNhapLai.UseVisualStyleBackColor = false;
@@ -203,12 +189,10 @@
             // 
             // btnTim
             // 
-            this.btnTim.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.ForeColor = System.Drawing.Color.White;
-            this.btnTim.Location = new System.Drawing.Point(476, 14);
+            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.Location = new System.Drawing.Point(339, 138);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(73, 30);
+            this.btnTim.Size = new System.Drawing.Size(75, 35);
             this.btnTim.TabIndex = 11;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
@@ -218,21 +202,19 @@
             // 
             this.btnThoat.BackColor = System.Drawing.Color.Red;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(607, 14);
+            this.btnThoat.Location = new System.Drawing.Point(607, 140);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(41, 30);
+            this.btnThoat.Size = new System.Drawing.Size(41, 35);
             this.btnThoat.TabIndex = 12;
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.button6_Click);
             // 
             // btnXem
             // 
-            this.btnXem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXem.ForeColor = System.Drawing.Color.White;
-            this.btnXem.Location = new System.Drawing.Point(476, 58);
+            this.btnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXem.Location = new System.Drawing.Point(526, 140);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(73, 27);
+            this.btnXem.Size = new System.Drawing.Size(75, 35);
             this.btnXem.TabIndex = 13;
             this.btnXem.Text = "Xem";
             this.btnXem.UseVisualStyleBackColor = false;
