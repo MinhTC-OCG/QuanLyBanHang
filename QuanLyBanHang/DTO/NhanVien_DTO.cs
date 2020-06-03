@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class NhanVien_DTO
+    public class NhanVien_DTO
     {
-        string MaNV_, HoTen_, DiaChi_,MaTD_;
-        int SoDT_;
+        string maNV,hoTen, diaChi, maTD;
+        string soDT;
 
-        public string MaNV { get => MaNV_; set => MaNV_ = value; }
-        public string HoTen { get => HoTen_; set => HoTen_ = value; }
-        public string DiaChi { get => DiaChi_; set => DiaChi_ = value; }
-        public string MaTD { get => MaTD_; set => MaTD_ = value; }
-        public int SoDT { get => SoDT; set => SoDT = value; }
+        public string MaNV { get => maNV; set => maNV = value; }
+        public string HoTen { get => hoTen; set => hoTen = value; }
+        public string DiaChi { get => diaChi; set => diaChi = value; }
+        public string MaTD { get => maTD; set => maTD = value; }
+        public string SoDT { get => soDT; set => soDT = value; }
     }
 }
