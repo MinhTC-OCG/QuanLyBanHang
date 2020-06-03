@@ -114,7 +114,7 @@
             this.cbMaTD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaTD.FormattingEnabled = true;
             this.cbMaTD.Location = new System.Drawing.Point(554, 63);
-            this.cbMaTD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbMaTD.Margin = new System.Windows.Forms.Padding(2);
             this.cbMaTD.Name = "cbMaTD";
             this.cbMaTD.Size = new System.Drawing.Size(316, 25);
             this.cbMaTD.TabIndex = 5;
@@ -123,7 +123,7 @@
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Location = new System.Drawing.Point(104, 96);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(296, 23);
             this.txtDiaChi.TabIndex = 6;
@@ -132,7 +132,7 @@
             // 
             this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoTen.Location = new System.Drawing.Point(104, 59);
-            this.txtHoTen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHoTen.Margin = new System.Windows.Forms.Padding(2);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(296, 23);
             this.txtHoTen.TabIndex = 7;
@@ -141,7 +141,8 @@
             // 
             this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaNV.Location = new System.Drawing.Point(104, 27);
-            this.txtMaNV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaNV.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaNV.Multiline = true;
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(296, 23);
             this.txtMaNV.TabIndex = 8;
@@ -150,7 +151,8 @@
             // 
             this.txtSoDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoDT.Location = new System.Drawing.Point(554, 28);
-            this.txtSoDT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSoDT.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSoDT.Multiline = true;
             this.txtSoDT.Name = "txtSoDT";
             this.txtSoDT.Size = new System.Drawing.Size(316, 23);
             this.txtSoDT.TabIndex = 9;
@@ -159,7 +161,7 @@
             // 
             this.bnNhapLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnNhapLai.Location = new System.Drawing.Point(9, 172);
-            this.bnNhapLai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bnNhapLai.Margin = new System.Windows.Forms.Padding(2);
             this.bnNhapLai.Name = "bnNhapLai";
             this.bnNhapLai.Size = new System.Drawing.Size(75, 35);
             this.bnNhapLai.TabIndex = 10;
@@ -170,7 +172,7 @@
             // 
             this.bnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnThoat.Location = new System.Drawing.Point(795, 172);
-            this.bnThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.bnThoat.Name = "bnThoat";
             this.bnThoat.Size = new System.Drawing.Size(75, 35);
             this.bnThoat.TabIndex = 11;
@@ -181,7 +183,7 @@
             // 
             this.bnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnXem.Location = new System.Drawing.Point(716, 172);
-            this.bnXem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bnXem.Margin = new System.Windows.Forms.Padding(2);
             this.bnXem.Name = "bnXem";
             this.bnXem.Size = new System.Drawing.Size(75, 35);
             this.bnXem.TabIndex = 12;
@@ -192,7 +194,7 @@
             // 
             this.bnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnTim.Location = new System.Drawing.Point(325, 172);
-            this.bnTim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bnTim.Margin = new System.Windows.Forms.Padding(2);
             this.bnTim.Name = "bnTim";
             this.bnTim.Size = new System.Drawing.Size(75, 35);
             this.bnTim.TabIndex = 13;
@@ -203,7 +205,7 @@
             // 
             this.bnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnXoa.Location = new System.Drawing.Point(246, 172);
-            this.bnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.bnXoa.Name = "bnXoa";
             this.bnXoa.Size = new System.Drawing.Size(75, 35);
             this.bnXoa.TabIndex = 14;
@@ -214,7 +216,7 @@
             // 
             this.bnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnSua.Location = new System.Drawing.Point(167, 172);
-            this.bnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bnSua.Margin = new System.Windows.Forms.Padding(2);
             this.bnSua.Name = "bnSua";
             this.bnSua.Size = new System.Drawing.Size(75, 35);
             this.bnSua.TabIndex = 15;
@@ -225,7 +227,7 @@
             // 
             this.bnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnThem.Location = new System.Drawing.Point(88, 172);
-            this.bnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bnThem.Margin = new System.Windows.Forms.Padding(2);
             this.bnThem.Name = "bnThem";
             this.bnThem.Size = new System.Drawing.Size(75, 35);
             this.bnThem.TabIndex = 16;
@@ -246,7 +248,7 @@
             this.MaTD});
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(9, 211);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -312,7 +314,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NhanVien";
             this.Text = "NhanVien";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

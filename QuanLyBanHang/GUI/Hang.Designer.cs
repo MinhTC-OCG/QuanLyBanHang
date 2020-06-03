@@ -189,8 +189,9 @@
             // txtSLC
             // 
             this.txtSLC.Location = new System.Drawing.Point(644, 84);
+            this.txtSLC.Multiline = true;
             this.txtSLC.Name = "txtSLC";
-            this.txtSLC.Size = new System.Drawing.Size(317, 20);
+            this.txtSLC.Size = new System.Drawing.Size(317, 23);
             this.txtSLC.TabIndex = 2;
             // 
             // btnThoat
@@ -322,29 +323,33 @@
             // txtDonVT
             // 
             this.txtDonVT.Location = new System.Drawing.Point(73, 84);
+            this.txtDonVT.Multiline = true;
             this.txtDonVT.Name = "txtDonVT";
-            this.txtDonVT.Size = new System.Drawing.Size(317, 20);
+            this.txtDonVT.Size = new System.Drawing.Size(317, 23);
             this.txtDonVT.TabIndex = 4;
             // 
             // txtDonG
             // 
             this.txtDonG.Location = new System.Drawing.Point(73, 124);
+            this.txtDonG.Multiline = true;
             this.txtDonG.Name = "txtDonG";
-            this.txtDonG.Size = new System.Drawing.Size(317, 20);
+            this.txtDonG.Size = new System.Drawing.Size(317, 23);
             this.txtDonG.TabIndex = 3;
             // 
             // txtTenH
             // 
             this.txtTenH.Location = new System.Drawing.Point(73, 44);
+            this.txtTenH.Multiline = true;
             this.txtTenH.Name = "txtTenH";
-            this.txtTenH.Size = new System.Drawing.Size(317, 20);
+            this.txtTenH.Size = new System.Drawing.Size(317, 23);
             this.txtTenH.TabIndex = 1;
             // 
             // txtMaH
             // 
             this.txtMaH.Location = new System.Drawing.Point(73, 3);
+            this.txtMaH.Multiline = true;
             this.txtMaH.Name = "txtMaH";
-            this.txtMaH.Size = new System.Drawing.Size(317, 20);
+            this.txtMaH.Size = new System.Drawing.Size(317, 23);
             this.txtMaH.TabIndex = 0;
             // 
             // Hang
