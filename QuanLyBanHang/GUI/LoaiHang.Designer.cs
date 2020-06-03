@@ -84,7 +84,7 @@
             this.txtMaL.Location = new System.Drawing.Point(80, 14);
             this.txtMaL.Multiline = true;
             this.txtMaL.Name = "txtMaL";
-            this.txtMaL.Size = new System.Drawing.Size(262, 30);
+            this.txtMaL.Size = new System.Drawing.Size(334, 30);
             this.txtMaL.TabIndex = 3;
             // 
             // txtTenL
@@ -92,7 +92,7 @@
             this.txtTenL.Location = new System.Drawing.Point(80, 58);
             this.txtTenL.Multiline = true;
             this.txtTenL.Name = "txtTenL";
-            this.txtTenL.Size = new System.Drawing.Size(262, 27);
+            this.txtTenL.Size = new System.Drawing.Size(334, 27);
             this.txtTenL.TabIndex = 4;
             // 
             // txtGhiChu
@@ -100,7 +100,7 @@
             this.txtGhiChu.Location = new System.Drawing.Point(80, 99);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(262, 27);
+            this.txtGhiChu.Size = new System.Drawing.Size(334, 27);
             this.txtGhiChu.TabIndex = 5;
             // 
             // dgvLoaiHang

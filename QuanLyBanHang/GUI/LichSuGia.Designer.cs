@@ -68,7 +68,7 @@
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThoat.Location = new System.Drawing.Point(829, 212);
+            this.btnThoat.Location = new System.Drawing.Point(827, 212);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 35);
             this.btnThoat.TabIndex = 37;
@@ -78,7 +78,7 @@
             // btnXem
             // 
             this.btnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXem.Location = new System.Drawing.Point(748, 212);
+            this.btnXem.Location = new System.Drawing.Point(746, 212);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(75, 35);
             this.btnXem.TabIndex = 36;
