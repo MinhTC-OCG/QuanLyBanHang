@@ -282,6 +282,7 @@
             this.btnXem.Size = new System.Drawing.Size(73, 23);
             this.btnXem.TabIndex = 21;
             this.btnXem.Text = "Xem";
+            this.btnXem.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnXem.UseVisualStyleBackColor = true;
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
@@ -348,6 +349,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvHang);
             this.Name = "Hang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hàng";
             this.Load += new System.EventHandler(this.Hang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHang)).EndInit();
