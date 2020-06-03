@@ -33,5 +33,20 @@ namespace GUI
             txtTrinhdo.Text = dgvTrinhdo.Rows[dong].Cells[0].Value.ToString().Trim();
             txtMatrinhdo.Text = dgvTrinhdo.Rows[dong].Cells[1].Value.ToString();
         }
+
+        private void btnNhaplai_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMatrinhdo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
