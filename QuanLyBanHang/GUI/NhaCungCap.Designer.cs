@@ -113,7 +113,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 79);
+            this.label2.Location = new System.Drawing.Point(8, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 20);
             this.label2.TabIndex = 2;
@@ -133,7 +133,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(523, 84);
+            this.label4.Location = new System.Drawing.Point(522, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 20);
             this.label4.TabIndex = 4;
@@ -150,7 +150,7 @@
             // txtTenNCC
             // 
             this.txtTenNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNCC.Location = new System.Drawing.Point(166, 76);
+            this.txtTenNCC.Location = new System.Drawing.Point(165, 90);
             this.txtTenNCC.Name = "txtTenNCC";
             this.txtTenNCC.Size = new System.Drawing.Size(310, 27);
             this.txtTenNCC.TabIndex = 6;
@@ -166,7 +166,7 @@
             // txtSoDT
             // 
             this.txtSoDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoDT.Location = new System.Drawing.Point(642, 81);
+            this.txtSoDT.Location = new System.Drawing.Point(641, 95);
             this.txtSoDT.Name = "txtSoDT";
             this.txtSoDT.Size = new System.Drawing.Size(317, 27);
             this.txtSoDT.TabIndex = 8;
