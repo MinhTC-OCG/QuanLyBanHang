@@ -142,17 +142,17 @@
             // txtMaNCC
             // 
             this.txtMaNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNCC.Location = new System.Drawing.Point(166, 34);
+            this.txtMaNCC.Location = new System.Drawing.Point(191, 34);
             this.txtMaNCC.Name = "txtMaNCC";
-            this.txtMaNCC.Size = new System.Drawing.Size(310, 27);
+            this.txtMaNCC.Size = new System.Drawing.Size(312, 27);
             this.txtMaNCC.TabIndex = 5;
             // 
             // txtTenNCC
             // 
             this.txtTenNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNCC.Location = new System.Drawing.Point(165, 90);
+            this.txtTenNCC.Location = new System.Drawing.Point(190, 90);
             this.txtTenNCC.Name = "txtTenNCC";
-            this.txtTenNCC.Size = new System.Drawing.Size(310, 27);
+            this.txtTenNCC.Size = new System.Drawing.Size(312, 27);
             this.txtTenNCC.TabIndex = 6;
             // 
             // txtDiaChi
@@ -180,6 +180,7 @@
             this.bnNhapLai.TabIndex = 9;
             this.bnNhapLai.Text = "Nhập lại";
             this.bnNhapLai.UseVisualStyleBackColor = true;
+            this.bnNhapLai.Click += new System.EventHandler(this.bnNhapLai_Click);
             // 
             // bnThem
             // 
@@ -201,6 +202,7 @@
             this.bnSua.TabIndex = 11;
             this.bnSua.Text = "Sửa";
             this.bnSua.UseVisualStyleBackColor = true;
+            this.bnSua.Click += new System.EventHandler(this.bnSua_Click);
             // 
             // bnXoa
             // 
@@ -265,6 +267,7 @@
             this.Controls.Add(this.dgvNCC);
             this.Name = "NhaCungCap";
             this.Text = "NhaCungCap";
+            this.Load += new System.EventHandler(this.NhaCungCap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
