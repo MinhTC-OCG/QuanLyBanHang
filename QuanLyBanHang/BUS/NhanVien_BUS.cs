@@ -20,14 +20,14 @@ namespace BUS
             return dt;
         }
 
-        public void InsertNhanVien(string manv, string hoten, string diachi, int sodt, string matd)
+        public void InsertNhanVien(string manv, string hoten, string diachi, string sodt, string matd)
         {
             string sql = "INSERT INTO Nhanvien12 VALUES ('" + manv + "',N'" + hoten + "',N'" + diachi + "',N'" + sodt + "',N'" + matd + "')";
             dal.ExecuteNonQuery(sql);
         }
 
 
-        public void UpdateNhanvien(string manv, string hoten, string diachi, int sodt, string matd)
+        public void UpdateNhanvien(string manv, string hoten, string diachi, string sodt, string matd)
         {
             string sql = "UPDATE Nhanvien12 SET hoten = N'" + hoten + "',diachi = N'" + diachi + "',sodt = N'" + sodt + "',matd = N'" + matd + "' WHERE manv = '" + manv + "'";
             dal.ExecuteNonQuery(sql);
