@@ -48,5 +48,10 @@ namespace GUI
         {
 
         }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
