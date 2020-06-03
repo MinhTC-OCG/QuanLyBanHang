@@ -204,7 +204,7 @@
             this.txtMakh.Margin = new System.Windows.Forms.Padding(2);
             this.txtMakh.Name = "txtMakh";
             this.txtMakh.Size = new System.Drawing.Size(261, 20);
-            this.txtMakh.TabIndex = 7;
+            this.txtMakh.TabIndex = 5;
             // 
             // txtHotenkh
             // 
@@ -212,7 +212,7 @@
             this.txtHotenkh.Margin = new System.Windows.Forms.Padding(2);
             this.txtHotenkh.Name = "txtHotenkh";
             this.txtHotenkh.Size = new System.Drawing.Size(261, 20);
-            this.txtHotenkh.TabIndex = 5;
+            this.txtHotenkh.TabIndex = 7;
             // 
             // label3
             // 

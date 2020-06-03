@@ -158,9 +158,10 @@
             // btnThem
             // 
             this.btnThem.AutoSize = true;
-            this.btnThem.Location = new System.Drawing.Point(0, 172);
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(-1, 163);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(73, 23);
+            this.btnThem.Size = new System.Drawing.Size(75, 35);
             this.btnThem.TabIndex = 15;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -168,9 +169,10 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(80, 172);
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Location = new System.Drawing.Point(79, 163);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(73, 23);
+            this.btnSua.Size = new System.Drawing.Size(75, 35);
             this.btnSua.TabIndex = 16;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -193,9 +195,10 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(891, 172);
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Location = new System.Drawing.Point(890, 163);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(73, 23);
+            this.btnThoat.Size = new System.Drawing.Size(75, 35);
             this.btnThoat.TabIndex = 20;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
@@ -211,9 +214,10 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(159, 172);
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(158, 163);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(73, 23);
+            this.btnXoa.Size = new System.Drawing.Size(75, 35);
             this.btnXoa.TabIndex = 17;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -230,9 +234,10 @@
             // 
             // btnTim
             // 
-            this.btnTim.Location = new System.Drawing.Point(238, 172);
+            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.Location = new System.Drawing.Point(237, 163);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(73, 23);
+            this.btnTim.Size = new System.Drawing.Size(75, 35);
             this.btnTim.TabIndex = 19;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
@@ -249,9 +254,10 @@
             // 
             // btnNhapLai
             // 
-            this.btnNhapLai.Location = new System.Drawing.Point(317, 172);
+            this.btnNhapLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhapLai.Location = new System.Drawing.Point(316, 163);
             this.btnNhapLai.Name = "btnNhapLai";
-            this.btnNhapLai.Size = new System.Drawing.Size(73, 23);
+            this.btnNhapLai.Size = new System.Drawing.Size(75, 35);
             this.btnNhapLai.TabIndex = 18;
             this.btnNhapLai.Text = "Nhập lại";
             this.btnNhapLai.UseVisualStyleBackColor = true;
@@ -269,7 +275,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1, 133);
+            this.label4.Location = new System.Drawing.Point(1, 127);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 11;
@@ -277,19 +283,19 @@
             // 
             // btnXem
             // 
-            this.btnXem.Location = new System.Drawing.Point(812, 172);
+            this.btnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXem.Location = new System.Drawing.Point(811, 163);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(73, 23);
+            this.btnXem.Size = new System.Drawing.Size(75, 35);
             this.btnXem.TabIndex = 21;
             this.btnXem.Text = "Xem";
-            this.btnXem.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnXem.UseVisualStyleBackColor = true;
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1, 87);
+            this.label3.Location = new System.Drawing.Point(1, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 10;
@@ -298,7 +304,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1, 47);
+            this.label2.Location = new System.Drawing.Point(1, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 9;
@@ -315,21 +321,21 @@
             // 
             // txtDonVT
             // 
-            this.txtDonVT.Location = new System.Drawing.Point(73, 86);
+            this.txtDonVT.Location = new System.Drawing.Point(73, 84);
             this.txtDonVT.Name = "txtDonVT";
             this.txtDonVT.Size = new System.Drawing.Size(317, 20);
             this.txtDonVT.TabIndex = 4;
             // 
             // txtDonG
             // 
-            this.txtDonG.Location = new System.Drawing.Point(73, 130);
+            this.txtDonG.Location = new System.Drawing.Point(73, 124);
             this.txtDonG.Name = "txtDonG";
             this.txtDonG.Size = new System.Drawing.Size(317, 20);
             this.txtDonG.TabIndex = 3;
             // 
             // txtTenH
             // 
-            this.txtTenH.Location = new System.Drawing.Point(73, 45);
+            this.txtTenH.Location = new System.Drawing.Point(73, 44);
             this.txtTenH.Name = "txtTenH";
             this.txtTenH.Size = new System.Drawing.Size(317, 20);
             this.txtTenH.TabIndex = 1;
