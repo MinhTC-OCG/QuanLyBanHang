@@ -44,7 +44,7 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnNhapLai = new System.Windows.Forms.Button();
             this.btnTim = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.btnXem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiHang)).BeginInit();
             this.SuspendLayout();
@@ -214,16 +214,16 @@
             this.btnTim.UseVisualStyleBackColor = false;
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
-            // button6
+            // btnThoat
             // 
-            this.button6.BackColor = System.Drawing.Color.Red;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(607, 14);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(41, 30);
-            this.button6.TabIndex = 12;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnThoat.BackColor = System.Drawing.Color.Red;
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(607, 14);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(41, 30);
+            this.btnThoat.TabIndex = 12;
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.button6_Click);
             // 
             // btnXem
             // 
@@ -245,7 +245,7 @@
             this.ClientSize = new System.Drawing.Size(660, 391);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnXem);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.btnNhapLai);
             this.Controls.Add(this.btnXoa);
@@ -283,7 +283,7 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnNhapLai;
         private System.Windows.Forms.Button btnTim;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.Button btnThem;
     }
