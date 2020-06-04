@@ -56,6 +56,7 @@
             // 
             // textBox6
             // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.Location = new System.Drawing.Point(590, 70);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
@@ -64,6 +65,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(127, 135);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -72,6 +74,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(127, 71);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -150,6 +153,7 @@
             // 
             // txtDonGia
             // 
+            this.txtDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDonGia.Location = new System.Drawing.Point(590, 135);
             this.txtDonGia.Multiline = true;
             this.txtDonGia.Name = "txtDonGia";

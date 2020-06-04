@@ -38,15 +38,17 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnTim = new System.Windows.Forms.Button();
             this.dgvTrinhdo = new System.Windows.Forms.DataGridView();
+            this.MaTD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTrinhdo = new System.Windows.Forms.TextBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.txtMatrinhdo = new System.Windows.Forms.TextBox();
             this.txtTim = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.MaTD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrinhdo)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -172,8 +174,25 @@
             this.dgvTrinhdo.TabIndex = 9;
             this.dgvTrinhdo.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrinhdo_RowEnter);
             // 
+            // MaTD
+            // 
+            this.MaTD.DataPropertyName = "MaTD";
+            this.MaTD.HeaderText = "Mã trình độ";
+            this.MaTD.MinimumWidth = 6;
+            this.MaTD.Name = "MaTD";
+            this.MaTD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // TenTD
+            // 
+            this.TenTD.DataPropertyName = "TenTD";
+            this.TenTD.HeaderText = "Trình độ";
+            this.TenTD.MinimumWidth = 6;
+            this.TenTD.Name = "TenTD";
+            this.TenTD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // txtTrinhdo
             // 
+            this.txtTrinhdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTrinhdo.Location = new System.Drawing.Point(110, 64);
             this.txtTrinhdo.Margin = new System.Windows.Forms.Padding(2);
             this.txtTrinhdo.Multiline = true;
@@ -194,6 +213,7 @@
             // 
             // txtMatrinhdo
             // 
+            this.txtMatrinhdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatrinhdo.Location = new System.Drawing.Point(110, 106);
             this.txtMatrinhdo.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatrinhdo.Multiline = true;
@@ -204,6 +224,7 @@
             // 
             // txtTim
             // 
+            this.txtTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTim.Location = new System.Drawing.Point(510, 64);
             this.txtTim.Margin = new System.Windows.Forms.Padding(2);
             this.txtTim.Multiline = true;
@@ -221,27 +242,20 @@
             this.panel1.Size = new System.Drawing.Size(672, 40);
             this.panel1.TabIndex = 15;
             // 
-            // MaTD
+            // dataGridView1
             // 
-            this.MaTD.DataPropertyName = "MaTD";
-            this.MaTD.HeaderText = "Mã trình độ";
-            this.MaTD.MinimumWidth = 6;
-            this.MaTD.Name = "MaTD";
-            this.MaTD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // TenTD
-            // 
-            this.TenTD.DataPropertyName = "TenTD";
-            this.TenTD.HeaderText = "Trình độ";
-            this.TenTD.MinimumWidth = 6;
-            this.TenTD.Name = "TenTD";
-            this.TenTD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(663, 153);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(8, 8);
+            this.dataGridView1.TabIndex = 16;
             // 
             // TrinhDo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 446);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtTim);
             this.Controls.Add(this.txtMatrinhdo);
@@ -264,6 +278,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrinhdo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,5 +303,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTD;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenTD;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

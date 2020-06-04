@@ -173,5 +173,11 @@ namespace GUI
             HoaDon hd = new HoaDon();
             hd.Show();
         }
+
+        private void BaoCaoTheoNgayMenuItem_Click(object sender, EventArgs e)
+        {
+            BaoCao bc = new BaoCao();
+            bc.Show();
+        }
     }
 }

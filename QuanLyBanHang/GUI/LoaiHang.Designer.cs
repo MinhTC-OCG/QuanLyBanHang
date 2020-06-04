@@ -81,6 +81,7 @@
             // 
             // txtMaL
             // 
+            this.txtMaL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaL.Location = new System.Drawing.Point(80, 14);
             this.txtMaL.Multiline = true;
             this.txtMaL.Name = "txtMaL";
@@ -89,6 +90,7 @@
             // 
             // txtTenL
             // 
+            this.txtTenL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenL.Location = new System.Drawing.Point(80, 58);
             this.txtTenL.Multiline = true;
             this.txtTenL.Name = "txtTenL";
@@ -97,6 +99,7 @@
             // 
             // txtGhiChu
             // 
+            this.txtGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGhiChu.Location = new System.Drawing.Point(80, 99);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";

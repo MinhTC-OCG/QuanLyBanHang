@@ -111,35 +111,35 @@
             // 
             // cbMaTD
             // 
-            this.cbMaTD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMaTD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaTD.FormattingEnabled = true;
             this.cbMaTD.Location = new System.Drawing.Point(554, 63);
             this.cbMaTD.Margin = new System.Windows.Forms.Padding(2);
             this.cbMaTD.Name = "cbMaTD";
-            this.cbMaTD.Size = new System.Drawing.Size(316, 25);
+            this.cbMaTD.Size = new System.Drawing.Size(316, 24);
             this.cbMaTD.TabIndex = 5;
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Location = new System.Drawing.Point(120, 97);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(296, 23);
+            this.txtDiaChi.Size = new System.Drawing.Size(296, 22);
             this.txtDiaChi.TabIndex = 6;
             // 
             // txtHoTen
             // 
-            this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoTen.Location = new System.Drawing.Point(120, 60);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(2);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(296, 23);
+            this.txtHoTen.Size = new System.Drawing.Size(296, 22);
             this.txtHoTen.TabIndex = 7;
             // 
             // txtMaNV
             // 
-            this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaNV.Location = new System.Drawing.Point(120, 28);
             this.txtMaNV.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaNV.Multiline = true;
@@ -149,7 +149,7 @@
             // 
             // txtSoDT
             // 
-            this.txtSoDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoDT.Location = new System.Drawing.Point(554, 28);
             this.txtSoDT.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoDT.Multiline = true;

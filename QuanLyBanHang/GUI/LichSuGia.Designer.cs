@@ -59,10 +59,11 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(78, 64);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(197, 21);
+            this.comboBox1.Size = new System.Drawing.Size(197, 24);
             this.comboBox1.TabIndex = 38;
             // 
             // btnThoat
@@ -137,6 +138,7 @@
             // 
             // txtDonGia
             // 
+            this.txtDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDonGia.Location = new System.Drawing.Point(78, 126);
             this.txtDonGia.Multiline = true;
             this.txtDonGia.Name = "txtDonGia";
@@ -145,26 +147,29 @@
             // 
             // dtpNgayCapNhat
             // 
+            this.dtpNgayCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayCapNhat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayCapNhat.Location = new System.Drawing.Point(730, 60);
             this.dtpNgayCapNhat.Name = "dtpNgayCapNhat";
-            this.dtpNgayCapNhat.Size = new System.Drawing.Size(172, 20);
+            this.dtpNgayCapNhat.Size = new System.Drawing.Size(172, 22);
             this.dtpNgayCapNhat.TabIndex = 29;
             // 
             // dtpNgayKetThuc
             // 
+            this.dtpNgayKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayKetThuc.Location = new System.Drawing.Point(410, 123);
             this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
-            this.dtpNgayKetThuc.Size = new System.Drawing.Size(172, 20);
+            this.dtpNgayKetThuc.Size = new System.Drawing.Size(172, 22);
             this.dtpNgayKetThuc.TabIndex = 28;
             // 
             // dtpNgayBatDau
             // 
+            this.dtpNgayBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayBatDau.Location = new System.Drawing.Point(410, 62);
             this.dtpNgayBatDau.Name = "dtpNgayBatDau";
-            this.dtpNgayBatDau.Size = new System.Drawing.Size(172, 20);
+            this.dtpNgayBatDau.Size = new System.Drawing.Size(172, 22);
             this.dtpNgayBatDau.TabIndex = 27;
             // 
             // dgvLichSuGia
