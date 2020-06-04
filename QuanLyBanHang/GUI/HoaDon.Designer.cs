@@ -424,80 +424,89 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(84, 535);
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(90, 528);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(56, 19);
+            this.btnThem.Size = new System.Drawing.Size(75, 35);
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(156, 535);
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Location = new System.Drawing.Point(169, 528);
             this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(56, 19);
+            this.btnSua.Size = new System.Drawing.Size(75, 35);
             this.btnSua.TabIndex = 4;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             // 
             // btnNhaplai
             // 
-            this.btnNhaplai.Location = new System.Drawing.Point(11, 535);
+            this.btnNhaplai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhaplai.Location = new System.Drawing.Point(11, 528);
             this.btnNhaplai.Margin = new System.Windows.Forms.Padding(2);
             this.btnNhaplai.Name = "btnNhaplai";
-            this.btnNhaplai.Size = new System.Drawing.Size(56, 19);
+            this.btnNhaplai.Size = new System.Drawing.Size(75, 35);
             this.btnNhaplai.TabIndex = 5;
             this.btnNhaplai.Text = "Nhập lại";
             this.btnNhaplai.UseVisualStyleBackColor = true;
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(230, 536);
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(248, 528);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(56, 19);
+            this.btnXoa.Size = new System.Drawing.Size(75, 35);
             this.btnXoa.TabIndex = 6;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             // 
             // btnTim
             // 
-            this.btnTim.Location = new System.Drawing.Point(655, 536);
+            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.Location = new System.Drawing.Point(662, 528);
             this.btnTim.Margin = new System.Windows.Forms.Padding(2);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(56, 19);
+            this.btnTim.Size = new System.Drawing.Size(75, 35);
             this.btnTim.TabIndex = 7;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
             // 
             // btnIn
             // 
-            this.btnIn.Location = new System.Drawing.Point(306, 535);
+            this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.Location = new System.Drawing.Point(327, 528);
             this.btnIn.Margin = new System.Windows.Forms.Padding(2);
             this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(56, 19);
+            this.btnIn.Size = new System.Drawing.Size(75, 35);
             this.btnIn.TabIndex = 8;
             this.btnIn.Text = "In";
             this.btnIn.UseVisualStyleBackColor = true;
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(854, 535);
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Location = new System.Drawing.Point(835, 528);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(56, 19);
+            this.btnThoat.Size = new System.Drawing.Size(75, 35);
             this.btnThoat.TabIndex = 9;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             // 
             // txtTim
             // 
-            this.txtTim.Location = new System.Drawing.Point(476, 536);
+            this.txtTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTim.Location = new System.Drawing.Point(476, 528);
             this.txtTim.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTim.Multiline = true;
             this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(159, 20);
+            this.txtTim.Size = new System.Drawing.Size(159, 35);
             this.txtTim.TabIndex = 10;
             // 
             // label14
@@ -525,7 +534,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 584);
+            this.ClientSize = new System.Drawing.Size(924, 591);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.txtTim);
             this.Controls.Add(this.btnThoat);

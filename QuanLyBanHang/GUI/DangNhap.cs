@@ -45,13 +45,14 @@ namespace GUI
                
                 Main m = new Main();
                 m.Show();
-                this.Visible=false;
+                this.Hide();
 
             }
             else
             {
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác, thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
 
         }
 
