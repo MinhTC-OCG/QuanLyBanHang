@@ -32,7 +32,6 @@ namespace BUS
             dal.ExecuteNonQuery(sql);
         }
 
-
         public void UpdateNhanvien(string manv, string hoten, string diachi, string sodt, string matd)
         {
             string sql = "UPDATE Nhanvien12 SET hoten = N'" + hoten + "',diachi = N'" + diachi + "',sodt = N'" + sodt + "',matd = N'" + matd + "' WHERE manv = '" + manv + "'";
@@ -47,7 +46,7 @@ namespace BUS
 
         public DataTable SearchNhanVien(string manv)
         {
-            string sql = "SELECT *FROM Nhanvien12 WHERE manv like '%" + manv + "'";
+            string sql = "SELECT * FROM Nhanvien12 WHERE manv like '%" + manv + "%'";
             DataTable dt = new DataTable();
             dt = dal.getTable(sql);
             return dt;

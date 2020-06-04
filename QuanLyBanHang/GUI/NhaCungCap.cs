@@ -155,7 +155,9 @@ namespace GUI
             if (txtTK.TextLength == 0)
                 MessageBox.Show("Bạn chưa nhập từ khóa tìm kiếm");
             else
+            {
                 dgvNCC.DataSource = bus.SearchNhaCungCap(txtTK.Text);
+            }
         }
 
         private void dgvNCC_RowEnter(object sender, DataGridViewCellEventArgs e)

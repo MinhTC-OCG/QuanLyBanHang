@@ -35,9 +35,9 @@ namespace GUI
             cbMaTD.DisplayMember = "TenTD";
             cbMaTD.ValueMember = "MaTD";
 
-            (dgvNV.Columns["MaDT"] as DataGridViewComboBoxColumn).DataSource = dtTrinhDo;
-            (dgvNV.Columns["MaDT"] as DataGridViewComboBoxColumn).DisplayMember = "TenTD";
-            (dgvNV.Columns["MaDT"] as DataGridViewComboBoxColumn).ValueMember = "MaTd";
+            (dgvNV.Columns["MaTD"] as DataGridViewComboBoxColumn).DataSource = dtTrinhDo;
+            (dgvNV.Columns["MaTD"] as DataGridViewComboBoxColumn).DisplayMember = "TenTD";
+            (dgvNV.Columns["MaTD"] as DataGridViewComboBoxColumn).ValueMember = "MaTD";
         }
         private void bnNhapLai_Click(object sender, EventArgs e)
         {
