@@ -34,7 +34,7 @@ namespace GUI
 
                 var tk = r["TenDN"].ToString().Trim();
                 var mk = r["MatKhau"].ToString().Trim();
-                if (dto.Tendangnhap == tk & dto.Matkhau == mk)
+                if (dto.Tendangnhap == tk && dto.Matkhau == mk)
                 {
                     dem++;
                     break;
@@ -53,6 +53,11 @@ namespace GUI
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác, thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
