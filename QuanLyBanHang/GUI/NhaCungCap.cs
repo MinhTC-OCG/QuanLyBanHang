@@ -62,7 +62,11 @@ namespace GUI
                     }
                     if (dem == 0)
                     {
-                        bus.InsertNhaCungCap(txtMaNCC.Text, txtTenNCC.Text, txtDiaChi.Text, txtSoDT.Text);
+                        dto.Mancc = txtMaNCC.Text;
+                        dto.Tenncc = txtTenNCC.Text;
+                        dto.Diachi= txtDiaChi.Text;
+                        dto.Sodt = txtSoDT.Text;
+                        bus.InsertNhaCungCap(dto.Mancc, dto.Tenncc, dto.Diachi, dto.Sodt);
                         MessageBox.Show("Thêm Nhà Cung cấp thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
                     }
@@ -113,7 +117,7 @@ namespace GUI
                     }
                     if (dem != 0)
                     {
-                        bus.UpdateNhaCungCap(dto.Mancc, dto.Mancc, dto.Diachi, dto.Sodt);
+                        bus.UpdateNhaCungCap(dto.Mancc, dto.Tenncc, dto.Diachi, dto.Sodt);
                         NhaCungCap_Load(sender, e);
                         MessageBox.Show("Cập nhập nhà cung cấp thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -133,6 +137,45 @@ namespace GUI
         private void NhaCungCap_Load(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void bnXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtTenNCC.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                bus.DeleteNhaCungCap(txtMaNCC.Text);
+                MessageBox.Show("Xóa thành công");
+                LoadData();
+            }
+        }
+
+        private void bnTim_Click(object sender, EventArgs e)
+        {
+            if (txtTK.TextLength == 0)
+                MessageBox.Show("Bạn chưa nhập từ khóa tìm kiếm");
+            else
+                dgvNCC.DataSource = bus.SearchNhaCungCap(txtTK.Text);
+        }
+
+        private void dgvNCC_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvNCC.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            int r = e.RowIndex;
+            txtMaNCC.Text = dgvNCC.Rows[r].Cells[0].Value.ToString();
+            txtTenNCC.Text = dgvNCC.Rows[r].Cells[1].Value.ToString();
+            txtDiaChi.Text = dgvNCC.Rows[r].Cells[2].Value.ToString();
+            txtSoDT.Text = dgvNCC.Rows[r].Cells[3].Value.ToString();
+        }
+
+        private void bnXem_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void bnThoat_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
