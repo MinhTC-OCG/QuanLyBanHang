@@ -33,13 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BUS">
+    <Reference Include="BUS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\BUS\bin\Debug\BUS.dll</HintPath>
     </Reference>
-    <Reference Include="DAL">
+    <Reference Include="DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
     </Reference>
-    <Reference Include="DTO">
+    <Reference Include="DTO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -55,6 +58,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao.Designer.cs">
+      <DependentUpon>BaoCao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,12 +106,6 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="NhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +126,12 @@
     <Compile Include="TrinhDo.Designer.cs">
       <DependentUpon>TrinhDo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BaoCao.resx">
+      <DependentUpon>BaoCao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hang.resx">
       <DependentUpon>Hang.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,9 +146,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoaiHang.resx">
       <DependentUpon>LoaiHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -168,20 +180,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Images\add-file.png" />
-    <Content Include="Images\add.png" />
-    <Content Include="Images\icadd.png" />
-    <Content Include="Images\iccancel.png" />
-    <Content Include="Images\icdelete.png" />
-    <Content Include="Images\icedit.png" />
-    <Content Include="Images\ichome.png" />
-    <Content Include="Images\icreload.png" />
-    <Content Include="Images\icsearch.png" />
-    <Content Include="Images\icuser.png" />
-    <Content Include="Images\logout.png" />
-    <Content Include="Images\null.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

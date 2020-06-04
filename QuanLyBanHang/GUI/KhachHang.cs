@@ -19,13 +19,8 @@ namespace GUI
         {
             InitializeComponent();
         }
-        Lop_DAL dal = new Lop_DAL();
+        private Lop_DAL dal = new Lop_DAL();
         KhachHang_BUS khb = new KhachHang_BUS();
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void KhachHang_Load(object sender, EventArgs e)
         {

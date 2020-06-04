@@ -14,7 +14,7 @@ namespace GUI
     public partial class Hang : Form
     {
         Hang_BUS bus = new Hang_BUS();
-        Hang_DTO dto;
+        Hang_DTO dto = new Hang_DTO();
 
         DataTable dtHang, dtLoaiHang, dtNhaCungCap, dtTimKiemHang;
         public Hang()
@@ -113,8 +113,8 @@ namespace GUI
                         dto.Maloai = cboMaL.SelectedValue.ToString();
                         dto.Mancc = cboMaNCC.SelectedValue.ToString();
                         dto.Soluongco = Int32.Parse(txtSLC.Text);
-             
-                        bus.InsertHang(dto.Mahang, dto.Tenhang, dto.Donvt, dto.Dongia, dto.Maloai, dto.Mancc, dto.Soluongco);
+
+                        bus.UpdateHang(dto.Mahang, dto.Tenhang, dto.Donvt, dto.Dongia, dto.Maloai, dto.Mancc, dto.Soluongco);
                         MessageBox.Show("Sửa hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
                     }
@@ -175,11 +175,11 @@ namespace GUI
             dgvHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             int r = e.RowIndex;
             txtMaH.Text = dgvHang.Rows[r].Cells[0].Value.ToString();
-            txtTenH.Text= dgvHang.Rows[r].Cells[1].Value.ToString();
-            txtDonVT.Text= dgvHang.Rows[r].Cells[2].Value.ToString();
+            txtTenH.Text = dgvHang.Rows[r].Cells[1].Value.ToString();
+            txtDonVT.Text = dgvHang.Rows[r].Cells[2].Value.ToString();
             txtDonG.Text = dgvHang.Rows[r].Cells[3].Value.ToString();
             cboMaL.SelectedValue = dgvHang.Rows[r].Cells[4].Value.ToString();
-            cboMaNCC.SelectedValue= dgvHang.Rows[r].Cells[5].Value.ToString();
+            cboMaNCC.SelectedValue = dgvHang.Rows[r].Cells[5].Value.ToString();
             txtSLC.Text = dgvHang.Rows[r].Cells[6].Value.ToString();
         }
 
