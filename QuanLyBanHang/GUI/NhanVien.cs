@@ -20,12 +20,24 @@ namespace GUI
         }
         NhanVien_BUS bus = new NhanVien_BUS();
         NhanVien_DTO dto = new NhanVien_DTO();
-        DataTable dtNhanVien;
+        DataTable dtNhanVien,dtTrinhDo;
         public void LoadData()
         {
             dtNhanVien = new DataTable();
             dtNhanVien = bus.ShowNhanVien();
             dgvNV.DataSource = dtNhanVien;
+        }
+        public void LoadComboBox()
+        {
+            dtTrinhDo = new DataTable();
+            dtTrinhDo = bus.GetComboTrinhDo();
+            cbMaTD.DataSource = dtTrinhDo;
+            cbMaTD.DisplayMember = "TenTD";
+            cbMaTD.ValueMember = "MaTD";
+
+            (dgvNV.Columns["MaDT"] as DataGridViewComboBoxColumn).DataSource = dtTrinhDo;
+            (dgvNV.Columns["MaDT"] as DataGridViewComboBoxColumn).DisplayMember = "TenTD";
+            (dgvNV.Columns["MaDT"] as DataGridViewComboBoxColumn).ValueMember = "MaTd";
         }
         private void bnNhapLai_Click(object sender, EventArgs e)
         {
@@ -145,6 +157,7 @@ namespace GUI
         private void NhanVien_Load(object sender, EventArgs e)
         {
             LoadData();
+            LoadComboBox();
         }
 
         private void bnXoa_Click(object sender, EventArgs e)
