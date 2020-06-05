@@ -27,9 +27,10 @@ namespace GUI
 
         private void LichSuGia_Load(object sender, EventArgs e)
         {
-            dtLichSuGia = new DataTable;
+            dtLichSuGia = new DataTable();
             dtLichSuGia= lsgb.ShowLichSuGia();
             dgvLichSuGia.DataSource = dtLichSuGia;
+
         }
 
         private void dtpNgayCapNhat_ValueChanged(object sender, EventArgs e)
