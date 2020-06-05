@@ -21,7 +21,30 @@ namespace BUS
             dt = dal.getTable(sql);
             return dt;
         }
+        public void InsertTrinhdo(string matd,string tentd)
+        {
+            string sql = "INSERT INTO TrinhDo12 VALUES ('" + matd + "',N'" + tentd + "')";
+            dal.ExecuteNonQuery(sql);
+        }
+
+        public void UpdateTrinhDo(string matd, string tentd)
+        {
+            string sql = "UPDATE TrinhDo12 SET TenTD =N'" + tentd + "' Where MaTD=N'"+matd+"'";
+            dal.ExecuteNonQuery(sql);
+        }
+
+        public void DeleteTrinhdo(string matd)
+        {
+            string sql = "DELETE TrinhDo12 WHERE MaTD = '" + matd + "'";
+            dal.ExecuteNonQuery(sql);
+        }
+
+        public DataTable SearchTrinhdo(string matd)
+        {
+            string sql = "SELECT * FROM TrinhDo12 WHERE MaTD = '" + matd + "'";
+            DataTable dt = new DataTable();
+            dt = dal.getTable(sql);
+            return dt;
+        }
     }
-
-
 }

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DangNhap_DTO.cs" />
+    <Compile Include="HoaDon_DTO.cs" />
     <Compile Include="KhachHang_DTO.cs" />
     <Compile Include="LichSuGia_DTO.cs" />
     <Compile Include="NhaCungCap_DTO.cs" />
