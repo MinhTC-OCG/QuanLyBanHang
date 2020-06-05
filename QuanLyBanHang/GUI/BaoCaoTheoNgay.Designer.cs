@@ -217,7 +217,7 @@
             // 
             this.lbNgayLayDuLieu.AutoSize = true;
             this.lbNgayLayDuLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNgayLayDuLieu.Location = new System.Drawing.Point(794, 110);
+            this.lbNgayLayDuLieu.Location = new System.Drawing.Point(794, 112);
             this.lbNgayLayDuLieu.Name = "lbNgayLayDuLieu";
             this.lbNgayLayDuLieu.Size = new System.Drawing.Size(82, 16);
             this.lbNgayLayDuLieu.TabIndex = 11;
