@@ -25,6 +25,5 @@ namespace BUS
             dal.ExecuteNonQuery(sql);
         }
 
-
     }
 }
