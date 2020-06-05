@@ -15,13 +15,15 @@ namespace GUI
 {
     public partial class TrinhDo : Form
     {
+        TrinhDo_DTO T = new TrinhDo_DTO();
+        TrinhDo_BUS td = new TrinhDo_BUS();
+        DataTable dtTrinhdo, dtTimKiem;
+
         public TrinhDo()
         {
             InitializeComponent();
         }
-        TrinhDo_DTO T = new TrinhDo_DTO();
-        TrinhDo_BUS td = new TrinhDo_BUS();
-        DataTable dtTrinhdo, dtTimKiem;
+     
         public void LoadData()
         {
             dtTrinhdo = new DataTable();
@@ -72,11 +74,10 @@ namespace GUI
                             dem++;
                             break;
                         }
-
                     }
+
                     if (dem == 0)
                     {
-
                         td.InsertTrinhdo(txtMatrinhdo.Text, txtTrinhdo.Text);
                         MessageBox.Show("Thêm hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();

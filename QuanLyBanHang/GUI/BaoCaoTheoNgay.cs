@@ -19,11 +19,6 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnIn_Click(object sender, EventArgs e)
         {
 
@@ -73,9 +68,5 @@ namespace GUI
             }
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

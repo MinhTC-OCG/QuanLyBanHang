@@ -222,7 +222,6 @@
             this.lbNgayLayDuLieu.Size = new System.Drawing.Size(82, 16);
             this.lbNgayLayDuLieu.TabIndex = 11;
             this.lbNgayLayDuLieu.Text = "yyyy-MM-dd";
-            this.lbNgayLayDuLieu.Click += new System.EventHandler(this.label5_Click);
             // 
             // BaoCaoTheoNgay
             // 

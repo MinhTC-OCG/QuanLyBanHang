@@ -27,11 +27,6 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void HoaDon_Load(object sender, EventArgs e)
         {
             dtGetInfor = new DataTable();
@@ -45,16 +40,13 @@ namespace GUI
             dtGetNamePrice = hd.GetNamePrice(txtMahang.Text);
             string tenhang;
             
-
             foreach(DataRow r in dtGetNamePrice.Rows)
             {
                 tenhang = r[0].ToString().Trim();
                 dongia = Int32.Parse(r [1].ToString().Trim());
                 txtTenhang.Text = tenhang;
                 txtDongia.Text = dongia.ToString();
-
             }
-           
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -155,7 +147,6 @@ namespace GUI
                 {
                     MessageBox.Show("Hàng bạn chọn đã có trong giỏ hàng, chọn hàng khác");
                 }
-               
             }    
         }
     }
