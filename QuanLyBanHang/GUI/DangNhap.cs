@@ -16,6 +16,7 @@ namespace GUI
         DangNhap_BUS bus = new DangNhap_BUS();
         DangNhap_DTO dto = new DangNhap_DTO();
         public static string tendangnhap="";
+
         public DangNhap()
         {
             InitializeComponent();
