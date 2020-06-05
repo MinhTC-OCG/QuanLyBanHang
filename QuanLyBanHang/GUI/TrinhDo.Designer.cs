@@ -273,7 +273,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TrinhDo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Trình độ";
+            this.Text = "TRÌNH ĐỘ";
             this.Load += new System.EventHandler(this.TrinhDo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrinhdo)).EndInit();
             this.panel1.ResumeLayout(false);

@@ -58,11 +58,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCao.cs">
+    <Compile Include="BaoCaoTheoNgay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaoCao.Designer.cs">
-      <DependentUpon>BaoCao.cs</DependentUpon>
+    <Compile Include="BaoCaoTheoNgay.Designer.cs">
+      <DependentUpon>BaoCaoTheoNgay.cs</DependentUpon>
     </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
@@ -126,8 +126,8 @@
     <Compile Include="TrinhDo.Designer.cs">
       <DependentUpon>TrinhDo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BaoCao.resx">
-      <DependentUpon>BaoCao.cs</DependentUpon>
+    <EmbeddedResource Include="BaoCaoTheoNgay.resx">
+      <DependentUpon>BaoCaoTheoNgay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>

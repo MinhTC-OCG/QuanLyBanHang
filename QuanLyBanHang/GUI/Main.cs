@@ -176,7 +176,7 @@ namespace GUI
 
         private void BaoCaoTheoNgayMenuItem_Click(object sender, EventArgs e)
         {
-            BaoCao bc = new BaoCao();
+            BaoCaoTheoNgay bc = new BaoCaoTheoNgay();
             bc.Show();
         }
     }

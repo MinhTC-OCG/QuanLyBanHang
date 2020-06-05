@@ -278,7 +278,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NhaCungCap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NhaCungCap";
+            this.Text = "NHÀ CUNG CẤP";
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

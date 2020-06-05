@@ -317,7 +317,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NhanVien";
+            this.Text = "NHÂN VIÊN";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -311,7 +311,7 @@
             this.Controls.Add(this.label2);
             this.Name = "LichSuGia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lịch sử giá";
+            this.Text = "LỊCH SỬ GIÁ";
             this.Load += new System.EventHandler(this.LichSuGia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuGia)).EndInit();
             this.panel1.ResumeLayout(false);

@@ -550,7 +550,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HoaDon";
+            this.Text = "HÓA ĐƠN";
             this.Load += new System.EventHandler(this.HoaDon_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 using BUS;
 namespace GUI
 {
-    public partial class BaoCao : Form
+    public partial class BaoCaoTheoNgay : Form
     {
         DataTable dtInfo;
         BaoCao_BUS bus = new BaoCao_BUS();
-        public BaoCao()
+        public BaoCaoTheoNgay()
         {
             InitializeComponent();
         }
@@ -38,9 +38,10 @@ namespace GUI
 
         public void HienThiBaoCao()
         {
-            //try
-            //{
+            try
+            {
                 string ngaychon = dtPicker.Value.Date.ToString("yyyy-MM-dd");
+                lbNgayLayDuLieu.Text = ngaychon;
                 dtInfo = new DataTable();
                 dtInfo = bus.GetReport(ngaychon);
                 if (dtInfo.Rows.Count > 0)
@@ -51,11 +52,11 @@ namespace GUI
                 {
                     MessageBox.Show("Không có mặt hàng nào được bán vào ngào " + ngaychon);
                 }
-            //}
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("Không có dữ liệu!");
-            //}
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Không có dữ liệu!");
+            }
 
         }
 
@@ -66,10 +67,15 @@ namespace GUI
 
         private void dgvBaoCao_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-            for(int i = 0; i < dtInfo.Rows.Count; i++)
+            for (int i = 0; i < dtInfo.Rows.Count; i++)
             {
                 dgvBaoCao.Rows[i].Cells[0].Value = i + 1;
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
