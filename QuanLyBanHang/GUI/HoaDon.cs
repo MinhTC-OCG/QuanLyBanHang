@@ -20,12 +20,13 @@ namespace GUI
         public int dongia;
         public int soluong;
 
+
         Lop_DAL dal = new Lop_DAL();
         HoaDon_BUS hd = new HoaDon_BUS();
 
-        DataTable dtGetNamePrice, dtGetInfor,dtGetHoaDonTongHop, dtGetNameKH, dtGetNameNV;
+        DataTable dtGetNamePrice, dtGetInfor, dtGetHoaDonTongHop, dtGetNameKH, dtGetNameNV;
 
-        string mahang, tenhang;
+
 
         public HoaDon()
         {
@@ -41,10 +42,12 @@ namespace GUI
             dtGetHoaDonTongHop = new DataTable();
             dtGetHoaDonTongHop = hd.showDgvHoaDonTongHop();
             dgvHoaDonTongHop.DataSource = dtGetHoaDonTongHop;
+
             LoadMaHD();
+
             int tongtienhoadon = 0;
             foreach (DataRow r in dtGetInfor.Rows)
-            { 
+            {
                 tongtienhoadon = tongtienhoadon + Int32.Parse(r[4].ToString().Trim());
             }
             txtTongTien.Text = tongtienhoadon.ToString();
@@ -57,7 +60,7 @@ namespace GUI
             DataTable dt = new DataTable();
             dt = hd.GetAmountHD();
             int numb = dt.Rows.Count;
-            txtMaHD.Text = "HD" + (numb+1).ToString();
+            txtMaHD.Text = "HD" + (numb + 1).ToString();
             txtMaHD.Enabled = false;
         }
 
@@ -108,16 +111,6 @@ namespace GUI
 
         }
 
-        private void dgvThongtinhang_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            int dong = e.RowIndex;
-            txtMahang.Text = dgvThongtinhang.Rows[dong].Cells[0].Value.ToString();
-            txtTenhang.Text = dgvThongtinhang.Rows[dong].Cells[1].Value.ToString();
-            nrSoluong.Text = dgvThongtinhang.Rows[dong].Cells[2].Value.ToString();
-            txtDongia.Text = dgvThongtinhang.Rows[dong].Cells[3].Value.ToString();
-            txtThanhtien.Text = dgvThongtinhang.Rows[dong].Cells[4].Value.ToString();
-        }
-
         private void nrSoluong_ValueChanged(object sender, EventArgs e)
         {
             if (nrSoluong.Value == 0)
@@ -131,7 +124,28 @@ namespace GUI
                 soluong = Int32.Parse(nrSoluong.Value.ToString());
                 thanhtien = soluong * dongia;
                 txtThanhtien.Text = thanhtien.ToString();
+                int tt = Int32.Parse(txtThanhtien.Text);
+                if (dtGetHoaDonTongHop.Rows.Count > 0)
+                {
+                    //soluong = Int32.Parse(nrSoluong.Value.ToString());
+                    //thanhtien = soluong * dongia;
+                    //txtThanhtien.Text = thanhtien.ToString();
+                    
+
+                    int numb = 0;
+                    foreach (DataRow r in dtGetHoaDonTongHop.Rows)
+                    {
+                        if (r["MaHD"].ToString().Trim() == txtMaHD.Text.Trim() && r["MaHang"].ToString().Trim() != txtMahang.Text.Trim())
+                        {
+                            int n = Int32.Parse(r["SoLuongHD"].ToString()) * Int32.Parse(r["DonGiaHD"].ToString());
+                            numb = numb + n;
+                        }
+                    }
+                    txtTongTien.Text = (tt + numb).ToString();
+                }
             }
+
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -226,12 +240,80 @@ namespace GUI
 
         private void btnSuaHoaDon_Click(object sender, EventArgs e)
         {
+            string mahd = txtMaHD.Text.Trim();
+            string makh = txtMaKH.Text;
+            string tenkh = txtHotenKH.Text;
+            string ngaylap = dpNgayLap.Value.Date.ToString("yyyy-MM-dd"); ;
+            string manv = txtMaNV.Text;
+            string tennv = txtTenNV.Text;
+            string tongtienhd = txtTongTien.Text;
 
+            string mahang = txtMahang.Text, tenhang = txtTenhang.Text;
+            int dongia = Int32.Parse(txtDongia.Text);
+            int thanhtien = Int32.Parse(txtThanhtien.Text), soluong = Int32.Parse(nrSoluong.Text);
+            hd.UpdateHoaDonTongHop(mahd,makh,tenkh,ngaylap,manv,tennv,mahang,tenhang,soluong,dongia,thanhtien,tongtienhd);
+            hd.UpdateHD(mahd, makh, ngaylap, manv);
+            hd.UpdateHDChiTiet(mahd, mahang, soluong);
+            MessageBox.Show("Cập nhật hóa đơn thành công.");
+            HoaDon_Load(sender, e);
+            btnNhaplai_Click(sender, e);
+            txtMahang.Enabled = true;
         }
 
         private void btnXoaHoaDon_Click(object sender, EventArgs e)
         {
+            string mahd = txtMaHD.Text.Trim();
+            string mahang = txtMahang.Text;
+           
+            hd.DeleteHoaDonTongHop(mahd);
+            hd.DeleteHDChiTiet(mahd);
+            hd.DeleteHD(mahd);
+            MessageBox.Show("Xóa hóa đơn thành công.");
+            HoaDon_Load(sender,e);
+            btnNhaplai_Click(sender, e);
+        }
 
+        private void dgvHoaDonTongHop_Click(object sender, EventArgs e)
+        {
+            int r = dgvHoaDonTongHop.CurrentCell.RowIndex;
+            txtMaHD.Text = dgvHoaDonTongHop.Rows[r].Cells[0].Value.ToString();
+            txtMaKH.Text = dgvHoaDonTongHop.Rows[r].Cells[1].Value.ToString();
+            txtHotenKH.Text = dgvHoaDonTongHop.Rows[r].Cells[2].Value.ToString();
+            dpNgayLap.Value = Convert.ToDateTime(dgvHoaDonTongHop.Rows[r].Cells[3].Value);
+            txtMaNV.Text = dgvHoaDonTongHop.Rows[r].Cells[4].Value.ToString();
+            txtTenNV.Text = dgvHoaDonTongHop.Rows[r].Cells[5].Value.ToString();
+            txtMahang.Text = dgvHoaDonTongHop.Rows[r].Cells[6].Value.ToString();
+            txtTenNV.Text = dgvHoaDonTongHop.Rows[r].Cells[7].Value.ToString();
+            nrSoluong.Text = dgvHoaDonTongHop.Rows[r].Cells[8].Value.ToString();
+            txtDongia.Text = dgvHoaDonTongHop.Rows[r].Cells[9].Value.ToString();
+            txtThanhtien.Text = dgvHoaDonTongHop.Rows[r].Cells[10].Value.ToString();
+            txtTongTien.Text = dgvHoaDonTongHop.Rows[r].Cells[11].Value.ToString();
+            txtMahang.Enabled = false;
+        }
+
+        private void dgvThongtinhang_Click(object sender, EventArgs e)
+        {
+            int dong = dgvThongtinhang.CurrentCell.RowIndex;
+            txtMahang.Text = dgvThongtinhang.Rows[dong].Cells[0].Value.ToString();
+            txtTenhang.Text = dgvThongtinhang.Rows[dong].Cells[1].Value.ToString();
+            nrSoluong.Text = dgvThongtinhang.Rows[dong].Cells[2].Value.ToString();
+            txtDongia.Text = dgvThongtinhang.Rows[dong].Cells[3].Value.ToString();
+            txtThanhtien.Text = dgvThongtinhang.Rows[dong].Cells[4].Value.ToString();
+        }
+
+        private void btnNhaplai_Click(object sender, EventArgs e)
+        {
+            HoaDon_Load(sender,e);
+            txtMaKH.Text = "";
+            txtHotenKH.Text = "";
+            txtMaNV.Text = "";
+            txtTenNV.Text = "";
+            txtTongTien.Text = "";
+            txtMahang.Text = "";
+            txtTenhang.Text = "";
+            nrSoluong.Value = 0;
+            txtDongia.Text = "";
+            txtMahang.Enabled = true;
         }
 
         private void btnThemHoaDon_Click(object sender, EventArgs e)
@@ -254,13 +336,11 @@ namespace GUI
                 string tennv = txtTenNV.Text;
                 string tongtienhd = txtTongTien.Text;
 
-                string  dongia;
-                int thanhtien, soluong;
+                string mahang = "", tenhang = "";
+                int dongia = 0;
+                int thanhtien = 0, soluong = 0;
 
-                //gop tat ca ten hang da mua trong gio hang
-                string ten = "";
-                //gop tat ca gia tien cua tung mat hang trong gioi hang;
-                string sl="", dg="", tt="";
+
                 hd.InsertHD(mahd, makh, ngaylap, manv);
 
                 foreach (DataRow r in dtGetInfor.Rows)
@@ -268,19 +348,18 @@ namespace GUI
                     mahang = r[0].ToString();
                     tenhang = r[1].ToString();
                     soluong = Int32.Parse(r[2].ToString());
-                    dongia = r[3].ToString();
+                    dongia = Int32.Parse(r[3].ToString());
                     thanhtien = Int32.Parse(r[4].ToString());
 
-                    ten = string.Concat(tenhang) + ",";
-                    sl = string.Concat(soluong.ToString()) + " , ";
-                    dg = string.Concat(dongia.ToString()) + " , ";
-                    tt = string.Concat(thanhtien.ToString()) + " , ";
                     hd.InsertHDChiTiet(mahd, mahang, soluong);
-                   
+                    hd.InsertHoaDonTongHop(mahd, makh, tenkh, ngaylap, manv, tennv, mahang, tenhang, soluong, dongia, thanhtien, tongtienhd);
                 }
-                hd.InsertHoaDonTongHop(mahd, makh, tenkh, ngaylap, manv, tennv, mahang, tenhang, sl, dg, tt, tongtienhd);
-                HoaDon_Load(sender, e);
+
+                
                 MessageBox.Show("Tạo hóa đơn thành công.");
+                hd.DeleteAllCart();
+                HoaDon_Load(sender, e);
+                btnNhaplai_Click(sender, e);
             }
         }
 

@@ -71,11 +71,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvHoaDonTongHop = new System.Windows.Forms.DataGridView();
-            this.MaH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSuaHoaDon = new System.Windows.Forms.Button();
-            this.btnXoaHoaDon = new System.Windows.Forms.Button();
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +83,11 @@
             this.DonGiaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTienHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTienHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSuaHoaDon = new System.Windows.Forms.Button();
+            this.btnXoaHoaDon = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -466,7 +466,7 @@
             this.dgvThongtinhang.RowTemplate.Height = 24;
             this.dgvThongtinhang.Size = new System.Drawing.Size(699, 255);
             this.dgvThongtinhang.TabIndex = 2;
-            this.dgvThongtinhang.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongtinhang_RowEnter);
+            this.dgvThongtinhang.Click += new System.EventHandler(this.dgvThongtinhang_Click);
             // 
             // btnThemHoaDon
             // 
@@ -490,6 +490,7 @@
             this.btnNhaplai.TabIndex = 5;
             this.btnNhaplai.Text = "Nhập lại";
             this.btnNhaplai.UseVisualStyleBackColor = true;
+            this.btnNhaplai.Click += new System.EventHandler(this.btnNhaplai_Click);
             // 
             // btnTim
             // 
@@ -578,54 +579,7 @@
             this.dgvHoaDonTongHop.RowTemplate.Height = 24;
             this.dgvHoaDonTongHop.Size = new System.Drawing.Size(699, 288);
             this.dgvHoaDonTongHop.TabIndex = 13;
-            // 
-            // MaH
-            // 
-            this.MaH.DataPropertyName = "MaH";
-            this.MaH.HeaderText = "Mã Hàng";
-            this.MaH.MinimumWidth = 6;
-            this.MaH.Name = "MaH";
-            this.MaH.Width = 186;
-            // 
-            // TenHang
-            // 
-            this.TenHang.DataPropertyName = "TenHang";
-            this.TenHang.HeaderText = "Tên Hàng";
-            this.TenHang.MinimumWidth = 6;
-            this.TenHang.Name = "TenHang";
-            this.TenHang.Width = 186;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.MinimumWidth = 6;
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.Width = 187;
-            // 
-            // btnSuaHoaDon
-            // 
-            this.btnSuaHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaHoaDon.Location = new System.Drawing.Point(241, 611);
-            this.btnSuaHoaDon.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSuaHoaDon.Name = "btnSuaHoaDon";
-            this.btnSuaHoaDon.Size = new System.Drawing.Size(75, 35);
-            this.btnSuaHoaDon.TabIndex = 14;
-            this.btnSuaHoaDon.Text = "Sửa";
-            this.btnSuaHoaDon.UseVisualStyleBackColor = true;
-            this.btnSuaHoaDon.Click += new System.EventHandler(this.btnSuaHoaDon_Click);
-            // 
-            // btnXoaHoaDon
-            // 
-            this.btnXoaHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaHoaDon.Location = new System.Drawing.Point(364, 611);
-            this.btnXoaHoaDon.Margin = new System.Windows.Forms.Padding(2);
-            this.btnXoaHoaDon.Name = "btnXoaHoaDon";
-            this.btnXoaHoaDon.Size = new System.Drawing.Size(75, 35);
-            this.btnXoaHoaDon.TabIndex = 15;
-            this.btnXoaHoaDon.Text = "Xóa";
-            this.btnXoaHoaDon.UseVisualStyleBackColor = true;
-            this.btnXoaHoaDon.Click += new System.EventHandler(this.btnXoaHoaDon_Click);
+            this.dgvHoaDonTongHop.Click += new System.EventHandler(this.dgvHoaDonTongHop_Click);
             // 
             // MaHD
             // 
@@ -722,6 +676,54 @@
             this.TongTienHD.MinimumWidth = 6;
             this.TongTienHD.Name = "TongTienHD";
             this.TongTienHD.Width = 125;
+            // 
+            // MaH
+            // 
+            this.MaH.DataPropertyName = "MaH";
+            this.MaH.HeaderText = "Mã Hàng";
+            this.MaH.MinimumWidth = 6;
+            this.MaH.Name = "MaH";
+            this.MaH.Width = 186;
+            // 
+            // TenHang
+            // 
+            this.TenHang.DataPropertyName = "TenHang";
+            this.TenHang.HeaderText = "Tên Hàng";
+            this.TenHang.MinimumWidth = 6;
+            this.TenHang.Name = "TenHang";
+            this.TenHang.Width = 186;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.MinimumWidth = 6;
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.Width = 187;
+            // 
+            // btnSuaHoaDon
+            // 
+            this.btnSuaHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaHoaDon.Location = new System.Drawing.Point(241, 611);
+            this.btnSuaHoaDon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSuaHoaDon.Name = "btnSuaHoaDon";
+            this.btnSuaHoaDon.Size = new System.Drawing.Size(75, 35);
+            this.btnSuaHoaDon.TabIndex = 14;
+            this.btnSuaHoaDon.Text = "Sửa";
+            this.btnSuaHoaDon.UseVisualStyleBackColor = true;
+            this.btnSuaHoaDon.Click += new System.EventHandler(this.btnSuaHoaDon_Click);
+            // 
+            // btnXoaHoaDon
+            // 
+            this.btnXoaHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaHoaDon.Location = new System.Drawing.Point(364, 611);
+            this.btnXoaHoaDon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoaHoaDon.Name = "btnXoaHoaDon";
+            this.btnXoaHoaDon.Size = new System.Drawing.Size(75, 35);
+            this.btnXoaHoaDon.TabIndex = 15;
+            this.btnXoaHoaDon.Text = "Xóa";
+            this.btnXoaHoaDon.UseVisualStyleBackColor = true;
+            this.btnXoaHoaDon.Click += new System.EventHandler(this.btnXoaHoaDon_Click);
             // 
             // HoaDon
             // 
