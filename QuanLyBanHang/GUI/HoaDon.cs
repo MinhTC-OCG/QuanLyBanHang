@@ -11,6 +11,9 @@ using DAL;
 using DTO;
 using BUS;
 using System.Diagnostics;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace GUI
 {
@@ -296,13 +299,17 @@ namespace GUI
         {
             string mahd = txtMaHD.Text.Trim();
             string mahang = txtMahang.Text;
+            DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + mahd + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                hd.DeleteHoaDonTongHop(mahd);
+                hd.DeleteHDChiTiet(mahd);
+                hd.DeleteHD(mahd);
+                MessageBox.Show("Xóa hóa đơn thành công.");
+                HoaDon_Load(sender, e);
+                btnNhaplai_Click(sender, e);
+            }
            
-            hd.DeleteHoaDonTongHop(mahd);
-            hd.DeleteHDChiTiet(mahd);
-            hd.DeleteHD(mahd);
-            MessageBox.Show("Xóa hóa đơn thành công.");
-            HoaDon_Load(sender,e);
-            btnNhaplai_Click(sender, e);
         }
 
         private void dgvHoaDonTongHop_Click(object sender, EventArgs e)
@@ -348,6 +355,72 @@ namespace GUI
             txtDongia.Text = "";
             txtMahang.Enabled = true;
             HoaDon_Load(sender, e);
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            if(dgvHoaDonTongHop.Rows.Count > 0)
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "PDF (*.pdf)|*.pdf";
+                sfd.FileName = "Hoadon.pdf";
+                bool fileError = false;
+                if(sfd.ShowDialog() == DialogResult.OK)
+                {
+                    if (File.Exists(sfd.FileName))
+                    {
+                        try
+                        {
+                            File.Delete(sfd.FileName);
+                        }
+                        catch (IOException ex)
+                        {
+                            fileError = true;
+                            MessageBox.Show("Không thể xuất hóa đơn");
+                        }
+                    }
+                }
+                if (!fileError)
+                {
+                    try
+                    {
+                        PdfPTable pdfTable = new PdfPTable(dgvHoaDonTongHop.Columns.Count);
+                        pdfTable.DefaultCell.Padding = 3;
+                        pdfTable.WidthPercentage = 100;
+                        pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                        foreach (DataGridViewColumn column in dgvHoaDonTongHop.Columns)
+                        {
+                            PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                            pdfTable.AddCell(cell);
+                        }
+
+                        foreach (DataGridViewRow row in dgvHoaDonTongHop.Rows)
+                        {
+                            foreach (DataGridViewCell cell in row.Cells)
+                            {
+                                pdfTable.AddCell(cell.Value.ToString());
+                            }
+                        }
+
+                        using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
+                        {
+                            Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
+                            PdfWriter.GetInstance(pdfDoc, stream);
+                            pdfDoc.Open();
+                            pdfDoc.Add(pdfTable);
+                            pdfDoc.Close();
+                            stream.Close();
+                        }
+
+                        MessageBox.Show("Xuất hóa đơn thành công.", "Thông báo");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error :" + ex.Message);
+                    }
+                }
+            }
         }
 
         private void btnThemHoaDon_Click(object sender, EventArgs e)
