@@ -161,6 +161,17 @@ namespace BUS
             dal.ExecuteNonQuery(sql);
         }
 
+        public void UpdateHoaDonTongHop2(string mahd, string ngaylaphd,string tongtien)
+        {
+            string sql = "UPDATE HoaDonTongHop12 SET " +
+                "NgayLapHD ='" + ngaylaphd +
+                "',TongTienHD='" + tongtien +
+                "' WHERE MaHD ='" + mahd + "'";
+            dal.ExecuteNonQuery(sql);
+        }
+
+
+
         public void DeleteHoaDonTongHop(string mahd)
         {
             string sql = "DELETE HoaDonTongHop12 WHERE MaHD ='" + mahd + "'";

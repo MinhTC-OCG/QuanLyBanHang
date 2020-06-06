@@ -204,6 +204,7 @@ namespace GUI
                     hd.UpdateThongtinloaihang(txtMahang.Text, txtTenhang.Text, Int32.Parse(nrSoluong.Text), dongia, thanhtien);
                     MessageBox.Show("Sửa giỏ hàng thành công");
                     HoaDon_Load(sender, e);
+                    btnNhaplai_Click(sender, e);
                 }
                 else
                 {
@@ -235,6 +236,7 @@ namespace GUI
                     hd.InsertThongtinhang(txtMahang.Text, txtTenhang.Text, Int32.Parse(nrSoluong.Text), dongia, thanhtien);
                     MessageBox.Show("Thêm vào giỏ hàng thành công.");
                     HoaDon_Load(sender, e);
+                    btnNhaplai_Click(sender, e);
                 }
                 else
                 {
@@ -251,29 +253,43 @@ namespace GUI
                 hd.DeleteThongtinloaihang(txtMahang.Text.Trim());
                 MessageBox.Show("Xóa thành công");
                 HoaDon_Load(sender, e);
+                btnNhaplai_Click(sender, e);
             }
         }
 
         private void btnSuaHoaDon_Click(object sender, EventArgs e)
         {
-            string mahd = txtMaHD.Text.Trim();
-            string makh = txtMaKH.Text;
-            string tenkh = txtHotenKH.Text;
-            string ngaylap = dpNgayLap.Value.Date.ToString("yyyy-MM-dd"); ;
-            string manv = txtMaNV.Text;
-            string tennv = txtTenNV.Text;
-            string tongtienhd = txtTongTien.Text;
+            if (txtMaKH.Text == "")
+                MessageBox.Show("Chưa nhập mã khách hàng, nhập lại!");
+            else if (txtTenhang.Text == "")
+                MessageBox.Show("Chưa nhập tên khách hàng, nhập lại!");
+            else if (txtMaNV.Text == "")
+                MessageBox.Show("Chưa nhập mã nhân viên, nhập lại!");
+            else if (txtTenNV.Text == "")
+                MessageBox.Show("Chưa nhập tên nhân viên, nhập lại!");
+            else
+            {
+                string mahd = txtMaHD.Text.Trim();
+                string makh = txtMaKH.Text;
+                string tenkh = txtHotenKH.Text;
+                string ngaylap = dpNgayLap.Value.Date.ToString("yyyy-MM-dd"); ;
+                string manv = txtMaNV.Text;
+                string tennv = txtTenNV.Text;
+                string tongtienhd = txtTongTien.Text;
 
-            string mahang = txtMahang.Text, tenhang = txtTenhang.Text;
-            int dongia = Int32.Parse(txtDongia.Text);
-            int thanhtien = Int32.Parse(txtThanhtien.Text), soluong = Int32.Parse(nrSoluong.Text);
-            hd.UpdateHoaDonTongHop(mahd,makh,tenkh,ngaylap,manv,tennv,mahang,tenhang,soluong,dongia,thanhtien,tongtienhd);
-            hd.UpdateHD(mahd, makh, ngaylap, manv);
-            hd.UpdateHDChiTiet(mahd, mahang, soluong);
-            MessageBox.Show("Cập nhật hóa đơn thành công.");
-            HoaDon_Load(sender, e);
-            btnNhaplai_Click(sender, e);
-            txtMahang.Enabled = true;
+                string mahang = txtMahang.Text, tenhang = txtTenhang.Text;
+                int dongia = Int32.Parse(txtDongia.Text);
+                int thanhtien = Int32.Parse(txtThanhtien.Text), soluong = Int32.Parse(nrSoluong.Text);
+                hd.UpdateHoaDonTongHop(mahd, makh, tenkh, ngaylap, manv, tennv, mahang, tenhang, soluong, dongia, thanhtien, tongtienhd);
+                hd.UpdateHoaDonTongHop2(mahd, ngaylap, tongtienhd);
+                hd.UpdateHD(mahd, makh, ngaylap, manv);
+                hd.UpdateHDChiTiet(mahd, mahang, soluong);
+                MessageBox.Show("Cập nhật hóa đơn thành công.");
+                HoaDon_Load(sender, e);
+                btnNhaplai_Click(sender, e);
+                txtMahang.Enabled = true;
+            }
+                
         }
 
         private void btnXoaHoaDon_Click(object sender, EventArgs e)
@@ -319,17 +335,19 @@ namespace GUI
 
         private void btnNhaplai_Click(object sender, EventArgs e)
         {
-            HoaDon_Load(sender,e);
+            
             txtMaKH.Text = "";
             txtHotenKH.Text = "";
             txtMaNV.Text = "";
             txtTenNV.Text = "";
+            dpNgayLap.Value = DateTime.Now;
             txtTongTien.Text = "";
             txtMahang.Text = "";
             txtTenhang.Text = "";
             nrSoluong.Value = 0;
             txtDongia.Text = "";
             txtMahang.Enabled = true;
+            HoaDon_Load(sender, e);
         }
 
         private void btnThemHoaDon_Click(object sender, EventArgs e)

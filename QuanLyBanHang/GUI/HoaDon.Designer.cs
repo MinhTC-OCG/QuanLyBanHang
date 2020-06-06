@@ -124,10 +124,10 @@
             // 
             // txtMaHD
             // 
-            this.txtMaHD.Location = new System.Drawing.Point(157, 51);
+            this.txtMaHD.Location = new System.Drawing.Point(111, 51);
             this.txtMaHD.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaHD.Name = "txtMaHD";
-            this.txtMaHD.Size = new System.Drawing.Size(261, 20);
+            this.txtMaHD.Size = new System.Drawing.Size(307, 20);
             this.txtMaHD.TabIndex = 19;
             // 
             // label15
@@ -164,33 +164,33 @@
             // dpNgayLap
             // 
             this.dpNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpNgayLap.Location = new System.Drawing.Point(157, 150);
+            this.dpNgayLap.Location = new System.Drawing.Point(111, 150);
             this.dpNgayLap.Name = "dpNgayLap";
-            this.dpNgayLap.Size = new System.Drawing.Size(261, 20);
+            this.dpNgayLap.Size = new System.Drawing.Size(307, 20);
             this.dpNgayLap.TabIndex = 16;
             // 
             // txtTongTien
             // 
-            this.txtTongTien.Location = new System.Drawing.Point(157, 252);
+            this.txtTongTien.Location = new System.Drawing.Point(111, 252);
             this.txtTongTien.Margin = new System.Windows.Forms.Padding(2);
             this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(261, 20);
+            this.txtTongTien.Size = new System.Drawing.Size(307, 20);
             this.txtTongTien.TabIndex = 15;
             // 
             // txtTenNV
             // 
-            this.txtTenNV.Location = new System.Drawing.Point(157, 214);
+            this.txtTenNV.Location = new System.Drawing.Point(111, 214);
             this.txtTenNV.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(261, 20);
+            this.txtTenNV.Size = new System.Drawing.Size(307, 20);
             this.txtTenNV.TabIndex = 14;
             // 
             // txtMaNV
             // 
-            this.txtMaNV.Location = new System.Drawing.Point(157, 181);
+            this.txtMaNV.Location = new System.Drawing.Point(111, 181);
             this.txtMaNV.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(261, 20);
+            this.txtMaNV.Size = new System.Drawing.Size(307, 20);
             this.txtMaNV.TabIndex = 13;
             this.txtMaNV.TextChanged += new System.EventHandler(this.txtMaNV_TextChanged);
             // 
@@ -198,12 +198,12 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 253);
+            this.label7.Location = new System.Drawing.Point(17, 253);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(119, 16);
+            this.label7.Size = new System.Drawing.Size(89, 16);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Tổng tiền hóa đơn:";
+            this.label7.Text = "Tổng tiền HĐ:";
             // 
             // label6
             // 
@@ -240,19 +240,19 @@
             // 
             // txtMaKH
             // 
-            this.txtMaKH.Location = new System.Drawing.Point(157, 84);
+            this.txtMaKH.Location = new System.Drawing.Point(111, 84);
             this.txtMaKH.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(261, 20);
+            this.txtMaKH.Size = new System.Drawing.Size(307, 20);
             this.txtMaKH.TabIndex = 5;
             this.txtMaKH.TextChanged += new System.EventHandler(this.txtMaKH_TextChanged);
             // 
             // txtHotenKH
             // 
-            this.txtHotenKH.Location = new System.Drawing.Point(157, 119);
+            this.txtHotenKH.Location = new System.Drawing.Point(111, 119);
             this.txtHotenKH.Margin = new System.Windows.Forms.Padding(2);
             this.txtHotenKH.Name = "txtHotenKH";
-            this.txtHotenKH.Size = new System.Drawing.Size(261, 20);
+            this.txtHotenKH.Size = new System.Drawing.Size(307, 20);
             this.txtHotenKH.TabIndex = 7;
             // 
             // label3
@@ -262,9 +262,9 @@
             this.label3.Location = new System.Drawing.Point(17, 88);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 16);
+            this.label3.Size = new System.Drawing.Size(51, 16);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Mã khách hàng:";
+            this.label3.Text = "Mã KH:";
             // 
             // label1
             // 
@@ -273,9 +273,9 @@
             this.label1.Location = new System.Drawing.Point(17, 121);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 16);
+            this.label1.Size = new System.Drawing.Size(56, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Họ tên khách hàng:";
+            this.label1.Text = "Tên KH:";
             // 
             // panel2
             // 
@@ -543,6 +543,7 @@
             // dgvHoaDonTongHop
             // 
             this.dgvHoaDonTongHop.AllowUserToAddRows = false;
+            this.dgvHoaDonTongHop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvHoaDonTongHop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDonTongHop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHD,
@@ -715,9 +716,11 @@
             // 
             this.dgvThongtinhang.AllowUserToAddRows = false;
             this.dgvThongtinhang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvThongtinhang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvThongtinhang.Location = new System.Drawing.Point(445, 45);
             this.dgvThongtinhang.Margin = new System.Windows.Forms.Padding(2);
             this.dgvThongtinhang.Name = "dgvThongtinhang";
+            this.dgvThongtinhang.RowHeadersVisible = false;
             this.dgvThongtinhang.RowHeadersWidth = 51;
             this.dgvThongtinhang.RowTemplate.Height = 24;
             this.dgvThongtinhang.Size = new System.Drawing.Size(699, 255);
