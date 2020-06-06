@@ -113,26 +113,17 @@ namespace GUI
 
         private void nrSoluong_ValueChanged(object sender, EventArgs e)
         {
+            int numb = 0;
+            int tt = 0;
             if (nrSoluong.Value == 0)
             {
                 soluong = 0;
                 thanhtien = soluong * dongia;
                 txtThanhtien.Text = thanhtien.ToString();
-            }
-            else
-            {
-                soluong = Int32.Parse(nrSoluong.Value.ToString());
-                thanhtien = soluong * dongia;
-                txtThanhtien.Text = thanhtien.ToString();
-                int tt = Int32.Parse(txtThanhtien.Text);
                 if (dtGetHoaDonTongHop.Rows.Count > 0)
                 {
-                    //soluong = Int32.Parse(nrSoluong.Value.ToString());
-                    //thanhtien = soluong * dongia;
-                    //txtThanhtien.Text = thanhtien.ToString();
-                    
 
-                    int numb = 0;
+
                     foreach (DataRow r in dtGetHoaDonTongHop.Rows)
                     {
                         if (r["MaHD"].ToString().Trim() == txtMaHD.Text.Trim() && r["MaHang"].ToString().Trim() != txtMahang.Text.Trim())
@@ -140,7 +131,32 @@ namespace GUI
                             int n = Int32.Parse(r["SoLuongHD"].ToString()) * Int32.Parse(r["DonGiaHD"].ToString());
                             numb = numb + n;
                         }
+
                     }
+
+                    txtTongTien.Text = (tt + numb).ToString();
+                }
+            }
+            else
+            {
+                soluong = Int32.Parse(nrSoluong.Value.ToString());
+                thanhtien = soluong * dongia;
+                txtThanhtien.Text = thanhtien.ToString();
+                tt = Int32.Parse(txtThanhtien.Text);
+                if (dtGetHoaDonTongHop.Rows.Count > 0)
+                {
+
+                   
+                    foreach (DataRow r in dtGetHoaDonTongHop.Rows)
+                    {
+                        if (r["MaHD"].ToString().Trim() == txtMaHD.Text.Trim() && r["MaHang"].ToString().Trim() != txtMahang.Text.Trim())
+                        {
+                            int n = Int32.Parse(r["SoLuongHD"].ToString()) * Int32.Parse(r["DonGiaHD"].ToString());
+                            numb = numb + n;
+                        }
+
+                    }
+                  
                     txtTongTien.Text = (tt + numb).ToString();
                 }
             }

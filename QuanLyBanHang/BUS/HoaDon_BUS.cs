@@ -157,7 +157,7 @@ namespace BUS
                 "',DonGiaHD='" + dongia +
                 "',ThanhTienHD='" + thanhtien +
                 "',TongTienHD='" + tongtien +
-                "' WHERE MaHD ='" + mahd + "' AND MaHang like'%"+mahang+"%'";
+                "' WHERE MaHD ='" + mahd + "' AND MaHang ='"+mahang+"'";
             dal.ExecuteNonQuery(sql);
         }
 

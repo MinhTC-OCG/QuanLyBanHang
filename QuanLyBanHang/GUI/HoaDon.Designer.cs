@@ -61,7 +61,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.dgvThongtinhang = new System.Windows.Forms.DataGridView();
             this.btnThemHoaDon = new System.Windows.Forms.Button();
             this.btnNhaplai = new System.Windows.Forms.Button();
             this.btnTim = new System.Windows.Forms.Button();
@@ -88,14 +87,15 @@
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSuaHoaDon = new System.Windows.Forms.Button();
             this.btnXoaHoaDon = new System.Windows.Forms.Button();
+            this.dgvThongtinhang = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nrSoluong)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThongtinhang)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDonTongHop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongtinhang)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -452,22 +452,6 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "Mã hàng:";
             // 
-            // dgvThongtinhang
-            // 
-            this.dgvThongtinhang.AllowUserToAddRows = false;
-            this.dgvThongtinhang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvThongtinhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThongtinhang.EnableHeadersVisualStyles = false;
-            this.dgvThongtinhang.Location = new System.Drawing.Point(445, 45);
-            this.dgvThongtinhang.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvThongtinhang.Name = "dgvThongtinhang";
-            this.dgvThongtinhang.RowHeadersVisible = false;
-            this.dgvThongtinhang.RowHeadersWidth = 51;
-            this.dgvThongtinhang.RowTemplate.Height = 24;
-            this.dgvThongtinhang.Size = new System.Drawing.Size(699, 255);
-            this.dgvThongtinhang.TabIndex = 2;
-            this.dgvThongtinhang.Click += new System.EventHandler(this.dgvThongtinhang_Click);
-            // 
             // btnThemHoaDon
             // 
             this.btnThemHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -558,6 +542,7 @@
             // 
             // dgvHoaDonTongHop
             // 
+            this.dgvHoaDonTongHop.AllowUserToAddRows = false;
             this.dgvHoaDonTongHop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDonTongHop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHD,
@@ -575,6 +560,7 @@
             this.dgvHoaDonTongHop.Location = new System.Drawing.Point(445, 310);
             this.dgvHoaDonTongHop.Margin = new System.Windows.Forms.Padding(2);
             this.dgvHoaDonTongHop.Name = "dgvHoaDonTongHop";
+            this.dgvHoaDonTongHop.RowHeadersVisible = false;
             this.dgvHoaDonTongHop.RowHeadersWidth = 51;
             this.dgvHoaDonTongHop.RowTemplate.Height = 24;
             this.dgvHoaDonTongHop.Size = new System.Drawing.Size(699, 288);
@@ -725,6 +711,19 @@
             this.btnXoaHoaDon.UseVisualStyleBackColor = true;
             this.btnXoaHoaDon.Click += new System.EventHandler(this.btnXoaHoaDon_Click);
             // 
+            // dgvThongtinhang
+            // 
+            this.dgvThongtinhang.AllowUserToAddRows = false;
+            this.dgvThongtinhang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvThongtinhang.Location = new System.Drawing.Point(445, 45);
+            this.dgvThongtinhang.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvThongtinhang.Name = "dgvThongtinhang";
+            this.dgvThongtinhang.RowHeadersWidth = 51;
+            this.dgvThongtinhang.RowTemplate.Height = 24;
+            this.dgvThongtinhang.Size = new System.Drawing.Size(699, 255);
+            this.dgvThongtinhang.TabIndex = 2;
+            this.dgvThongtinhang.Click += new System.EventHandler(this.dgvThongtinhang_Click);
+            // 
             // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -757,10 +756,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nrSoluong)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThongtinhang)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDonTongHop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongtinhang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -788,7 +787,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dgvThongtinhang;
         private System.Windows.Forms.TextBox txtThanhtien;
         private System.Windows.Forms.TextBox txtDongia;
         private System.Windows.Forms.TextBox txtTenhang;
@@ -828,5 +826,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGiaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTienHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTienHD;
+        private System.Windows.Forms.DataGridView dgvThongtinhang;
     }
 }
