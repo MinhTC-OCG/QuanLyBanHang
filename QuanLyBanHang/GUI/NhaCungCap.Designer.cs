@@ -193,7 +193,7 @@
             this.bnNhapLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnNhapLai.Image = ((System.Drawing.Image)(resources.GetObject("bnNhapLai.Image")));
             this.bnNhapLai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnNhapLai.Location = new System.Drawing.Point(639, 149);
+            this.bnNhapLai.Location = new System.Drawing.Point(639, 192);
             this.bnNhapLai.Margin = new System.Windows.Forms.Padding(2);
             this.bnNhapLai.Name = "bnNhapLai";
             this.bnNhapLai.Size = new System.Drawing.Size(89, 35);
@@ -249,7 +249,7 @@
             this.bnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnXem.Image = ((System.Drawing.Image)(resources.GetObject("bnXem.Image")));
             this.bnXem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnXem.Location = new System.Drawing.Point(732, 149);
+            this.bnXem.Location = new System.Drawing.Point(732, 192);
             this.bnXem.Margin = new System.Windows.Forms.Padding(2);
             this.bnXem.Name = "bnXem";
             this.bnXem.Size = new System.Drawing.Size(75, 35);
@@ -263,7 +263,7 @@
             this.bnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnThoat.Image = ((System.Drawing.Image)(resources.GetObject("bnThoat.Image")));
             this.bnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnThoat.Location = new System.Drawing.Point(811, 149);
+            this.bnThoat.Location = new System.Drawing.Point(811, 192);
             this.bnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.bnThoat.Name = "bnThoat";
             this.bnThoat.Size = new System.Drawing.Size(40, 35);
