@@ -429,7 +429,7 @@ namespace GUI
                         pdfTable.WidthPercentage = 100;
                         pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
                         iTextSharp.text.Font fon = FontFactory.GetFont("ARIAL", 10);
-
+                        
                         foreach (DataGridViewColumn column in dgvHoaDonTongHop.Columns)
                         {
                             PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
