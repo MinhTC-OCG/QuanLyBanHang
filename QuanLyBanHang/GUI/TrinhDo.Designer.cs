@@ -58,9 +58,9 @@
             this.label1.Location = new System.Drawing.Point(356, 7);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 26);
+            this.label1.Size = new System.Drawing.Size(125, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Trình độ";
+            this.label1.Text = "TRÌNH ĐỘ";
             // 
             // label2
             // 

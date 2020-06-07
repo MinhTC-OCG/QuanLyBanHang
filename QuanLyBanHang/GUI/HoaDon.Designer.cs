@@ -552,9 +552,9 @@
             this.label14.Location = new System.Drawing.Point(562, 6);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(100, 25);
+            this.label14.Size = new System.Drawing.Size(116, 25);
             this.label14.TabIndex = 11;
-            this.label14.Text = "Hóa đơn";
+            this.label14.Text = "HÓA ĐƠN";
             // 
             // panel3
             // 
