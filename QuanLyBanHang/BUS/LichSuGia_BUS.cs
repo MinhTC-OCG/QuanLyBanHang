@@ -26,26 +26,26 @@ namespace BUS
             dtcb = dal.getTable(sql);
             return dtcb;
         }
-        public void InsertLichSuGia(string mahang, string ngaybatdau, string ngayketthuc, string dongia,string ngaycapnhat)
+        public void InsertLichSuGia(string mahang, String ngaybatdau, string ngayketthuc, int dongia,string ngaycapnhat)
         {
             string sql = "Insert into LichSuGia12 values('"+ mahang +"','"+ngaybatdau+"','"+ngayketthuc+"',"+ dongia +",'"+ngaycapnhat+"')";
             dal.ExecuteNonQuery(sql);
         }
-        public void UpdateLoaiHang(string maloai, string tenloai, string ghichu)
+        public void UpdateLoaiHang(string mahang, string ngaybatdau, string ngayketthuc, int dongia, string ngaycapnhat)
         {
-            string sql = "UPDATE LoaiHang12 SET TenL = N'"+tenloai+"',GhiChu = N'"+ghichu+"' WHERE MaL = '"+maloai+"'";
+            string sql = "update LichSuGia12 set NgayBD='"+ ngaybatdau +"',NgayKT='"+ ngayketthuc +"',DonG= "+ dongia +",NgayCN='"+ngaycapnhat+"' where Mah='"+mahang+"'";
             dal.ExecuteNonQuery(sql);
         }
 
-        public void DeleteLoaiHang(string maloai)
+        public void DeleteLichSuGia(string mahang)
         {
-            string sql = "DELETE LoaiHang12 WHERE MaL = '"+maloai+"'";
+            string sql = "delete from dbo.LichSuGia12 where MaH='"+mahang+"'";
             dal.ExecuteNonQuery(sql);
         }
 
-        public DataTable SearchLoaiHang(string maloai)
+        public DataTable SearchLichSuHang(string mahang)
         {
-            string sql = "SELECT *FROM LoaiHang12 WHERE MaL = '" + maloai + "'";
+            string sql = "SELECT * FROM LichSuGia12 where MaH='"+ mahang +"'";
             DataTable dt = new DataTable();
             dt = dal.getTable(sql);
             return dt;

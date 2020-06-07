@@ -41,6 +41,11 @@
             this.dtpNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.dgvLichSuGia = new System.Windows.Forms.DataGridView();
+            this.MaH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clngaybd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clngaykt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cldongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clngaycapnhat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,11 +53,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.MaH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clngaybd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clngaykt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cldongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clngaycapnhat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuGia)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +86,7 @@
             this.btnXem.TabIndex = 36;
             this.btnXem.Text = "Xem";
             this.btnXem.UseVisualStyleBackColor = false;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // btnTim
             // 
@@ -95,6 +97,7 @@
             this.btnTim.TabIndex = 35;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // btnXoa
             // 
@@ -105,6 +108,7 @@
             this.btnXoa.TabIndex = 34;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -115,6 +119,7 @@
             this.btnSua.TabIndex = 33;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -195,6 +200,36 @@
             this.dgvLichSuGia.TabIndex = 26;
             this.dgvLichSuGia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichSuGia_CellContentClick);
             // 
+            // MaH
+            // 
+            this.MaH.DataPropertyName = "MaH";
+            this.MaH.HeaderText = "Mã hàng";
+            this.MaH.Name = "MaH";
+            // 
+            // clngaybd
+            // 
+            this.clngaybd.DataPropertyName = "NgayBD";
+            this.clngaybd.HeaderText = "Ngày bắt đầu";
+            this.clngaybd.Name = "clngaybd";
+            // 
+            // clngaykt
+            // 
+            this.clngaykt.DataPropertyName = "NgayKT";
+            this.clngaykt.HeaderText = "Ngày kết thúc";
+            this.clngaykt.Name = "clngaykt";
+            // 
+            // cldongia
+            // 
+            this.cldongia.DataPropertyName = "DonG";
+            this.cldongia.HeaderText = "Đơn giá";
+            this.cldongia.Name = "cldongia";
+            // 
+            // clngaycapnhat
+            // 
+            this.clngaycapnhat.DataPropertyName = "NgayCN";
+            this.clngaycapnhat.HeaderText = "Ngày cập nhật";
+            this.clngaycapnhat.Name = "clngaycapnhat";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -265,35 +300,12 @@
             this.panel1.Size = new System.Drawing.Size(909, 39);
             this.panel1.TabIndex = 39;
             // 
-            // MaH
+            // testbox
             // 
-            this.MaH.DataPropertyName = "MaH";
-            this.MaH.HeaderText = "Mã hàng";
-            this.MaH.Name = "MaH";
-            // 
-            // clngaybd
-            // 
-            this.clngaybd.DataPropertyName = "NgayBD";
-            this.clngaybd.HeaderText = "Ngày bắt đầu";
-            this.clngaybd.Name = "clngaybd";
-            // 
-            // clngaykt
-            // 
-            this.clngaykt.DataPropertyName = "NgayKT";
-            this.clngaykt.HeaderText = "Ngày kết thúc";
-            this.clngaykt.Name = "clngaykt";
-            // 
-            // cldongia
-            // 
-            this.cldongia.DataPropertyName = "DonG";
-            this.cldongia.HeaderText = "Đơn giá";
-            this.cldongia.Name = "cldongia";
-            // 
-            // clngaycapnhat
-            // 
-            this.clngaycapnhat.DataPropertyName = "NgayCN";
-            this.clngaycapnhat.HeaderText = "Ngày cập nhật";
-            this.clngaycapnhat.Name = "clngaycapnhat";
+            this.testbox.Location = new System.Drawing.Point(94, 171);
+            this.testbox.Name = "testbox";
+            this.testbox.Size = new System.Drawing.Size(706, 20);
+            this.testbox.TabIndex = 40;
             // 
             // LichSuGia
             // 
@@ -301,6 +313,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(926, 534);
+            this.Controls.Add(this.testbox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cbMaHang);
             this.Controls.Add(this.btnThoat);
@@ -359,5 +372,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clngaykt;
         private System.Windows.Forms.DataGridViewTextBoxColumn cldongia;
         private System.Windows.Forms.DataGridViewTextBoxColumn clngaycapnhat;
+        private System.Windows.Forms.TextBox testbox;
     }
 }
