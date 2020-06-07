@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoaDon));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -312,12 +313,15 @@
             // btnThemGioHang
             // 
             this.btnThemGioHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemGioHang.Image = ((System.Drawing.Image)(resources.GetObject("btnThemGioHang.Image")));
+            this.btnThemGioHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThemGioHang.Location = new System.Drawing.Point(111, 218);
             this.btnThemGioHang.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemGioHang.Name = "btnThemGioHang";
-            this.btnThemGioHang.Size = new System.Drawing.Size(89, 35);
+            this.btnThemGioHang.Size = new System.Drawing.Size(80, 35);
             this.btnThemGioHang.TabIndex = 12;
-            this.btnThemGioHang.Text = "Thêm hàng";
+            this.btnThemGioHang.Text = "Thêm";
+            this.btnThemGioHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemGioHang.UseVisualStyleBackColor = true;
             this.btnThemGioHang.Click += new System.EventHandler(this.btnThemGioHang_Click);
             // 
@@ -367,12 +371,15 @@
             // btnXoaHangTrongGio
             // 
             this.btnXoaHangTrongGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaHangTrongGio.Location = new System.Drawing.Point(338, 217);
+            this.btnXoaHangTrongGio.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaHangTrongGio.Image")));
+            this.btnXoaHangTrongGio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaHangTrongGio.Location = new System.Drawing.Point(338, 218);
             this.btnXoaHangTrongGio.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaHangTrongGio.Name = "btnXoaHangTrongGio";
-            this.btnXoaHangTrongGio.Size = new System.Drawing.Size(75, 37);
+            this.btnXoaHangTrongGio.Size = new System.Drawing.Size(75, 35);
             this.btnXoaHangTrongGio.TabIndex = 6;
             this.btnXoaHangTrongGio.Text = "Xóa";
+            this.btnXoaHangTrongGio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaHangTrongGio.UseVisualStyleBackColor = true;
             this.btnXoaHangTrongGio.Click += new System.EventHandler(this.btnXoaHangTrongGio_Click);
             // 
@@ -399,12 +406,15 @@
             // btnSuaGioHang
             // 
             this.btnSuaGioHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaGioHang.Location = new System.Drawing.Point(233, 219);
+            this.btnSuaGioHang.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaGioHang.Image")));
+            this.btnSuaGioHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaGioHang.Location = new System.Drawing.Point(224, 218);
             this.btnSuaGioHang.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaGioHang.Name = "btnSuaGioHang";
-            this.btnSuaGioHang.Size = new System.Drawing.Size(75, 35);
+            this.btnSuaGioHang.Size = new System.Drawing.Size(80, 35);
             this.btnSuaGioHang.TabIndex = 4;
             this.btnSuaGioHang.Text = "Sửa";
+            this.btnSuaGioHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaGioHang.UseVisualStyleBackColor = true;
             this.btnSuaGioHang.Click += new System.EventHandler(this.btnSuaGioHang_Click);
             // 
@@ -455,69 +465,83 @@
             // btnThemHoaDon
             // 
             this.btnThemHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemHoaDon.Location = new System.Drawing.Point(119, 611);
+            this.btnThemHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnThemHoaDon.Image")));
+            this.btnThemHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemHoaDon.Location = new System.Drawing.Point(142, 611);
             this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemHoaDon.Name = "btnThemHoaDon";
             this.btnThemHoaDon.Size = new System.Drawing.Size(75, 35);
             this.btnThemHoaDon.TabIndex = 3;
             this.btnThemHoaDon.Text = "Thêm";
+            this.btnThemHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemHoaDon.UseVisualStyleBackColor = true;
             this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHoaDon_Click);
             // 
             // btnNhaplai
             // 
             this.btnNhaplai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhaplai.Image = ((System.Drawing.Image)(resources.GetObject("btnNhaplai.Image")));
+            this.btnNhaplai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNhaplai.Location = new System.Drawing.Point(7, 611);
             this.btnNhaplai.Margin = new System.Windows.Forms.Padding(2);
             this.btnNhaplai.Name = "btnNhaplai";
-            this.btnNhaplai.Size = new System.Drawing.Size(75, 35);
+            this.btnNhaplai.Size = new System.Drawing.Size(92, 35);
             this.btnNhaplai.TabIndex = 5;
             this.btnNhaplai.Text = "Nhập lại";
+            this.btnNhaplai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNhaplai.UseVisualStyleBackColor = true;
             this.btnNhaplai.Click += new System.EventHandler(this.btnNhaplai_Click);
             // 
             // btnTim
             // 
             this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.Location = new System.Drawing.Point(878, 611);
+            this.btnTim.Image = ((System.Drawing.Image)(resources.GetObject("btnTim.Image")));
+            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTim.Location = new System.Drawing.Point(1025, 611);
             this.btnTim.Margin = new System.Windows.Forms.Padding(2);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(75, 35);
             this.btnTim.TabIndex = 7;
             this.btnTim.Text = "Tìm";
+            this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTim.UseVisualStyleBackColor = true;
             // 
             // btnIn
             // 
             this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIn.Location = new System.Drawing.Point(550, 611);
+            this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
+            this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIn.Location = new System.Drawing.Point(681, 611);
             this.btnIn.Margin = new System.Windows.Forms.Padding(2);
             this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(75, 35);
+            this.btnIn.Size = new System.Drawing.Size(60, 35);
             this.btnIn.TabIndex = 8;
             this.btnIn.Text = "In";
+            this.btnIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnIn.UseVisualStyleBackColor = true;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(1069, 611);
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThoat.Location = new System.Drawing.Point(1104, 611);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 35);
+            this.btnThoat.Size = new System.Drawing.Size(40, 35);
             this.btnThoat.TabIndex = 9;
-            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThoat.UseVisualStyleBackColor = true;
             // 
             // txtTim
             // 
             this.txtTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTim.Location = new System.Drawing.Point(715, 611);
+            this.txtTim.Location = new System.Drawing.Point(799, 611);
             this.txtTim.Margin = new System.Windows.Forms.Padding(2);
             this.txtTim.Multiline = true;
             this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(159, 35);
+            this.txtTim.Size = new System.Drawing.Size(222, 35);
             this.txtTim.TabIndex = 10;
             // 
             // label14
@@ -692,24 +716,30 @@
             // btnSuaHoaDon
             // 
             this.btnSuaHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaHoaDon.Location = new System.Drawing.Point(241, 611);
+            this.btnSuaHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaHoaDon.Image")));
+            this.btnSuaHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaHoaDon.Location = new System.Drawing.Point(256, 611);
             this.btnSuaHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaHoaDon.Name = "btnSuaHoaDon";
             this.btnSuaHoaDon.Size = new System.Drawing.Size(75, 35);
             this.btnSuaHoaDon.TabIndex = 14;
             this.btnSuaHoaDon.Text = "Sửa";
+            this.btnSuaHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaHoaDon.UseVisualStyleBackColor = true;
             this.btnSuaHoaDon.Click += new System.EventHandler(this.btnSuaHoaDon_Click);
             // 
             // btnXoaHoaDon
             // 
             this.btnXoaHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaHoaDon.Location = new System.Drawing.Point(364, 611);
+            this.btnXoaHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaHoaDon.Image")));
+            this.btnXoaHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaHoaDon.Location = new System.Drawing.Point(366, 611);
             this.btnXoaHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaHoaDon.Name = "btnXoaHoaDon";
             this.btnXoaHoaDon.Size = new System.Drawing.Size(75, 35);
             this.btnXoaHoaDon.TabIndex = 15;
             this.btnXoaHoaDon.Text = "Xóa";
+            this.btnXoaHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaHoaDon.UseVisualStyleBackColor = true;
             this.btnXoaHoaDon.Click += new System.EventHandler(this.btnXoaHoaDon_Click);
             // 
@@ -749,7 +779,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HÓA ĐƠN";
+            this.Text = "QUẢN LÝ BÁN HÀNG";
             this.Load += new System.EventHandler(this.HoaDon_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

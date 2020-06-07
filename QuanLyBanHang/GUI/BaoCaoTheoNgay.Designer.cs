@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaoCaoTheoNgay));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dtPicker = new System.Windows.Forms.DateTimePicker();
@@ -65,11 +66,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(437, 9);
+            this.label1.Location = new System.Drawing.Point(389, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 25);
+            this.label1.Size = new System.Drawing.Size(237, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Báo cáo";
+            this.label1.Text = "BÁO CÁO THEO NGÀY";
             // 
             // dtPicker
             // 
@@ -82,12 +83,16 @@
             // 
             // btnIn
             // 
-            this.btnIn.Location = new System.Drawing.Point(12, 52);
+            this.btnIn.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
+            this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIn.Location = new System.Drawing.Point(12, 49);
             this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(75, 27);
+            this.btnIn.Size = new System.Drawing.Size(51, 34);
             this.btnIn.TabIndex = 3;
             this.btnIn.Text = "In";
-            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIn.UseVisualStyleBackColor = false;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnXuat
@@ -241,7 +246,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "BaoCaoTheoNgay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BÁO CÁO THEO NGÀY";
+            this.Text = "QUẢN LÝ BÁN HÀNG";
             this.Load += new System.EventHandler(this.BaoCao_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
