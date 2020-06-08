@@ -250,13 +250,29 @@ namespace GUI
 
         private void btnXoaHangTrongGio_Click(object sender, EventArgs e)
         {
-            DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtTenhang.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (rs == DialogResult.Yes)
+            try
             {
-                hd.DeleteThongtinloaihang(txtMahang.Text.Trim());
-                MessageBox.Show("Xóa thành công");
-                HoaDon_Load(sender, e);
-                btnNhaplai_Click(sender, e);
+                if (txtMahang.Text == "")
+                {
+                    MessageBox.Show("Chưa chọn mặt hàng để xóa!");
+
+                }
+                else
+                {
+                    DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtTenhang.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (rs == DialogResult.Yes)
+                    {
+                        hd.DeleteThongtinloaihang(txtMahang.Text.Trim());
+                        MessageBox.Show("Xóa thành công");
+                        HoaDon_Load(sender, e);
+                        btnNhaplai_Click(sender, e);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể sửa!");
             }
         }
 
@@ -429,7 +445,7 @@ namespace GUI
                         pdfTable.WidthPercentage = 100;
                         pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
                         iTextSharp.text.Font fon = FontFactory.GetFont("ARIAL", 10);
-                        
+
                         foreach (DataGridViewColumn column in dgvHoaDonTongHop.Columns)
                         {
                             PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
@@ -552,7 +568,7 @@ namespace GUI
             if (dtGetNameNV.Rows.Count > 0)
             {
                 string tennv;
-                foreach (DataRow r in dtGetNameKH.Rows)
+                foreach (DataRow r in dtGetNameNV.Rows)
                 {
                     tennv = r[0].ToString().Trim();
                     txtTenNV.Text = tennv == "" ? "" : tennv;
