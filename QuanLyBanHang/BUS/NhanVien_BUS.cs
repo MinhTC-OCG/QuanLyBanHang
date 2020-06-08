@@ -19,13 +19,18 @@ namespace BUS
             dt = dal.getTable(sql);
             return dt;
         }
-
+        public DataTable GetComboTrinhDo()
+        {
+            string sql = "SELECT * FROM TrinhDo12";
+            DataTable dt = new DataTable();
+            dt = dal.getTable(sql);
+            return dt;
+        }
         public void InsertNhanVien(string manv, string hoten, string diachi, string sodt, string matd)
         {
             string sql = "INSERT INTO Nhanvien12 VALUES ('" + manv + "',N'" + hoten + "',N'" + diachi + "',N'" + sodt + "',N'" + matd + "')";
             dal.ExecuteNonQuery(sql);
         }
-
 
         public void UpdateNhanvien(string manv, string hoten, string diachi, string sodt, string matd)
         {
@@ -41,7 +46,7 @@ namespace BUS
 
         public DataTable SearchNhanVien(string manv)
         {
-            string sql = "SELECT *FROM Nhanvien12 WHERE manv like '%" + manv + "'";
+            string sql = "SELECT * FROM Nhanvien12 WHERE manv like '%" + manv + "%'";
             DataTable dt = new DataTable();
             dt = dal.getTable(sql);
             return dt;
