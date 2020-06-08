@@ -226,6 +226,7 @@
             this.bnXoa.Text = "Xóa";
             this.bnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnXoa.UseVisualStyleBackColor = true;
+            this.bnXoa.Click += new System.EventHandler(this.bnXoa_Click);
             // 
             // bnSua
             // 
@@ -240,6 +241,7 @@
             this.bnSua.Text = "Sửa";
             this.bnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnSua.UseVisualStyleBackColor = true;
+            this.bnSua.Click += new System.EventHandler(this.bnSua_Click);
             // 
             // bnThem
             // 
@@ -254,6 +256,7 @@
             this.bnThem.Text = "Thêm";
             this.bnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnThem.UseVisualStyleBackColor = true;
+            this.bnThem.Click += new System.EventHandler(this.bnThem_Click);
             // 
             // dgvNV
             // 
