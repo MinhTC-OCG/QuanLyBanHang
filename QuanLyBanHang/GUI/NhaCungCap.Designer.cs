@@ -197,6 +197,7 @@
             this.bnNhapLai.Text = "Nhập lại";
             this.bnNhapLai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnNhapLai.UseVisualStyleBackColor = true;
+            this.bnNhapLai.Click += new System.EventHandler(this.bnNhapLai_Click);
             // 
             // bnThem
             // 
@@ -211,6 +212,7 @@
             this.bnThem.Text = "Thêm";
             this.bnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnThem.UseVisualStyleBackColor = true;
+            this.bnThem.Click += new System.EventHandler(this.bnThem_Click);
             // 
             // bnSua
             // 
@@ -225,6 +227,7 @@
             this.bnSua.Text = "Sửa";
             this.bnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnSua.UseVisualStyleBackColor = true;
+            this.bnSua.Click += new System.EventHandler(this.bnSua_Click);
             // 
             // bnXoa
             // 
@@ -239,6 +242,7 @@
             this.bnXoa.Text = "Xóa";
             this.bnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnXoa.UseVisualStyleBackColor = true;
+            this.bnXoa.Click += new System.EventHandler(this.bnXoa_Click);
             // 
             // bnXem
             // 
@@ -253,6 +257,7 @@
             this.bnXem.Text = "Xem";
             this.bnXem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnXem.UseVisualStyleBackColor = true;
+            this.bnXem.Click += new System.EventHandler(this.bnXem_Click);
             // 
             // bnThoat
             // 
@@ -266,6 +271,7 @@
             this.bnThoat.TabIndex = 14;
             this.bnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnThoat.UseVisualStyleBackColor = true;
+            this.bnThoat.Click += new System.EventHandler(this.bnThoat_Click);
             // 
             // bnTim
             // 
@@ -280,6 +286,7 @@
             this.bnTim.Text = "Tìm";
             this.bnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnTim.UseVisualStyleBackColor = true;
+            this.bnTim.Click += new System.EventHandler(this.bnTim_Click);
             // 
             // panel1
             // 
