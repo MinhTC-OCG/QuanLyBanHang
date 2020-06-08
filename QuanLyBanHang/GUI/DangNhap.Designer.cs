@@ -43,7 +43,7 @@
             // 
             this.btnDangNhap.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangNhap.Location = new System.Drawing.Point(217, 226);
+            this.btnDangNhap.Location = new System.Drawing.Point(217, 205);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(96, 46);
             this.btnDangNhap.TabIndex = 11;
@@ -78,7 +78,7 @@
             this.txtMatKhau.Multiline = true;
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
-            this.txtMatKhau.Size = new System.Drawing.Size(226, 30);
+            this.txtMatKhau.Size = new System.Drawing.Size(295, 25);
             this.txtMatKhau.TabIndex = 8;
             // 
             // txtTenDN
@@ -87,16 +87,16 @@
             this.txtTenDN.Location = new System.Drawing.Point(217, 115);
             this.txtTenDN.Multiline = true;
             this.txtTenDN.Name = "txtTenDN";
-            this.txtTenDN.Size = new System.Drawing.Size(226, 30);
+            this.txtTenDN.Size = new System.Drawing.Size(295, 25);
             this.txtTenDN.TabIndex = 7;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(533, 44);
+            this.panel1.Size = new System.Drawing.Size(538, 44);
             this.panel1.TabIndex = 6;
             // 
             // label1
@@ -104,7 +104,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(208, 8);
+            this.label1.Location = new System.Drawing.Point(213, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 25);
             this.label1.TabIndex = 0;
@@ -113,7 +113,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(223, 276);
+            this.linkLabel1.Location = new System.Drawing.Point(215, 254);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(41, 13);
             this.linkLabel1.TabIndex = 12;
@@ -127,7 +127,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.linkLabel1;
-            this.ClientSize = new System.Drawing.Size(534, 298);
+            this.ClientSize = new System.Drawing.Size(537, 298);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.label3);
@@ -137,7 +137,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DangNhap";
+            this.Text = "QUẢN LÝ BÁN HÀNG";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

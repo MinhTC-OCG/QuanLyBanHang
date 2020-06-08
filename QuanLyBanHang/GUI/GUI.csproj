@@ -45,6 +45,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCaoTheoNgay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCaoTheoNgay.Designer.cs">
+      <DependentUpon>BaoCaoTheoNgay.cs</DependentUpon>
+    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +129,9 @@
     <Compile Include="TrinhDo.Designer.cs">
       <DependentUpon>TrinhDo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BaoCaoTheoNgay.resx">
+      <DependentUpon>BaoCaoTheoNgay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +171,7 @@
     <EmbeddedResource Include="TrinhDo.resx">
       <DependentUpon>TrinhDo.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -171,6 +184,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\add.png" />
+    <Content Include="Images\addcart.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\deletecart.png" />
+    <Content Include="Images\exit.png" />
+    <Content Include="Images\loading.png" />
+    <Content Include="Images\print.png" />
+    <Content Include="Images\printer.png" />
+    <Content Include="Images\printers.png" />
+    <Content Include="Images\refresh.png" />
+    <Content Include="Images\reload.png" />
+    <Content Include="Images\retype.png" />
+    <Content Include="Images\search.png" />
+    <Content Include="Images\search1.png" />
+    <Content Include="Images\upatecart.png" />
+    <Content Include="Images\update.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -149,6 +149,7 @@
             this.BaoCaoTheoNgayMenuItem.Name = "BaoCaoTheoNgayMenuItem";
             this.BaoCaoTheoNgayMenuItem.Size = new System.Drawing.Size(273, 26);
             this.BaoCaoTheoNgayMenuItem.Text = "Báo cáo theo ngày";
+            this.BaoCaoTheoNgayMenuItem.Click += new System.EventHandler(this.BaoCaoTheoNgayMenuItem_Click);
             // 
             // BaoCaoTheoThangMenuItem
             // 
