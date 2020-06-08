@@ -27,7 +27,7 @@ namespace GUI
         Lop_DAL dal = new Lop_DAL();
         HoaDon_BUS hd = new HoaDon_BUS();
 
-        DataTable dtGetNamePrice, dtGetInfor, dtGetHoaDonTongHop, dtGetNameKH, dtGetNameNV;
+        DataTable dtGetNamePrice, dtGetInfor, dtGetHoaDonTongHop, dtGetNameKH, dtGetNameNV, dtGetHD;
 
 
 
@@ -478,6 +478,25 @@ namespace GUI
                     }
                 }
             }
+        }
+
+        private void btnXem_Click(object sender, EventArgs e)
+        {
+            HoaDon_Load(sender, e);
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn muốn thoát không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+                this.Dispose();
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            dtGetHD = new DataTable();
+            dtGetHD = hd.SearchHD(txtTim.Text);
+            dgvHoaDonTongHop.DataSource = dtGetHD;
         }
 
         private void btnThemHoaDon_Click(object sender, EventArgs e)
