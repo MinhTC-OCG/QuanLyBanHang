@@ -171,6 +171,7 @@
             this.bnNhapLai.Text = "Nhập lại";
             this.bnNhapLai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnNhapLai.UseVisualStyleBackColor = true;
+            this.bnNhapLai.Click += new System.EventHandler(this.bnNhapLai_Click);
             // 
             // bnThoat
             // 
@@ -184,6 +185,7 @@
             this.bnThoat.TabIndex = 11;
             this.bnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnThoat.UseVisualStyleBackColor = true;
+            this.bnThoat.Click += new System.EventHandler(this.bnThoat_Click);
             // 
             // bnXem
             // 
@@ -198,6 +200,7 @@
             this.bnXem.Text = "Xem";
             this.bnXem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnXem.UseVisualStyleBackColor = true;
+            this.bnXem.Click += new System.EventHandler(this.bnXem_Click);
             // 
             // bnTim
             // 
@@ -212,6 +215,7 @@
             this.bnTim.Text = "Tìm";
             this.bnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnTim.UseVisualStyleBackColor = true;
+            this.bnTim.Click += new System.EventHandler(this.bnTim_Click);
             // 
             // bnXoa
             // 
@@ -279,6 +283,7 @@
             this.dgvNV.RowTemplate.Height = 24;
             this.dgvNV.Size = new System.Drawing.Size(1120, 267);
             this.dgvNV.TabIndex = 17;
+            this.dgvNV.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNV_RowEnter);
             // 
             // MaNV
             // 

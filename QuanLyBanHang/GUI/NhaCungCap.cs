@@ -33,6 +33,7 @@ namespace GUI
             txtTenNCC.Text = "";
             txtDiaChi.Text = "";
             txtSoDT.Text = "";
+            txtMaNCC.Focus();
         }
 
         private void bnThem_Click(object sender, EventArgs e)
@@ -150,15 +151,15 @@ namespace GUI
             }
         }
 
-        /*private void bnTim_Click(object sender, EventArgs e)
+        private void bnTim_Click(object sender, EventArgs e)
         {
-            /*if (txtTK.TextLength == 0)
+            if (txtMaNCC.TextLength == 0)
                 MessageBox.Show("Bạn chưa nhập từ khóa tìm kiếm");
             else
             {
-                dgvNCC.DataSource = bus.SearchNhaCungCap(txtTK.Text);
+                dgvNCC.DataSource = bus.SearchNhaCungCap(txtMaNCC.Text);
             }
-        }*/
+        }
 
         private void dgvNCC_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
