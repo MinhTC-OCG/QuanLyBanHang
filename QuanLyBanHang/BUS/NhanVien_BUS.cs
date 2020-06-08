@@ -14,7 +14,7 @@ namespace BUS
 
         public DataTable ShowNhanVien()
         {
-            string sql = "SELECT * FROM Nhanvien12";
+            string sql = "SELECT * FROM NhanVien12";
             DataTable dt = new DataTable();
             dt = dal.getTable(sql);
             return dt;

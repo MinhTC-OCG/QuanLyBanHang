@@ -171,13 +171,13 @@ namespace GUI
             }
         }
 
-        private void bnTim_Click(object sender, EventArgs e)
+        /*(private void bnTim_Click(object sender, EventArgs e)
         {
             if (txtTK.TextLength == 0)
                 MessageBox.Show("Bạn chưa nhập từ khóa tìm kiếm");
             else
                 dgvNV.DataSource = bus.SearchNhanVien(txtTK.Text);
-        }
+        }*/
 
         private void bnXem_Click(object sender, EventArgs e)
         {
