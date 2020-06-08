@@ -126,7 +126,7 @@
             this.txtDiaChi.Multiline = true;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(392, 30);
-            this.txtDiaChi.TabIndex = 6;
+            this.txtDiaChi.TabIndex = 3;
             // 
             // txtHoTen
             // 
@@ -136,7 +136,7 @@
             this.txtHoTen.Multiline = true;
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(392, 30);
-            this.txtHoTen.TabIndex = 7;
+            this.txtHoTen.TabIndex = 2;
             // 
             // txtMaNV
             // 
@@ -146,7 +146,7 @@
             this.txtMaNV.Multiline = true;
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(392, 30);
-            this.txtMaNV.TabIndex = 8;
+            this.txtMaNV.TabIndex = 1;
             // 
             // txtSoDT
             // 
@@ -156,7 +156,7 @@
             this.txtSoDT.Multiline = true;
             this.txtSoDT.Name = "txtSoDT";
             this.txtSoDT.Size = new System.Drawing.Size(392, 30);
-            this.txtSoDT.TabIndex = 9;
+            this.txtSoDT.TabIndex = 4;
             // 
             // bnNhapLai
             // 
@@ -177,7 +177,7 @@
             this.bnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnThoat.Image = ((System.Drawing.Image)(resources.GetObject("bnThoat.Image")));
             this.bnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnThoat.Location = new System.Drawing.Point(1079, 212);
+            this.bnThoat.Location = new System.Drawing.Point(1079, 268);
             this.bnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bnThoat.Name = "bnThoat";
             this.bnThoat.Size = new System.Drawing.Size(53, 43);
@@ -361,6 +361,7 @@
             this.Name = "NhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QUẢN LÝ BÁN HÀNG";
+            this.Load += new System.EventHandler(this.NhanVien_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -14,7 +14,7 @@ namespace BUS
 
         public DataTable ShowNhaCungCap()
         {
-            string sql = "SELECT * FROM Nhacungcap12";
+            string sql = "SELECT * FROM NhaCungCap12";
             DataTable dt = new DataTable();
             dt = dal.getTable(sql);
             return dt;

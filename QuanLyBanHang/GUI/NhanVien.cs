@@ -18,8 +18,8 @@ namespace GUI
         {
             InitializeComponent();
         }
-        NhanVien_BUS bus = new NhanVien_BUS();
-        NhanVien_DTO dto = new NhanVien_DTO();
+        public NhanVien_BUS bus = new NhanVien_BUS();
+        public NhanVien_DTO dto = new NhanVien_DTO();
         DataTable dtNhanVien,dtTrinhDo;
         public void LoadData()
         {
@@ -138,7 +138,7 @@ namespace GUI
                     if (dem == 0)
                     {
                         bus.UpdateNhanvien(dto.MaNV, dto.HoTen, dto.DiaChi, dto.SoDT, dto.MaTD);
-                        NhanVien_Load(sender, e);
+                        NhanVien_Load_1(sender, e);
                         MessageBox.Show("Cập nhập nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -154,11 +154,6 @@ namespace GUI
             }
         }
 
-        private void NhanVien_Load(object sender, EventArgs e)
-        {
-            LoadData();
-            LoadComboBox();
-        }
 
         private void bnXoa_Click(object sender, EventArgs e)
         {
@@ -182,6 +177,12 @@ namespace GUI
         private void bnXem_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void NhanVien_Load_1(object sender, EventArgs e)
+        {
+            LoadData();
+            LoadComboBox();
         }
 
         private void bnThoat_Click(object sender, EventArgs e)
