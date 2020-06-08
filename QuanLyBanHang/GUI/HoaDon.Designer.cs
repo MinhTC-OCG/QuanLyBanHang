@@ -89,6 +89,7 @@
             this.btnSuaHoaDon = new System.Windows.Forms.Button();
             this.btnXoaHoaDon = new System.Windows.Forms.Button();
             this.dgvThongtinhang = new System.Windows.Forms.DataGridView();
+            this.btnXem = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -496,13 +497,14 @@
             this.btnTim.Text = "Tìm";
             this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // btnIn
             // 
             this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
             this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIn.Location = new System.Drawing.Point(908, 752);
+            this.btnIn.Location = new System.Drawing.Point(795, 752);
             this.btnIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(80, 43);
@@ -524,6 +526,7 @@
             this.btnThoat.TabIndex = 9;
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // txtTim
             // 
@@ -750,11 +753,27 @@
             this.dgvThongtinhang.TabIndex = 2;
             this.dgvThongtinhang.Click += new System.EventHandler(this.dgvThongtinhang_Click);
             // 
+            // btnXem
+            // 
+            this.btnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXem.Image = ((System.Drawing.Image)(resources.GetObject("btnXem.Image")));
+            this.btnXem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXem.Location = new System.Drawing.Point(938, 752);
+            this.btnXem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(80, 43);
+            this.btnXem.TabIndex = 16;
+            this.btnXem.Text = "Xem";
+            this.btnXem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
+            // 
             // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1535, 804);
+            this.Controls.Add(this.btnXem);
             this.Controls.Add(this.btnXoaHoaDon);
             this.Controls.Add(this.btnSuaHoaDon);
             this.Controls.Add(this.dgvHoaDonTongHop);
@@ -853,5 +872,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTienHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTienHD;
         private System.Windows.Forms.DataGridView dgvThongtinhang;
+        private System.Windows.Forms.Button btnXem;
     }
 }

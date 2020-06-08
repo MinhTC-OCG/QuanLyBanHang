@@ -170,6 +170,7 @@ namespace BUS
             dal.ExecuteNonQuery(sql);
         }
 
+        
 
 
         public void DeleteHoaDonTongHop(string mahd)
@@ -178,5 +179,12 @@ namespace BUS
             dal.ExecuteNonQuery(sql);
         }
 
+        public DataTable SearchHD(string mahd)
+        {
+            string sql = "SELECT *FROM HoaDonTongHop12 WHERE MaHD = '" + mahd + "'";
+            DataTable dt = new DataTable();
+            dt = dal.getTable(sql);
+            return dt;
+        }
     }
 }
