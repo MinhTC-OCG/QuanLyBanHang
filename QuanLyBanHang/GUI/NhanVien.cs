@@ -45,6 +45,7 @@ namespace GUI
             txtHoTen.ResetText();
             txtDiaChi.ResetText();
             txtSoDT.ResetText();
+            txtMaNV.Focus();
         }
 
         private void dgvNV_RowEnter(object sender, DataGridViewCellEventArgs e)

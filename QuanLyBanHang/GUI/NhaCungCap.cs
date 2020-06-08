@@ -33,6 +33,7 @@ namespace GUI
             txtTenNCC.Text = "";
             txtDiaChi.Text = "";
             txtSoDT.Text = "";
+            txtMaNCC.Focus();
         }
 
         private void bnThem_Click(object sender, EventArgs e)
