@@ -283,6 +283,7 @@
             this.dgvNV.RowTemplate.Height = 24;
             this.dgvNV.Size = new System.Drawing.Size(1120, 267);
             this.dgvNV.TabIndex = 17;
+            this.dgvNV.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNV_RowEnter);
             // 
             // MaNV
             // 

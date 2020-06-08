@@ -75,6 +75,7 @@
             this.dgvNCC.RowTemplate.Height = 24;
             this.dgvNCC.Size = new System.Drawing.Size(1121, 283);
             this.dgvNCC.TabIndex = 0;
+            this.dgvNCC.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNCC_RowEnter);
             // 
             // MaNCC
             // 
