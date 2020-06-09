@@ -181,10 +181,20 @@ namespace BUS
 
         public DataTable SearchHD(string mahd)
         {
-            string sql = "SELECT *FROM HoaDonTongHop12 WHERE MaHD = '" + mahd + "'";
+            string sql = "SELECT * FROM HoaDonTongHop12 WHERE MaHD = '" + mahd + "'";
             DataTable dt = new DataTable();
             dt = dal.getTable(sql);
             return dt;
+        }
+
+
+        /**
+         * INSERT to LichSuHang12
+         */
+         public void InsertLichSuHang(string mahang,string ngaycapnhat)
+        {
+            string sql = "INSERT INTO LichSuHang12 VALUES('"+ mahang+"',N'"+tenhang+"','"+soluongcon+"','" + ngaycapnhat + "'";
+            dal.ExecuteNonQuery(sql);
         }
     }
 }
