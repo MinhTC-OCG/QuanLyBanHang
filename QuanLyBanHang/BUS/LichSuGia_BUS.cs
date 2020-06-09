@@ -31,7 +31,7 @@ namespace BUS
             string sql = "Insert into LichSuGia12 values('"+ mahang +"','"+ngaybatdau+"','"+ngayketthuc+"',"+ dongia +",'"+ngaycapnhat+"')";
             dal.ExecuteNonQuery(sql);
         }
-        public void UpdateLoaiHang(string mahang, string ngaybatdau, string ngayketthuc, int dongia, string ngaycapnhat)
+        public void UpdateLichSuGia(string mahang, string ngaybatdau, string ngayketthuc, int dongia, string ngaycapnhat)
         {
             string sql = "update LichSuGia12 set NgayBD='"+ ngaybatdau +"',NgayKT='"+ ngayketthuc +"',DonG= "+ dongia +",NgayCN='"+ngaycapnhat+"' where Mah='"+mahang+"'";
             dal.ExecuteNonQuery(sql);

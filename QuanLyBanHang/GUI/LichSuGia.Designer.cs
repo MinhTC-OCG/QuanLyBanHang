@@ -76,6 +76,7 @@
             this.btnThoat.TabIndex = 37;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnXem
             // 
@@ -198,7 +199,7 @@
             this.dgvLichSuGia.RowHeadersVisible = false;
             this.dgvLichSuGia.Size = new System.Drawing.Size(900, 271);
             this.dgvLichSuGia.TabIndex = 26;
-            this.dgvLichSuGia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichSuGia_CellContentClick);
+            this.dgvLichSuGia.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.chondgv);
             // 
             // MaH
             // 

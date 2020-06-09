@@ -100,11 +100,6 @@ namespace GUI
             }
         }
 
-        private void dgvLichSuGia_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dtpNgayCapNhat_ValueChanged(object sender, EventArgs e)
         {
 
@@ -114,6 +109,44 @@ namespace GUI
         {
             dtpNgayCapNhat.Show();
             label6.Show();
+            int result = DateTime.Compare(dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date);
+            if (txtDonGia.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập đơn giá, nhập lại!");
+            }
+            else if (result > 0)
+            {
+                MessageBox.Show("Sai ngày bắt đầu và ngày kết thúc!");
+            }
+            else
+            {
+                DataTable dtMaH = new DataTable();
+                dtMaH.Clear();
+                SqlConnection conn = dal.getConnect();
+                conn.Open();
+                SqlDataAdapter ad = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + cbMaHang.Text + "'", conn);
+                ad.Fill(dtMaH);
+
+                dtpNgayBatDau.Format = DateTimePickerFormat.Custom;
+                dtpNgayBatDau.CustomFormat = "MM/dd/yyyy";
+
+                dtpNgayKetThuc.Format = DateTimePickerFormat.Custom;
+                dtpNgayKetThuc.CustomFormat = "MM/dd/yyyy";
+
+
+                dtpNgayCapNhat.CustomFormat = "MM/dd/yyyy";
+
+                dto.MaHang_1 = dtMaH.Rows[0]["MaH"].ToString().Trim();
+                dto.NgayBatDau_1 = dtpNgayBatDau.Text.Trim();
+                dto.NgayKetThuc_1 = dtpNgayKetThuc.Text.Trim();
+                dto.NgayCapNhat_1 = dtpNgayCapNhat.Text.Trim();
+                dto.DonGia_1 = Int32.Parse(txtDonGia.Text);
+
+
+                bus.UpdateLichSuGia(dto.MaHang_1, dto.NgayBatDau_1, dto.NgayKetThuc_1, dto.DonGia_1, dto.NgayCapNhat_1);
+                MessageBox.Show("Thêm nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData();
+            }
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -167,6 +200,18 @@ namespace GUI
         private void btnXem_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void chondgv(object sender, DataGridViewCellEventArgs e)
+        {
+            int c = e.RowIndex;
+            testbox.Text = dgvLichSuGia.Rows[c].Cells[0].Value.ToString();
+            txtDonGia.Text= dgvLichSuGia.Rows[c].Cells[3].Value.ToString();
         }
     }
 }

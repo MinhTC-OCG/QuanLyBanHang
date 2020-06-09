@@ -150,6 +150,7 @@
             this.btnNhapLai.TabIndex = 32;
             this.btnNhapLai.Text = "Nhập lại";
             this.btnNhapLai.UseVisualStyleBackColor = false;
+            this.btnNhapLai.Click += new System.EventHandler(this.btnNhapLai_Click);
             // 
             // txtDonGia
             // 
