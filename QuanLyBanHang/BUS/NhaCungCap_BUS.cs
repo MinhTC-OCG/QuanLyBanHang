@@ -14,7 +14,7 @@ namespace BUS
 
         public DataTable ShowNhaCungCap()
         {
-            string sql = "SELECT * FROM Nhacungcap12";
+            string sql = "SELECT * FROM NhaCungCap12";
             DataTable dt = new DataTable();
             dt = dal.getTable(sql);
             return dt;
@@ -39,9 +39,9 @@ namespace BUS
             dal.ExecuteNonQuery(sql);
         }
 
-        public DataTable SearchNhaCungCap(string mancc)
+        public DataTable SearchNhaCungCap(string key)
         {
-            string sql = "SELECT *FROM NhaCungCap12 WHERE MaNCC like '%" + mancc + "'";
+            string sql = "SELECT * FROM NhaCungCap12 WHERE MaNCC like N'%" + key + "%'";
             DataTable dt = new DataTable();
             dt = dal.getTable(sql);
             return dt;
