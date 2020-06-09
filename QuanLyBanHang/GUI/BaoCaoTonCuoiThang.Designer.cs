@@ -30,12 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.bnIn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lbNguoiLap = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbDate = new System.Windows.Forms.Label();
             this.dgvBCHTonThang = new System.Windows.Forms.DataGridView();
-            this.bnIn = new System.Windows.Forms.Button();
             this.bnXuat = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +67,16 @@
             this.label1.Size = new System.Drawing.Size(478, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "BÁO CÁO HÀNG TỒN CUỐI THÁNG";
+            // 
+            // bnIn
+            // 
+            this.bnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnIn.Location = new System.Drawing.Point(12, 18);
+            this.bnIn.Name = "bnIn";
+            this.bnIn.Size = new System.Drawing.Size(49, 32);
+            this.bnIn.TabIndex = 7;
+            this.bnIn.Text = "In";
+            this.bnIn.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -128,16 +138,6 @@
             this.dgvBCHTonThang.Size = new System.Drawing.Size(1462, 442);
             this.dgvBCHTonThang.TabIndex = 6;
             // 
-            // bnIn
-            // 
-            this.bnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnIn.Location = new System.Drawing.Point(12, 18);
-            this.bnIn.Name = "bnIn";
-            this.bnIn.Size = new System.Drawing.Size(49, 32);
-            this.bnIn.TabIndex = 7;
-            this.bnIn.Text = "In";
-            this.bnIn.UseVisualStyleBackColor = true;
-            // 
             // bnXuat
             // 
             this.bnXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -147,6 +147,7 @@
             this.bnXuat.TabIndex = 8;
             this.bnXuat.Text = "Xuất";
             this.bnXuat.UseVisualStyleBackColor = true;
+            this.bnXuat.Click += new System.EventHandler(this.bnXuat_Click);
             // 
             // dateTimePicker1
             // 
@@ -165,24 +166,28 @@
             // 
             // TenH
             // 
+            this.TenH.DataPropertyName = "TenH";
             this.TenH.HeaderText = "Tên hàng";
             this.TenH.MinimumWidth = 6;
             this.TenH.Name = "TenH";
             // 
             // DonVT
             // 
+            this.DonVT.DataPropertyName = "DonVT";
             this.DonVT.HeaderText = "Đơn vị";
             this.DonVT.MinimumWidth = 6;
             this.DonVT.Name = "DonVT";
             // 
             // SLC
             // 
+            this.SLC.DataPropertyName = "SLC";
             this.SLC.HeaderText = "Số lượng có";
             this.SLC.MinimumWidth = 6;
             this.SLC.Name = "SLC";
             // 
             // GhiChu
             // 
+            this.GhiChu.DataPropertyName = "GhiChu";
             this.GhiChu.HeaderText = "Ghi Chú";
             this.GhiChu.MinimumWidth = 6;
             this.GhiChu.Name = "GhiChu";
@@ -202,6 +207,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "BaoCaoTonCuoiThang";
             this.Text = "BaoCaoTonCuoiThang";
+            this.Load += new System.EventHandler(this.BaoCaoTonCuoiThang_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBCHTonThang)).EndInit();

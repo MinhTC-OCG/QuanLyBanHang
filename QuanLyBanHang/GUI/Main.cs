@@ -179,5 +179,11 @@ namespace GUI
             BaoCaoTheoNgay bc = new BaoCaoTheoNgay();
             bc.Show();
         }
+
+        private void BaoCaoTheoThangMenuItem_Click(object sender, EventArgs e)
+        {
+            BaoCaoTonCuoiThang bc = new BaoCaoTonCuoiThang();
+            bc.Show();
+        }
     }
 }
