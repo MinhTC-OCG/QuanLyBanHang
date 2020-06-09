@@ -116,13 +116,13 @@ namespace BUS
 
         public void UpdateHDChiTiet(string mahd, string mahang, int soluong)
         {
-            string sql = "UPDATE HoaDonChiTiet12 SET SoLuong='" + soluong + "' WHERE MaHD='"+mahd+"' AND MaH='"+mahang+"'";
+            string sql = "UPDATE HoaDonChiTiet12 SET SoLuong='" + soluong + "' WHERE MaHD='" + mahd + "' AND MaH='" + mahang + "'";
             dal.ExecuteNonQuery(sql);
         }
 
         public void DeleteHDChiTiet(string mahd)
         {
-            string sql = "DELETE HoaDonChiTiet12 WHERE MaHD ='" + mahd+"'";
+            string sql = "DELETE HoaDonChiTiet12 WHERE MaHD ='" + mahd + "'";
             dal.ExecuteNonQuery(sql);
         }
 
@@ -157,11 +157,11 @@ namespace BUS
                 "',DonGiaHD='" + dongia +
                 "',ThanhTienHD='" + thanhtien +
                 "',TongTienHD='" + tongtien +
-                "' WHERE MaHD ='" + mahd + "' AND MaHang ='"+mahang+"'";
+                "' WHERE MaHD ='" + mahd + "' AND MaHang ='" + mahang + "'";
             dal.ExecuteNonQuery(sql);
         }
 
-        public void UpdateHoaDonTongHop2(string mahd, string ngaylaphd,string tongtien)
+        public void UpdateHoaDonTongHop2(string mahd, string ngaylaphd, string tongtien)
         {
             string sql = "UPDATE HoaDonTongHop12 SET " +
                 "NgayLapHD ='" + ngaylaphd +
@@ -169,9 +169,6 @@ namespace BUS
                 "' WHERE MaHD ='" + mahd + "'";
             dal.ExecuteNonQuery(sql);
         }
-
-        
-
 
         public void DeleteHoaDonTongHop(string mahd)
         {
@@ -181,10 +178,31 @@ namespace BUS
 
         public DataTable SearchHD(string mahd)
         {
-            string sql = "SELECT *FROM HoaDonTongHop12 WHERE MaHD = '" + mahd + "'";
+            string sql = "SELECT * FROM HoaDonTongHop12 WHERE MaHD = '" + mahd + "'";
             DataTable dt = new DataTable();
             dt = dal.getTable(sql);
             return dt;
+        }
+
+        //
+        public DataTable getLichSuHang()
+        {
+            string sql = "Select MaHang FROM LichSuHang12";
+            DataTable dt = new DataTable();
+            dt = dal.getTable(sql);
+            return dt;
+        }
+
+        public void InsertLSHang(string mh, string th, string dv, string soluongcon, DateTime ngaycapnhat)
+        {
+            string sql = "Insert into LichSuHang12 values ('" + mh + "',N'" + th + "',N'" + dv + "','" + soluongcon + "','" + ngaycapnhat + "')";
+            dal.ExecuteNonQuery(sql);
+        }
+
+        public void UpdateLSHang(string mh, string th, string dv, string soluongcon, DateTime ngaycapnhat)
+        {
+            string sql = "UPDATE LichSuHang12 SET TenHang=N'" + th + "',DonVi=N'" + dv + "',SoLuongCon='" + soluongcon + "',NgayCapNhat='" + ngaycapnhat + "' WHERE MaHang ='"+mh+"'";
+            dal.ExecuteNonQuery(sql);
         }
     }
 }

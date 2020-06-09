@@ -21,7 +21,7 @@ namespace GUI
         public void formatDPicker()
         {
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "yyyy-MM";
+            dateTimePicker1.CustomFormat = "yyyy-MM-28";
         }
        
         private void BaoCaoTonCuoiThang_Load(object sender, EventArgs e)
@@ -29,16 +29,17 @@ namespace GUI
             formatDPicker();
             lbNguoiLap.Text = DangNhap.tendangnhap;
             lbDate.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            
         }
 
         private void bnXuat_Click(object sender, EventArgs e)
         {
-            string ym = dateTimePicker1.Value.ToString("yyyy-MM");
-            string[] mang = ym.Split('-');
-            string year = mang[0];
-            string month = mang[1];
+            string t = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            //string[] mang = ym.Split('-');
+            //string year = mang[0];
+            //string month = mang[1];
             DataTable dt = new DataTable();
-            dt = bus.BCTonThang(year, month);
+            dt = bus.BCTonThang(t);
             dgvBCHTonThang.DataSource = dt;
         }
     }
