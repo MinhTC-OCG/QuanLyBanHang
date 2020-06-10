@@ -116,13 +116,13 @@ namespace BUS
 
         public void UpdateHDChiTiet(string mahd, string mahang, int soluong)
         {
-            string sql = "UPDATE HoaDonChiTiet12 SET SoLuong='" + soluong + "' WHERE MaHD='"+mahd+"' AND MaH='"+mahang+"'";
+            string sql = "UPDATE HoaDonChiTiet12 SET SoLuong='" + soluong + "' WHERE MaHD='" + mahd + "' AND MaH='" + mahang + "'";
             dal.ExecuteNonQuery(sql);
         }
 
         public void DeleteHDChiTiet(string mahd)
         {
-            string sql = "DELETE HoaDonChiTiet12 WHERE MaHD ='" + mahd+"'";
+            string sql = "DELETE HoaDonChiTiet12 WHERE MaHD ='" + mahd + "'";
             dal.ExecuteNonQuery(sql);
         }
 
@@ -157,11 +157,11 @@ namespace BUS
                 "',DonGiaHD='" + dongia +
                 "',ThanhTienHD='" + thanhtien +
                 "',TongTienHD='" + tongtien +
-                "' WHERE MaHD ='" + mahd + "' AND MaHang ='"+mahang+"'";
+                "' WHERE MaHD ='" + mahd + "' AND MaHang ='" + mahang + "'";
             dal.ExecuteNonQuery(sql);
         }
 
-        public void UpdateHoaDonTongHop2(string mahd, string ngaylaphd,string tongtien)
+        public void UpdateHoaDonTongHop2(string mahd, string ngaylaphd, string tongtien)
         {
             string sql = "UPDATE HoaDonTongHop12 SET " +
                 "NgayLapHD ='" + ngaylaphd +
@@ -170,7 +170,7 @@ namespace BUS
             dal.ExecuteNonQuery(sql);
         }
 
-        
+
 
 
         public void DeleteHoaDonTongHop(string mahd)
@@ -189,11 +189,25 @@ namespace BUS
 
 
         /**
-         * INSERT to LichSuHang12
+         * LichSuHang12 Table
          */
-         public void InsertLichSuHang(string mahang,string tenhang,int soluongcon,string ngaycapnhat)
+        public DataTable getLichSuHang()
         {
-            string sql = "INSERT INTO LichSuHang12 VALUES('"+ mahang+"',N'"+tenhang+"','"+soluongcon+"','" + ngaycapnhat + "'";
+            DataTable dt = new DataTable();
+            string sql = "SELECT * FROM LichSuHang12";
+            dt = dal.getTable(sql);
+            return dt;
+        }
+
+        public void InsertLSHang(string mahang, string tenhang, string donvi, int soluongcon, string ngaycapnhat)
+        {
+            string sql = "INSERT INTO LichSuHang12 VALUES('" + mahang + "',N'" + tenhang + "',N'" + donvi + "','" + soluongcon + "','" + ngaycapnhat + "')";
+            dal.ExecuteNonQuery(sql);
+        }
+
+        public void UpdateLSHang(string mahang, string tenhang, string donvi, int soluongcon, string ngaycapnhat)
+        {
+            string sql = "UPDATE LichSuHang12 SET TenHang='" + tenhang + "',DonVi=N'" + donvi + "',SoLuongCon ='" + soluongcon + "',NgayCapNhat='" + ngaycapnhat + "' WHERE MaHang='"+mahang+"'";
             dal.ExecuteNonQuery(sql);
         }
     }
