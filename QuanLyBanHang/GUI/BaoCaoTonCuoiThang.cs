@@ -14,22 +14,46 @@ using iTextSharp.text.pdf;
 
 namespace GUI
 {
-    public partial class BaoCaoTheoNgay : Form
+    public partial class BaoCaoTonCuoiThang : Form
     {
-        DataTable dtInfo;
-        BaoCao_BUS bus = new BaoCao_BUS();
-        public BaoCaoTheoNgay()
+        BCHTonThang_BUS bus = new BCHTonThang_BUS();
+
+        public BaoCaoTonCuoiThang()
         {
             InitializeComponent();
         }
-
-        private void btnIn_Click(object sender, EventArgs e)
+        public void formatDPicker()
         {
-            if (dgvBaoCao.Rows.Count > 0)
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "yyyy-MM";
+        }
+       
+        private void BaoCaoTonCuoiThang_Load(object sender, EventArgs e)
+        {
+            formatDPicker();
+            lbNguoiLap.Text = DangNhap.tendangnhap;
+            lbDate.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            
+        }
+
+        private void bnXuat_Click(object sender, EventArgs e)
+        {
+            string ym = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            string[] mang = ym.Split('-');
+            string year = mang[0];
+            string month = mang[1];
+            DataTable dt = new DataTable();
+            dt = bus.BCTonThang(year,month);
+            dgvBCHTonThang.DataSource = dt;
+        }
+
+        private void bnIn_Click(object sender, EventArgs e)
+        {
+            if (dgvBCHTonThang.Rows.Count > 0)
             {
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Filter = "PDF (*.pdf)|*.pdf";
-                sfd.FileName = "Baocaotheongay.pdf";
+                sfd.FileName = "Baocaotheothang.pdf";
                 bool fileError = false;
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
@@ -50,18 +74,18 @@ namespace GUI
                 {
                     try
                     {
-                        PdfPTable pdfTable = new PdfPTable(dgvBaoCao.Columns.Count);
+                        PdfPTable pdfTable = new PdfPTable(dgvBCHTonThang.Columns.Count);
                         pdfTable.DefaultCell.Padding = 3;
                         pdfTable.WidthPercentage = 100;
                         pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
 
-                        foreach (DataGridViewColumn column in dgvBaoCao.Columns)
+                        foreach (DataGridViewColumn column in dgvBCHTonThang.Columns)
                         {
                             PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
                             pdfTable.AddCell(cell);
                         }
 
-                        foreach (DataGridViewRow row in dgvBaoCao.Rows)
+                        foreach (DataGridViewRow row in dgvBCHTonThang.Rows)
                         {
                             foreach (DataGridViewCell cell in row.Cells)
                             {
@@ -88,51 +112,12 @@ namespace GUI
                 }
             }
         }
-
-        private void BaoCao_Load(object sender, EventArgs e)
+        private void dgvBCHTonThang_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-            string dateCurrent = DateTime.Now.ToString("dd-MM-yyyy");
-            lbNgayLap.Text = dateCurrent;
-            lbNguoiLap.Text = DangNhap.tendangnhap;
-        }
-
-        public void HienThiBaoCao()
-        {
-            try
+            for (int i = 0; i < dgvBCHTonThang.Rows.Count; i++)
             {
-                string ngaychon = dtPicker.Value.Date.ToString("yyyy-MM-dd");
-                string fmngaychon = dtPicker.Value.Date.ToString("dd-MM-yyyy");
-                lbNgayLayDuLieu.Text = fmngaychon;
-                dtInfo = new DataTable();
-                dtInfo = bus.GetReport(ngaychon);
-                if (dtInfo.Rows.Count > 0)
-                {
-                    dgvBaoCao.DataSource = dtInfo;
-                }
-                else
-                {
-                    MessageBox.Show("Không có mặt hàng nào được bán vào ngày " + ngaychon);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Không có dữ liệu!");
-            }
-
-        }
-
-        private void btnXuat_Click(object sender, EventArgs e)
-        {
-            HienThiBaoCao();
-        }
-
-        private void dgvBaoCao_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-        {
-            for (int i = 0; i < dgvBaoCao.Rows.Count; i++)
-            {
-                dgvBaoCao.Rows[i].Cells[0].Value = i + 1;
+                dgvBCHTonThang.Rows[i].Cells[0].Value = i + 1;
             }
         }
-
     }
 }
