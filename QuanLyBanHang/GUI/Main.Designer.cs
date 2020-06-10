@@ -69,7 +69,7 @@
             // 
             this.LoaiHangMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoaiHangMenuItem.Name = "LoaiHangMenuItem";
-            this.LoaiHangMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.LoaiHangMenuItem.Size = new System.Drawing.Size(221, 32);
             this.LoaiHangMenuItem.Text = "Loại hàng";
             this.LoaiHangMenuItem.Click += new System.EventHandler(this.LoaiHangMenuItem_Click);
             // 
@@ -77,7 +77,7 @@
             // 
             this.HangMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HangMenuItem.Name = "HangMenuItem";
-            this.HangMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.HangMenuItem.Size = new System.Drawing.Size(221, 32);
             this.HangMenuItem.Text = "Hàng";
             this.HangMenuItem.Click += new System.EventHandler(this.HangMenuItem_Click);
             // 
@@ -85,7 +85,7 @@
             // 
             this.NCCMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NCCMenuItem.Name = "NCCMenuItem";
-            this.NCCMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.NCCMenuItem.Size = new System.Drawing.Size(221, 32);
             this.NCCMenuItem.Text = "Nhà cung cấp";
             this.NCCMenuItem.Click += new System.EventHandler(this.NCCMenuItem_Click);
             // 
@@ -93,7 +93,7 @@
             // 
             this.NhanVienMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NhanVienMenuItem.Name = "NhanVienMenuItem";
-            this.NhanVienMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.NhanVienMenuItem.Size = new System.Drawing.Size(221, 32);
             this.NhanVienMenuItem.Text = "Nhân viên";
             this.NhanVienMenuItem.Click += new System.EventHandler(this.NhanVienMenuItem_Click);
             // 
@@ -101,7 +101,7 @@
             // 
             this.KhachHangMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KhachHangMenuItem.Name = "KhachHangMenuItem";
-            this.KhachHangMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.KhachHangMenuItem.Size = new System.Drawing.Size(221, 32);
             this.KhachHangMenuItem.Text = "Khách hàng";
             this.KhachHangMenuItem.Click += new System.EventHandler(this.KhachHangMenuItem_Click);
             // 
@@ -109,7 +109,7 @@
             // 
             this.LichSuGiaMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LichSuGiaMenuItem.Name = "LichSuGiaMenuItem";
-            this.LichSuGiaMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.LichSuGiaMenuItem.Size = new System.Drawing.Size(221, 32);
             this.LichSuGiaMenuItem.Text = "Lịch sử giá";
             this.LichSuGiaMenuItem.Click += new System.EventHandler(this.LichSuGiaMenuItem_Click);
             // 
@@ -117,7 +117,7 @@
             // 
             this.TrinhDoMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TrinhDoMenuItem.Name = "TrinhDoMenuItem";
-            this.TrinhDoMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.TrinhDoMenuItem.Size = new System.Drawing.Size(221, 32);
             this.TrinhDoMenuItem.Text = "Trình độ";
             this.TrinhDoMenuItem.Click += new System.EventHandler(this.TrinhDoMenuItem_Click);
             // 
@@ -125,7 +125,7 @@
             // 
             this.HoaDonMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoaDonMenuItem.Name = "HoaDonMenuItem";
-            this.HoaDonMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.HoaDonMenuItem.Size = new System.Drawing.Size(221, 32);
             this.HoaDonMenuItem.Text = "Hóa đơn";
             this.HoaDonMenuItem.Click += new System.EventHandler(this.HoaDonMenuItem_Click);
             // 
@@ -147,7 +147,7 @@
             // 
             this.BaoCaoTheoNgayMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaoCaoTheoNgayMenuItem.Name = "BaoCaoTheoNgayMenuItem";
-            this.BaoCaoTheoNgayMenuItem.Size = new System.Drawing.Size(273, 26);
+            this.BaoCaoTheoNgayMenuItem.Size = new System.Drawing.Size(343, 32);
             this.BaoCaoTheoNgayMenuItem.Text = "Báo cáo theo ngày";
             this.BaoCaoTheoNgayMenuItem.Click += new System.EventHandler(this.BaoCaoTheoNgayMenuItem_Click);
             // 
@@ -155,33 +155,36 @@
             // 
             this.BaoCaoTheoThangMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaoCaoTheoThangMenuItem.Name = "BaoCaoTheoThangMenuItem";
-            this.BaoCaoTheoThangMenuItem.Size = new System.Drawing.Size(273, 26);
+            this.BaoCaoTheoThangMenuItem.Size = new System.Drawing.Size(343, 32);
             this.BaoCaoTheoThangMenuItem.Text = "Báo cáo theo tháng";
+            this.BaoCaoTheoThangMenuItem.Click += new System.EventHandler(this.BaoCaoTheoThangMenuItem_Click);
             // 
             // BaoCaoDoanhSoMenuItem
             // 
             this.BaoCaoDoanhSoMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaoCaoDoanhSoMenuItem.Name = "BaoCaoDoanhSoMenuItem";
-            this.BaoCaoDoanhSoMenuItem.Size = new System.Drawing.Size(273, 26);
+            this.BaoCaoDoanhSoMenuItem.Size = new System.Drawing.Size(343, 32);
             this.BaoCaoDoanhSoMenuItem.Text = "Báo cáo doanh số bán hàng";
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnTSQuanLy,
             this.mnTSBaoCao});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1069, 54);
+            this.menuStrip1.Size = new System.Drawing.Size(1425, 54);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // btnDangXuat
             // 
-            this.btnDangXuat.Location = new System.Drawing.Point(979, 0);
+            this.btnDangXuat.Location = new System.Drawing.Point(1305, 0);
+            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(90, 54);
+            this.btnDangXuat.Size = new System.Drawing.Size(120, 66);
             this.btnDangXuat.TabIndex = 1;
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.UseVisualStyleBackColor = true;
@@ -189,12 +192,13 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1069, 611);
+            this.ClientSize = new System.Drawing.Size(1425, 752);
             this.Controls.Add(this.btnDangXuat);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QUẢN LÝ BÁN HÀNG";

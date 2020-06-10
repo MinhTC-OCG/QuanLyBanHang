@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BUS;
 using DAL;
-using DTO;
-using BUS;
-using System.Diagnostics;
-using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System;
+using System.Data;
+using System.IO;
+using System.Windows.Forms;
 
 namespace GUI
 {
@@ -26,10 +18,9 @@ namespace GUI
 
         Lop_DAL dal = new Lop_DAL();
         HoaDon_BUS hd = new HoaDon_BUS();
+        Hang_BUS hangcapnhat = new Hang_BUS();
 
-        DataTable dtGetNamePrice, dtGetInfor, dtGetHoaDonTongHop, dtGetNameKH, dtGetNameNV, dtGetHD;
-
-
+        DataTable dtGetNamePrice, dtGetInfor, dtGetHoaDonTongHop, dtGetNameKH, dtGetNameNV, dtGetHD, dtHangCapNhat, dtLichSuHang;
 
         public HoaDon()
         {
@@ -560,6 +551,44 @@ namespace GUI
                             hd.DeleteAllCart();
                             HoaDon_Load(sender, e);
                             btnNhaplai_Click(sender, e);
+
+
+
+                            dtHangCapNhat = hangcapnhat.ShowHang();
+                            dtLichSuHang = hd.getLichSuHang();
+
+                            if (dtLichSuHang.Rows.Count > 0)
+                            {
+                                foreach (DataRow r1 in dtLichSuHang.Rows)
+                                {
+                                    foreach (DataRow r2 in dtHangCapNhat.Rows)
+                                    {
+                                        string mh = r2["MaH"].ToString();
+                                        string th = r2["TenH"].ToString();
+                                        string dv = r2["DonVT"].ToString();
+                                        string sl = r2["SLC"].ToString();
+                                        DateTime ngaycapnhat = DateTime.Now;
+
+                                        if (r1["MaHang"].ToString().Trim() == r2["MaH"].ToString().Trim())
+                                        {
+                                            hd.UpdateLSHang(mh, th, dv, sl, ngaycapnhat);
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                foreach (DataRow r2 in dtHangCapNhat.Rows)
+                                {
+                                    string mh = r2["MaH"].ToString();
+                                    string th = r2["TenH"].ToString();
+                                    string dv = r2["DonVT"].ToString();
+                                    string sl = r2["SLC"].ToString();
+                                    DateTime ngaycapnhat = DateTime.Now;
+                                    hd.InsertLSHang(mh, th, dv, sl, ngaycapnhat);
+
+                                }
+                            }
                         }
                         else
                         {
@@ -571,10 +600,10 @@ namespace GUI
                         MessageBox.Show("Lỗi, hãy mua hàng trước khi lập hóa đơn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
-                    MessageBox.Show("Không tạo được hóa đơn, thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine(ex);
+                    //MessageBox.Show("Không tạo được hóa đơn, thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
