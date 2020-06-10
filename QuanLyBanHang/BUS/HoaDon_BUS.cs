@@ -191,7 +191,7 @@ namespace BUS
         /**
          * INSERT to LichSuHang12
          */
-         public void InsertLichSuHang(string mahang,string ngaycapnhat)
+         public void InsertLichSuHang(string mahang,string tenhang,int soluongcon,string ngaycapnhat)
         {
             string sql = "INSERT INTO LichSuHang12 VALUES('"+ mahang+"',N'"+tenhang+"','"+soluongcon+"','" + ngaycapnhat + "'";
             dal.ExecuteNonQuery(sql);

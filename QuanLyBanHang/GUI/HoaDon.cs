@@ -553,7 +553,7 @@ namespace GUI
 
                                 hd.InsertHDChiTiet(mahd, mahang, soluong);
                                 hd.InsertHoaDonTongHop(mahd, makh, tenkh, ngaylap, manv, tennv, mahang, tenhang, soluong, dongia, thanhtien, tongtienhd);
-                                hd.InsertLichSuHang(mahang,ngaylap);
+                                //hd.InsertLichSuHang(mahang,ngaylap);
                             }
 
                             MessageBox.Show("Tạo hóa đơn thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
