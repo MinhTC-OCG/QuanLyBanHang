@@ -127,7 +127,7 @@ namespace GUI
 
         private void dgvBaoCao_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-            for (int i = 0; i < dtInfo.Rows.Count; i++)
+            for (int i = 0; i < dgvBaoCao.Rows.Count; i++)
             {
                 dgvBaoCao.Rows[i].Cells[0].Value = i + 1;
             }

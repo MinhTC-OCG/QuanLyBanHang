@@ -39,6 +39,7 @@
             this.bnXuat = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SLC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +78,7 @@
             this.bnIn.TabIndex = 7;
             this.bnIn.Text = "In";
             this.bnIn.UseVisualStyleBackColor = true;
+            this.bnIn.Click += new System.EventHandler(this.bnIn_Click);
             // 
             // label2
             // 
@@ -126,6 +128,7 @@
             this.dgvBCHTonThang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBCHTonThang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
+            this.MaHang,
             this.TenH,
             this.DonVT,
             this.SLC,
@@ -137,6 +140,7 @@
             this.dgvBCHTonThang.RowTemplate.Height = 24;
             this.dgvBCHTonThang.Size = new System.Drawing.Size(1462, 442);
             this.dgvBCHTonThang.TabIndex = 6;
+            this.dgvBCHTonThang.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvBCHTonThang_RowPrePaint);
             // 
             // bnXuat
             // 
@@ -164,31 +168,38 @@
             this.STT.MinimumWidth = 6;
             this.STT.Name = "STT";
             // 
+            // MaHang
+            // 
+            this.MaHang.DataPropertyName = "MaHang";
+            this.MaHang.HeaderText = "Mã Hàng";
+            this.MaHang.MinimumWidth = 6;
+            this.MaHang.Name = "MaHang";
+            // 
             // TenH
             // 
-            this.TenH.DataPropertyName = "TenH";
+            this.TenH.DataPropertyName = "TenHang";
             this.TenH.HeaderText = "Tên hàng";
             this.TenH.MinimumWidth = 6;
             this.TenH.Name = "TenH";
             // 
             // DonVT
             // 
-            this.DonVT.DataPropertyName = "DonVT";
+            this.DonVT.DataPropertyName = "DonVi";
             this.DonVT.HeaderText = "Đơn vị";
             this.DonVT.MinimumWidth = 6;
             this.DonVT.Name = "DonVT";
             // 
             // SLC
             // 
-            this.SLC.DataPropertyName = "SLC";
+            this.SLC.DataPropertyName = "SoLuongCon";
             this.SLC.HeaderText = "Số lượng có";
             this.SLC.MinimumWidth = 6;
             this.SLC.Name = "SLC";
             // 
             // GhiChu
             // 
-            this.GhiChu.DataPropertyName = "GhiChu";
-            this.GhiChu.HeaderText = "Ghi Chú";
+            this.GhiChu.DataPropertyName = "NgayCapNhat";
+            this.GhiChu.HeaderText = "Ngày Cập Nhật";
             this.GhiChu.MinimumWidth = 6;
             this.GhiChu.Name = "GhiChu";
             // 
@@ -229,6 +240,7 @@
         private System.Windows.Forms.Button bnXuat;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenH;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonVT;
         private System.Windows.Forms.DataGridViewTextBoxColumn SLC;
