@@ -186,7 +186,7 @@
             this.lbNgayLap.Name = "lbNgayLap";
             this.lbNgayLap.Size = new System.Drawing.Size(82, 16);
             this.lbNgayLap.TabIndex = 7;
-            this.lbNgayLap.Text = "yyyy-MM-dd";
+            this.lbNgayLap.Text = "dd-MM-yyyy";
             // 
             // label4
             // 
@@ -226,7 +226,7 @@
             this.lbNgayLayDuLieu.Name = "lbNgayLayDuLieu";
             this.lbNgayLayDuLieu.Size = new System.Drawing.Size(82, 16);
             this.lbNgayLayDuLieu.TabIndex = 11;
-            this.lbNgayLayDuLieu.Text = "yyyy-MM-dd";
+            this.lbNgayLayDuLieu.Text = "dd-MM-yyyy";
             // 
             // BaoCaoTheoNgay
             // 
