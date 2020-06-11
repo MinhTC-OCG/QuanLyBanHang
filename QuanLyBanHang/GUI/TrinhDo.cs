@@ -15,9 +15,10 @@ namespace GUI
 {
     public partial class TrinhDo : Form
     {
-        TrinhDo_DTO T = new TrinhDo_DTO();
-        TrinhDo_BUS td = new TrinhDo_BUS();
+        TrinhDo_DTO td = new TrinhDo_DTO();
+        TrinhDo_BUS bus = new TrinhDo_BUS();
         DataTable dtTrinhdo, dtTimKiem;
+        List<TrinhDo_DTO> list = new List<TrinhDo_DTO>();
 
         public TrinhDo()
         {
@@ -26,9 +27,8 @@ namespace GUI
      
         public void LoadData()
         {
-            dtTrinhdo = new DataTable();
-            dtTrinhdo = td.ShowTrinhDo();
-            dgvTrinhdo.DataSource = dtTrinhdo;
+            list = bus.ShowTD();
+            dgvTrinhdo.DataSource = list;
         }
         private void TrinhDo_Load(object sender, EventArgs e)
         {
@@ -38,8 +38,8 @@ namespace GUI
         private void dgvTrinhdo_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             int dong = e.RowIndex;
-            txtTrinhdo.Text = dgvTrinhdo.Rows[dong].Cells[1].Value.ToString().Trim();
             txtMatrinhdo.Text = dgvTrinhdo.Rows[dong].Cells[0].Value.ToString().Trim();
+            txtTrinhdo.Text = dgvTrinhdo.Rows[dong].Cells[1].Value.ToString().Trim();
         }
 
         private void btnNhaplai_Click(object sender, EventArgs e)
@@ -50,9 +50,9 @@ namespace GUI
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            dtTimKiem = new DataTable();
-            dtTimKiem = td.SearchTrinhdo(txtTim.Text);
-            dgvTrinhdo.DataSource = dtTimKiem;
+            List<TrinhDo_DTO> list_tk = new List<TrinhDo_DTO>();
+            list_tk = bus.SearchTD(txtTim.Text);
+            dgvTrinhdo.DataSource = list_tk;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -66,10 +66,9 @@ namespace GUI
                 else
                 {
                     int dem = 0;
-                    foreach (DataRow row in dtTrinhdo.Rows)
+                    foreach (TrinhDo_DTO td in list)
                     {
-                        var check = row["MaTD"].ToString().Trim();
-                        if (txtMatrinhdo.Text.Trim() == check)
+                        if (txtMatrinhdo.Text.Trim() == td.MaTD_1.Trim())
                         {
                             dem++;
                             break;
@@ -78,7 +77,7 @@ namespace GUI
 
                     if (dem == 0)
                     {
-                        td.InsertTrinhdo(txtMatrinhdo.Text, txtTrinhdo.Text);
+                        bus.InsertTD(txtMatrinhdo.Text, txtTrinhdo.Text);
                         MessageBox.Show("Thêm hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
                     }
@@ -106,20 +105,19 @@ namespace GUI
                 else
                 {
                     int dem = 0;
-                    foreach (DataRow row in dtTrinhdo.Rows)
+                    foreach (TrinhDo_DTO td in list)
                     {
-                        var check = row["MaTD"].ToString().Trim();
-                        if (txtMatrinhdo.Text.Trim() == check)
+                        if (txtMatrinhdo.Text.Trim() == td.MaTD_1.Trim())
                         {
                             dem++;
                             break;
                         }
-
                     }
+                
                     if (dem != 0)
                     {
 
-                        td.UpdateTrinhDo(txtMatrinhdo.Text, txtTrinhdo.Text);
+                        bus.UpdateTD(txtMatrinhdo.Text, txtTrinhdo.Text);
                         MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
                     }
@@ -153,7 +151,7 @@ namespace GUI
             DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtTrinhdo.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
-                td.DeleteTrinhdo(txtMatrinhdo.Text.Trim());
+               bus.DeleteTD(txtMatrinhdo.Text.Trim());
                 MessageBox.Show("Xóa thành công");
                 LoadData();
             }
