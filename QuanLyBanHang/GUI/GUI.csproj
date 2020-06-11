@@ -36,16 +36,17 @@
     <Reference Include="BUS">
       <HintPath>..\BUS\bin\Debug\BUS.dll</HintPath>
     </Reference>
-    <Reference Include="DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DAL">
       <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
     </Reference>
-    <Reference Include="DTO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DTO">
       <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -204,6 +205,7 @@
     <EmbeddedResource Include="TrinhDo.resx">
       <DependentUpon>TrinhDo.cs</DependentUpon>
     </EmbeddedResource>
+    <Fakes Include="Fakes\itextsharp.fakes" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BaoCaoTheoNgay.datasource" />
     <None Include="Properties\DataSources\BaoCaoTonCuoiThang.datasource" />

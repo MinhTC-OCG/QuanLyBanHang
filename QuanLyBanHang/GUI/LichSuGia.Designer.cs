@@ -192,10 +192,12 @@
             // dgvLichSuGia
             // 
             this.dgvLichSuGia.AllowUserToAddRows = false;
+            this.dgvLichSuGia.AllowUserToResizeColumns = false;
+            this.dgvLichSuGia.AllowUserToResizeRows = false;
             this.dgvLichSuGia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLichSuGia.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvLichSuGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvLichSuGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLichSuGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLichSuGia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaH,
             this.NgayBD,
@@ -206,6 +208,7 @@
             this.dgvLichSuGia.Location = new System.Drawing.Point(12, 253);
             this.dgvLichSuGia.Name = "dgvLichSuGia";
             this.dgvLichSuGia.RowHeadersVisible = false;
+            this.dgvLichSuGia.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvLichSuGia.Size = new System.Drawing.Size(890, 271);
             this.dgvLichSuGia.TabIndex = 26;
             this.dgvLichSuGia.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.rowenter);
@@ -304,7 +307,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 534);
+            this.ClientSize = new System.Drawing.Size(919, 534);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cbMaHang);
             this.Controls.Add(this.btnThoat);
