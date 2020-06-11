@@ -201,5 +201,10 @@ namespace GUI
 
             chart1.DataBindTable(dt.DefaultView, "TenHang");
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

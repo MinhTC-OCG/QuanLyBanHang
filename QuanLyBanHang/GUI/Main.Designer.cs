@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.mnTSQuanLy = new System.Windows.Forms.ToolStripMenuItem();
             this.LoaiHangMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -231,14 +230,10 @@
             this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(-1, -1);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Color = System.Drawing.SystemColors.HotTrack;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(606, 432);
             this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.chart1.Text = "Số lượng hàng trong kho";
+            this.chart1.UseWaitCursor = true;
             // 
             // panel2
             // 

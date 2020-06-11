@@ -37,7 +37,7 @@ namespace GUI
             LoadData();
         }
 
-        private void ResetText()
+        private void ClearText()
         {
             txtMaKhachHang.ResetText();
             txtHoTen.ResetText();
@@ -97,7 +97,7 @@ namespace GUI
                         bus.InsertKhachHang(dto.MaKhachHang_1, dto.HoTen_1, dto.DiaChi_1, dto.SoDienThoai_1);
                         MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
-                        ResetText();
+                        ClearText();
                     }
                     else
                     {
@@ -127,7 +127,7 @@ namespace GUI
 
         private void btnNhapLai_Click_1(object sender, EventArgs e)
         {
-            ResetText();
+            ClearText();
         }
 
         private void btnXem_Click_1(object sender, EventArgs e)
@@ -177,7 +177,7 @@ namespace GUI
                         bus.UpdateKhachHang(dto.MaKhachHang_1, dto.HoTen_1, dto.DiaChi_1, dto.SoDienThoai_1);
                         MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
-                        ResetText();
+                        ClearText();
                     }
                     else
                     {
