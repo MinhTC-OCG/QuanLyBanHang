@@ -406,8 +406,6 @@ namespace GUI
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            ReportHoaDon rp = new ReportHoaDon();
-            rp.Show();
         }
 
         private void btnXem_Click(object sender, EventArgs e)
