@@ -33,8 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BUS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="BUS">
       <HintPath>..\BUS\bin\Debug\BUS.dll</HintPath>
     </Reference>
     <Reference Include="DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -220,6 +219,7 @@
     <EmbeddedResource Include="TrinhDo.resx">
       <DependentUpon>TrinhDo.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\BaoCaoTheoNgay.datasource" />
     <None Include="Properties\DataSources\BaoCaoTonCuoiThang.datasource" />
     <None Include="Properties\DataSources\DangNhap.datasource" />
