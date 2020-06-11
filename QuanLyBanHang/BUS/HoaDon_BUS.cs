@@ -194,7 +194,7 @@ namespace BUS
         public DataTable getLichSuHang()
         {
             DataTable dt = new DataTable();
-            string sql = "SELECT * FROM LichSuHang12";
+            string sql = "SELECT MaHang,TenHang,SoLuongCon FROM LichSuHang12";
             dt = dal.getTable(sql);
             return dt;
         }

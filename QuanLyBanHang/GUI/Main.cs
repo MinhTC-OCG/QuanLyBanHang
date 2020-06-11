@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BUS;
 namespace GUI
 {
     public partial class Main : Form
     {
+        HoaDon_BUS bus = new HoaDon_BUS();
+        DataTable dt = new DataTable();
         public Main()
         {
             InitializeComponent();
@@ -184,6 +186,20 @@ namespace GUI
         {
             BaoCaoTonCuoiThang bc = new BaoCaoTonCuoiThang();
             bc.Show();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            dt = bus.getLichSuHang();
+            chart1.ChartAreas[0].AxisX.Minimum = 0;
+
+            chart1.ChartAreas[0].AxisX.Maximum = 10;
+
+            chart1.ChartAreas[0].AxisY.Minimum = 0;
+
+            chart1.ChartAreas[0].AxisY.Maximum = 5000;
+
+            chart1.DataBindTable(dt.DefaultView, "TenHang");
         }
     }
 }
