@@ -406,69 +406,8 @@ namespace GUI
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            if (dgvHoaDonTongHop.Rows.Count > 0)
-            {
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "PDF (*.pdf)|*.pdf";
-                sfd.FileName = "Hoadon.pdf";
-                bool fileError = false;
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    if (File.Exists(sfd.FileName))
-                    {
-                        try
-                        {
-                            File.Delete(sfd.FileName);
-                        }
-                        catch (IOException ex)
-                        {
-                            fileError = true;
-                            MessageBox.Show("Không thể xuất hóa đơn");
-                        }
-                    }
-                }
-                if (!fileError)
-                {
-                    try
-                    {
-                        PdfPTable pdfTable = new PdfPTable(dgvHoaDonTongHop.Columns.Count);
-                        pdfTable.DefaultCell.Padding = 3;
-                        pdfTable.WidthPercentage = 100;
-                        pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-                        iTextSharp.text.Font fon = FontFactory.GetFont("ARIAL", 10);
-
-                        foreach (DataGridViewColumn column in dgvHoaDonTongHop.Columns)
-                        {
-                            PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                            pdfTable.AddCell(cell);
-                        }
-
-                        foreach (DataGridViewRow row in dgvHoaDonTongHop.Rows)
-                        {
-                            foreach (DataGridViewCell cell in row.Cells)
-                            {
-                                pdfTable.AddCell(cell.Value.ToString());
-                            }
-                        }
-
-                        using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
-                        {
-                            Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
-                            PdfWriter.GetInstance(pdfDoc, stream);
-                            pdfDoc.Open();
-                            pdfDoc.Add(pdfTable);
-                            pdfDoc.Close();
-                            stream.Close();
-                        }
-
-                        MessageBox.Show("Xuất hóa đơn thành công.", "Thông báo");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error :" + ex.Message);
-                    }
-                }
-            }
+            ReportHoaDon rp = new ReportHoaDon();
+            rp.Show();
         }
 
         private void btnXem_Click(object sender, EventArgs e)
@@ -566,8 +505,8 @@ namespace GUI
                                         string mh = r2["MaH"].ToString();
                                         string th = r2["TenH"].ToString();
                                         string dv = r2["DonVT"].ToString();
-                                        string sl = r2["SLC"].ToString();
-                                        DateTime ngaycapnhat = DateTime.Now;
+                                        int sl = Int32.Parse(r2["SLC"].ToString());
+                                        string ngaycapnhat = DateTime.Now.ToString();
 
                                         if (r1["MaHang"].ToString().Trim() == r2["MaH"].ToString().Trim())
                                         {
@@ -583,10 +522,9 @@ namespace GUI
                                     string mh = r2["MaH"].ToString();
                                     string th = r2["TenH"].ToString();
                                     string dv = r2["DonVT"].ToString();
-                                    string sl = r2["SLC"].ToString();
-                                    DateTime ngaycapnhat = DateTime.Now;
+                                    int sl = Int32.Parse(r2["SLC"].ToString());
+                                    string ngaycapnhat = DateTime.Now.ToString();
                                     hd.InsertLSHang(mh, th, dv, sl, ngaycapnhat);
-
                                 }
                             }
                         }
