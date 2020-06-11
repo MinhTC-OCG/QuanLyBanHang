@@ -171,8 +171,6 @@ namespace BUS
         }
 
         
-
-
         public void DeleteHoaDonTongHop(string mahd)
         {
             string sql = "DELETE HoaDonTongHop12 WHERE MaHD ='" + mahd + "'";
