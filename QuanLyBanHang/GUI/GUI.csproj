@@ -158,6 +158,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBHDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ReportBaoCaoTheoNgay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportBaoCaoTheoNgay.Designer.cs">
+      <DependentUpon>ReportBaoCaoTheoNgay.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportBaoCaoTheoNgay.rdlc" />
+    <EmbeddedResource Include="ReportBaoCaoTheoNgay.resx">
+      <DependentUpon>ReportBaoCaoTheoNgay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportHoaDon.rdlc" />
     <EmbeddedResource Include="KhachHang.resx">
@@ -220,6 +230,7 @@
     <EmbeddedResource Include="TrinhDo.resx">
       <DependentUpon>TrinhDo.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\BaoCao.datasource" />
     <None Include="Properties\DataSources\BaoCaoTheoNgay.datasource" />
     <None Include="Properties\DataSources\BaoCaoTonCuoiThang.datasource" />
     <None Include="Properties\DataSources\DangNhap.datasource" />

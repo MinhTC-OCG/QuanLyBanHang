@@ -11,11 +11,13 @@ using System.Windows.Forms;
 using BUS;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Microsoft.Reporting.WinForms;
 
 namespace GUI
 {
     public partial class BaoCaoTheoNgay : Form
     {
+        ReportDataSource rs = new ReportDataSource();
         DataTable dtInfo;
         BaoCao_BUS bus = new BaoCao_BUS();
         public BaoCaoTheoNgay()
@@ -25,68 +27,29 @@ namespace GUI
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            if (dgvBaoCao.Rows.Count > 0)
+            List<BaoCao> list = new List<BaoCao>();
+            list.Clear();
+            for (int i = 0; i < dgvBaoCao.RowCount; i++)
             {
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "PDF (*.pdf)|*.pdf";
-                sfd.FileName = "Baocaotheongay.pdf";
-                bool fileError = false;
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    if (File.Exists(sfd.FileName))
-                    {
-                        try
-                        {
-                            File.Delete(sfd.FileName);
-                        }
-                        catch (IOException ex)
-                        {
-                            fileError = true;
-                            MessageBox.Show("Không thể xuất báo cáo");
-                        }
-                    }
-                }
-                if (!fileError)
-                {
-                    try
-                    {
-                        PdfPTable pdfTable = new PdfPTable(dgvBaoCao.Columns.Count);
-                        pdfTable.DefaultCell.Padding = 3;
-                        pdfTable.WidthPercentage = 100;
-                        pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+                BaoCao bc = new BaoCao();
+                bc.Stt = dgvBaoCao.Rows[i].Cells[0].Value.ToString();
+                bc.Mahang = dgvBaoCao.Rows[i].Cells[1].Value.ToString();
+                bc.Tenhang = dgvBaoCao.Rows[i].Cells[2].Value.ToString();
+                bc.Donvi = dgvBaoCao.Rows[i].Cells[3].Value.ToString();
+                bc.Dongia = dgvBaoCao.Rows[i].Cells[4].Value.ToString();
+                bc.Soluong = dgvBaoCao.Rows[i].Cells[5].Value.ToString();
+                bc.Thanhtien = dgvBaoCao.Rows[i].Cells[6].Value.ToString();
+                list.Add(bc);
 
-                        foreach (DataGridViewColumn column in dgvBaoCao.Columns)
-                        {
-                            PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                            pdfTable.AddCell(cell);
-                        }
-
-                        foreach (DataGridViewRow row in dgvBaoCao.Rows)
-                        {
-                            foreach (DataGridViewCell cell in row.Cells)
-                            {
-                                pdfTable.AddCell(cell.Value.ToString());
-                            }
-                        }
-
-                        using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
-                        {
-                            Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
-                            PdfWriter.GetInstance(pdfDoc, stream);
-                            pdfDoc.Open();
-                            pdfDoc.Add(pdfTable);
-                            pdfDoc.Close();
-                            stream.Close();
-                        }
-
-                        MessageBox.Show("Xuất báo cáo thành công.", "Thông báo");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error :" + ex.Message);
-                    }
-                }
             }
+            rs.Name = "DataSet1";
+            rs.Value = list;
+            ReportBaoCaoTheoNgay rp = new ReportBaoCaoTheoNgay();
+            rp.reportViewer1.LocalReport.DataSources.Clear();
+            rp.reportViewer1.LocalReport.DataSources.Add(rs);
+            rp.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI.ReportBaoCaoTheoNgay.rdlc";
+            rp.ShowDialog();
+
         }
 
         private void BaoCao_Load(object sender, EventArgs e)
@@ -94,6 +57,7 @@ namespace GUI
             string dateCurrent = DateTime.Now.ToString("dd-MM-yyyy");
             lbNgayLap.Text = dateCurrent;
             lbNguoiLap.Text = DangNhap.tendangnhap;
+
         }
 
         public void HienThiBaoCao()
@@ -134,5 +98,28 @@ namespace GUI
             }
         }
 
+    }
+    public class BaoCao
+    {
+        string stt, mahang, tenhang, donvi, dongia, soluong, thanhtien;
+
+        //public BaoCao(string stt, string mahang, string tenhang, string donvi, string dongia, string soluong, string thanhtien)
+        //{
+        //    this.stt = stt;
+        //    this.mahang = mahang;
+        //    this.tenhang = tenhang;
+        //    this.donvi = donvi;
+        //    this.dongia = dongia;
+        //    this.soluong = soluong;
+        //    this.thanhtien = thanhtien;
+        //}
+
+        public string Stt { get => stt; set => stt = value; }
+        public string Mahang { get => mahang; set => mahang = value; }
+        public string Tenhang { get => tenhang; set => tenhang = value; }
+        public string Donvi { get => donvi; set => donvi = value; }
+        public string Dongia { get => dongia; set => dongia = value; }
+        public string Soluong { get => soluong; set => soluong = value; }
+        public string Thanhtien { get => thanhtien; set => thanhtien = value; }
     }
 }

@@ -492,7 +492,6 @@ namespace GUI
                             btnNhaplai_Click(sender, e);
 
 
-
                             dtHangCapNhat = hangcapnhat.ShowHang();
                             dtLichSuHang = hd.getLichSuHang();
 
