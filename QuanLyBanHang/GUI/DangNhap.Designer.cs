@@ -55,7 +55,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(116, 181);
+            this.label3.Location = new System.Drawing.Point(120, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 24);
             this.label3.TabIndex = 10;
@@ -65,7 +65,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(64, 115);
+            this.label2.Location = new System.Drawing.Point(65, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 24);
             this.label2.TabIndex = 9;
@@ -74,20 +74,20 @@
             // txtMatKhau
             // 
             this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.Location = new System.Drawing.Point(217, 174);
+            this.txtMatKhau.Location = new System.Drawing.Point(217, 162);
             this.txtMatKhau.Multiline = true;
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
-            this.txtMatKhau.Size = new System.Drawing.Size(295, 25);
+            this.txtMatKhau.Size = new System.Drawing.Size(295, 37);
             this.txtMatKhau.TabIndex = 8;
             // 
             // txtTenDN
             // 
             this.txtTenDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDN.Location = new System.Drawing.Point(217, 115);
+            this.txtTenDN.Location = new System.Drawing.Point(217, 105);
             this.txtTenDN.Multiline = true;
             this.txtTenDN.Name = "txtTenDN";
-            this.txtTenDN.Size = new System.Drawing.Size(295, 25);
+            this.txtTenDN.Size = new System.Drawing.Size(295, 35);
             this.txtTenDN.TabIndex = 7;
             // 
             // panel1

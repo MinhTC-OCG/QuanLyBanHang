@@ -33,10 +33,13 @@ namespace DAL
     partial void InsertLoaiHang12(LoaiHang12 instance);
     partial void UpdateLoaiHang12(LoaiHang12 instance);
     partial void DeleteLoaiHang12(LoaiHang12 instance);
+    partial void InsertTrinhDo12(TrinhDo12 instance);
+    partial void UpdateTrinhDo12(TrinhDo12 instance);
+    partial void DeleteTrinhDo12(TrinhDo12 instance);
     #endregion
 		
 		public dbDataContext() : 
-				base(global::DAL.Properties.Settings.Default.QLBHConnectionStringMinh, mappingSource)
+				base(global::DAL.Properties.Settings.Default.QLBHConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -70,6 +73,14 @@ namespace DAL
 			get
 			{
 				return this.GetTable<LoaiHang12>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TrinhDo12> TrinhDo12s
+		{
+			get
+			{
+				return this.GetTable<TrinhDo12>();
 			}
 		}
 	}
@@ -159,6 +170,92 @@ namespace DAL
 					this._GhiChu = value;
 					this.SendPropertyChanged("GhiChu");
 					this.OnGhiChuChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TrinhDo12")]
+	public partial class TrinhDo12 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaTD;
+		
+		private string _TenTD;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaTDChanging(string value);
+    partial void OnMaTDChanged();
+    partial void OnTenTDChanging(string value);
+    partial void OnTenTDChanged();
+    #endregion
+		
+		public TrinhDo12()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTD", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaTD
+		{
+			get
+			{
+				return this._MaTD;
+			}
+			set
+			{
+				if ((this._MaTD != value))
+				{
+					this.OnMaTDChanging(value);
+					this.SendPropertyChanging();
+					this._MaTD = value;
+					this.SendPropertyChanged("MaTD");
+					this.OnMaTDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTD", DbType="NVarChar(50)")]
+		public string TenTD
+		{
+			get
+			{
+				return this._TenTD;
+			}
+			set
+			{
+				if ((this._TenTD != value))
+				{
+					this.OnTenTDChanging(value);
+					this.SendPropertyChanging();
+					this._TenTD = value;
+					this.SendPropertyChanged("TenTD");
+					this.OnTenTDChanged();
 				}
 			}
 		}
