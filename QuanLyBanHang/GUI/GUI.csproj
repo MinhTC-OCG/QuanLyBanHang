@@ -220,6 +220,7 @@
     <EmbeddedResource Include="TrinhDo.resx">
       <DependentUpon>TrinhDo.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\BaoCaoTheoNgay.datasource" />
     <None Include="Properties\DataSources\BaoCaoTonCuoiThang.datasource" />
     <None Include="Properties\DataSources\DangNhap.datasource" />
