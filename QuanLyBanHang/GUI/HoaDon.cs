@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BUS;
 using DAL;
-using DTO;
-using BUS;
-using System.Diagnostics;
-using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System;
+using System.Data;
+using System.IO;
+using System.Windows.Forms;
 
 namespace GUI
 {
@@ -26,10 +18,9 @@ namespace GUI
 
         Lop_DAL dal = new Lop_DAL();
         HoaDon_BUS hd = new HoaDon_BUS();
+        Hang_BUS hangcapnhat = new Hang_BUS();
 
-        DataTable dtGetNamePrice, dtGetInfor, dtGetHoaDonTongHop, dtGetNameKH, dtGetNameNV, dtGetHD;
-
-
+        DataTable dtGetNamePrice, dtGetInfor, dtGetHoaDonTongHop, dtGetNameKH, dtGetNameNV, dtGetHD, dtHangCapNhat, dtLichSuHang;
 
         public HoaDon()
         {
@@ -415,69 +406,8 @@ namespace GUI
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            if (dgvHoaDonTongHop.Rows.Count > 0)
-            {
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "PDF (*.pdf)|*.pdf";
-                sfd.FileName = "Hoadon.pdf";
-                bool fileError = false;
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    if (File.Exists(sfd.FileName))
-                    {
-                        try
-                        {
-                            File.Delete(sfd.FileName);
-                        }
-                        catch (IOException ex)
-                        {
-                            fileError = true;
-                            MessageBox.Show("Không thể xuất hóa đơn");
-                        }
-                    }
-                }
-                if (!fileError)
-                {
-                    try
-                    {
-                        PdfPTable pdfTable = new PdfPTable(dgvHoaDonTongHop.Columns.Count);
-                        pdfTable.DefaultCell.Padding = 3;
-                        pdfTable.WidthPercentage = 100;
-                        pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-                        iTextSharp.text.Font fon = FontFactory.GetFont("ARIAL", 10);
-
-                        foreach (DataGridViewColumn column in dgvHoaDonTongHop.Columns)
-                        {
-                            PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                            pdfTable.AddCell(cell);
-                        }
-
-                        foreach (DataGridViewRow row in dgvHoaDonTongHop.Rows)
-                        {
-                            foreach (DataGridViewCell cell in row.Cells)
-                            {
-                                pdfTable.AddCell(cell.Value.ToString());
-                            }
-                        }
-
-                        using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
-                        {
-                            Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
-                            PdfWriter.GetInstance(pdfDoc, stream);
-                            pdfDoc.Open();
-                            pdfDoc.Add(pdfTable);
-                            pdfDoc.Close();
-                            stream.Close();
-                        }
-
-                        MessageBox.Show("Xuất hóa đơn thành công.", "Thông báo");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error :" + ex.Message);
-                    }
-                }
-            }
+            ReportHoaDon rp = new ReportHoaDon();
+            rp.Show();
         }
 
         private void btnXem_Click(object sender, EventArgs e)
@@ -553,12 +483,50 @@ namespace GUI
 
                                 hd.InsertHDChiTiet(mahd, mahang, soluong);
                                 hd.InsertHoaDonTongHop(mahd, makh, tenkh, ngaylap, manv, tennv, mahang, tenhang, soluong, dongia, thanhtien, tongtienhd);
+                                //hd.InsertLichSuHang(mahang,ngaylap);
                             }
 
                             MessageBox.Show("Tạo hóa đơn thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             hd.DeleteAllCart();
                             HoaDon_Load(sender, e);
                             btnNhaplai_Click(sender, e);
+
+
+
+                            dtHangCapNhat = hangcapnhat.ShowHang();
+                            dtLichSuHang = hd.getLichSuHang();
+
+                            if (dtLichSuHang.Rows.Count > 0)
+                            {
+                                foreach (DataRow r1 in dtLichSuHang.Rows)
+                                {
+                                    foreach (DataRow r2 in dtHangCapNhat.Rows)
+                                    {
+                                        string mh = r2["MaH"].ToString();
+                                        string th = r2["TenH"].ToString();
+                                        string dv = r2["DonVT"].ToString();
+                                        int sl = Int32.Parse(r2["SLC"].ToString());
+                                        string ngaycapnhat = DateTime.Now.ToString();
+
+                                        if (r1["MaHang"].ToString().Trim() == r2["MaH"].ToString().Trim())
+                                        {
+                                            hd.UpdateLSHang(mh, th, dv, sl, ngaycapnhat);
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                foreach (DataRow r2 in dtHangCapNhat.Rows)
+                                {
+                                    string mh = r2["MaH"].ToString();
+                                    string th = r2["TenH"].ToString();
+                                    string dv = r2["DonVT"].ToString();
+                                    int sl = Int32.Parse(r2["SLC"].ToString());
+                                    string ngaycapnhat = DateTime.Now.ToString();
+                                    hd.InsertLSHang(mh, th, dv, sl, ngaycapnhat);
+                                }
+                            }
                         }
                         else
                         {
@@ -570,10 +538,10 @@ namespace GUI
                         MessageBox.Show("Lỗi, hãy mua hàng trước khi lập hóa đơn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
-                    MessageBox.Show("Không tạo được hóa đơn, thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine(ex);
+                    //MessageBox.Show("Không tạo được hóa đơn, thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

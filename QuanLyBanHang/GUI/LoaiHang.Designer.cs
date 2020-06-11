@@ -36,9 +36,6 @@
             this.txtTenL = new System.Windows.Forms.TextBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.dgvLoaiHang = new System.Windows.Forms.DataGridView();
-            this.MaL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -48,6 +45,9 @@
             this.btnXem = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.Maoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tenloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiHang)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -116,8 +116,8 @@
             this.dgvLoaiHang.BackgroundColor = System.Drawing.Color.White;
             this.dgvLoaiHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoaiHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaL,
-            this.TenL,
+            this.Maoai,
+            this.Tenloai,
             this.GhiChu});
             this.dgvLoaiHang.EnableHeadersVisualStyles = false;
             this.dgvLoaiHang.Location = new System.Drawing.Point(12, 228);
@@ -125,25 +125,7 @@
             this.dgvLoaiHang.RowHeadersVisible = false;
             this.dgvLoaiHang.Size = new System.Drawing.Size(636, 200);
             this.dgvLoaiHang.TabIndex = 6;
-            this.dgvLoaiHang.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiHang_RowEnter);
-            // 
-            // MaL
-            // 
-            this.MaL.DataPropertyName = "MaL";
-            this.MaL.HeaderText = "Mã loại";
-            this.MaL.Name = "MaL";
-            // 
-            // TenL
-            // 
-            this.TenL.DataPropertyName = "TenL";
-            this.TenL.HeaderText = "Tên loại";
-            this.TenL.Name = "TenL";
-            // 
-            // GhiChu
-            // 
-            this.GhiChu.DataPropertyName = "GhiChu";
-            this.GhiChu.HeaderText = "Ghi chú";
-            this.GhiChu.Name = "GhiChu";
+            this.dgvLoaiHang.Click += new System.EventHandler(this.dgvLoaiHang_Click);
             // 
             // btnThem
             // 
@@ -262,6 +244,24 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "LOẠI HÀNG";
             // 
+            // Maoai
+            // 
+            this.Maoai.DataPropertyName = "Maloai";
+            this.Maoai.HeaderText = "Mã loại";
+            this.Maoai.Name = "Maoai";
+            // 
+            // Tenloai
+            // 
+            this.Tenloai.DataPropertyName = "Tenloai";
+            this.Tenloai.HeaderText = "Tên loại";
+            this.Tenloai.Name = "Tenloai";
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.DataPropertyName = "GhiChu";
+            this.GhiChu.HeaderText = "Ghi chú";
+            this.GhiChu.Name = "GhiChu";
+            // 
             // LoaiHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,9 +303,6 @@
         private System.Windows.Forms.TextBox txtTenL;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.DataGridView dgvLoaiHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnNhapLai;
@@ -315,5 +312,8 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Maoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tenloai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
     }
 }

@@ -101,7 +101,8 @@ namespace GUI
             try
             {
                 string ngaychon = dtPicker.Value.Date.ToString("yyyy-MM-dd");
-                lbNgayLayDuLieu.Text = ngaychon;
+                string fmngaychon = dtPicker.Value.Date.ToString("dd-MM-yyyy");
+                lbNgayLayDuLieu.Text = fmngaychon;
                 dtInfo = new DataTable();
                 dtInfo = bus.GetReport(ngaychon);
                 if (dtInfo.Rows.Count > 0)
@@ -110,7 +111,7 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show("Không có mặt hàng nào được bán vào ngào " + ngaychon);
+                    MessageBox.Show("Không có mặt hàng nào được bán vào ngày " + ngaychon);
                 }
             }
             catch (Exception)
@@ -127,7 +128,7 @@ namespace GUI
 
         private void dgvBaoCao_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-            for (int i = 0; i < dtInfo.Rows.Count; i++)
+            for (int i = 0; i < dgvBaoCao.Rows.Count; i++)
             {
                 dgvBaoCao.Rows[i].Cells[0].Value = i + 1;
             }

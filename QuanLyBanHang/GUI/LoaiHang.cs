@@ -16,8 +16,7 @@ namespace GUI
     {
         LoaiHang_BUS bus = new LoaiHang_BUS();
         LoaiHang_DTO lh = new LoaiHang_DTO();
-
-        DataTable dtLoaiHang, dtTimKiem;
+        List<LoaiHang_DTO> list = new List<LoaiHang_DTO>();
 
         public LoaiHang()
         {
@@ -31,9 +30,8 @@ namespace GUI
 
         public void LoadData()
         {
-            dtLoaiHang = new DataTable();
-            dtLoaiHang = bus.ShowLoaiHang();
-            dgvLoaiHang.DataSource = dtLoaiHang;
+            list = bus.ShowLH();
+            dgvLoaiHang.DataSource = list;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -47,19 +45,17 @@ namespace GUI
                 else
                 {
                     int dem = 0;
-                    foreach (DataRow row in dtLoaiHang.Rows)
+                    foreach(LoaiHang_DTO lh in list)
                     {
-                        var check = row["MaL"].ToString().Trim();
-                        if (txtMaL.Text.Trim() == check)
+                        if(txtMaL.Text.Trim() == lh.Maloai.Trim())
                         {
                             dem++;
                             break;
                         }
-
                     }
-                    if (dem == 0)
+                    if(dem == 0)
                     {
-                        bus.InsertLoaiHang(txtMaL.Text, txtTenL.Text, txtGhiChu.Text);
+                        bus.InsertLH(txtMaL.Text, txtTenL.Text, txtGhiChu.Text);
                         MessageBox.Show("Thêm loại hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
                     }
@@ -67,15 +63,13 @@ namespace GUI
                     {
                         MessageBox.Show("Mã loại hàng đã tồn tại, nhập lại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-
+                   
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("Không thêm được loại hàng, thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -92,22 +86,17 @@ namespace GUI
                     lh.Tenloai = txtTenL.Text;
                     lh.Ghichu = txtGhiChu.Text;
                     int dem = 0;
-                    foreach (DataRow row in dtLoaiHang.Rows)
+                    foreach (LoaiHang_DTO lh in list)
                     {
-                        foreach (DataColumn c in dtLoaiHang.Columns)
+                        if (txtMaL.Text.Trim() == lh.Maloai.Trim())
                         {
-                            var check = row[c].ToString().Trim();
-                            if (txtMaL.Text.Trim() == check)
-                            {
-                                dem++;
-                                break;
-                            }
+                            dem++;
+                            break;
                         }
-
                     }
                     if (dem != 0)
                     {
-                        bus.UpdateLoaiHang(lh.Maloai,lh.Tenloai,lh.Ghichu);
+                        bus.UpdateLH(lh.Maloai, lh.Tenloai, lh.Ghichu);
                         LoaiHang_Load(sender, e);
                         MessageBox.Show("Cập nhập loại hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -129,7 +118,7 @@ namespace GUI
             DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtTenL.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
-                bus.DeleteLoaiHang(txtMaL.Text);
+                bus.DeleteLH(txtMaL.Text);
                 MessageBox.Show("Xóa thành công");
                 LoadData();
             }
@@ -156,10 +145,10 @@ namespace GUI
             txtMaL.Focus();
         }
 
-        private void dgvLoaiHang_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void dgvLoaiHang_Click(object sender, EventArgs e)
         {
             dgvLoaiHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            int r = e.RowIndex;
+            int r = dgvLoaiHang.CurrentCell.RowIndex;
             txtMaL.Text = dgvLoaiHang.Rows[r].Cells[0].Value.ToString();
             txtTenL.Text = dgvLoaiHang.Rows[r].Cells[1].Value.ToString();
             txtGhiChu.Text = dgvLoaiHang.Rows[r].Cells[2].Value.ToString();
@@ -167,9 +156,9 @@ namespace GUI
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            dtTimKiem = new DataTable();
-            dtTimKiem = bus.SearchLoaiHang(txtMaL.Text);
-            dgvLoaiHang.DataSource = dtTimKiem;
+            List<LoaiHang_DTO> list_tk = new List<LoaiHang_DTO>();
+            list_tk = bus.SearchLH(txtMaL.Text); 
+            dgvLoaiHang.DataSource = list_tk;
         }
     }
 }
