@@ -210,5 +210,6 @@ namespace BUS
             string sql = "UPDATE LichSuHang12 SET TenHang='" + tenhang + "',DonVi=N'" + donvi + "',SoLuongCon ='" + soluongcon + "',NgayCapNhat='" + ngaycapnhat + "' WHERE MaHang='"+mahang+"'";
             dal.ExecuteNonQuery(sql);
         }
+
     }
 }

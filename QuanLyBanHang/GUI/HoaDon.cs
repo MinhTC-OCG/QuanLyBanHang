@@ -1,7 +1,5 @@
 ﻿using BUS;
 using DAL;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 using System;
 using System.Data;
 using System.IO;
@@ -406,8 +404,6 @@ namespace GUI
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            ReportHoaDon rp = new ReportHoaDon();
-            rp.Show();
         }
 
         private void btnXem_Click(object sender, EventArgs e)
