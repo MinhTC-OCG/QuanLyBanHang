@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.QLBHDataSet = new GUI.QLBHDataSet();
             this.HoaDonTongHop12BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.QLBHDataSet = new GUI.QLBHDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.HoaDonTongHop12TableAdapter = new GUI.QLBHDataSetTableAdapters.HoaDonTongHop12TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.QLBHDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HoaDonTongHop12BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLBHDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // HoaDonTongHop12BindingSource
+            // 
+            this.HoaDonTongHop12BindingSource.DataMember = "HoaDonTongHop12";
+            this.HoaDonTongHop12BindingSource.DataSource = this.QLBHDataSet;
+            // 
+            // QLBHDataSet
+            // 
+            this.QLBHDataSet.DataSetName = "QLBHDataSet";
+            this.QLBHDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -44,21 +54,11 @@
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.HoaDonTongHop12BindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI.HoaDonReport.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI.ReportHoaDon.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // QLBHDataSet
-            // 
-            this.QLBHDataSet.DataSetName = "QLBHDataSet";
-            this.QLBHDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // HoaDonTongHop12BindingSource
-            // 
-            this.HoaDonTongHop12BindingSource.DataMember = "HoaDonTongHop12";
-            this.HoaDonTongHop12BindingSource.DataSource = this.QLBHDataSet;
             // 
             // HoaDonTongHop12TableAdapter
             // 
@@ -71,10 +71,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "ReportHoaDon";
-            this.Text = "ReportHoaDon";
+            this.Text = "XUẤT HÓA ĐƠN";
             this.Load += new System.EventHandler(this.ReportHoaDon_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.QLBHDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HoaDonTongHop12BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLBHDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
