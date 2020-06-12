@@ -312,6 +312,8 @@ namespace GUI
                     HoaDon_Load(sender, e);
                     btnNhaplai_Click(sender, e);
                     txtMahang.Enabled = true;
+
+                    LSHang();
                 }
                 else
                 {
@@ -487,41 +489,8 @@ namespace GUI
                             HoaDon_Load(sender, e);
                             btnNhaplai_Click(sender, e);
 
-
-                            dtHangCapNhat = hangcapnhat.ShowHang();
-                            dtLichSuHang = hd.getLichSuHang();
-
-                            if (dtLichSuHang.Rows.Count > 0)
-                            {
-                                foreach (DataRow r1 in dtLichSuHang.Rows)
-                                {
-                                    foreach (DataRow r2 in dtHangCapNhat.Rows)
-                                    {
-                                        string mh = r2["MaH"].ToString();
-                                        string th = r2["TenH"].ToString();
-                                        string dv = r2["DonVT"].ToString();
-                                        int sl = Int32.Parse(r2["SLC"].ToString());
-                                        string ngaycapnhat = DateTime.Now.ToString();
-
-                                        if (r1["MaHang"].ToString().Trim() == r2["MaH"].ToString().Trim())
-                                        {
-                                            hd.UpdateLSHang(mh, th, dv, sl, ngaycapnhat);
-                                        }
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                foreach (DataRow r2 in dtHangCapNhat.Rows)
-                                {
-                                    string mh = r2["MaH"].ToString();
-                                    string th = r2["TenH"].ToString();
-                                    string dv = r2["DonVT"].ToString();
-                                    int sl = Int32.Parse(r2["SLC"].ToString());
-                                    string ngaycapnhat = DateTime.Now.ToString();
-                                    hd.InsertLSHang(mh, th, dv, sl, ngaycapnhat);
-                                }
-                            }
+                            LSHang();
+                            
                         }
                         else
                         {
@@ -540,6 +509,51 @@ namespace GUI
                 }
             }
 
+        }
+
+        public void LSHang()
+        {
+            dtHangCapNhat = hangcapnhat.ShowHang();
+            dtLichSuHang = hd.getLichSuHang();
+
+            if (dtLichSuHang.Rows.Count > 0)
+            {
+                foreach (DataRow r1 in dtHangCapNhat.Rows)
+                {
+                    string mh = r1["MaH"].ToString();
+                    string th = r1["TenH"].ToString();
+                    string dv = r1["DonVT"].ToString();
+                    int sl = Int32.Parse(r1["SLC"].ToString());
+                    string ngaycapnhat = DateTime.Now.ToString();
+                    int check = 0;
+                    foreach (DataRow r2 in dtLichSuHang.Rows)
+                    {
+
+                        if (r2["MaHang"].ToString().Trim() == r1["MaH"].ToString().Trim())
+                        {
+                            hd.UpdateLSHang(mh, th, dv, sl, ngaycapnhat);
+                            check++;
+                            break;
+                        }
+                    }
+                    if (check == 0)
+                    {
+                        hd.InsertLSHang(mh, th, dv, sl, ngaycapnhat);
+                    }
+                }
+            }
+            else
+            {
+                foreach (DataRow r2 in dtHangCapNhat.Rows)
+                {
+                    string mh = r2["MaH"].ToString();
+                    string th = r2["TenH"].ToString();
+                    string dv = r2["DonVT"].ToString();
+                    int sl = Int32.Parse(r2["SLC"].ToString());
+                    string ngaycapnhat = DateTime.Now.ToString();
+                    hd.InsertLSHang(mh, th, dv, sl, ngaycapnhat);
+                }
+            }
         }
 
         //Khi nhap vao ma nhan vien thi ten nhan vien tu dong hien thi tren o textbox

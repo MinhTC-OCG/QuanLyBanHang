@@ -13,7 +13,10 @@ namespace GUI
     public partial class Main : Form
     {
         HoaDon_BUS bus = new HoaDon_BUS();
+        Main_BUS mbus = new Main_BUS();
         DataTable dt = new DataTable();
+
+        public int somathang;
         public Main()
         {
             InitializeComponent();
@@ -188,23 +191,59 @@ namespace GUI
             bc.Show();
         }
 
+        public void LoadData()
+        {
+            DataTable dtTongHang, dtTongNhanVien, dtTongKhachHang;
+            dtTongHang = mbus.GetAmount_Hang();
+            dtTongNhanVien = mbus.GetAmount_NhanVien();
+            dtTongKhachHang = mbus.GetAmount_KhachHang();
+            foreach (DataRow r in dtTongHang.Rows)
+            {
+                lbTongHang.Text = r["TongHang"].ToString();
+                somathang = Int32.Parse(r["SoMatHang"].ToString());
+            }
+
+            foreach (DataRow r in dtTongNhanVien.Rows)
+            {
+                lbTongNhanVien.Text = r["TongNhanVien"].ToString();
+            }
+
+            foreach (DataRow r in dtTongKhachHang.Rows)
+            {
+                lbTongKH.Text = r["TongKH"].ToString();
+            }
+
+        }
         private void Main_Load(object sender, EventArgs e)
         {
+            LoadData();
             dt = bus.getLichSuHang();
+
+            chart1.DataSource = dt;
+            chart1.Series.Clear();
+            chart1.ChartAreas.Clear();
+            chart1.ChartAreas.Add("Area0");
+            chart1.Series.Add("SoLuongCon");
+          
+
             chart1.ChartAreas[0].AxisX.Minimum = 0;
 
-            chart1.ChartAreas[0].AxisX.Maximum = 10;
+            chart1.ChartAreas[0].AxisX.Maximum = somathang;
 
             chart1.ChartAreas[0].AxisY.Minimum = 0;
 
-            chart1.ChartAreas[0].AxisY.Maximum = 5000;
+            //chart1.ChartAreas[0].AxisY.Maximum = 5000;
 
-            chart1.DataBindTable(dt.DefaultView, "TenHang");
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
+            chart1.Series[0].XValueMember = "TenHang";
+            chart1.Series[0].YValueMembers = "SoLuongCon";
+            chart1.Series[0].IsValueShownAsLabel = true;
+            chart1.ChartAreas[0].AxisX.LabelStyle.Angle = -90;
+            
            
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+                    }
     }
 }
