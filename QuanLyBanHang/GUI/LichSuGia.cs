@@ -30,7 +30,6 @@ namespace GUI
 
         private void LichSuGia_Load(object sender, EventArgs e)
         {
-            
             LoadData();
             LoadComboBox();
         }
@@ -56,6 +55,33 @@ namespace GUI
         private void btnThem_Click(object sender, EventArgs e)
         {
             int result = DateTime.Compare(dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date);
+
+            DataTable dtMaH = new DataTable();
+            dtMaH.Clear();
+            SqlConnection conn = dal.getConnect();
+            conn.Open();
+            SqlDataAdapter adMaH = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + cbMaHang.Text + "'", conn);
+            adMaH.Fill(dtMaH);
+            
+            for (int rows = 0; rows < dgvLichSuGia.Rows.Count; rows++)
+            {
+                for (int col = 0; col < dgvLichSuGia.Rows[0].Cells.Count; col++)
+                {
+                    string value1 = dgvLichSuGia.Rows[rows].Cells[col].Value.ToString();
+                }
+            }
+            //DataTable dtNgay = new DataTable();
+            //dtNgay.Clear();
+            //String ma= dtMaH.Rows[0]["MaH"].ToString().Trim();
+            //SqlDataAdapter adNgay = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + ma + "'", conn);
+            //adNgay.Fill(dtNgay);
+            ////for (int i = 0; i <= dtNgay.Rows.Count; i++)
+            ////{
+            ////    if (dtpNgayBatDau.Value.Date > Convert.ToDateTime(dtNgay.Rows[i]["NgayBD"].ToString().Trim())  && dtpNgayBatDau.Value.Date < Convert.ToDateTime(dtNgay.Rows[i]["NgayKT"].ToString().Trim()))
+            ////    {
+            ////        MessageBox.Show("Sai ngay");
+            ////    }
+            ////}
             if (txtDonGia.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập đơn giá, nhập lại!");
@@ -63,17 +89,13 @@ namespace GUI
             else if (result > 0)
             {
                 MessageBox.Show("Sai ngày bắt đầu và ngày kết thúc!");
+                ResetText();
             }
             else
             {
                 try
                 {
-                    DataTable dtMaH = new DataTable();
-                    dtMaH.Clear();
-                    SqlConnection conn = dal.getConnect();
-                    conn.Open();
-                    SqlDataAdapter ad = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + cbMaHang.Text + "'", conn);
-                    ad.Fill(dtMaH);
+                    
 
                     dtpNgayBatDau.Format = DateTimePickerFormat.Custom;
                     dtpNgayBatDau.CustomFormat = "MM/dd/yyyy";
@@ -234,6 +256,10 @@ namespace GUI
                 MessageBox.Show("Khong lay dc ma hang");
             }
             txtDonGia.Text = dgvLichSuGia.Rows[c].Cells[3].Value.ToString().Trim();
+            dtpNgayBatDau.Value = Convert.ToDateTime(dgvLichSuGia.Rows[c].Cells[1].Value);
+            dtpNgayKetThuc.Value = Convert.ToDateTime(dgvLichSuGia.Rows[c].Cells[2].Value);
+
+
         }
     }
 }

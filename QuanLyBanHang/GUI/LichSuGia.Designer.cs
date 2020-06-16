@@ -52,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txttest = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuGia)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -303,11 +304,21 @@
             this.panel1.Size = new System.Drawing.Size(909, 39);
             this.panel1.TabIndex = 39;
             // 
+            // txttest
+            // 
+            this.txttest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttest.Location = new System.Drawing.Point(354, 173);
+            this.txttest.Multiline = true;
+            this.txttest.Name = "txttest";
+            this.txttest.Size = new System.Drawing.Size(197, 23);
+            this.txttest.TabIndex = 40;
+            // 
             // LichSuGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 534);
+            this.Controls.Add(this.txttest);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cbMaHang);
             this.Controls.Add(this.btnThoat);
@@ -362,5 +373,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayKT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonG;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayCN;
+        private System.Windows.Forms.TextBox txttest;
     }
 }
