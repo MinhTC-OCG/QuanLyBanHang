@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BUS;
 using DTO;
-using DAL;
-using BUS;
+using System;
+using System.Data;
+using System.Windows.Forms;
 namespace GUI
 {
     public partial class NhaCungCap : Form
@@ -65,7 +58,7 @@ namespace GUI
                     {
                         dto.Mancc = txtMaNCC.Text;
                         dto.Tenncc = txtTenNCC.Text;
-                        dto.Diachi= txtDiaChi.Text;
+                        dto.Diachi = txtDiaChi.Text;
                         dto.Sodt = txtSoDT.Text;
                         bus.InsertNhaCungCap(dto.Mancc, dto.Tenncc, dto.Diachi, dto.Sodt);
                         MessageBox.Show("Thêm Nhà Cung cấp thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -142,12 +135,19 @@ namespace GUI
 
         private void bnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtTenNCC.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (rs == DialogResult.Yes)
+            if (txtMaNCC.Text == "")
             {
-                bus.DeleteNhaCungCap(txtMaNCC.Text);
-                MessageBox.Show("Xóa thành công");
-                LoadData();
+                MessageBox.Show("Thất bại, chưa nhập mã nhà cung cấp cần xóa!");
+            }
+            else
+            {
+                DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtTenNCC.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rs == DialogResult.Yes)
+                {
+                    bus.DeleteNhaCungCap(txtMaNCC.Text);
+                    MessageBox.Show("Xóa thành công");
+                    LoadData();
+                }
             }
         }
 

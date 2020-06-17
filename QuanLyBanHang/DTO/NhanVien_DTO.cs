@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DTO
+﻿namespace DTO
 {
     public class NhanVien_DTO
     {
-        string maNV,hoTen, diaChi, maTD;
+        string maNV, hoTen, diaChi, maTD;
         string soDT;
 
         public string MaNV { get => maNV; set => maNV = value; }

@@ -35,7 +35,7 @@
             this.txtTenDN = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lbLinkThoat = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,25 +110,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐĂNG NHẬP";
             // 
-            // linkLabel1
+            // lbLinkThoat
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(215, 254);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(41, 13);
-            this.linkLabel1.TabIndex = 12;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Thoát?";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.lbLinkThoat.AutoSize = true;
+            this.lbLinkThoat.Location = new System.Drawing.Point(215, 254);
+            this.lbLinkThoat.Name = "lbLinkThoat";
+            this.lbLinkThoat.Size = new System.Drawing.Size(41, 13);
+            this.lbLinkThoat.TabIndex = 12;
+            this.lbLinkThoat.TabStop = true;
+            this.lbLinkThoat.Text = "Thoát?";
+            this.lbLinkThoat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbLinkThoat_LinkClicked);
             // 
             // DangNhap
             // 
             this.AcceptButton = this.btnDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.linkLabel1;
+            this.CancelButton = this.lbLinkThoat;
             this.ClientSize = new System.Drawing.Size(537, 298);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.lbLinkThoat);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -154,6 +154,6 @@
         private System.Windows.Forms.TextBox txtTenDN;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel lbLinkThoat;
     }
 }

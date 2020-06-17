@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DAL;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAL;
 namespace BUS
 {
     public class Main_BUS
@@ -34,5 +29,12 @@ namespace BUS
             return dt;
         }
 
+        public DataTable TongDoanhThu()
+        {
+            string sql = "SELECT ThanhTienHD FROM HoaDonTongHop12";
+            DataTable dt = new DataTable();
+            dt = dal.getTable(sql);
+            return dt;
+        }
     }
 }

@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DAL;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAL;
-using DTO;
 
 namespace BUS
 {
@@ -194,7 +188,7 @@ namespace BUS
         public DataTable getLichSuHang()
         {
             DataTable dt = new DataTable();
-            string sql = "SELECT MaHang,TenHang,SoLuongCon FROM LichSuHang12";
+            string sql = "SELECT MaHang,TenHang,SoLuongCon,NgayCapNhat FROM LichSuHang12";
             dt = dal.getTable(sql);
             return dt;
         }
@@ -207,7 +201,7 @@ namespace BUS
 
         public void UpdateLSHang(string mahang, string tenhang, string donvi, int soluongcon, string ngaycapnhat)
         {
-            string sql = "UPDATE LichSuHang12 SET TenHang='" + tenhang + "',DonVi=N'" + donvi + "',SoLuongCon ='" + soluongcon + "',NgayCapNhat='" + ngaycapnhat + "' WHERE MaHang='"+mahang+"'";
+            string sql = "UPDATE LichSuHang12 SET TenHang='" + tenhang + "',DonVi=N'" + donvi + "',SoLuongCon ='" + soluongcon + "',NgayCapNhat='" + ngaycapnhat + "' WHERE MaHang='" + mahang + "'";
             dal.ExecuteNonQuery(sql);
         }
 
