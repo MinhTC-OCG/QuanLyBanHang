@@ -3,6 +3,7 @@ using DAL;
 using DTO;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 namespace GUI
 {
@@ -23,6 +24,7 @@ namespace GUI
             dtKhachHang.Clear();
             dtKhachHang = bus.ShowKhachHang();
             dgvKhachHang.DataSource = dtKhachHang;
+            dgvKhachHang.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
 
         }
         private void KhachHang_Load(object sender, EventArgs e)
@@ -197,10 +199,14 @@ namespace GUI
         {
             dgvKhachHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             int r = e.RowIndex;
-            txtMaKhachHang.Text = dgvKhachHang.Rows[r].Cells[0].Value.ToString();
-            txtHoTen.Text = dgvKhachHang.Rows[r].Cells[1].Value.ToString();
-            txtDiaChi.Text = dgvKhachHang.Rows[r].Cells[2].Value.ToString();
-            txtSoDienThoai.Text = dgvKhachHang.Rows[r].Cells[3].Value.ToString();
+            if (r >= 0)
+            {
+                txtMaKhachHang.Text = dgvKhachHang.Rows[r].Cells[0].Value.ToString();
+                txtHoTen.Text = dgvKhachHang.Rows[r].Cells[1].Value.ToString();
+                txtDiaChi.Text = dgvKhachHang.Rows[r].Cells[2].Value.ToString();
+                txtSoDienThoai.Text = dgvKhachHang.Rows[r].Cells[3].Value.ToString();
+            }
+            
         }
 
         private void KhachHang_FormClosed(object sender, FormClosedEventArgs e)

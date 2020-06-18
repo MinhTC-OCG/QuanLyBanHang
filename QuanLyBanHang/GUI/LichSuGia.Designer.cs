@@ -212,7 +212,7 @@
             this.dgvLichSuGia.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvLichSuGia.Size = new System.Drawing.Size(890, 271);
             this.dgvLichSuGia.TabIndex = 26;
-            this.dgvLichSuGia.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.rowenter);
+            this.dgvLichSuGia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.rowenter);
             // 
             // MaH
             // 
