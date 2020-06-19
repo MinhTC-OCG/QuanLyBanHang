@@ -201,7 +201,7 @@ namespace BUS
 
         public void UpdateLSHang(string mahang, string tenhang, string donvi, int soluongcon, string ngaycapnhat)
         {
-            string sql = "UPDATE LichSuHang12 SET TenHang='" + tenhang + "',DonVi=N'" + donvi + "',SoLuongCon ='" + soluongcon + "',NgayCapNhat='" + ngaycapnhat + "' WHERE MaHang='" + mahang + "'";
+            string sql = "UPDATE LichSuHang12 SET TenHang=N'" + tenhang + "',DonVi=N'" + donvi + "',SoLuongCon ='" + soluongcon + "',NgayCapNhat='" + ngaycapnhat + "' WHERE MaHang='" + mahang + "'";
             dal.ExecuteNonQuery(sql);
         }
 

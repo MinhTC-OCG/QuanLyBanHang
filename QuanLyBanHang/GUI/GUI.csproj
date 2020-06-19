@@ -195,11 +195,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLBH_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBH_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ReportBaoCaoTheoNgay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportBaoCaoTheoNgay.Designer.cs">
       <DependentUpon>ReportBaoCaoTheoNgay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportBaoCaoTheoThang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportBaoCaoTheoThang.Designer.cs">
+      <DependentUpon>ReportBaoCaoTheoThang.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TrinhDo.cs">
@@ -254,6 +265,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportBaoCaoTheoThang.rdlc" />
+    <EmbeddedResource Include="ReportBaoCaoTheoThang.resx">
+      <DependentUpon>ReportBaoCaoTheoThang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TrinhDo.resx">
       <DependentUpon>TrinhDo.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,6 +298,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLBH_DataSet.xsc">
+      <DependentUpon>QLBH_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLBH_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBH_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBH_DataSet.xss">
+      <DependentUpon>QLBH_DataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

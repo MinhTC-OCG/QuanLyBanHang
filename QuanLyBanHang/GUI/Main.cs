@@ -148,7 +148,8 @@ namespace GUI
 
         private void mntsBaoCaoTheoThang_Click(object sender, EventArgs e)
         {
-
+            BaoCaoTonCuoiThang bc = new BaoCaoTonCuoiThang();
+            bc.Show();
         }
 
         private void mntsBaoCaoDoanhSo_Click(object sender, EventArgs e)
