@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DAL;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAL;
-using DTO;
 
 namespace BUS
 {
@@ -21,12 +15,12 @@ namespace BUS
         }
         public void InsertKhachHang(string makhachhang, string hoten, string diachi, string sodienthoai)
         {
-            string sql = "insert into KhachHang12 values('"+makhachhang+"',N'"+hoten+"',N'"+diachi+"','"+sodienthoai+"')";
+            string sql = "insert into KhachHang12 values('" + makhachhang + "',N'" + hoten + "',N'" + diachi + "','" + sodienthoai + "')";
             dal.ExecuteNonQuery(sql);
         }
         public void UpdateKhachHang(string makhachhang, string hoten, string diachi, string sodienthoai)
         {
-            string sql = "update KhachHang12 set HoTen=N'"+ hoten +"',DiaChi=N'" + diachi + "',SoDT='"+ sodienthoai + "' where MaKH=N'"+ makhachhang +"'";
+            string sql = "update KhachHang12 set HoTen=N'" + hoten + "',DiaChi=N'" + diachi + "',SoDT='" + sodienthoai + "' where MaKH=N'" + makhachhang + "'";
             dal.ExecuteNonQuery(sql);
         }
 

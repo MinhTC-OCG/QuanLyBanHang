@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
-using DAL;
+﻿using DAL;
 using System.Data;
 
 namespace BUS
@@ -37,16 +31,16 @@ namespace BUS
             return dt;
         }
 
-        public void InsertHang(string mahang, string tenhang, string donvt,int dongia,string maloai,string mancc, int soluongco)
+        public void InsertHang(string mahang, string tenhang, string donvt, int dongia, string maloai, string mancc, int soluongco)
         {
-            string sql = "INSERT INTO Hang12 VALUES ('" + mahang + "',N'" + tenhang + "',N'" + donvt +"','"+ dongia +"','"+ maloai +"','"+ mancc +"','"+ soluongco + "')";
+            string sql = "INSERT INTO Hang12 VALUES ('" + mahang + "',N'" + tenhang + "',N'" + donvt + "','" + dongia + "','" + maloai + "','" + mancc + "','" + soluongco + "')";
             dal.ExecuteNonQuery(sql);
         }
 
 
         public void UpdateHang(string mahang, string tenhang, string donvt, int dongia, string maloai, string mancc, int soluongco)
         {
-            string sql = "UPDATE Hang12 SET TenH =N'"+tenhang+"',DonVT=N'"+donvt+"',DonG='"+dongia+"',MaL='"+maloai+"', MaNCC= '"+mancc+"', SLC='"+soluongco+"' WHERE MaH ='"+mahang+"'";
+            string sql = "UPDATE Hang12 SET TenH =N'" + tenhang + "',DonVT=N'" + donvt + "',DonG='" + dongia + "',MaL='" + maloai + "', MaNCC= '" + mancc + "', SLC='" + soluongco + "' WHERE MaH ='" + mahang + "'";
             dal.ExecuteNonQuery(sql);
         }
 

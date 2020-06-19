@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,20 +27,30 @@ namespace BUS
             dtcb = dal.getTable(sql);
             return dtcb;
         }
-        public void InsertLichSuGia(string mahang, String ngaybatdau, string ngayketthuc, int dongia, string ngaycapnhat)
+        public DataTable InsertLichSuGia(string mahang, String ngaybatdau, string ngayketthuc, int dongia, string ngaycapnhat)
         {
-            string sql = "Insert into LichSuGia12 values('" + mahang + "','" + ngaybatdau + "','" + ngayketthuc + "'," + dongia + ",'" + ngaycapnhat + "')";
-            dal.ExecuteNonQuery(sql);
+            DataTable dtNgay = new DataTable();
+            dtNgay.Clear();
+            string sql = " Declare @ERROR int"
+                          + " exec insertlsgia '" + mahang + "','" + ngaybatdau + "','" + ngayketthuc + "'," + dongia + ",'" + ngaycapnhat + "',@ERROR output"
+                          + " select @ERROR";
+            dtNgay = dal.getTable(sql);
+            return dtNgay;
         }
-        public void UpdateLichSuGia(string mahang, string ngaybatdau, string ngayketthuc, int dongia, string ngaycapnhat)
+        public DataTable UpdateLichSuGia(string mahang, string ngaybatdau, string ngayketthuc, int dongia, string ngaycapnhat, String ngaybatdaucu)
         {
-            string sql = "update LichSuGia12 set NgayBD='" + ngaybatdau + "',NgayKT='" + ngayketthuc + "',DonG= " + dongia + ",NgayCN='" + ngaycapnhat + "' where Mah='" + mahang + "'";
-            dal.ExecuteNonQuery(sql);
+            DataTable dtNgay1 = new DataTable();
+            dtNgay1.Clear();
+            string sql = " Declare @ERROR int"
+                        + " exec updatelsgia '" + mahang + "','" + ngaybatdau + "','" + ngayketthuc + "'," + dongia + ",'" + ngaycapnhat + "','" + ngaybatdaucu + "',@ERROR output"
+                        + " select @ERROR";
+            dtNgay1 = dal.getTable(sql);
+            return dtNgay1;
         }
 
-        public void DeleteLichSuGia(string mahang)
+        public void DeleteLichSuGia(string mahang, String ngaybatdau)
         {
-            string sql = "delete from dbo.LichSuGia12 where MaH='" + mahang + "'";
+            string sql = "delete from LichSuGia12 where MaH='" + mahang + "' and NgayBD='" + ngaybatdau + "'";
             dal.ExecuteNonQuery(sql);
         }
 

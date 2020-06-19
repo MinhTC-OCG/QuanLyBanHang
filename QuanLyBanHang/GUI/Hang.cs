@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BUS;
 using DTO;
-using BUS;
+using System;
+using System.Data;
+using System.Windows.Forms;
 namespace GUI
 {
     public partial class Hang : Form
     {
         Hang_BUS bus = new Hang_BUS();
         Hang_DTO dto = new Hang_DTO();
-
         DataTable dtHang, dtLoaiHang, dtNhaCungCap, dtTimKiemHang;
+
         public Hang()
         {
             InitializeComponent();
@@ -60,7 +54,7 @@ namespace GUI
                         dto.Soluongco = Int32.Parse(txtSLC.Text);
 
                         bus.InsertHang(dto.Mahang, dto.Tenhang, dto.Donvt, dto.Dongia, dto.Maloai, dto.Mancc, dto.Soluongco);
-                        MessageBox.Show("Thêm hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Thêm hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
                     }
                     else
@@ -72,7 +66,7 @@ namespace GUI
             }
             catch (Exception)
             {
-                MessageBox.Show("Không thêm được hàng, thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không thêm được hàng, thử lại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -102,7 +96,6 @@ namespace GUI
                             dem++;
                             break;
                         }
-
                     }
                     if (dem != 0)
                     {
@@ -127,19 +120,27 @@ namespace GUI
             }
             catch (Exception)
             {
-                MessageBox.Show("Không sửa được hàng, thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không sửa được hàng, thử lại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtTenH.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (rs == DialogResult.Yes)
+            if (txtMaH.Text == "")
             {
-                bus.DeleteHang(txtMaH.Text.Trim());
-                MessageBox.Show("Xóa thành công");
-                LoadData();
+                MessageBox.Show("Thất bại, chưa nhập mã hàng cần xóa!");
             }
+            else
+            {
+                DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtTenH.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rs == DialogResult.Yes)
+                {
+                    bus.DeleteHang(txtMaH.Text.Trim());
+                    MessageBox.Show("Xóa thành công");
+                    LoadData();
+                }
+            }
+
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -156,6 +157,7 @@ namespace GUI
             txtDonVT.Text = "";
             txtDonG.Text = "";
             txtSLC.Text = "";
+            txtMaH.Focus();
         }
 
         private void btnXem_Click(object sender, EventArgs e)
@@ -170,14 +172,14 @@ namespace GUI
                 this.Dispose();
         }
 
-        private void dgvHang_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void dgvHang_Click(object sender, EventArgs e)
         {
             dgvHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            int r = e.RowIndex;
+            int r = dgvHang.CurrentCell.RowIndex;
             txtMaH.Text = dgvHang.Rows[r].Cells[0].Value.ToString();
             txtTenH.Text = dgvHang.Rows[r].Cells[1].Value.ToString();
-            txtDonVT.Text = dgvHang.Rows[r].Cells[2].Value.ToString();
-            txtDonG.Text = dgvHang.Rows[r].Cells[3].Value.ToString();
+            txtDonVT.Text= dgvHang.Rows[r].Cells[2].Value.ToString();
+            txtDonG.Text= dgvHang.Rows[r].Cells[3].Value.ToString();
             cboMaL.SelectedValue = dgvHang.Rows[r].Cells[4].Value.ToString();
             cboMaNCC.SelectedValue = dgvHang.Rows[r].Cells[5].Value.ToString();
             txtSLC.Text = dgvHang.Rows[r].Cells[6].Value.ToString();
@@ -218,7 +220,5 @@ namespace GUI
             (dgvHang.Columns["MaNCC"] as DataGridViewComboBoxColumn).DisplayMember = "TenNCC";
             (dgvHang.Columns["MaNCC"] as DataGridViewComboBoxColumn).ValueMember = "MaNCC";
         }
-
-
     }
 }

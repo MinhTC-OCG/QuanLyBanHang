@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using BUS;
+using System;
 using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BUS;
 
 namespace GUI
 {
@@ -25,13 +18,13 @@ namespace GUI
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "yyyy-MM";
         }
-       
+
         private void BaoCaoTonCuoiThang_Load(object sender, EventArgs e)
         {
             formatDPicker();
             lbNguoiLap.Text = DangNhap.tendangnhap;
             lbDate.Text = DateTime.Now.ToString("yyyy/MM/dd");
-            
+
         }
 
         private void bnXuat_Click(object sender, EventArgs e)
@@ -41,12 +34,14 @@ namespace GUI
             string year = mang[0];
             string month = mang[1];
             DataTable dt = new DataTable();
-            dt = bus.BCTonThang(year,month);
+            dt = bus.BCTonThang(year, month);
             dgvBCHTonThang.DataSource = dt;
         }
 
         private void bnIn_Click(object sender, EventArgs e)
         {
+            ReportBaoCaoTheoThang rp = new ReportBaoCaoTheoThang();
+            rp.Show();
         }
         private void dgvBCHTonThang_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {

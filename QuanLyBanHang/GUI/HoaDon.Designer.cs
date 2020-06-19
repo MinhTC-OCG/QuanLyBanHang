@@ -770,7 +770,7 @@
             this.btnXem.Location = new System.Drawing.Point(704, 611);
             this.btnXem.Margin = new System.Windows.Forms.Padding(2);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(60, 35);
+            this.btnXem.Size = new System.Drawing.Size(73, 35);
             this.btnXem.TabIndex = 16;
             this.btnXem.Text = "Xem";
             this.btnXem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

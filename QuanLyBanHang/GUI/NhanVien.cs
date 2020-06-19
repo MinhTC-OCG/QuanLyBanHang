@@ -1,13 +1,7 @@
 ﻿using BUS;
 using DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -20,7 +14,7 @@ namespace GUI
         }
         public NhanVien_BUS bus = new NhanVien_BUS();
         public NhanVien_DTO dto = new NhanVien_DTO();
-        DataTable dtNhanVien,dtTrinhDo;
+        DataTable dtNhanVien, dtTrinhDo;
         public void LoadData()
         {
             dtNhanVien = new DataTable();
@@ -129,14 +123,14 @@ namespace GUI
                     int dem = 0;
                     foreach (DataRow row in dtNhanVien.Rows)
                     {
-                            var check = row.ToString().Trim();
-                            if (txtMaNV.Text.Trim() == check)
-                            {
-                                dem++;
-                                break;
-                            }
+                        var check = row.ToString().Trim();
+                        if (txtMaNV.Text.Trim() == check)
+                        {
+                            dem++;
+                            break;
+                        }
                     }
-                    if (dem == 0)
+                    if (dem != 0)
                     {
                         bus.UpdateNhanvien(dto.MaNV, dto.HoTen, dto.DiaChi, dto.SoDT, dto.MaTD);
                         NhanVien_Load_1(sender, e);
@@ -158,12 +152,19 @@ namespace GUI
 
         private void bnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa nhân viên \"" + txtHoTen.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (rs == DialogResult.Yes)
+            if (txtMaNV.Text == "")
             {
-                bus.DeleteNhanVien(txtMaNV.Text);
-                MessageBox.Show("Xóa thành công");
-                LoadData();
+                MessageBox.Show("Thất bại, chưa nhập mã nhân viên cần xóa!");
+            }
+            else
+            {
+                DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa nhân viên \"" + txtHoTen.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rs == DialogResult.Yes)
+                {
+                    bus.DeleteNhanVien(txtMaNV.Text);
+                    MessageBox.Show("Xóa thành công");
+                    LoadData();
+                }
             }
         }
 

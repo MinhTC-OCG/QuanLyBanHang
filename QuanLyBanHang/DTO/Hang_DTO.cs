@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DTO
+﻿namespace DTO
 {
     public class Hang_DTO
     {
@@ -15,7 +9,7 @@ namespace DTO
         int soluongco;
         public Hang_DTO()
         {
-             
+
         }
 
         public Hang_DTO(string mahang, string tenhang, string donvt, int dongia, string maloai, string mancc, int soluongco)

@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DAL;
+﻿using BUS;
 using DTO;
-using BUS;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace GUI
 {
@@ -17,14 +10,14 @@ namespace GUI
     {
         TrinhDo_DTO td = new TrinhDo_DTO();
         TrinhDo_BUS bus = new TrinhDo_BUS();
-        DataTable dtTrinhdo, dtTimKiem;
+
         List<TrinhDo_DTO> list = new List<TrinhDo_DTO>();
 
         public TrinhDo()
         {
             InitializeComponent();
         }
-     
+
         public void LoadData()
         {
             list = bus.ShowTD();
@@ -60,7 +53,7 @@ namespace GUI
             try
             {
                 if (txtTrinhdo.Text == "")
-                    MessageBox.Show("Bạn chưa nhập tên trình độ, nhập lại!"); 
+                    MessageBox.Show("Bạn chưa nhập tên trình độ, nhập lại!");
                 else if (txtMatrinhdo.Text == "")
                     MessageBox.Show("Bạn chưa nhập mã trình độ, nhập lại!");
                 else
@@ -113,7 +106,7 @@ namespace GUI
                             break;
                         }
                     }
-                
+
                     if (dem != 0)
                     {
 
@@ -148,12 +141,19 @@ namespace GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtTrinhdo.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (rs == DialogResult.Yes)
+            if (txtMatrinhdo.Text == "")
             {
-               bus.DeleteTD(txtMatrinhdo.Text.Trim());
-                MessageBox.Show("Xóa thành công");
-                LoadData();
+                MessageBox.Show("Thất bại, chưa nhập mã trình độ cần xóa!");
+            }
+            else
+            {
+                DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtTrinhdo.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rs == DialogResult.Yes)
+                {
+                    bus.DeleteTD(txtMatrinhdo.Text.Trim());
+                    MessageBox.Show("Xóa thành công");
+                    LoadData();
+                }
             }
         }
     }

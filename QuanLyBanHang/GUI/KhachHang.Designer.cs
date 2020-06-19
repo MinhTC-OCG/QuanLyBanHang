@@ -156,6 +156,8 @@
             // dgvKhachHang
             // 
             this.dgvKhachHang.AllowUserToAddRows = false;
+            this.dgvKhachHang.AllowUserToResizeColumns = false;
+            this.dgvKhachHang.AllowUserToResizeRows = false;
             this.dgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhachHang.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.None;

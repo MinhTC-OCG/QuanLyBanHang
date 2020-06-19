@@ -1,9 +1,6 @@
-﻿using System;
+﻿using DTO;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
 namespace DAL
 {
     public class linq
@@ -13,7 +10,7 @@ namespace DAL
 
         public List<LoaiHang_DTO> ShowLoaiHang()
         {
-           var query = from lh in db.LoaiHang12s select new LoaiHang_DTO{Maloai=lh.MaL,Tenloai=lh.TenL,Ghichu = lh.GhiChu};
+            var query = from lh in db.LoaiHang12s select new LoaiHang_DTO { Maloai = lh.MaL, Tenloai = lh.TenL, Ghichu = lh.GhiChu };
             return query.ToList();
         }
 
@@ -47,7 +44,7 @@ namespace DAL
             }
         }
 
-        public List<LoaiHang_DTO>SearchLoaiHang(string maloai)
+        public List<LoaiHang_DTO> SearchLoaiHang(string maloai)
         {
             var query = from lh in db.LoaiHang12s where lh.MaL.Trim() == maloai.Trim() select new LoaiHang_DTO { Maloai = lh.MaL, Tenloai = lh.TenL, Ghichu = lh.GhiChu };
             return query.ToList();

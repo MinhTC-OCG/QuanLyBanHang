@@ -85,7 +85,7 @@
             this.dgvHang.RowHeadersVisible = false;
             this.dgvHang.Size = new System.Drawing.Size(890, 281);
             this.dgvHang.TabIndex = 0;
-            this.dgvHang.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHang_RowEnter);
+            this.dgvHang.Click += new System.EventHandler(this.dgvHang_Click);
             // 
             // MaH
             // 

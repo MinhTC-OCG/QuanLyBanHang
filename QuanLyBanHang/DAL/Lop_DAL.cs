@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace DAL
 {
     public class Lop_DAL
@@ -12,7 +7,7 @@ namespace DAL
 
         public SqlConnection getConnect()
         {
-            return new SqlConnection(@"Data Source=DESKTOP-G3PG01C\NHATNGUYEN;Initial Catalog=QLBH;Integrated Security=True");
+            return new SqlConnection(@"Data Source=LONGLD\LLD;Initial Catalog=QLBH;Integrated Security=True");
             //Data Source=DESKTOP-G3PG01C\NHATNGUYEN;Initial Catalog=QLBH;Integrated Security=True
             //Data Source=DESKTOP-KRH26DK\MINH;Initial Catalog=QLBH;Integrated Security=True
             //Data Source=LONGLD\LLD;Initial Catalog=QLBH;Integrated Security=True

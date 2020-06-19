@@ -36,14 +36,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbDate = new System.Windows.Forms.Label();
             this.dgvBCHTonThang = new System.Windows.Forms.DataGridView();
-            this.bnXuat = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SLC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bnXuat = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBCHTonThang)).BeginInit();
             this.SuspendLayout();
@@ -54,8 +54,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.bnIn);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1462, 65);
+            this.panel1.Size = new System.Drawing.Size(1105, 53);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -63,18 +64,20 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(531, 18);
+            this.label1.Location = new System.Drawing.Point(398, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(478, 32);
+            this.label1.Size = new System.Drawing.Size(377, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "BÁO CÁO HÀNG TỒN CUỐI THÁNG";
             // 
             // bnIn
             // 
             this.bnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnIn.Location = new System.Drawing.Point(12, 18);
+            this.bnIn.Location = new System.Drawing.Point(9, 15);
+            this.bnIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bnIn.Name = "bnIn";
-            this.bnIn.Size = new System.Drawing.Size(49, 32);
+            this.bnIn.Size = new System.Drawing.Size(37, 26);
             this.bnIn.TabIndex = 7;
             this.bnIn.Text = "In";
             this.bnIn.UseVisualStyleBackColor = true;
@@ -84,9 +87,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 87);
+            this.label2.Location = new System.Drawing.Point(9, 71);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 25);
+            this.label2.Size = new System.Drawing.Size(79, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Người lập:";
             // 
@@ -94,9 +98,10 @@
             // 
             this.lbNguoiLap.AutoSize = true;
             this.lbNguoiLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNguoiLap.Location = new System.Drawing.Point(118, 87);
+            this.lbNguoiLap.Location = new System.Drawing.Point(88, 71);
+            this.lbNguoiLap.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNguoiLap.Name = "lbNguoiLap";
-            this.lbNguoiLap.Size = new System.Drawing.Size(53, 25);
+            this.lbNguoiLap.Size = new System.Drawing.Size(43, 20);
             this.lbNguoiLap.TabIndex = 3;
             this.lbNguoiLap.Text = "User";
             // 
@@ -104,9 +109,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1227, 87);
+            this.label4.Location = new System.Drawing.Point(920, 71);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 25);
+            this.label4.Size = new System.Drawing.Size(74, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Ngày lập:";
             // 
@@ -114,9 +120,10 @@
             // 
             this.lbDate.AutoSize = true;
             this.lbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.Location = new System.Drawing.Point(1328, 87);
+            this.lbDate.Location = new System.Drawing.Point(996, 71);
+            this.lbDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(120, 25);
+            this.lbDate.Size = new System.Drawing.Size(89, 20);
             this.lbDate.TabIndex = 5;
             this.lbDate.Text = "yyyy/MM/dd";
             // 
@@ -133,34 +140,15 @@
             this.DonVT,
             this.SLC,
             this.GhiChu});
-            this.dgvBCHTonThang.Location = new System.Drawing.Point(0, 134);
+            this.dgvBCHTonThang.Location = new System.Drawing.Point(9, 109);
+            this.dgvBCHTonThang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvBCHTonThang.Name = "dgvBCHTonThang";
             this.dgvBCHTonThang.RowHeadersVisible = false;
             this.dgvBCHTonThang.RowHeadersWidth = 51;
             this.dgvBCHTonThang.RowTemplate.Height = 24;
-            this.dgvBCHTonThang.Size = new System.Drawing.Size(1462, 442);
+            this.dgvBCHTonThang.Size = new System.Drawing.Size(1087, 359);
             this.dgvBCHTonThang.TabIndex = 6;
             this.dgvBCHTonThang.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvBCHTonThang_RowPrePaint);
-            // 
-            // bnXuat
-            // 
-            this.bnXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnXuat.Location = new System.Drawing.Point(888, 82);
-            this.bnXuat.Name = "bnXuat";
-            this.bnXuat.Size = new System.Drawing.Size(86, 30);
-            this.bnXuat.TabIndex = 8;
-            this.bnXuat.Text = "Xuất";
-            this.bnXuat.UseVisualStyleBackColor = true;
-            this.bnXuat.Click += new System.EventHandler(this.bnXuat_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(526, 82);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(347, 30);
-            this.dateTimePicker1.TabIndex = 8;
             // 
             // STT
             // 
@@ -203,11 +191,33 @@
             this.GhiChu.MinimumWidth = 6;
             this.GhiChu.Name = "GhiChu";
             // 
+            // bnXuat
+            // 
+            this.bnXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnXuat.Location = new System.Drawing.Point(666, 67);
+            this.bnXuat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bnXuat.Name = "bnXuat";
+            this.bnXuat.Size = new System.Drawing.Size(64, 24);
+            this.bnXuat.TabIndex = 8;
+            this.bnXuat.Text = "Xuất";
+            this.bnXuat.UseVisualStyleBackColor = true;
+            this.bnXuat.Click += new System.EventHandler(this.bnXuat_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(394, 67);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(261, 26);
+            this.dateTimePicker1.TabIndex = 8;
+            // 
             // BaoCaoTonCuoiThang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1462, 576);
+            this.ClientSize = new System.Drawing.Size(1106, 468);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.bnXuat);
             this.Controls.Add(this.dgvBCHTonThang);
@@ -216,6 +226,7 @@
             this.Controls.Add(this.lbNguoiLap);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BaoCaoTonCuoiThang";
             this.Text = "BaoCaoTonCuoiThang";
             this.Load += new System.EventHandler(this.BaoCaoTonCuoiThang_Load);

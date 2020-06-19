@@ -32,6 +32,50 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BUS">
       <HintPath>..\BUS\bin\Debug\BUS.dll</HintPath>
@@ -148,11 +192,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLBH_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBH_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ReportBaoCaoTheoNgay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportBaoCaoTheoNgay.Designer.cs">
       <DependentUpon>ReportBaoCaoTheoNgay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportBaoCaoTheoThang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportBaoCaoTheoThang.Designer.cs">
+      <DependentUpon>ReportBaoCaoTheoThang.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TrinhDo.cs">
@@ -207,6 +262,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportBaoCaoTheoThang.rdlc" />
+    <EmbeddedResource Include="ReportBaoCaoTheoThang.resx">
+      <DependentUpon>ReportBaoCaoTheoThang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TrinhDo.resx">
       <DependentUpon>TrinhDo.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +295,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLBH_DataSet.xsc">
+      <DependentUpon>QLBH_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLBH_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBH_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBH_DataSet.xss">
+      <DependentUpon>QLBH_DataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -266,13 +336,11 @@
     <Content Include="Images\exit.png" />
     <Content Include="Images\loading.png" />
     <Content Include="Images\print.png" />
-    <Content Include="Images\printer.png" />
     <Content Include="Images\printers.png" />
     <Content Include="Images\product.png" />
-    <Content Include="Images\refresh.png" />
     <Content Include="Images\reload.png" />
     <Content Include="Images\retype.png" />
-    <Content Include="Images\search.png" />
+    <Content Include="Images\revenue.png" />
     <Content Include="Images\search1.png" />
     <Content Include="Images\upatecart.png" />
     <Content Include="Images\update.png" />
