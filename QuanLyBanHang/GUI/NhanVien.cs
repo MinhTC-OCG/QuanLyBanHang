@@ -123,11 +123,14 @@ namespace GUI
                     int dem = 0;
                     foreach (DataRow row in dtNhanVien.Rows)
                     {
-                        var check = row.ToString().Trim();
-                        if (txtMaNV.Text.Trim() == check)
+                        foreach (DataColumn c in dtNhanVien.Columns)
                         {
-                            dem++;
-                            break;
+                            var check = row[c].ToString().Trim();
+                            if (txtMaNV.Text.Trim() == check)
+                            {
+                                dem++;
+                                break;
+                            }
                         }
                     }
                     if (dem != 0)
