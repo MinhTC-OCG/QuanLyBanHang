@@ -176,7 +176,7 @@
             // 
             this.dtpNgayKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayKetThuc.Location = new System.Drawing.Point(410, 123);
+            this.dtpNgayKetThuc.Location = new System.Drawing.Point(591, 122);
             this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
             this.dtpNgayKetThuc.Size = new System.Drawing.Size(172, 22);
             this.dtpNgayKetThuc.TabIndex = 28;
@@ -185,7 +185,7 @@
             // 
             this.dtpNgayBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayBatDau.Location = new System.Drawing.Point(410, 62);
+            this.dtpNgayBatDau.Location = new System.Drawing.Point(591, 59);
             this.dtpNgayBatDau.Name = "dtpNgayBatDau";
             this.dtpNgayBatDau.Size = new System.Drawing.Size(172, 22);
             this.dtpNgayBatDau.TabIndex = 27;
@@ -258,7 +258,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(312, 128);
+            this.label4.Location = new System.Drawing.Point(459, 128);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 16);
             this.label4.TabIndex = 23;
@@ -268,7 +268,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(312, 65);
+            this.label3.Location = new System.Drawing.Point(459, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 16);
             this.label3.TabIndex = 22;

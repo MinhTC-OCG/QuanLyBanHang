@@ -189,7 +189,7 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show("Không sửa được!");
+                    MessageBox.Show("Không sửa được!","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 dgvLichSuGia.ClearSelection();
@@ -216,13 +216,13 @@ namespace GUI
                     {
                         bus.DeleteLichSuGia(dtMaH.Rows[0]["MaH"].ToString().Trim(), dtpNgayBatDau.Value.ToString("MM/dd/yyyy").Trim());
                         LoadData();
-                        MessageBox.Show("Xóa thành công");
+                        MessageBox.Show("Xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }
                 catch
                 {
-                    MessageBox.Show("Không thỏa mãn " + dtMaH.Rows[0]["MaH"].ToString().Trim() + " && " + dtpNgayBatDau.Value.ToString("MM/dd/yyyy").Trim() + "! ");
+                    MessageBox.Show("Không thỏa mãn " + dtMaH.Rows[0]["MaH"].ToString().Trim() + " && " + dtpNgayBatDau.Value.ToString("MM/dd/yyyy").Trim() + "! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 dgvLichSuGia.ClearSelection();
@@ -243,7 +243,7 @@ namespace GUI
             }
             catch
             {
-                MessageBox.Show("Sai dữ liệu Combobox");
+                MessageBox.Show("Sai dữ liệu Combobox","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
             dgvLichSuGia.ClearSelection();
@@ -281,7 +281,7 @@ namespace GUI
                 }
                 catch
                 {
-                    MessageBox.Show("Khong lay dc ma hang");
+                    MessageBox.Show("Khong lay dc ma hang","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                 txtDonGia.Text = dgvLichSuGia.Rows[c].Cells[3].Value.ToString().Trim();
                 dtpNgayBatDau.Value = Convert.ToDateTime(dgvLichSuGia.Rows[c].Cells[1].Value);

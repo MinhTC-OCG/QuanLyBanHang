@@ -154,7 +154,7 @@ namespace GUI
 
         private void mntsBaoCaoDoanhSo_Click(object sender, EventArgs e)
         {
-            BaoCaoTonCuoiThang bc = new BaoCaoTonCuoiThang();
+            BaoCaoDoanhSoBanHang bc = new BaoCaoDoanhSoBanHang();
             bc.Show();
         }
 
