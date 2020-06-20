@@ -37,10 +37,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.lbThang = new System.Windows.Forms.Label();
+            this.cbNV = new System.Windows.Forms.CheckBox();
+            this.cbH = new System.Windows.Forms.CheckBox();
             this.dgvDoanhSoHang = new System.Windows.Forms.DataGridView();
+            this.btnTatCa = new System.Windows.Forms.Button();
+            this.cl10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,8 +53,15 @@
             this.DonG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayBD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhSoHang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -90,12 +99,13 @@
             // 
             // btnXuat
             // 
-            this.btnXuat.Location = new System.Drawing.Point(633, 80);
+            this.btnXuat.Location = new System.Drawing.Point(596, 80);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(71, 27);
             this.btnXuat.TabIndex = 5;
             this.btnXuat.Text = "Xuất";
             this.btnXuat.UseVisualStyleBackColor = true;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // dtPicker
             // 
@@ -136,37 +146,39 @@
             this.label5.TabIndex = 13;
             this.label5.Text = " ";
             // 
-            // label6
+            // lbThang
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(247, 135);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 16);
-            this.label6.TabIndex = 14;
-            this.label6.Text = " MM/yyyy";
+            this.lbThang.AutoSize = true;
+            this.lbThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThang.Location = new System.Drawing.Point(247, 135);
+            this.lbThang.Name = "lbThang";
+            this.lbThang.Size = new System.Drawing.Size(65, 16);
+            this.lbThang.TabIndex = 14;
+            this.lbThang.Text = " MM/yyyy";
             // 
-            // checkBox1
+            // cbNV
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.checkBox1.Location = new System.Drawing.Point(371, 134);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(150, 20);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Doanh số Nhân Viên";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbNV.AutoSize = true;
+            this.cbNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbNV.Location = new System.Drawing.Point(371, 134);
+            this.cbNV.Name = "cbNV";
+            this.cbNV.Size = new System.Drawing.Size(150, 20);
+            this.cbNV.TabIndex = 15;
+            this.cbNV.Text = "Doanh số Nhân Viên";
+            this.cbNV.UseVisualStyleBackColor = true;
+            this.cbNV.CheckedChanged += new System.EventHandler(this.cbNV_CheckedChanged);
             // 
-            // checkBox2
+            // cbH
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.checkBox2.Location = new System.Drawing.Point(554, 131);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(150, 20);
-            this.checkBox2.TabIndex = 16;
-            this.checkBox2.Text = "Doanh số theo Hàng";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbH.AutoSize = true;
+            this.cbH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbH.Location = new System.Drawing.Point(554, 131);
+            this.cbH.Name = "cbH";
+            this.cbH.Size = new System.Drawing.Size(150, 20);
+            this.cbH.TabIndex = 16;
+            this.cbH.Text = "Doanh số theo Hàng";
+            this.cbH.UseVisualStyleBackColor = true;
+            this.cbH.CheckedChanged += new System.EventHandler(this.cbH_CheckedChanged);
             // 
             // dgvDoanhSoHang
             // 
@@ -178,6 +190,7 @@
             this.dgvDoanhSoHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDoanhSoHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDoanhSoHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cl10,
             this.MaHD,
             this.MaH,
             this.TenH,
@@ -195,6 +208,21 @@
             this.dgvDoanhSoHang.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvDoanhSoHang.Size = new System.Drawing.Size(920, 271);
             this.dgvDoanhSoHang.TabIndex = 27;
+            // 
+            // btnTatCa
+            // 
+            this.btnTatCa.Location = new System.Drawing.Point(711, 80);
+            this.btnTatCa.Name = "btnTatCa";
+            this.btnTatCa.Size = new System.Drawing.Size(71, 27);
+            this.btnTatCa.TabIndex = 28;
+            this.btnTatCa.Text = "Tất cả";
+            this.btnTatCa.UseVisualStyleBackColor = true;
+            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
+            // 
+            // cl10
+            // 
+            this.cl10.HeaderText = "Ngay";
+            this.cl10.Name = "cl10";
             // 
             // MaHD
             // 
@@ -265,15 +293,70 @@
             this.TongTien.HeaderText = "Tổng tiền";
             this.TongTien.Name = "TongTien";
             // 
+            // dgvNhanVien
+            // 
+            this.dgvNhanVien.AllowUserToAddRows = false;
+            this.dgvNhanVien.AllowUserToResizeColumns = false;
+            this.dgvNhanVien.AllowUserToResizeRows = false;
+            this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNhanVien.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.NgayBD,
+            this.NgayKT,
+            this.dataGridViewTextBoxColumn2,
+            this.NgayCN});
+            this.dgvNhanVien.EnableHeadersVisualStyles = false;
+            this.dgvNhanVien.Location = new System.Drawing.Point(15, 237);
+            this.dgvNhanVien.Name = "dgvNhanVien";
+            this.dgvNhanVien.RowHeadersVisible = false;
+            this.dgvNhanVien.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvNhanVien.Size = new System.Drawing.Size(850, 271);
+            this.dgvNhanVien.TabIndex = 29;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "MaH";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã hàng";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // NgayBD
+            // 
+            this.NgayBD.DataPropertyName = "NgayBD";
+            this.NgayBD.HeaderText = "Ngày bắt đầu";
+            this.NgayBD.Name = "NgayBD";
+            // 
+            // NgayKT
+            // 
+            this.NgayKT.DataPropertyName = "NgayKT";
+            this.NgayKT.HeaderText = "Ngày kết thúc";
+            this.NgayKT.Name = "NgayKT";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "DonG";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Đơn giá";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // NgayCN
+            // 
+            this.NgayCN.DataPropertyName = "NgayCN";
+            this.NgayCN.HeaderText = "Ngày cập nhật";
+            this.NgayCN.Name = "NgayCN";
+            // 
             // BaoCaoDoanhSoBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(947, 520);
+            this.Controls.Add(this.dgvNhanVien);
+            this.Controls.Add(this.btnTatCa);
             this.Controls.Add(this.dgvDoanhSoHang);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cbH);
+            this.Controls.Add(this.cbNV);
+            this.Controls.Add(this.lbThang);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -287,6 +370,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhSoHang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,10 +386,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Label lbThang;
+        private System.Windows.Forms.CheckBox cbNV;
+        private System.Windows.Forms.CheckBox cbH;
         private System.Windows.Forms.DataGridView dgvDoanhSoHang;
+        private System.Windows.Forms.Button btnTatCa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl10;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenH;
@@ -316,5 +402,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DonG;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoL;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
+        private System.Windows.Forms.DataGridView dgvNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayBD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayKT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayCN;
     }
 }
