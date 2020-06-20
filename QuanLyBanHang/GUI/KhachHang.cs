@@ -103,7 +103,7 @@ namespace GUI
             }
             catch (Exception)
             {
-                MessageBox.Show("Không thêm được khach hàng, thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không thêm được khách hàng, thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -120,7 +120,7 @@ namespace GUI
                 if (rs == DialogResult.Yes)
                 {
                     bus.DeleteKhachHang(txtMaKhachHang.Text.Trim());
-                    MessageBox.Show("Xóa thành công");
+                    MessageBox.Show("Xóa thành công","Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     LoadData();
                 }
             }
@@ -129,11 +129,12 @@ namespace GUI
         private void btnNhapLai_Click_1(object sender, EventArgs e)
         {
             ClearText();
+            txtMaKhachHang.Focus();
         }
 
         private void btnXem_Click_1(object sender, EventArgs e)
         {
-
+            LoadData();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -182,7 +183,7 @@ namespace GUI
                     }
                     else
                     {
-                        MessageBox.Show("Mã khach hàng đã tồn tại, nhập lại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Mã khách hàng không tồn tại, nhập lại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                 }
@@ -216,9 +217,16 @@ namespace GUI
 
         private void btnTim_Click_1(object sender, EventArgs e)
         {
-            dtTimKiemHang = new DataTable();
-            dtTimKiemHang = bus.SearchKhachHang(txtMaKhachHang.Text);
-            dgvKhachHang.DataSource = dtTimKiemHang;
+            if(txtMaKhachHang.Text == "")
+            {
+                MessageBox.Show("Chưa nhập mã hàng cần tìm", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                dtTimKiemHang = new DataTable();
+                dtTimKiemHang = bus.SearchKhachHang(txtMaKhachHang.Text);
+                dgvKhachHang.DataSource = dtTimKiemHang;
+            }
         }
 
     }

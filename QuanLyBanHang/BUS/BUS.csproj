@@ -87,6 +87,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCaoDoanhSoBanHang_BUS.cs" />
     <Compile Include="BaoCao_BUS.cs" />
     <Compile Include="BCHTonThang_BUS.cs" />
     <Compile Include="Hang_BUS.cs" />
