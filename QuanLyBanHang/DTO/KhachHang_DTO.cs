@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DTO
 {
     public class KhachHang_DTO
     {
-        String MaKhachHang_, HoTen_,DiaChi_,SoDienThoai_;
+        String MaKhachHang_, HoTen_, DiaChi_, SoDienThoai_;
 
         public string MaKhachHang_1 { get => MaKhachHang_; set => MaKhachHang_ = value; }
         public string HoTen_1 { get => HoTen_; set => HoTen_ = value; }

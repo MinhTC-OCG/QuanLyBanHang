@@ -1,10 +1,7 @@
 ﻿using BUS;
 using DAL;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 using System;
 using System.Data;
-using System.IO;
 using System.Windows.Forms;
 
 namespace GUI
@@ -29,10 +26,12 @@ namespace GUI
 
         private void HoaDon_Load(object sender, EventArgs e)
         {
+            //Hiển thị dữ liệu vào bảng giỏ hàng 
             dtGetInfor = new DataTable();
             dtGetInfor = hd.GetThongtinhang();
             dgvThongtinhang.DataSource = dtGetInfor;
 
+            //Hiển thị dữ liệu vào bảng hóa đơn tổng hợp 
             dtGetHoaDonTongHop = new DataTable();
             dtGetHoaDonTongHop = hd.showDgvHoaDonTongHop();
             dgvHoaDonTongHop.DataSource = dtGetHoaDonTongHop;
@@ -45,10 +44,12 @@ namespace GUI
                 tongtienhoadon = tongtienhoadon + Int32.Parse(r[4].ToString().Trim());
             }
             txtTongTien.Text = tongtienhoadon.ToString();
+            txtTongTien.Enabled = false;
+            txtThanhtien.Enabled = false;
 
         }
 
-        //Load so thu tu ma hoa don the tu dong dien ma hoa don vao o textbox
+        //Tự động điền mã hóa đơn vào ô mã hóa đơn.
         public void LoadMaHD()
         {
             DataTable dt = new DataTable();
@@ -58,6 +59,7 @@ namespace GUI
             txtMaHD.Enabled = false;
         }
 
+        //Khi nhập mã hàng tự động hiển thị lên tên hàng và đơn giá.
         private void txtMahang_TextChanged(object sender, EventArgs e)
         {
             dtGetNamePrice = new DataTable();
@@ -73,38 +75,7 @@ namespace GUI
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            if (txtMahang.Text == "")
-                MessageBox.Show("Không để trống mã hàng!");
-            else if (nrSoluong.Text == "")
-                MessageBox.Show("Không để trống số lượng!");
-            else
-            {
-                int dem = 0;
-                foreach (DataRow r in dtGetInfor.Rows)
-                {
-                    var check = r["MaH"].ToString().Trim();
-                    if (txtMahang.Text.Trim() == check)
-                    {
-                        dem++;
-                        break;
-                    }
-                }
-                if (dem != 0)
-                {
-                    hd.UpdateThongtinloaihang(txtMahang.Text, txtTenhang.Text, Int32.Parse(nrSoluong.Text), dongia, thanhtien);
-                    MessageBox.Show("Sửa giỏ hàng thành công");
-                    HoaDon_Load(sender, e);
-                }
-                else
-                {
-                    MessageBox.Show("Không sửa được hàng");
-                }
-            }
-
-        }
-
+        // Tự động cập nhật lại ô thành tiền trong giỏi hàng và tổng tiền trong hóa đơn khi thay đổi số lượng.
         private void nrSoluong_ValueChanged(object sender, EventArgs e)
         {
             int numb = 0;
@@ -116,8 +87,6 @@ namespace GUI
                 txtThanhtien.Text = thanhtien.ToString();
                 if (dtGetHoaDonTongHop.Rows.Count > 0)
                 {
-
-
                     foreach (DataRow r in dtGetHoaDonTongHop.Rows)
                     {
                         if (r["MaHD"].ToString().Trim() == txtMaHD.Text.Trim() && r["MaHang"].ToString().Trim() != txtMahang.Text.Trim())
@@ -125,9 +94,7 @@ namespace GUI
                             int n = Int32.Parse(r["SoLuongHD"].ToString()) * Int32.Parse(r["DonGiaHD"].ToString());
                             numb = numb + n;
                         }
-
                     }
-
                     txtTongTien.Text = (tt + numb).ToString();
                 }
             }
@@ -139,8 +106,6 @@ namespace GUI
                 tt = Int32.Parse(txtThanhtien.Text);
                 if (dtGetHoaDonTongHop.Rows.Count > 0)
                 {
-
-
                     foreach (DataRow r in dtGetHoaDonTongHop.Rows)
                     {
                         if (r["MaHD"].ToString().Trim() == txtMaHD.Text.Trim() && r["MaHang"].ToString().Trim() != txtMahang.Text.Trim())
@@ -148,33 +113,13 @@ namespace GUI
                             int n = Int32.Parse(r["SoLuongHD"].ToString()) * Int32.Parse(r["DonGiaHD"].ToString());
                             numb = numb + n;
                         }
-
                     }
-
                     txtTongTien.Text = (tt + numb).ToString();
                 }
             }
-
-
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtTenhang.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (rs == DialogResult.Yes)
-            {
-                hd.DeleteThongtinloaihang(txtMahang.Text.Trim());
-                MessageBox.Show("Xóa thành công");
-                HoaDon_Load(sender, e);
-            }
-        }
-
-        //Them hoa don
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //Sửa hàng trong giỏ hàng.
         private void btnSuaGioHang_Click(object sender, EventArgs e)
         {
             if (txtMahang.Text == "")
@@ -207,6 +152,7 @@ namespace GUI
             }
         }
 
+        //Thêm hàng vào giỏ hàng.
         private void btnThemGioHang_Click(object sender, EventArgs e)
         {
             if (txtMahang.Text == "")
@@ -239,6 +185,7 @@ namespace GUI
             }
         }
 
+        //Xóa hàng trong giỏ hàng.
         private void btnXoaHangTrongGio_Click(object sender, EventArgs e)
         {
             try
@@ -246,7 +193,6 @@ namespace GUI
                 if (txtMahang.Text == "")
                 {
                     MessageBox.Show("Chưa chọn mặt hàng để xóa!");
-
                 }
                 else
                 {
@@ -267,68 +213,78 @@ namespace GUI
             }
         }
 
+        //Sửa hóa đơn.
         private void btnSuaHoaDon_Click(object sender, EventArgs e)
         {
-            if (txtMaKH.Text == "")
-                MessageBox.Show("Chưa nhập mã khách hàng, nhập lại!");
-            else if (txtHotenKH.Text == "")
-                MessageBox.Show("Chưa nhập tên khách hàng, nhập lại!");
-            else if (txtMaNV.Text == "")
-                MessageBox.Show("Chưa nhập mã nhân viên, nhập lại!");
-            else if (txtTenNV.Text == "")
-                MessageBox.Show("Chưa nhập tên nhân viên, nhập lại!");
-            else if (txtMahang.Text == "")
-                MessageBox.Show("Chưa nhập mã hàng, nhập lại!");
-            else
+            try
             {
-                string mahd = txtMaHD.Text.Trim();
-                string makh = txtMaKH.Text;
-                string tenkh = txtHotenKH.Text;
-                string ngaylap = dpNgayLap.Value.Date.ToString("yyyy-MM-dd"); ;
-                string manv = txtMaNV.Text;
-                string tennv = txtTenNV.Text;
-                string tongtienhd = txtTongTien.Text;
-
-                string mahang = txtMahang.Text.Trim(), tenhang = txtTenhang.Text;
-                int dongia = Int32.Parse(txtDongia.Text);
-                int thanhtien = Int32.Parse(txtThanhtien.Text), soluong = Int32.Parse(nrSoluong.Text);
-
-                int dem = 0;
-                foreach (DataRow r in dtGetHoaDonTongHop.Rows)
-                {
-                    var checkMaHD = r["MaHD"].ToString().Trim();
-                    var checkMaHang = r["MaHang"].ToString().Trim();
-                    if (mahd == checkMaHD && mahang == checkMaHang)
-                    {
-                        dem++;
-                        break;
-                    }
-                }
-                if (dem != 0)
-                {
-                    hd.UpdateHoaDonTongHop(mahd, makh, tenkh, ngaylap, manv, tennv, mahang, tenhang, soluong, dongia, thanhtien, tongtienhd);
-                    hd.UpdateHoaDonTongHop2(mahd, ngaylap, tongtienhd);
-                    hd.UpdateHD(mahd, makh, ngaylap, manv);
-                    hd.UpdateHDChiTiet(mahd, mahang, soluong);
-                    MessageBox.Show("Cập nhật hóa đơn thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    HoaDon_Load(sender, e);
-                    btnNhaplai_Click(sender, e);
-                    txtMahang.Enabled = true;
-                }
+                if (txtMaKH.Text == "")
+                    MessageBox.Show("Chưa nhập mã khách hàng, nhập lại!");
+                else if (txtHotenKH.Text == "")
+                    MessageBox.Show("Chưa nhập tên khách hàng, nhập lại!");
+                else if (txtMaNV.Text == "")
+                    MessageBox.Show("Chưa nhập mã nhân viên, nhập lại!");
+                else if (txtTenNV.Text == "")
+                    MessageBox.Show("Chưa nhập tên nhân viên, nhập lại!");
+                else if (txtMahang.Text == "")
+                    MessageBox.Show("Chưa nhập mã hàng, nhập lại!");
                 else
                 {
-                    MessageBox.Show("Cập nhật không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string mahd = txtMaHD.Text.Trim();
+                    string makh = txtMaKH.Text;
+                    string tenkh = txtHotenKH.Text;
+                    string ngaylap = dpNgayLap.Value.Date.ToString("yyyy-MM-dd"); ;
+                    string manv = txtMaNV.Text;
+                    string tennv = txtTenNV.Text;
+                    string tongtienhd = txtTongTien.Text;
+
+                    string mahang = txtMahang.Text.Trim(), tenhang = txtTenhang.Text;
+                    int dongia = Int32.Parse(txtDongia.Text);
+                    int thanhtien = Int32.Parse(txtThanhtien.Text), soluong = Int32.Parse(nrSoluong.Text);
+
+                    int dem = 0;
+                    foreach (DataRow r in dtGetHoaDonTongHop.Rows)
+                    {
+                        var checkMaHD = r["MaHD"].ToString().Trim();
+                        var checkMaHang = r["MaHang"].ToString().Trim();
+                        if (mahd == checkMaHD && mahang == checkMaHang)
+                        {
+                            dem++;
+                            break;
+                        }
+                    }
+                    if (dem != 0)
+                    {
+                        hd.UpdateHoaDonTongHop(mahd, makh, tenkh, ngaylap, manv, tennv, mahang, tenhang, soluong, dongia, thanhtien, tongtienhd);
+                        hd.UpdateHoaDonTongHop2(mahd, ngaylap, tongtienhd);
+                        hd.UpdateHD(mahd, makh, ngaylap, manv);
+                        hd.UpdateHDChiTiet(mahd, mahang, soluong);
+                        MessageBox.Show("Cập nhật hóa đơn thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HoaDon_Load(sender, e);
+                        btnNhaplai_Click(sender, e);
+                        txtMahang.Enabled = true;
+
+                        LSHang();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-
             }
-
+            catch (Exception)
+            {
+                MessageBox.Show("Không sửa được hóa đơn", "Cảnh báo");
+            }
         }
 
+        //Xóa hóa đơn.
         private void btnXoaHoaDon_Click(object sender, EventArgs e)
         {
             string mahd = txtMaHD.Text.Trim();
             string mahang = txtMahang.Text;
             int dem = 0;
+
             foreach (DataRow r in dtGetHoaDonTongHop.Rows)
             {
                 var check = r["MaHD"].ToString().Trim();
@@ -344,8 +300,8 @@ namespace GUI
                 if (rs == DialogResult.Yes)
                 {
                     hd.DeleteHoaDonTongHop(mahd);
-                    hd.DeleteHDChiTiet(mahd);
-                    hd.DeleteHD(mahd);
+                    //hd.DeleteHDChiTiet(mahd);
+                    //hd.DeleteHD(mahd);
                     MessageBox.Show("Xóa hóa đơn thành công.", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     HoaDon_Load(sender, e);
                     btnNhaplai_Click(sender, e);
@@ -355,9 +311,8 @@ namespace GUI
             {
                 MessageBox.Show("Mã mã hóa đơn không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-
         }
+
 
         private void dgvHoaDonTongHop_Click(object sender, EventArgs e)
         {
@@ -387,9 +342,9 @@ namespace GUI
             txtThanhtien.Text = dgvThongtinhang.Rows[dong].Cells[4].Value.ToString();
         }
 
+        //Reset lại các ô hiển thị dữ liệu.
         private void btnNhaplai_Click(object sender, EventArgs e)
         {
-
             txtMaKH.Text = "";
             txtHotenKH.Text = "";
             txtMaNV.Text = "";
@@ -404,17 +359,18 @@ namespace GUI
             HoaDon_Load(sender, e);
         }
 
+        //In hóa đơn.
         private void btnIn_Click(object sender, EventArgs e)
         {
-            ReportHoaDon rp = new ReportHoaDon();
-            rp.Show();
         }
 
+        //Load lại dữ liệu của form.
         private void btnXem_Click(object sender, EventArgs e)
         {
             HoaDon_Load(sender, e);
         }
 
+        //Thoát form.
         private void btnThoat_Click(object sender, EventArgs e)
         {
             DialogResult rs = MessageBox.Show("Bạn muốn thoát không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -422,6 +378,7 @@ namespace GUI
                 this.Dispose();
         }
 
+        //Tìm kiếm hóa đơn.
         private void btnTim_Click(object sender, EventArgs e)
         {
             dtGetHD = new DataTable();
@@ -429,6 +386,7 @@ namespace GUI
             dgvHoaDonTongHop.DataSource = dtGetHD;
         }
 
+        //Thêm hóa đơn.
         private void btnThemHoaDon_Click(object sender, EventArgs e)
         {
             if (txtMaKH.Text == "")
@@ -457,8 +415,6 @@ namespace GUI
                 {
                     if (dtGetInfor.Rows.Count > 0)
                     {
-
-
                         int dem = 0;
                         foreach (DataRow r in dtGetHoaDonTongHop.Rows)
                         {
@@ -491,42 +447,7 @@ namespace GUI
                             HoaDon_Load(sender, e);
                             btnNhaplai_Click(sender, e);
 
-
-
-                            dtHangCapNhat = hangcapnhat.ShowHang();
-                            dtLichSuHang = hd.getLichSuHang();
-
-                            if (dtLichSuHang.Rows.Count > 0)
-                            {
-                                foreach (DataRow r1 in dtLichSuHang.Rows)
-                                {
-                                    foreach (DataRow r2 in dtHangCapNhat.Rows)
-                                    {
-                                        string mh = r2["MaH"].ToString();
-                                        string th = r2["TenH"].ToString();
-                                        string dv = r2["DonVT"].ToString();
-                                        int sl = Int32.Parse(r2["SLC"].ToString());
-                                        string ngaycapnhat = DateTime.Now.ToString();
-
-                                        if (r1["MaHang"].ToString().Trim() == r2["MaH"].ToString().Trim())
-                                        {
-                                            hd.UpdateLSHang(mh, th, dv, sl, ngaycapnhat);
-                                        }
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                foreach (DataRow r2 in dtHangCapNhat.Rows)
-                                {
-                                    string mh = r2["MaH"].ToString();
-                                    string th = r2["TenH"].ToString();
-                                    string dv = r2["DonVT"].ToString();
-                                    int sl = Int32.Parse(r2["SLC"].ToString());
-                                    string ngaycapnhat = DateTime.Now.ToString();
-                                    hd.InsertLSHang(mh, th, dv, sl, ngaycapnhat);
-                                }
-                            }
+                            LSHang();
                         }
                         else
                         {
@@ -538,16 +459,62 @@ namespace GUI
                         MessageBox.Show("Lỗi, hãy mua hàng trước khi lập hóa đơn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Console.WriteLine(ex);
-                    //MessageBox.Show("Không tạo được hóa đơn, thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //Console.WriteLine(ex);
+                    MessageBox.Show("Không tạo được hóa đơn, thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
         }
 
-        //Khi nhap vao ma nhan vien thi ten nhan vien tu dong hien thi tren o textbox
+        //Cập nhật lại bảng lịch sử hàng.
+        public void LSHang()
+        {
+            dtHangCapNhat = hangcapnhat.ShowHang();
+            dtLichSuHang = hd.getLichSuHang();
+
+            if (dtLichSuHang.Rows.Count > 0)
+            {
+                foreach (DataRow r1 in dtHangCapNhat.Rows)
+                {
+                    string mh = r1["MaH"].ToString();
+                    string th = r1["TenH"].ToString();
+                    string dv = r1["DonVT"].ToString();
+                    int sl = Int32.Parse(r1["SLC"].ToString());
+                    string ngaycapnhat = DateTime.Now.ToString();
+                    int check = 0;
+                    foreach (DataRow r2 in dtLichSuHang.Rows)
+                    {
+
+                        if (r2["MaHang"].ToString().Trim() == r1["MaH"].ToString().Trim())
+                        {
+                            hd.UpdateLSHang(mh, th, dv, sl, ngaycapnhat);
+                            check++;
+                            break;
+                        }
+                    }
+                    if (check == 0)
+                    {
+                        hd.InsertLSHang(mh, th, dv, sl, ngaycapnhat);
+                    }
+                }
+            }
+            else
+            {
+                foreach (DataRow r2 in dtHangCapNhat.Rows)
+                {
+                    string mh = r2["MaH"].ToString();
+                    string th = r2["TenH"].ToString();
+                    string dv = r2["DonVT"].ToString();
+                    int sl = Int32.Parse(r2["SLC"].ToString());
+                    string ngaycapnhat = DateTime.Now.ToString();
+                    hd.InsertLSHang(mh, th, dv, sl, ngaycapnhat);
+                }
+            }
+        }
+
+        //Khi nhap vao ma nhan vien thi ten nhan vien tu dong hien thi tren o textbox.
         private void txtMaNV_TextChanged(object sender, EventArgs e)
         {
             dtGetNameNV = new DataTable();
@@ -568,7 +535,7 @@ namespace GUI
 
         }
 
-        //Khi nhap vao ma khach hang thi ten khach hang tu dong hien thi tren o textbox
+        //Khi nhap vao ma khach hang thi ten khach hang tu dong hien thi tren o textbox.
         private void txtMaKH_TextChanged(object sender, EventArgs e)
         {
             dtGetNameKH = new DataTable();
@@ -588,35 +555,5 @@ namespace GUI
             }
         }
 
-        private void btnThemhang_Click(object sender, EventArgs e)
-        {
-            if (txtMahang.Text == "")
-                MessageBox.Show("Không để trống mã hàng!");
-            else if (nrSoluong.Text == "")
-                MessageBox.Show("Không để trống số lượng!");
-            else
-            {
-                int dem = 0;
-                foreach (DataRow r in dtGetInfor.Rows)
-                {
-                    var check = r["MaH"].ToString().Trim();
-                    if (txtMahang.Text.Trim() == check)
-                    {
-                        dem++;
-                        break;
-                    }
-                }
-                if (dem == 0)
-                {
-                    hd.InsertThongtinhang(txtMahang.Text, txtTenhang.Text, Int32.Parse(nrSoluong.Text), dongia, thanhtien);
-                    MessageBox.Show("Thêm hàng vào giỏ hàng thành công");
-                    HoaDon_Load(sender, e);
-                }
-                else
-                {
-                    MessageBox.Show("Hàng bạn chọn đã có trong giỏ hàng, chọn hàng khác");
-                }
-            }
-        }
     }
 }

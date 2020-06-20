@@ -1,17 +1,10 @@
-﻿using DAL;
+﻿using BUS;
+using DAL;
+using DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BUS;
-using DTO;
-using Org.BouncyCastle.Asn1.Cmp;
-using System.Data.SqlClient;
 namespace GUI
 {
     public partial class KhachHang : Form
@@ -19,7 +12,7 @@ namespace GUI
         KhachHang_DTO dto = new KhachHang_DTO();
         Lop_DAL dal = new Lop_DAL();
         KhachHang_BUS bus = new KhachHang_BUS();
-        DataTable dtKhachHang,dtTimKiemHang;
+        DataTable dtKhachHang, dtTimKiemHang;
 
         public KhachHang()
         {
@@ -31,26 +24,27 @@ namespace GUI
             dtKhachHang.Clear();
             dtKhachHang = bus.ShowKhachHang();
             dgvKhachHang.DataSource = dtKhachHang;
-            
+            dgvKhachHang.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+
         }
         private void KhachHang_Load(object sender, EventArgs e)
         {
             LoadData();
         }
 
-        private void ResetText()
+        private void ClearText()
         {
             txtMaKhachHang.ResetText();
             txtHoTen.ResetText();
             txtDiaChi.ResetText();
             txtSoDienThoai.ResetText();
         }
-        
+
 
         private void btnXem_Click(object sender, EventArgs e)
         {
             LoadData();
-            
+
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -98,7 +92,7 @@ namespace GUI
                         bus.InsertKhachHang(dto.MaKhachHang_1, dto.HoTen_1, dto.DiaChi_1, dto.SoDienThoai_1);
                         MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
-                        ResetText();
+                        ClearText();
                     }
                     else
                     {
@@ -116,19 +110,25 @@ namespace GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
-            DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtHoTen.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (rs == DialogResult.Yes)
+            if (txtMaKhachHang.Text == "")
             {
-                bus.DeleteKhachHang(txtMaKhachHang.Text.Trim());
-                MessageBox.Show("Xóa thành công");
-                LoadData();
+                MessageBox.Show("Thất bại, chưa nhập mã khách hàng cần xóa!");
+            }
+            else
+            {
+                DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtHoTen.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rs == DialogResult.Yes)
+                {
+                    bus.DeleteKhachHang(txtMaKhachHang.Text.Trim());
+                    MessageBox.Show("Xóa thành công");
+                    LoadData();
+                }
             }
         }
 
         private void btnNhapLai_Click_1(object sender, EventArgs e)
         {
-            ResetText();
+            ClearText();
         }
 
         private void btnXem_Click_1(object sender, EventArgs e)
@@ -178,7 +178,7 @@ namespace GUI
                         bus.UpdateKhachHang(dto.MaKhachHang_1, dto.HoTen_1, dto.DiaChi_1, dto.SoDienThoai_1);
                         MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
-                        ResetText();
+                        ClearText();
                     }
                     else
                     {
@@ -199,10 +199,19 @@ namespace GUI
         {
             dgvKhachHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             int r = e.RowIndex;
-            txtMaKhachHang.Text = dgvKhachHang.Rows[r].Cells[0].Value.ToString();
-            txtHoTen.Text = dgvKhachHang.Rows[r].Cells[1].Value.ToString();
-            txtDiaChi.Text = dgvKhachHang.Rows[r].Cells[2].Value.ToString();
-            txtSoDienThoai.Text = dgvKhachHang.Rows[r].Cells[3].Value.ToString();
+            if (r >= 0)
+            {
+                txtMaKhachHang.Text = dgvKhachHang.Rows[r].Cells[0].Value.ToString();
+                txtHoTen.Text = dgvKhachHang.Rows[r].Cells[1].Value.ToString();
+                txtDiaChi.Text = dgvKhachHang.Rows[r].Cells[2].Value.ToString();
+                txtSoDienThoai.Text = dgvKhachHang.Rows[r].Cells[3].Value.ToString();
+            }
+            
+        }
+
+        private void KhachHang_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
         }
 
         private void btnTim_Click_1(object sender, EventArgs e)

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLBH" Class="TrinhDo_dbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ARINAHASHIMOTO\SQLEXPRESS;Initial Catalog=QLBH;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QLBHConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TrinhDo12" Member="TrinhDo12s">
+    <Type Name="TrinhDo12">
+      <Column Name="MaTD" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

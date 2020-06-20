@@ -20,7 +20,9 @@ namespace GUI
         LichSuGia_DTO dto = new LichSuGia_DTO();
         Lop_DAL dal = new Lop_DAL();
         LichSuGia_BUS bus = new LichSuGia_BUS();
-        DataTable dtLichSuGia;
+        DataTable dtLichSuGia, dtNgaylsg;
+        String ngaybdtam;
+
 
 
         public LichSuGia()
@@ -30,7 +32,8 @@ namespace GUI
 
         private void LichSuGia_Load(object sender, EventArgs e)
         {
-            
+            txttest.Hide();
+            dgvLichSuGia.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
             LoadData();
             LoadComboBox();
         }
@@ -56,6 +59,33 @@ namespace GUI
         private void btnThem_Click(object sender, EventArgs e)
         {
             int result = DateTime.Compare(dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date);
+
+            DataTable dtMaH = new DataTable();
+            dtMaH.Clear();
+            SqlConnection conn = dal.getConnect();
+            conn.Open();
+            SqlDataAdapter adMaH = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + cbMaHang.Text + "'", conn);
+            adMaH.Fill(dtMaH);
+
+            //for (int rows = 0; rows < dgvLichSuGia.Rows.Count; rows++)
+            //{
+            //    for (int col = 0; col < dgvLichSuGia.Rows[0].Cells.Count; col++)
+            //    {
+            //        string value1 = dgvLichSuGia.Rows[rows].Cells[col].Value.ToString();
+            //    }
+            //}
+            //DataTable dtNgay = new DataTable();
+            //dtNgay.Clear();
+            //String ma= dtMaH.Rows[0]["MaH"].ToString().Trim();
+            //SqlDataAdapter adNgay = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + ma + "'", conn);
+            //adNgay.Fill(dtNgay);
+            ////for (int i = 0; i <= dtNgay.Rows.Count; i++)
+            ////{
+            ////    if (dtpNgayBatDau.Value.Date > Convert.ToDateTime(dtNgay.Rows[i]["NgayBD"].ToString().Trim())  && dtpNgayBatDau.Value.Date < Convert.ToDateTime(dtNgay.Rows[i]["NgayKT"].ToString().Trim()))
+            ////    {
+            ////        MessageBox.Show("Sai ngay");
+            ////    }
+            ////}
             if (txtDonGia.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập đơn giá, nhập lại!");
@@ -63,30 +93,19 @@ namespace GUI
             else if (result > 0)
             {
                 MessageBox.Show("Sai ngày bắt đầu và ngày kết thúc!");
+                ResetText();
             }
             else
             {
                 try
                 {
-                    DataTable dtMaH = new DataTable();
-                    dtMaH.Clear();
-                    SqlConnection conn = dal.getConnect();
-                    conn.Open();
-                    SqlDataAdapter ad = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + cbMaHang.Text + "'", conn);
-                    ad.Fill(dtMaH);
-
-                    dtpNgayBatDau.Format = DateTimePickerFormat.Custom;
-                    dtpNgayBatDau.CustomFormat = "MM/dd/yyyy";
-
-                    dtpNgayKetThuc.Format = DateTimePickerFormat.Custom;
-                    dtpNgayKetThuc.CustomFormat = "MM/dd/yyyy";
 
 
                     try
                     {
                         dto.MaHang_1 = dtMaH.Rows[0]["MaH"].ToString().Trim();
-                        dto.NgayBatDau_1 = dtpNgayBatDau.Text.Trim();
-                        dto.NgayKetThuc_1 = dtpNgayKetThuc.Text.Trim();
+                        dto.NgayBatDau_1 = dtpNgayBatDau.Value.Date.ToString("MM/dd/yyyy").Trim();
+                        dto.NgayKetThuc_1 = dtpNgayKetThuc.Value.Date.ToString("MM/dd/yyyy").Trim();
                         dto.NgayCapNhat_1 = ngayCapNhat.ToString("MM/dd/yyyy");
                         dto.DonGia_1 = Int32.Parse(txtDonGia.Text);
                     }
@@ -95,13 +114,25 @@ namespace GUI
                         MessageBox.Show("Sai format don gia! ");
                     }
 
-                    bus.InsertLichSuGia(dto.MaHang_1, dto.NgayBatDau_1, dto.NgayKetThuc_1, dto.DonGia_1, dto.NgayCapNhat_1);
-                    MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                    dtNgaylsg = new DataTable();
+                    dtNgaylsg = bus.InsertLichSuGia(dto.MaHang_1, dto.NgayBatDau_1, dto.NgayKetThuc_1, dto.DonGia_1, dto.NgayCapNhat_1);
+                    String checkncn = dtNgaylsg.Rows[0][0].ToString().Trim();
+                    if (checkncn.Equals("1") == true)
+                    {
+                        MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thêm được!");
+                    }
+                    dgvLichSuGia.ClearSelection();
                     LoadData();
                 }
                 catch
                 {
-                    MessageBox.Show("Sai dữ liệu ");
+                    MessageBox.Show("Sai dữ liệu nhập");
                 }
             }
         }
@@ -109,10 +140,14 @@ namespace GUI
         private void btnNhapLai_Click(object sender, EventArgs e)
         {
             txtDonGia.ResetText();
+            dtpNgayBatDau.Value = DateTime.Now;
+            dtpNgayKetThuc.Value = DateTime.Now;
+            dgvLichSuGia.ClearSelection();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+
             int result = DateTime.Compare(dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date);
             if (txtDonGia.Text == "")
             {
@@ -131,23 +166,33 @@ namespace GUI
                 SqlDataAdapter ad = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + cbMaHang.Text + "'", conn);
                 ad.Fill(dtMaH);
 
-                dtpNgayBatDau.Format = DateTimePickerFormat.Custom;
-                dtpNgayBatDau.CustomFormat = "MM/dd/yyyy";
+                try
+                {
+                    dto.MaHang_1 = dtMaH.Rows[0]["MaH"].ToString().Trim();
+                    dto.NgayBatDau_1 = dtpNgayBatDau.Value.Date.ToString("MM/dd/yyyy").Trim();
+                    dto.NgayKetThuc_1 = dtpNgayKetThuc.Value.Date.ToString("MM/dd/yyyy").Trim();
+                    dto.NgayCapNhat_1 = ngayCapNhat.ToString("MM/dd/yyyy");
+                    dto.DonGia_1 = Int32.Parse(txtDonGia.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Sai format don gia! ");
+                }
 
-                dtpNgayKetThuc.Format = DateTimePickerFormat.Custom;
-                dtpNgayKetThuc.CustomFormat = "MM/dd/yyyy";
 
+                dtNgaylsg = new DataTable();
+                dtNgaylsg = bus.UpdateLichSuGia(dto.MaHang_1, dto.NgayBatDau_1, dto.NgayKetThuc_1, dto.DonGia_1, dto.NgayCapNhat_1, txttest.Text.Trim());
+                String checkncn = dtNgaylsg.Rows[0][0].ToString().Trim();
+                if (checkncn.Equals("1") == true)
+                {
+                    MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Không sửa được!");
+                }
 
-
-                dto.MaHang_1 = dtMaH.Rows[0]["MaH"].ToString().Trim();
-                dto.NgayBatDau_1 = dtpNgayBatDau.Text.Trim();
-                dto.NgayKetThuc_1 = dtpNgayKetThuc.Text.Trim();
-                dto.NgayCapNhat_1 = ngayCapNhat.ToString("MM/dd/yyyy");
-                dto.DonGia_1 = Int32.Parse(txtDonGia.Text);
-
-
-                bus.UpdateLichSuGia(dto.MaHang_1, dto.NgayBatDau_1, dto.NgayKetThuc_1, dto.DonGia_1, dto.NgayCapNhat_1);
-                MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvLichSuGia.ClearSelection();
                 LoadData();
             }
         }
@@ -169,7 +214,7 @@ namespace GUI
                     String s2 = dtMaH.Rows[0]["MaH"].ToString().Trim();
                     if (s1.Equals(s2) == true)
                     {
-                        bus.DeleteLichSuGia(dtMaH.Rows[0]["MaH"].ToString().Trim());
+                        bus.DeleteLichSuGia(dtMaH.Rows[0]["MaH"].ToString().Trim(), dtpNgayBatDau.Value.ToString("MM/dd/yyyy").Trim());
                         LoadData();
                         MessageBox.Show("Xóa thành công");
                     }
@@ -177,8 +222,10 @@ namespace GUI
                 }
                 catch
                 {
-                    MessageBox.Show("Không có Hàng " + dtMaH.Rows[0]["MaH"].ToString().Trim() + "! ");
+                    MessageBox.Show("Không thỏa mãn " + dtMaH.Rows[0]["MaH"].ToString().Trim() + " && " + dtpNgayBatDau.Value.ToString("MM/dd/yyyy").Trim() + "! ");
                 }
+
+                dgvLichSuGia.ClearSelection();
             }
         }
 
@@ -198,11 +245,14 @@ namespace GUI
             {
                 MessageBox.Show("Sai dữ liệu Combobox");
             }
+
+            dgvLichSuGia.ClearSelection();
         }
 
         private void btnXem_Click(object sender, EventArgs e)
         {
             LoadData();
+            dgvLichSuGia.ClearSelection();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -214,26 +264,34 @@ namespace GUI
         private void rowenter(object sender, DataGridViewCellEventArgs e)
         {
             int c = e.RowIndex;
-            
-            String maHang= dgvLichSuGia.Rows[c].Cells[0].Value.ToString().Trim();
+            if (c >= 0)
+            {
+                String maHang = dgvLichSuGia.Rows[c].Cells[0].Value.ToString().Trim();
 
-            
-            DataTable dtMaH = new DataTable();
-            dtMaH.Clear();
-            SqlConnection conn = dal.getConnect();
-            conn.Open();
-            SqlDataAdapter ad = new SqlDataAdapter("select TenH from Hang12 where MaH= N'" + maHang + "'", conn);
-            ad.Fill(dtMaH);
-            try
-            {
-                cbMaHang.Text = "";
-                cbMaHang.SelectedText = dtMaH.Rows[0]["TenH"].ToString().Trim();
+                DataTable dtMaH = new DataTable();
+                dtMaH.Clear();
+                SqlConnection conn = dal.getConnect();
+                conn.Open();
+                SqlDataAdapter ad = new SqlDataAdapter("select TenH from Hang12 where MaH= N'" + maHang + "'", conn);
+                ad.Fill(dtMaH);
+                try
+                {
+                    cbMaHang.Text = "";
+                    cbMaHang.SelectedText = dtMaH.Rows[0]["TenH"].ToString().Trim();
+                }
+                catch
+                {
+                    MessageBox.Show("Khong lay dc ma hang");
+                }
+                txtDonGia.Text = dgvLichSuGia.Rows[c].Cells[3].Value.ToString().Trim();
+                dtpNgayBatDau.Value = Convert.ToDateTime(dgvLichSuGia.Rows[c].Cells[1].Value);
+                dtpNgayKetThuc.Value = Convert.ToDateTime(dgvLichSuGia.Rows[c].Cells[2].Value);
+                txttest.Text = dtpNgayBatDau.Value.ToString("MM/dd/yyyy");
+
             }
-            catch
-            {
-                MessageBox.Show("Khong lay dc ma hang");
-            }
-            txtDonGia.Text = dgvLichSuGia.Rows[c].Cells[3].Value.ToString().Trim();
+
         }
+
     }
 }
+

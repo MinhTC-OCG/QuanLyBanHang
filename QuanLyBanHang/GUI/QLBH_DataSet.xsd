@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="QLBHDataSet" targetNamespace="http://tempuri.org/QLBHDataSet.xsd" xmlns:mstns="http://tempuri.org/QLBHDataSet.xsd" xmlns="http://tempuri.org/QLBHDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="QLBH_DataSet" targetNamespace="http://tempuri.org/QLBH_DataSet.xsd" xmlns:mstns="http://tempuri.org/QLBH_DataSet.xsd" xmlns="http://tempuri.org/QLBH_DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -836,7 +836,7 @@ SELECT MaTD, TenTD FROM TrinhDo12 WHERE (MaTD = @MaTD)</CommandText>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="QLBHDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QLBHDataSet" msprop:Generator_UserDSName="QLBHDataSet">
+  <xs:element name="QLBH_DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QLBH_DataSet" msprop:Generator_UserDSName="QLBH_DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="DangNhap12" msprop:Generator_TableClassName="DangNhap12DataTable" msprop:Generator_TableVarName="tableDangNhap12" msprop:Generator_TablePropName="DangNhap12" msprop:Generator_RowDeletingName="DangNhap12RowDeleting" msprop:Generator_RowChangingName="DangNhap12RowChanging" msprop:Generator_RowEvHandlerName="DangNhap12RowChangeEventHandler" msprop:Generator_RowDeletedName="DangNhap12RowDeleted" msprop:Generator_UserTableName="DangNhap12" msprop:Generator_RowChangedName="DangNhap12RowChanged" msprop:Generator_RowEvArgName="DangNhap12RowChangeEvent" msprop:Generator_RowClassName="DangNhap12Row">

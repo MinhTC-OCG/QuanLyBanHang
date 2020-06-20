@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BUS;
+﻿using BUS;
 using DTO;
+using System;
+using System.Data;
+using System.Windows.Forms;
 namespace GUI
 {
     public partial class DangNhap : Form
     {
         DangNhap_BUS bus = new DangNhap_BUS();
         DangNhap_DTO dto = new DangNhap_DTO();
-        public static string tendangnhap="";
+        public static string tendangnhap = "";
 
         public DangNhap()
         {
@@ -27,8 +21,8 @@ namespace GUI
             DataTable dt = new DataTable();
             dto.Tendangnhap = txtTenDN.Text.Trim();
             dto.Matkhau = txtMatKhau.Text.Trim();
-           
-            dt = bus.DangNhap(dto.Tendangnhap,dto.Matkhau);
+
+            dt = bus.DangNhap(dto.Tendangnhap, dto.Matkhau);
             int dem = 0;
             foreach (DataRow r in dt.Rows)
             {
@@ -41,7 +35,7 @@ namespace GUI
                     break;
                 }
             }
-            if(dem != 0)
+            if (dem != 0)
             {
                 Main m = new Main();
                 m.Show();
@@ -53,7 +47,7 @@ namespace GUI
             }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lbLinkThoat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
         }

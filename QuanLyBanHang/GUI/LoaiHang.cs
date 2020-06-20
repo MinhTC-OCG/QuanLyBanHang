@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DAL;
+﻿using BUS;
 using DTO;
-using BUS;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 namespace GUI
 {
     public partial class LoaiHang : Form
@@ -45,15 +38,15 @@ namespace GUI
                 else
                 {
                     int dem = 0;
-                    foreach(LoaiHang_DTO lh in list)
+                    foreach (LoaiHang_DTO lh in list)
                     {
-                        if(txtMaL.Text.Trim() == lh.Maloai.Trim())
+                        if (txtMaL.Text.Trim() == lh.Maloai.Trim())
                         {
                             dem++;
                             break;
                         }
                     }
-                    if(dem == 0)
+                    if (dem == 0)
                     {
                         bus.InsertLH(txtMaL.Text, txtTenL.Text, txtGhiChu.Text);
                         MessageBox.Show("Thêm loại hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -63,7 +56,7 @@ namespace GUI
                     {
                         MessageBox.Show("Mã loại hàng đã tồn tại, nhập lại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                   
+
                 }
             }
             catch (Exception)
@@ -115,12 +108,20 @@ namespace GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtTenL.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (rs == DialogResult.Yes)
+
+            if (txtMaL.Text == "")
             {
-                bus.DeleteLH(txtMaL.Text);
-                MessageBox.Show("Xóa thành công");
-                LoadData();
+                MessageBox.Show("Thất bại, chưa nhập mã loại cần xóa!");
+            }
+            else
+            {
+                DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa \"" + txtTenL.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rs == DialogResult.Yes)
+                {
+                    bus.DeleteLH(txtMaL.Text);
+                    MessageBox.Show("Xóa thành công");
+                    LoadData();
+                }
             }
 
         }
@@ -157,7 +158,7 @@ namespace GUI
         private void btnTim_Click(object sender, EventArgs e)
         {
             List<LoaiHang_DTO> list_tk = new List<LoaiHang_DTO>();
-            list_tk = bus.SearchLH(txtMaL.Text); 
+            list_tk = bus.SearchLH(txtMaL.Text);
             dgvLoaiHang.DataSource = list_tk;
         }
     }
