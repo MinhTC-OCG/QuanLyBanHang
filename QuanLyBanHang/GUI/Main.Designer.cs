@@ -185,7 +185,7 @@
             this.mnTaiKhoản});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(119, 554);
+            this.menuStrip2.Size = new System.Drawing.Size(119, 761);
             this.menuStrip2.TabIndex = 10;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -319,7 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 554);
+            this.ClientSize = new System.Drawing.Size(1264, 761);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbTongDoanhThu);
             this.Controls.Add(this.label3);
