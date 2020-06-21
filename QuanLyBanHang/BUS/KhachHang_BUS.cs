@@ -20,7 +20,7 @@ namespace BUS
         }
         public void UpdateKhachHang(string makhachhang, string hoten, string diachi, string sodienthoai)
         {
-            string sql = "update KhachHang12 set HoTen=N'" + hoten + "',DiaChi=N'" + diachi + "',SoDT='" + sodienthoai + "' where MaKH=N'" + makhachhang + "'";
+            string sql = "update KhachHang12 set HoTenKH=N'" + hoten + "',DiaChi=N'" + diachi + "',SoDTKH='" + sodienthoai + "' where MaKH=N'" + makhachhang + "'";
             dal.ExecuteNonQuery(sql);
         }
 

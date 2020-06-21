@@ -2,6 +2,7 @@
 using DAL;
 using DTO;
 using System;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -30,6 +31,7 @@ namespace GUI
         private void KhachHang_Load(object sender, EventArgs e)
         {
             LoadData();
+            dgvKhachHang.Sort(dgvKhachHang.Columns[0], ListSortDirection.Ascending);
         }
 
         private void ClearText()
@@ -171,10 +173,10 @@ namespace GUI
                     }
                     if (dem != 0)
                     {
-                        dto.MaKhachHang_1 = txtMaKhachHang.Text;
-                        dto.HoTen_1 = txtHoTen.Text;
-                        dto.DiaChi_1 = txtDiaChi.Text;
-                        dto.SoDienThoai_1 = txtSoDienThoai.Text;
+                        dto.MaKhachHang_1 = txtMaKhachHang.Text.Trim();
+                        dto.HoTen_1 = txtHoTen.Text.Trim();
+                        dto.DiaChi_1 = txtDiaChi.Text.Trim();
+                        dto.SoDienThoai_1 = txtSoDienThoai.Text.Trim();
 
                         bus.UpdateKhachHang(dto.MaKhachHang_1, dto.HoTen_1, dto.DiaChi_1, dto.SoDienThoai_1);
                         MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -220,6 +222,7 @@ namespace GUI
             if(txtMaKhachHang.Text == "")
             {
                 MessageBox.Show("Chưa nhập mã hàng cần tìm", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                txtMaKhachHang.Focus();
             }
             else
             {

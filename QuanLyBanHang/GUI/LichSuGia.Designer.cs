@@ -280,9 +280,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(9, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 16);
+            this.label2.Size = new System.Drawing.Size(44, 16);
             this.label2.TabIndex = 21;
-            this.label2.Text = "Mã hàng:";
+            this.label2.Text = "Hàng:";
             // 
             // label1
             // 
@@ -307,10 +307,10 @@
             // txttest
             // 
             this.txttest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttest.Location = new System.Drawing.Point(354, 173);
+            this.txttest.Location = new System.Drawing.Point(885, 48);
             this.txttest.Multiline = true;
             this.txttest.Name = "txttest";
-            this.txttest.Size = new System.Drawing.Size(197, 23);
+            this.txttest.Size = new System.Drawing.Size(27, 23);
             this.txttest.TabIndex = 40;
             // 
             // LichSuGia
@@ -338,7 +338,7 @@
             this.Controls.Add(this.label2);
             this.Name = "LichSuGia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "QUẢN LÝ BÁN HÀNG";
+            this.Text = "WWWWWW";
             this.Load += new System.EventHandler(this.LichSuGia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuGia)).EndInit();
             this.panel1.ResumeLayout(false);

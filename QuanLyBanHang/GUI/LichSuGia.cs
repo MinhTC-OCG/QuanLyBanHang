@@ -62,10 +62,7 @@ namespace GUI
 
             DataTable dtMaH = new DataTable();
             dtMaH.Clear();
-            SqlConnection conn = dal.getConnect();
-            conn.Open();
-            SqlDataAdapter adMaH = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + cbMaHang.Text + "'", conn);
-            adMaH.Fill(dtMaH);
+            dtMaH = bus.GetMa(cbMaHang.Text.Trim());
 
             //for (int rows = 0; rows < dgvLichSuGia.Rows.Count; rows++)
             //{
@@ -161,10 +158,7 @@ namespace GUI
             {
                 DataTable dtMaH = new DataTable();
                 dtMaH.Clear();
-                SqlConnection conn = dal.getConnect();
-                conn.Open();
-                SqlDataAdapter ad = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + cbMaHang.Text + "'", conn);
-                ad.Fill(dtMaH);
+                dtMaH = bus.GetMa(cbMaHang.Text.Trim());
 
                 try
                 {
@@ -204,12 +198,9 @@ namespace GUI
             {
                 DataTable dtMaH = new DataTable();
                 dtMaH.Clear();
-                SqlConnection conn = dal.getConnect();
-                conn.Open();
+                dtMaH = bus.GetMa(cbMaHang.Text.Trim());
                 try
                 {
-                    SqlDataAdapter ad = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + cbMaHang.Text + "'", conn);
-                    ad.Fill(dtMaH);
                     String s1 = bus.SearchLichSuHang(dtMaH.Rows[0]["MaH"].ToString().Trim()).Rows[0]["MaH"].ToString().Trim();
                     String s2 = dtMaH.Rows[0]["MaH"].ToString().Trim();
                     if (s1.Equals(s2) == true)
@@ -233,12 +224,10 @@ namespace GUI
         {
             DataTable dtMaH = new DataTable();
             dtMaH.Clear();
-            SqlConnection conn = dal.getConnect();
-            conn.Open();
+            dtMaH = bus.GetMa(cbMaHang.Text.Trim());
             try
             {
-                SqlDataAdapter ad = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + cbMaHang.Text + "'", conn);
-                ad.Fill(dtMaH);
+                
                 dgvLichSuGia.DataSource = bus.SearchLichSuHang(dtMaH.Rows[0]["MaH"].ToString().Trim());
             }
             catch
@@ -270,10 +259,7 @@ namespace GUI
 
                 DataTable dtMaH = new DataTable();
                 dtMaH.Clear();
-                SqlConnection conn = dal.getConnect();
-                conn.Open();
-                SqlDataAdapter ad = new SqlDataAdapter("select TenH from Hang12 where MaH= N'" + maHang + "'", conn);
-                ad.Fill(dtMaH);
+                dtMaH = bus.GetTen(maHang);
                 try
                 {
                     cbMaHang.Text = "";
