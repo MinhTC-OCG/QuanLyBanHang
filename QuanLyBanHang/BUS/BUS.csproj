@@ -90,9 +90,11 @@
     <Compile Include="BaoCaoDoanhSoBanHang_BUS.cs" />
     <Compile Include="BaoCao_BUS.cs" />
     <Compile Include="BCHTonThang_BUS.cs" />
+    <Compile Include="DangKy_BUS.cs" />
     <Compile Include="Hang_BUS.cs" />
     <Compile Include="HoaDon_BUS.cs" />
     <Compile Include="KhachHang_BUS.cs" />
+    <Compile Include="LayMatKhau_BUS.cs" />
     <Compile Include="LichSuGia_BUS.cs" />
     <Compile Include="LoaiHang_BUS.cs" />
     <Compile Include="DangNhap_BUS.cs" />

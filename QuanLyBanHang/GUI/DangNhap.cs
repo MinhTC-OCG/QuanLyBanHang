@@ -9,6 +9,7 @@ namespace GUI
     {
         DangNhap_BUS bus = new DangNhap_BUS();
         DangNhap_DTO dto = new DangNhap_DTO();
+        
         public static string tendangnhap = "";
 
         public DangNhap()
@@ -50,6 +51,20 @@ namespace GUI
         private void lbLinkThoat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LayMatKhau lmk = new LayMatKhau();
+            this.Hide();
+            lmk.Show();
+        }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+            DangKy dk = new DangKy();
+            this.Hide();
+            dk.Show();
         }
     }
 }
