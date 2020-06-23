@@ -82,6 +82,7 @@ namespace GUI
             int tt = 0;
             if (nrSoluong.Value == 0)
             {
+
                 soluong = 0;
                 thanhtien = soluong * dongia;
                 txtThanhtien.Text = thanhtien.ToString();
