@@ -592,7 +592,7 @@
             this.dgvHoaDonTongHop.RowHeadersVisible = false;
             this.dgvHoaDonTongHop.RowHeadersWidth = 51;
             this.dgvHoaDonTongHop.RowTemplate.Height = 24;
-            this.dgvHoaDonTongHop.Size = new System.Drawing.Size(699, 288);
+            this.dgvHoaDonTongHop.Size = new System.Drawing.Size(743, 288);
             this.dgvHoaDonTongHop.TabIndex = 13;
             this.dgvHoaDonTongHop.Click += new System.EventHandler(this.dgvHoaDonTongHop_Click);
             // 
@@ -781,7 +781,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1149, 680);
+            this.ClientSize = new System.Drawing.Size(1239, 680);
             this.Controls.Add(this.btnXem);
             this.Controls.Add(this.btnXoaHoaDon);
             this.Controls.Add(this.btnSuaHoaDon);
