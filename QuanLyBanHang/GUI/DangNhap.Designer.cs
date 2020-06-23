@@ -31,17 +31,19 @@
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMatKhau = new System.Windows.Forms.TextBox();
-            this.txtTenDN = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lbLinkThoat = new System.Windows.Forms.LinkLabel();
+            this.linkQuenMK = new System.Windows.Forms.LinkLabel();
+            this.btnDangKy = new System.Windows.Forms.Button();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.txtTenDN = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.Location = new System.Drawing.Point(217, 205);
             this.btnDangNhap.Name = "btnDangNhap";
@@ -54,41 +56,22 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(120, 165);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(120, 151);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 24);
+            this.label3.Size = new System.Drawing.Size(79, 20);
             this.label3.TabIndex = 10;
             this.label3.Text = "Mật khẩu:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(65, 108);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(79, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 24);
+            this.label2.Size = new System.Drawing.Size(120, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Tên đăng nhập:";
-            // 
-            // txtMatKhau
-            // 
-            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.Location = new System.Drawing.Point(217, 162);
-            this.txtMatKhau.Multiline = true;
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.PasswordChar = '*';
-            this.txtMatKhau.Size = new System.Drawing.Size(295, 37);
-            this.txtMatKhau.TabIndex = 8;
-            // 
-            // txtTenDN
-            // 
-            this.txtTenDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDN.Location = new System.Drawing.Point(217, 105);
-            this.txtTenDN.Multiline = true;
-            this.txtTenDN.Name = "txtTenDN";
-            this.txtTenDN.Size = new System.Drawing.Size(295, 35);
-            this.txtTenDN.TabIndex = 7;
             // 
             // panel1
             // 
@@ -113,13 +96,51 @@
             // lbLinkThoat
             // 
             this.lbLinkThoat.AutoSize = true;
-            this.lbLinkThoat.Location = new System.Drawing.Point(215, 254);
+            this.lbLinkThoat.Location = new System.Drawing.Point(249, 265);
             this.lbLinkThoat.Name = "lbLinkThoat";
             this.lbLinkThoat.Size = new System.Drawing.Size(41, 13);
             this.lbLinkThoat.TabIndex = 12;
             this.lbLinkThoat.TabStop = true;
             this.lbLinkThoat.Text = "Thoát?";
             this.lbLinkThoat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbLinkThoat_LinkClicked);
+            // 
+            // linkQuenMK
+            // 
+            this.linkQuenMK.AutoSize = true;
+            this.linkQuenMK.Location = new System.Drawing.Point(310, 265);
+            this.linkQuenMK.Name = "linkQuenMK";
+            this.linkQuenMK.Size = new System.Drawing.Size(80, 13);
+            this.linkQuenMK.TabIndex = 13;
+            this.linkQuenMK.TabStop = true;
+            this.linkQuenMK.Text = "Quên mật khẩu";
+            this.linkQuenMK.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // btnDangKy
+            // 
+            this.btnDangKy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangKy.Location = new System.Drawing.Point(351, 205);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(96, 46);
+            this.btnDangKy.TabIndex = 14;
+            this.btnDangKy.Text = "Đăng ký";
+            this.btnDangKy.UseVisualStyleBackColor = false;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
+            // 
+            // txtMatKhau
+            // 
+            this.txtMatKhau.Location = new System.Drawing.Point(218, 153);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Size = new System.Drawing.Size(257, 20);
+            this.txtMatKhau.TabIndex = 15;
+            this.txtMatKhau.UseSystemPasswordChar = true;
+            // 
+            // txtTenDN
+            // 
+            this.txtTenDN.Location = new System.Drawing.Point(218, 108);
+            this.txtTenDN.Name = "txtTenDN";
+            this.txtTenDN.Size = new System.Drawing.Size(257, 20);
+            this.txtTenDN.TabIndex = 16;
             // 
             // DangNhap
             // 
@@ -128,12 +149,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.lbLinkThoat;
             this.ClientSize = new System.Drawing.Size(537, 298);
+            this.Controls.Add(this.txtTenDN);
+            this.Controls.Add(this.txtMatKhau);
+            this.Controls.Add(this.btnDangKy);
+            this.Controls.Add(this.linkQuenMK);
             this.Controls.Add(this.lbLinkThoat);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtMatKhau);
-            this.Controls.Add(this.txtTenDN);
             this.Controls.Add(this.panel1);
             this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -150,10 +173,12 @@
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtMatKhau;
-        private System.Windows.Forms.TextBox txtTenDN;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel lbLinkThoat;
+        private System.Windows.Forms.LinkLabel linkQuenMK;
+        private System.Windows.Forms.Button btnDangKy;
+        private System.Windows.Forms.TextBox txtMatKhau;
+        private System.Windows.Forms.TextBox txtTenDN;
     }
 }

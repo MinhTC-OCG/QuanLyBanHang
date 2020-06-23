@@ -124,6 +124,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCaoDoanhSoBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCaoDoanhSoBanHang.Designer.cs">
+      <DependentUpon>BaoCaoDoanhSoBanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCaoTheoNgay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,12 @@
     </Compile>
     <Compile Include="BaoCaoTonCuoiThang.Designer.cs">
       <DependentUpon>BaoCaoTonCuoiThang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKy.Designer.cs">
+      <DependentUpon>DangKy.cs</DependentUpon>
     </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
@@ -159,6 +171,12 @@
     </Compile>
     <Compile Include="KhachHang.Designer.cs">
       <DependentUpon>KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LayMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LayMatKhau.Designer.cs">
+      <DependentUpon>LayMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="LichSuGia.cs">
       <SubType>Form</SubType>
@@ -216,11 +234,17 @@
     <Compile Include="TrinhDo.Designer.cs">
       <DependentUpon>TrinhDo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BaoCaoDoanhSoBanHang.resx">
+      <DependentUpon>BaoCaoDoanhSoBanHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCaoTheoNgay.resx">
       <DependentUpon>BaoCaoTheoNgay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCaoTonCuoiThang.resx">
       <DependentUpon>BaoCaoTonCuoiThang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangKy.resx">
+      <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
@@ -230,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayMatKhau.resx">
+      <DependentUpon>LayMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportBaoCaoTheoNgay.rdlc" />
     <EmbeddedResource Include="ReportBaoCaoTheoNgay.resx">
