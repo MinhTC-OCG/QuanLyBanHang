@@ -62,10 +62,7 @@ namespace GUI
 
             DataTable dtMaH = new DataTable();
             dtMaH.Clear();
-            SqlConnection conn = dal.getConnect();
-            conn.Open();
-            SqlDataAdapter adMaH = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + cbMaHang.Text + "'", conn);
-            adMaH.Fill(dtMaH);
+            dtMaH = bus.GetMa(cbMaHang.Text.Trim());
 
             //for (int rows = 0; rows < dgvLichSuGia.Rows.Count; rows++)
             //{
@@ -161,10 +158,7 @@ namespace GUI
             {
                 DataTable dtMaH = new DataTable();
                 dtMaH.Clear();
-                SqlConnection conn = dal.getConnect();
-                conn.Open();
-                SqlDataAdapter ad = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + cbMaHang.Text + "'", conn);
-                ad.Fill(dtMaH);
+                dtMaH = bus.GetMa(cbMaHang.Text.Trim());
 
                 try
                 {
@@ -189,7 +183,7 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show("Không sửa được!");
+                    MessageBox.Show("Không sửa được!","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 dgvLichSuGia.ClearSelection();
@@ -204,25 +198,22 @@ namespace GUI
             {
                 DataTable dtMaH = new DataTable();
                 dtMaH.Clear();
-                SqlConnection conn = dal.getConnect();
-                conn.Open();
+                dtMaH = bus.GetMa(cbMaHang.Text.Trim());
                 try
                 {
-                    SqlDataAdapter ad = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + cbMaHang.Text + "'", conn);
-                    ad.Fill(dtMaH);
                     String s1 = bus.SearchLichSuHang(dtMaH.Rows[0]["MaH"].ToString().Trim()).Rows[0]["MaH"].ToString().Trim();
                     String s2 = dtMaH.Rows[0]["MaH"].ToString().Trim();
                     if (s1.Equals(s2) == true)
                     {
                         bus.DeleteLichSuGia(dtMaH.Rows[0]["MaH"].ToString().Trim(), dtpNgayBatDau.Value.ToString("MM/dd/yyyy").Trim());
                         LoadData();
-                        MessageBox.Show("Xóa thành công");
+                        MessageBox.Show("Xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }
                 catch
                 {
-                    MessageBox.Show("Không thỏa mãn " + dtMaH.Rows[0]["MaH"].ToString().Trim() + " && " + dtpNgayBatDau.Value.ToString("MM/dd/yyyy").Trim() + "! ");
+                    MessageBox.Show("Không thỏa mãn " + dtMaH.Rows[0]["MaH"].ToString().Trim() + " && " + dtpNgayBatDau.Value.ToString("MM/dd/yyyy").Trim() + "! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 dgvLichSuGia.ClearSelection();
@@ -233,17 +224,15 @@ namespace GUI
         {
             DataTable dtMaH = new DataTable();
             dtMaH.Clear();
-            SqlConnection conn = dal.getConnect();
-            conn.Open();
+            dtMaH = bus.GetMa(cbMaHang.Text.Trim());
             try
             {
-                SqlDataAdapter ad = new SqlDataAdapter("select MaH from Hang12 where TenH= N'" + cbMaHang.Text + "'", conn);
-                ad.Fill(dtMaH);
+                
                 dgvLichSuGia.DataSource = bus.SearchLichSuHang(dtMaH.Rows[0]["MaH"].ToString().Trim());
             }
             catch
             {
-                MessageBox.Show("Sai dữ liệu Combobox");
+                MessageBox.Show("Sai dữ liệu Combobox","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
             dgvLichSuGia.ClearSelection();
@@ -270,10 +259,7 @@ namespace GUI
 
                 DataTable dtMaH = new DataTable();
                 dtMaH.Clear();
-                SqlConnection conn = dal.getConnect();
-                conn.Open();
-                SqlDataAdapter ad = new SqlDataAdapter("select TenH from Hang12 where MaH= N'" + maHang + "'", conn);
-                ad.Fill(dtMaH);
+                dtMaH = bus.GetTen(maHang);
                 try
                 {
                     cbMaHang.Text = "";
@@ -281,7 +267,7 @@ namespace GUI
                 }
                 catch
                 {
-                    MessageBox.Show("Khong lay dc ma hang");
+                    MessageBox.Show("Khong lay dc ma hang","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                 txtDonGia.Text = dgvLichSuGia.Rows[c].Cells[3].Value.ToString().Trim();
                 dtpNgayBatDau.Value = Convert.ToDateTime(dgvLichSuGia.Rows[c].Cells[1].Value);

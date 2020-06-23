@@ -18,7 +18,7 @@ namespace BUS
 
         public DataTable GetNameKH(string makh)
         {
-            string sql = "SELECT HoTen FROM KhachHang12 WHERE MaKH='" + makh + "'";
+            string sql = "SELECT HoTenKH FROM KhachHang12 WHERE MaKH='" + makh + "'";
             DataTable dt = new DataTable();
             dt = dal.getTable(sql);
             return dt;
