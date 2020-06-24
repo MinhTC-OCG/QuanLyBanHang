@@ -66,5 +66,10 @@ namespace GUI
             this.Hide();
             dk.Show();
         }
+
+        private void txtMatKhau_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

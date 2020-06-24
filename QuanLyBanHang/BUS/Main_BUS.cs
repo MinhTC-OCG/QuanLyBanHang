@@ -36,5 +36,12 @@ namespace BUS
             dt = dal.getTable(sql);
             return dt;
         }
+        public DataTable QuyenDangNhap(string tendangnhap)
+        {
+            DataTable dt = new DataTable();
+            string sql = "SELECT Quyen FROM DangNhap12 WHERE TenDN='" + tendangnhap+"'";
+            dt = dal.getTable(sql);
+            return dt;
+        }
     }
 }
