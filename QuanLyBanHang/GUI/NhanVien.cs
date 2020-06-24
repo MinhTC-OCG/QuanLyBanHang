@@ -52,105 +52,60 @@ namespace GUI
             txtSoDT.Text = dgvNV.Rows[r].Cells[3].Value.ToString();
         }
 
-        private void bnThem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txtMaNV.Text == "")
-                    MessageBox.Show("Bạn chưa nhập mã Nhân viên, nhập lại!");
-                else if (txtHoTen.Text == "")
-                    MessageBox.Show("Bạn chưa nhập họ tên nhân viên, nhập lại!");
-                else if (txtDiaChi.Text == "")
-                    MessageBox.Show("Bạn chưa nhập địa chỉ, nhập lại!");
-                else if (txtSoDT.Text == "")
-                    MessageBox.Show("Bạn chưa nhập số điện thoại, nhập lại!");
-                else
-                {
+        private void bnThem_Click(object sender, EventArgs e){
+            try{
+                if (txtMaNV.Text == "") MessageBox.Show("Bạn chưa nhập mã Nhân viên, nhập lại!");
+                else if (txtHoTen.Text == "") MessageBox.Show("Bạn chưa nhập họ tên nhân viên, nhập lại!");
+                else if (txtDiaChi.Text == "") MessageBox.Show("Bạn chưa nhập địa chỉ, nhập lại!");
+                else if (txtSoDT.Text == "") MessageBox.Show("Bạn chưa nhập số điện thoại, nhập lại!");
+                else{
                     dto.MaNV = txtMaNV.Text;
                     dto.HoTen = txtHoTen.Text;
                     dto.DiaChi = txtDiaChi.Text;
                     dto.MaTD = cbMaTD.SelectedValue.ToString();
                     dto.SoDT = txtSoDT.Text;
                     int dem = 0;
-                    foreach (DataRow row in dtNhanVien.Rows)
-                    {
+                    foreach (DataRow row in dtNhanVien.Rows){
                         var check = row["MaNV"].ToString().Trim();
-                        if (txtMaNV.Text.Trim() == check)
-                        {
+                        if (txtMaNV.Text.Trim() == check){
                             dem++;
-                            break;
-                        }
-
-                    }
-                    if (dem == 0)
-                    {
+                            break;}}
+                    if (dem == 0){
                         bus.InsertNhanVien(dto.MaNV, dto.HoTen, dto.DiaChi, dto.SoDT, dto.MaTD);
                         MessageBox.Show("Thêm nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadData();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Mã nhân viên đã tồn tại, nhập lại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Không thêm được nhân viên, thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                        LoadData();}
+                    else { MessageBox.Show("Mã nhân viên đã tồn tại, nhập lại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);}
+                }}
+            catch (Exception){ MessageBox.Show("Không thêm được nhân viên, thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);}
         }
 
-        private void bnSua_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txtMaNV.Text == "")
-                    MessageBox.Show("Bạn chưa nhập mã Nhân viên, nhập lại!");
-                else if (txtHoTen.Text == "")
-                    MessageBox.Show("Bạn chưa nhập họ tên nhân viên, nhập lại!");
-                else if (txtDiaChi.Text == "")
-                    MessageBox.Show("Bạn chưa nhập địa chỉ, nhập lại!");
-                else if (txtSoDT.Text == "")
-                    MessageBox.Show("Bạn chưa nhập số điện thoại, nhập lại!");
-                else
-                {
+        private void bnSua_Click(object sender, EventArgs e){
+            try{
+                if (txtMaNV.Text == "") MessageBox.Show("Bạn chưa nhập mã Nhân viên, nhập lại!");
+                else if (txtHoTen.Text == "") MessageBox.Show("Bạn chưa nhập họ tên nhân viên, nhập lại!");
+                else if (txtDiaChi.Text == "") MessageBox.Show("Bạn chưa nhập địa chỉ, nhập lại!");
+                else if (txtSoDT.Text == "") MessageBox.Show("Bạn chưa nhập số điện thoại, nhập lại!");
+                else{
                     dto.MaNV = txtMaNV.Text;
                     dto.HoTen = txtHoTen.Text;
                     dto.DiaChi = txtDiaChi.Text;
                     dto.MaTD = cbMaTD.SelectedValue.ToString();
                     dto.SoDT = txtSoDT.Text;
                     int dem = 0;
-                    foreach (DataRow row in dtNhanVien.Rows)
-                    {
-                        foreach (DataColumn c in dtNhanVien.Columns)
-                        {
+                    foreach (DataRow row in dtNhanVien.Rows){
+                        foreach (DataColumn c in dtNhanVien.Columns){
                             var check = row[c].ToString().Trim();
-                            if (txtMaNV.Text.Trim() == check)
-                            {
+                            if (txtMaNV.Text.Trim() == check) {
                                 dem++;
                                 break;
-                            }
-                        }
-                    }
-                    if (dem != 0)
-                    {
+                            } } }
+                    if (dem != 0){
                         bus.UpdateNhanvien(dto.MaNV, dto.HoTen, dto.DiaChi, dto.SoDT, dto.MaTD);
                         NhanVien_Load_1(sender, e);
-                        MessageBox.Show("Cập nhập nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Mã nhân viên không tồn tại, nhập lại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Không cập nhật được nhân viên, thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+                        MessageBox.Show("Cập nhập nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);  }
+                    else{ MessageBox.Show("Mã nhân viên không tồn tại, nhập lại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);} } }
+            catch (Exception){ MessageBox.Show("Không cập nhật được nhân viên, thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } }
 
 
         private void bnXoa_Click(object sender, EventArgs e)
@@ -160,8 +115,8 @@ namespace GUI
                 MessageBox.Show("Thất bại, chưa nhập mã nhân viên cần xóa!");
             }
             else
-            {
-                DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa nhân viên \"" + txtHoTen.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            { 
+        DialogResult rs = MessageBox.Show("Bạn thực sự muốn xóa nhân viên \"" + txtHoTen.Text + "\" ra khỏi danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (rs == DialogResult.Yes)
                 {
                     bus.DeleteNhanVien(txtMaNV.Text);
