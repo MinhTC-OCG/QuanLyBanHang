@@ -48,13 +48,13 @@
             this.mntsKhachHang = new System.Windows.Forms.ToolStripMenuItem();
             this.mntsLichSuGia = new System.Windows.Forms.ToolStripMenuItem();
             this.mntsTrinhDo = new System.Windows.Forms.ToolStripMenuItem();
-            this.mntsHoaDon = new System.Windows.Forms.ToolStripMenuItem();
             this.mnBaoCao = new System.Windows.Forms.ToolStripMenuItem();
             this.mntsBaoCaoTheoNgay = new System.Windows.Forms.ToolStripMenuItem();
             this.mntsBaoCaoTheoThang = new System.Windows.Forms.ToolStripMenuItem();
             this.mntsBaoCaoDoanhSo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnTaiKhoản = new System.Windows.Forms.ToolStripMenuItem();
             this.mnstDangXuat = new System.Windows.Forms.ToolStripMenuItem();
+            this.hóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -182,10 +182,11 @@
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnQuanLy,
             this.mnBaoCao,
-            this.mnTaiKhoản});
+            this.mnTaiKhoản,
+            this.hóaĐơnToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(119, 761);
+            this.menuStrip2.Size = new System.Drawing.Size(119, 749);
             this.menuStrip2.TabIndex = 10;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -199,13 +200,13 @@
             this.mntsNhanVien,
             this.mntsKhachHang,
             this.mntsLichSuGia,
-            this.mntsTrinhDo,
-            this.mntsHoaDon});
+            this.mntsTrinhDo});
             this.mnQuanLy.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnQuanLy.Name = "mnQuanLy";
             this.mnQuanLy.Size = new System.Drawing.Size(113, 50);
             this.mnQuanLy.Text = "Quản lý";
             this.mnQuanLy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mnQuanLy.Click += new System.EventHandler(this.mnQuanLy_Click);
             // 
             // mntsLoaiHang
             // 
@@ -256,13 +257,6 @@
             this.mntsTrinhDo.Text = "Trình độ";
             this.mntsTrinhDo.Click += new System.EventHandler(this.mntsTrinhDo_Click);
             // 
-            // mntsHoaDon
-            // 
-            this.mntsHoaDon.Name = "mntsHoaDon";
-            this.mntsHoaDon.Size = new System.Drawing.Size(201, 30);
-            this.mntsHoaDon.Text = "Hóa đơn";
-            this.mntsHoaDon.Click += new System.EventHandler(this.mntsHoaDon_Click);
-            // 
             // mnBaoCao
             // 
             this.mnBaoCao.AutoSize = false;
@@ -275,6 +269,7 @@
             this.mnBaoCao.Size = new System.Drawing.Size(113, 50);
             this.mnBaoCao.Text = "Báo cáo";
             this.mnBaoCao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mnBaoCao.Click += new System.EventHandler(this.mnBaoCao_Click);
             // 
             // mntsBaoCaoTheoNgay
             // 
@@ -302,11 +297,12 @@
             this.mnTaiKhoản.AutoSize = false;
             this.mnTaiKhoản.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnstDangXuat});
-            this.mnTaiKhoản.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnTaiKhoản.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.mnTaiKhoản.Name = "mnTaiKhoản";
             this.mnTaiKhoản.Size = new System.Drawing.Size(113, 50);
             this.mnTaiKhoản.Text = "Tài khoản";
             this.mnTaiKhoản.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mnTaiKhoản.Click += new System.EventHandler(this.mnTaiKhoản_Click);
             // 
             // mnstDangXuat
             // 
@@ -315,11 +311,20 @@
             this.mnstDangXuat.Text = "Đăng xuất";
             this.mnstDangXuat.Click += new System.EventHandler(this.mnstDangXuat_Click);
             // 
+            // hóaĐơnToolStripMenuItem
+            // 
+            this.hóaĐơnToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.hóaĐơnToolStripMenuItem.Name = "hóaĐơnToolStripMenuItem";
+            this.hóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(106, 29);
+            this.hóaĐơnToolStripMenuItem.Text = "Hóa Đơn";
+            this.hóaĐơnToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.hóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.hóaĐơnToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 761);
+            this.ClientSize = new System.Drawing.Size(1264, 749);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbTongDoanhThu);
             this.Controls.Add(this.label3);
@@ -362,13 +367,13 @@
         private System.Windows.Forms.ToolStripMenuItem mntsKhachHang;
         private System.Windows.Forms.ToolStripMenuItem mntsLichSuGia;
         private System.Windows.Forms.ToolStripMenuItem mntsTrinhDo;
-        private System.Windows.Forms.ToolStripMenuItem mntsHoaDon;
         private System.Windows.Forms.ToolStripMenuItem mnBaoCao;
         private System.Windows.Forms.ToolStripMenuItem mntsBaoCaoTheoNgay;
         private System.Windows.Forms.ToolStripMenuItem mntsBaoCaoTheoThang;
         private System.Windows.Forms.ToolStripMenuItem mntsBaoCaoDoanhSo;
         private System.Windows.Forms.ToolStripMenuItem mnTaiKhoản;
         private System.Windows.Forms.ToolStripMenuItem mnstDangXuat;
+        private System.Windows.Forms.ToolStripMenuItem hóaĐơnToolStripMenuItem;
     }
 }
 
