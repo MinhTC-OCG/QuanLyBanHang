@@ -338,7 +338,7 @@
             this.Controls.Add(this.label2);
             this.Name = "LichSuGia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WWWWWW";
+            this.Text = "QUẢN LÝ BÁN HÀNG";
             this.Load += new System.EventHandler(this.LichSuGia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuGia)).EndInit();
             this.panel1.ResumeLayout(false);
