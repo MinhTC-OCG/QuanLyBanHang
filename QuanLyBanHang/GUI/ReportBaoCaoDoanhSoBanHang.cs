@@ -10,17 +10,15 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class ReportHoaDon : Form
+    public partial class ReportBaoCaoDoanhSoBanHang : Form
     {
-        public ReportHoaDon()
+        public ReportBaoCaoDoanhSoBanHang()
         {
             InitializeComponent();
         }
 
-        private void ReportHoaDon_Load(object sender, EventArgs e)
+        private void ReportBaoCaoDoanhSoBanHang_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'QLBHDataSet.HoaDonTongHop12' table. You can move, or remove it, as needed.
-            this.HoaDonTongHop12TableAdapter.Fill(this.QLBHDataSet.HoaDonTongHop12);
 
             this.reportViewer1.RefreshReport();
         }

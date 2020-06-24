@@ -40,7 +40,7 @@ namespace GUI
 
         private void bnIn_Click(object sender, EventArgs e)
         {
-            ReportBaoCaoTheoThang rp = new ReportBaoCaoTheoThang();
+            ReportBaoCaoTonCuoiThang rp = new ReportBaoCaoTonCuoiThang();
             rp.Show();
         }
         private void dgvBCHTonThang_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)

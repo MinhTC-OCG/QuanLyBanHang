@@ -41,9 +41,6 @@
             this.cbNV = new System.Windows.Forms.CheckBox();
             this.cbH = new System.Windows.Forms.CheckBox();
             this.dgvDoanhSoHang = new System.Windows.Forms.DataGridView();
-            this.btnTatCa = new System.Windows.Forms.Button();
-            this.dgvNhanVien = new System.Windows.Forms.DataGridView();
-            this.lbNguoiLap = new System.Windows.Forms.Label();
             this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +52,8 @@
             this.DonG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnTatCa = new System.Windows.Forms.Button();
+            this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +64,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbNguoiLap = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhSoHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -102,6 +102,7 @@
             this.btnIn.Text = "In";
             this.btnIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnIn.UseVisualStyleBackColor = false;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnXuat
             // 
@@ -214,52 +215,6 @@
             this.dgvDoanhSoHang.Size = new System.Drawing.Size(920, 271);
             this.dgvDoanhSoHang.TabIndex = 27;
             // 
-            // btnTatCa
-            // 
-            this.btnTatCa.Location = new System.Drawing.Point(711, 80);
-            this.btnTatCa.Name = "btnTatCa";
-            this.btnTatCa.Size = new System.Drawing.Size(71, 27);
-            this.btnTatCa.TabIndex = 28;
-            this.btnTatCa.Text = "Tất cả";
-            this.btnTatCa.UseVisualStyleBackColor = true;
-            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
-            // 
-            // dgvNhanVien
-            // 
-            this.dgvNhanVien.AllowUserToAddRows = false;
-            this.dgvNhanVien.AllowUserToResizeRows = false;
-            this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvNhanVien.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.MaNV,
-            this.HoTen,
-            this.Mahdcl,
-            this.Column1,
-            this.Column3,
-            this.Column4,
-            this.Column2,
-            this.Column5,
-            this.Column6});
-            this.dgvNhanVien.EnableHeadersVisualStyles = false;
-            this.dgvNhanVien.Location = new System.Drawing.Point(15, 237);
-            this.dgvNhanVien.Name = "dgvNhanVien";
-            this.dgvNhanVien.RowHeadersVisible = false;
-            this.dgvNhanVien.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvNhanVien.Size = new System.Drawing.Size(920, 271);
-            this.dgvNhanVien.TabIndex = 29;
-            // 
-            // lbNguoiLap
-            // 
-            this.lbNguoiLap.AutoSize = true;
-            this.lbNguoiLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNguoiLap.Location = new System.Drawing.Point(87, 135);
-            this.lbNguoiLap.Name = "lbNguoiLap";
-            this.lbNguoiLap.Size = new System.Drawing.Size(0, 16);
-            this.lbNguoiLap.TabIndex = 31;
-            // 
             // NgayLap
             // 
             this.NgayLap.DataPropertyName = "Ngày lập";
@@ -335,6 +290,43 @@
             this.Tong.HeaderText = "Tổng";
             this.Tong.Name = "Tong";
             // 
+            // btnTatCa
+            // 
+            this.btnTatCa.Location = new System.Drawing.Point(711, 80);
+            this.btnTatCa.Name = "btnTatCa";
+            this.btnTatCa.Size = new System.Drawing.Size(71, 27);
+            this.btnTatCa.TabIndex = 28;
+            this.btnTatCa.Text = "Tất cả";
+            this.btnTatCa.UseVisualStyleBackColor = true;
+            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
+            // 
+            // dgvNhanVien
+            // 
+            this.dgvNhanVien.AllowUserToAddRows = false;
+            this.dgvNhanVien.AllowUserToResizeRows = false;
+            this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNhanVien.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.MaNV,
+            this.HoTen,
+            this.Mahdcl,
+            this.Column1,
+            this.Column3,
+            this.Column4,
+            this.Column2,
+            this.Column5,
+            this.Column6});
+            this.dgvNhanVien.EnableHeadersVisualStyles = false;
+            this.dgvNhanVien.Location = new System.Drawing.Point(15, 237);
+            this.dgvNhanVien.Name = "dgvNhanVien";
+            this.dgvNhanVien.RowHeadersVisible = false;
+            this.dgvNhanVien.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvNhanVien.Size = new System.Drawing.Size(920, 271);
+            this.dgvNhanVien.TabIndex = 29;
+            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -397,6 +389,15 @@
             this.Column6.HeaderText = "Tổng tiền";
             this.Column6.Name = "Column6";
             // 
+            // lbNguoiLap
+            // 
+            this.lbNguoiLap.AutoSize = true;
+            this.lbNguoiLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNguoiLap.Location = new System.Drawing.Point(87, 135);
+            this.lbNguoiLap.Name = "lbNguoiLap";
+            this.lbNguoiLap.Size = new System.Drawing.Size(0, 16);
+            this.lbNguoiLap.TabIndex = 31;
+            // 
             // BaoCaoDoanhSoBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,6 +418,7 @@
             this.Controls.Add(this.btnIn);
             this.Controls.Add(this.panel1);
             this.Name = "BaoCaoDoanhSoBanHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BaoCaoDoanhSoBanHang";
             this.Load += new System.EventHandler(this.BaoCaoDoanhSoBanHang_Load);
             this.panel1.ResumeLayout(false);

@@ -48,10 +48,8 @@
             this.lbNguoiLap = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbNgayLayDuLieu = new System.Windows.Forms.Label();
-            this.qlbH_DataSet1 = new GUI.QLBH_DataSet();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaoCao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlbH_DataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -232,9 +230,6 @@
             // 
             // qlbH_DataSet1
             // 
-            this.qlbH_DataSet1.DataSetName = "QLBH_DataSet";
-            this.qlbH_DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // BaoCaoTheoNgay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,7 +253,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaoCao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlbH_DataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,6 +279,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbNgayLayDuLieu;
-        private QLBH_DataSet qlbH_DataSet1;
     }
 }
