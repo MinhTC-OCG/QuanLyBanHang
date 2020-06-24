@@ -55,6 +55,7 @@
             this.mntsBaoCaoDoanhSo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnTaiKhoản = new System.Windows.Forms.ToolStripMenuItem();
             this.mnstDangXuat = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnstDangKy = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -185,7 +186,7 @@
             this.mnTaiKhoản});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(119, 761);
+            this.menuStrip2.Size = new System.Drawing.Size(126, 749);
             this.menuStrip2.TabIndex = 10;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -301,7 +302,8 @@
             // 
             this.mnTaiKhoản.AutoSize = false;
             this.mnTaiKhoản.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnstDangXuat});
+            this.mnstDangXuat,
+            this.mnstDangKy});
             this.mnTaiKhoản.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnTaiKhoản.Name = "mnTaiKhoản";
             this.mnTaiKhoản.Size = new System.Drawing.Size(113, 50);
@@ -311,15 +313,22 @@
             // mnstDangXuat
             // 
             this.mnstDangXuat.Name = "mnstDangXuat";
-            this.mnstDangXuat.Size = new System.Drawing.Size(170, 30);
+            this.mnstDangXuat.Size = new System.Drawing.Size(180, 30);
             this.mnstDangXuat.Text = "Đăng xuất";
             this.mnstDangXuat.Click += new System.EventHandler(this.mnstDangXuat_Click);
+            // 
+            // mnstDangKy
+            // 
+            this.mnstDangKy.Name = "mnstDangKy";
+            this.mnstDangKy.Size = new System.Drawing.Size(180, 30);
+            this.mnstDangKy.Text = "Đăng ký";
+            this.mnstDangKy.Click += new System.EventHandler(this.mnstDangKy_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 761);
+            this.ClientSize = new System.Drawing.Size(1264, 749);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbTongDoanhThu);
             this.Controls.Add(this.label3);
@@ -369,6 +378,7 @@
         private System.Windows.Forms.ToolStripMenuItem mntsBaoCaoDoanhSo;
         private System.Windows.Forms.ToolStripMenuItem mnTaiKhoản;
         private System.Windows.Forms.ToolStripMenuItem mnstDangXuat;
+        private System.Windows.Forms.ToolStripMenuItem mnstDangKy;
     }
 }
 

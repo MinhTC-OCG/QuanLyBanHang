@@ -108,7 +108,7 @@
             this.btnXacNhan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnXacNhan.Location = new System.Drawing.Point(271, 236);
             this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(85, 40);
+            this.btnXacNhan.Size = new System.Drawing.Size(75, 35);
             this.btnXacNhan.TabIndex = 5;
             this.btnXacNhan.Text = "Xác nhận";
             this.btnXacNhan.UseVisualStyleBackColor = false;
@@ -117,9 +117,9 @@
             // btnQuayLai
             // 
             this.btnQuayLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnQuayLai.Location = new System.Drawing.Point(386, 236);
+            this.btnQuayLai.Location = new System.Drawing.Point(396, 236);
             this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(85, 40);
+            this.btnQuayLai.Size = new System.Drawing.Size(75, 35);
             this.btnQuayLai.TabIndex = 6;
             this.btnQuayLai.Text = "Quay lại";
             this.btnQuayLai.UseVisualStyleBackColor = false;
@@ -172,7 +172,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Name = "LayMatKhau";
-            this.Text = "LayMatKhau";
+            this.Text = "QUẢN LÝ BÁN HÀNG";
             this.Load += new System.EventHandler(this.LayMatKhau_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
