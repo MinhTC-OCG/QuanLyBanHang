@@ -48,10 +48,8 @@
             this.lbNguoiLap = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbNgayLayDuLieu = new System.Windows.Forms.Label();
-            this.qlbH_DataSet1 = new GUI.QLBH_DataSet();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaoCao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlbH_DataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -285,6 +283,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbNgayLayDuLieu;
-        private QLBH_DataSet qlbH_DataSet1;
     }
 }
