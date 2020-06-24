@@ -186,7 +186,7 @@
             this.hóaĐơnToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(119, 749);
+            this.menuStrip2.Size = new System.Drawing.Size(126, 749);
             this.menuStrip2.TabIndex = 10;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -206,7 +206,6 @@
             this.mnQuanLy.Size = new System.Drawing.Size(113, 50);
             this.mnQuanLy.Text = "Quản lý";
             this.mnQuanLy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mnQuanLy.Click += new System.EventHandler(this.mnQuanLy_Click);
             // 
             // mntsLoaiHang
             // 
@@ -269,7 +268,6 @@
             this.mnBaoCao.Size = new System.Drawing.Size(113, 50);
             this.mnBaoCao.Text = "Báo cáo";
             this.mnBaoCao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mnBaoCao.Click += new System.EventHandler(this.mnBaoCao_Click);
             // 
             // mntsBaoCaoTheoNgay
             // 
@@ -302,7 +300,6 @@
             this.mnTaiKhoản.Size = new System.Drawing.Size(113, 50);
             this.mnTaiKhoản.Text = "Tài khoản";
             this.mnTaiKhoản.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mnTaiKhoản.Click += new System.EventHandler(this.mnTaiKhoản_Click);
             // 
             // mnstDangXuat
             // 
@@ -315,7 +312,7 @@
             // 
             this.hóaĐơnToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.hóaĐơnToolStripMenuItem.Name = "hóaĐơnToolStripMenuItem";
-            this.hóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(106, 29);
+            this.hóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(113, 29);
             this.hóaĐơnToolStripMenuItem.Text = "Hóa Đơn";
             this.hóaĐơnToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.hóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.hóaĐơnToolStripMenuItem_Click);

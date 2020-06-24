@@ -39,7 +39,7 @@ namespace DAL
     #endregion
 		
 		public dbDataContext() : 
-				base(global::DAL.Properties.Settings.Default.QLBHConnectionString1, mappingSource)
+				base(global::DAL.Properties.Settings.Default.QLBHConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}

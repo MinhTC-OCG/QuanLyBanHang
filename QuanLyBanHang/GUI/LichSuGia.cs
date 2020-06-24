@@ -246,7 +246,9 @@ namespace GUI
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            Dispose();
+            DialogResult rs = MessageBox.Show("Bạn muốn thoát không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+                this.Dispose();
         }
 
 

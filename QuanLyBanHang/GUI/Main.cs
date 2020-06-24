@@ -90,6 +90,13 @@ namespace GUI
         private void Main_Load(object sender, EventArgs e)
         {
             LoadData();
+            DataTable quyen = new DataTable();
+            quyen.Clear();
+            quyen = mbus.QuyenDangNhap(DangNhap.tendangnhap.Trim());
+            if (quyen.Rows[0]["Quyen"].ToString().Trim()=="True")
+            {
+                mnQuanLy.Enabled = false;
+            }
         }
         //------------------------------------------
         private void mntsLoaiHang_Click(object sender, EventArgs e)
@@ -169,6 +176,12 @@ namespace GUI
         {
             DangKy dk = new DangKy();
             dk.Show();
+        }
+
+        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HoaDon hd = new HoaDon();
+            hd.Show();
         }
     }
 }

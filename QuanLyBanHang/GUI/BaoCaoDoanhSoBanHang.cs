@@ -49,6 +49,8 @@ namespace GUI
             dtPicker.Format = DateTimePickerFormat.Custom;
             dtPicker.CustomFormat = "MM/yyyy";
             LoadData();
+            dgvDoanhSoHang.Sort(dgvDoanhSoHang.Columns[0], ListSortDirection.Ascending);
+            dgvNhanVien.Sort(dgvNhanVien.Columns[0], ListSortDirection.Ascending);
         }
         private void clickCBHang()
         {
