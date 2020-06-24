@@ -10,7 +10,6 @@ namespace GUI
         HoaDon_BUS bus = new HoaDon_BUS();
         Main_BUS mbus = new Main_BUS();
         DataTable dt;
-        int qdn=0;
         public int somathang;
 
         public Main()
@@ -90,125 +89,49 @@ namespace GUI
 
         private void Main_Load(object sender, EventArgs e)
         {
-            int demq = 0;
-            DataTable quyen = new DataTable();
-            quyen.Clear();
-            quyen = mbus.QuyenDangNhap(DangNhap.tendangnhap.Trim());
-            string q = "";
-            foreach (DataRow r in quyen.Rows)
-            {
-                 q = r["Quyen"].ToString().Trim();
-             
-            }
-
-            if (q=="True")
-            {
-
-                mnQuanLy.Enabled = false;
-            }
-            //else if (demq == 0)
-            //{
-            //    qdn = 0;
-            //}
             LoadData();
-            
         }
         //------------------------------------------
         private void mntsLoaiHang_Click(object sender, EventArgs e)
         {
-            if (qdn == 0)
-            {
-                LoaiHang loaihang = new LoaiHang();
-                loaihang.Show();
-            }
-            else
-            {
-                MessageBox.Show("Bạn không có quyền truy cập!");
-            }
-            
+            LoaiHang loaihang = new LoaiHang();
+            loaihang.Show();
         }
 
         private void mntsHang_Click(object sender, EventArgs e)
         {
-
-            if (qdn == 0)
-            {
-                Hang hang = new Hang();
-                hang.Show();
-            }
-            else
-            {
-                MessageBox.Show("Bạn không có quyền truy cập!");
-            }
+            Hang hang = new Hang();
+            hang.Show();
         }
 
         private void mntsNCC_Click(object sender, EventArgs e)
         {
-            
-            if (qdn == 0)
-            {
-                NhaCungCap ncc = new NhaCungCap();
-                ncc.Show();
-            }
-            else
-            {
-                MessageBox.Show("Bạn không có quyền truy cập!");
-            }
+            NhaCungCap ncc = new NhaCungCap();
+            ncc.Show();
         }
 
         private void mntsNhanVien_Click(object sender, EventArgs e)
         {
-            
-            if (qdn == 0)
-            {
-                NhanVien nv = new NhanVien();
-                nv.Show();
-            }
-            else
-            {
-                MessageBox.Show("Bạn không có quyền truy cập!");
-            }
+            NhanVien nv = new NhanVien();
+            nv.Show();
         }
 
         private void mntsKhachHang_Click(object sender, EventArgs e)
         {
-            
-            if (qdn == 0)
-            {
-                KhachHang kh = new KhachHang();
-                kh.Show();
-            }
-            else
-            {
-                MessageBox.Show("Bạn không có quyền truy cập!");
-            }
+            KhachHang kh = new KhachHang();
+            kh.Show();
         }
 
         private void mntsLichSuGia_Click(object sender, EventArgs e)
         {
-             if (qdn == 0)
-            {
-                LichSuGia ls = new LichSuGia();
-                ls.Show();
-            }
-            else
-            {
-                MessageBox.Show("Bạn không có quyền truy cập!");
-            }
+            LichSuGia ls = new LichSuGia();
+            ls.Show();
         }
 
         private void mntsTrinhDo_Click(object sender, EventArgs e)
         {
-            
-            if (qdn == 0)
-            {
-                TrinhDo td = new TrinhDo();
-                td.Show();
-            }
-            else
-            {
-                MessageBox.Show("Bạn không có quyền truy cập!");
-            }
+            TrinhDo td = new TrinhDo();
+            td.Show();
         }
 
         private void mntsHoaDon_Click(object sender, EventArgs e)
@@ -242,30 +165,10 @@ namespace GUI
             this.Close();
         }
 
-        private void mnQuanLy_Click(object sender, EventArgs e)
+        private void mnstDangKy_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void mnBaoCao_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mnTaiKhoản_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        
-
-        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-                HoaDon hd = new HoaDon();
-                hd.Show();
-            
-            
+            DangKy dk = new DangKy();
+            dk.Show();
         }
     }
 }

@@ -95,9 +95,9 @@
             // btnDangKy
             // 
             this.btnDangKy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnDangKy.Location = new System.Drawing.Point(232, 257);
+            this.btnDangKy.Location = new System.Drawing.Point(205, 257);
             this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(85, 46);
+            this.btnDangKy.Size = new System.Drawing.Size(75, 35);
             this.btnDangKy.TabIndex = 5;
             this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.UseVisualStyleBackColor = false;
@@ -134,9 +134,9 @@
             // btnQuayLai
             // 
             this.btnQuayLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnQuayLai.Location = new System.Drawing.Point(352, 257);
+            this.btnQuayLai.Location = new System.Drawing.Point(325, 257);
             this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(83, 46);
+            this.btnQuayLai.Size = new System.Drawing.Size(75, 35);
             this.btnQuayLai.TabIndex = 9;
             this.btnQuayLai.Text = "Quay lại";
             this.btnQuayLai.UseVisualStyleBackColor = false;
@@ -183,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 315);
+            this.ClientSize = new System.Drawing.Size(478, 315);
             this.Controls.Add(this.txtSdt);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
@@ -199,7 +199,7 @@
             this.Controls.Add(this.cbVaiTro);
             this.Name = "DangKy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DangKy";
+            this.Text = "QUẢN LÝ BÁN HÀNG";
             this.Load += new System.EventHandler(this.DangKy_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -47,7 +47,7 @@
             this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.Location = new System.Drawing.Point(217, 205);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(96, 46);
+            this.btnDangNhap.Size = new System.Drawing.Size(90, 35);
             this.btnDangNhap.TabIndex = 3;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = false;
@@ -96,7 +96,7 @@
             // lbLinkThoat
             // 
             this.lbLinkThoat.AutoSize = true;
-            this.lbLinkThoat.Location = new System.Drawing.Point(249, 265);
+            this.lbLinkThoat.Location = new System.Drawing.Point(215, 265);
             this.lbLinkThoat.Name = "lbLinkThoat";
             this.lbLinkThoat.Size = new System.Drawing.Size(41, 13);
             this.lbLinkThoat.TabIndex = 5;
@@ -107,7 +107,7 @@
             // linkQuenMK
             // 
             this.linkQuenMK.AutoSize = true;
-            this.linkQuenMK.Location = new System.Drawing.Point(310, 265);
+            this.linkQuenMK.Location = new System.Drawing.Point(262, 265);
             this.linkQuenMK.Name = "linkQuenMK";
             this.linkQuenMK.Size = new System.Drawing.Size(80, 13);
             this.linkQuenMK.TabIndex = 6;
@@ -119,9 +119,9 @@
             // 
             this.btnDangKy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangKy.Location = new System.Drawing.Point(351, 205);
+            this.btnDangKy.Location = new System.Drawing.Point(313, 205);
             this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(96, 46);
+            this.btnDangKy.Size = new System.Drawing.Size(90, 35);
             this.btnDangKy.TabIndex = 4;
             this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.UseVisualStyleBackColor = false;
@@ -129,18 +129,19 @@
             // 
             // txtMatKhau
             // 
+            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhau.Location = new System.Drawing.Point(218, 153);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(257, 20);
+            this.txtMatKhau.Size = new System.Drawing.Size(257, 26);
             this.txtMatKhau.TabIndex = 2;
             this.txtMatKhau.UseSystemPasswordChar = true;
-            this.txtMatKhau.TextChanged += new System.EventHandler(this.txtMatKhau_TextChanged);
             // 
             // txtTenDN
             // 
+            this.txtTenDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDN.Location = new System.Drawing.Point(218, 108);
             this.txtTenDN.Name = "txtTenDN";
-            this.txtTenDN.Size = new System.Drawing.Size(257, 20);
+            this.txtTenDN.Size = new System.Drawing.Size(257, 26);
             this.txtTenDN.TabIndex = 1;
             // 
             // DangNhap

@@ -273,9 +273,10 @@ namespace GUI
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Không sửa được hóa đơn", "Cảnh báo");
+                Console.WriteLine(ex);
+                //MessageBox.Show("Không sửa được hóa đơn", "Cảnh báo");
             }
         }
 
@@ -363,6 +364,9 @@ namespace GUI
         //In hóa đơn.
         private void btnIn_Click(object sender, EventArgs e)
         {
+            ReportHoaDon hd = new ReportHoaDon();
+            hd.Show();
+
         }
 
         //Load lại dữ liệu của form.
