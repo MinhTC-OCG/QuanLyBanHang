@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.QLBH_DataSet = new GUI.QLBH_DataSet();
             this.HoaDonTongHop12BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.HoaDonTongHop12TableAdapter = new GUI.QLBH_DataSetTableAdapters.HoaDonTongHop12TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.QLBH_DataSet)).BeginInit();
+            this.QLBHDataSet = new GUI.QLBHDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.HoaDonTongHop12TableAdapter = new GUI.QLBHDataSetTableAdapters.HoaDonTongHop12TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.HoaDonTongHop12BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLBHDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // HoaDonTongHop12BindingSource
+            // 
+            this.HoaDonTongHop12BindingSource.DataMember = "HoaDonTongHop12";
+            this.HoaDonTongHop12BindingSource.DataSource = this.QLBHDataSet;
+            // 
+            // QLBHDataSet
+            // 
+            this.QLBHDataSet.DataSetName = "QLBHDataSet";
+            this.QLBHDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -47,18 +57,8 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI.ReportHoaDon.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1254, 534);
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // QLBH_DataSet
-            // 
-            this.QLBH_DataSet.DataSetName = "QLBH_DataSet";
-            this.QLBH_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // HoaDonTongHop12BindingSource
-            // 
-            this.HoaDonTongHop12BindingSource.DataMember = "HoaDonTongHop12";
-            this.HoaDonTongHop12BindingSource.DataSource = this.QLBH_DataSet;
             // 
             // HoaDonTongHop12TableAdapter
             // 
@@ -66,15 +66,16 @@
             // 
             // ReportHoaDon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1254, 534);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "ReportHoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportHoaDon";
             this.Load += new System.EventHandler(this.ReportHoaDon_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.QLBH_DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HoaDonTongHop12BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLBHDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -83,7 +84,7 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource HoaDonTongHop12BindingSource;
-        private QLBH_DataSet QLBH_DataSet;
-        private QLBH_DataSetTableAdapters.HoaDonTongHop12TableAdapter HoaDonTongHop12TableAdapter;
+        private QLBHDataSet QLBHDataSet;
+        private QLBHDataSetTableAdapters.HoaDonTongHop12TableAdapter HoaDonTongHop12TableAdapter;
     }
 }

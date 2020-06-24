@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class ReportBaoCaoTheoNgay
+    partial class ReportBaoCaoDoanhSoBanHang
     {
         /// <summary>
         /// Required designer variable.
@@ -28,40 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.BaoCaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.BaoCaoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.BaoCaoBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI.ReportBaoCaoTheoNgay.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI.ReportBaoCaoDoanhSoBanHang.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(936, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // BaoCaoBindingSource
-            // 
-            this.BaoCaoBindingSource.DataSource = typeof(GUI.BaoCao);
-            // 
-            // ReportBaoCaoTheoNgay
+            // ReportBaoCaoDoanhSoBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(936, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "ReportBaoCaoTheoNgay";
+            this.Name = "ReportBaoCaoDoanhSoBanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ReportBaoCaoTheoNgay";
-            this.Load += new System.EventHandler(this.ReportBaoCaoTheoNgay_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.BaoCaoBindingSource)).EndInit();
+            this.Text = "ReportBaoCaoDoanhSoBanHang";
+            this.Load += new System.EventHandler(this.ReportBaoCaoDoanhSoBanHang_Load);
             this.ResumeLayout(false);
 
         }
@@ -69,6 +57,5 @@
         #endregion
 
         public Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource BaoCaoBindingSource;
     }
 }

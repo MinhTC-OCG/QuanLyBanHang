@@ -210,17 +210,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLBHDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBHDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportBaoCaoDoanhSoBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportBaoCaoDoanhSoBanHang.Designer.cs">
+      <DependentUpon>ReportBaoCaoDoanhSoBanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportBaoCaoTheoNgay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportBaoCaoTheoNgay.Designer.cs">
       <DependentUpon>ReportBaoCaoTheoNgay.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportBaoCaoTheoThang.cs">
+    <Compile Include="ReportBaoCaoTonCuoiThang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportBaoCaoTheoThang.Designer.cs">
-      <DependentUpon>ReportBaoCaoTheoThang.cs</DependentUpon>
+    <Compile Include="ReportBaoCaoTonCuoiThang.Designer.cs">
+      <DependentUpon>ReportBaoCaoTonCuoiThang.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportHoaDon.cs">
       <SubType>Form</SubType>
@@ -259,6 +270,11 @@
     <EmbeddedResource Include="LayMatKhau.resx">
       <DependentUpon>LayMatKhau.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportBaoCaoDoanhSoBanHang.rdlc" />
+    <EmbeddedResource Include="ReportBaoCaoDoanhSoBanHang.resx">
+      <DependentUpon>ReportBaoCaoDoanhSoBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportBaoCaoTonCuoiThang.rdlc" />
     <EmbeddedResource Include="ReportHoaDon.rdlc" />
     <EmbeddedResource Include="ReportBaoCaoTheoNgay.rdlc" />
     <EmbeddedResource Include="ReportBaoCaoTheoNgay.resx">
@@ -291,9 +307,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReportBaoCaoTheoThang.rdlc" />
-    <EmbeddedResource Include="ReportBaoCaoTheoThang.resx">
-      <DependentUpon>ReportBaoCaoTheoThang.cs</DependentUpon>
+    <EmbeddedResource Include="ReportBaoCaoTonCuoiThang.resx">
+      <DependentUpon>ReportBaoCaoTonCuoiThang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportHoaDon.resx">
       <DependentUpon>ReportHoaDon.cs</DependentUpon>
@@ -302,6 +317,8 @@
       <DependentUpon>TrinhDo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\BaoCao.datasource" />
+    <None Include="Properties\DataSources\BaoCaoDoanhSo.datasource" />
+    <None Include="Properties\DataSources\BaoCaoDoanhSoBanHang.datasource" />
     <None Include="Properties\DataSources\BaoCaoTheoNgay.datasource" />
     <None Include="Properties\DataSources\BaoCaoTonCuoiThang.datasource" />
     <None Include="Properties\DataSources\DangNhap.datasource" />
@@ -327,6 +344,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLBHDataSet.xsc">
+      <DependentUpon>QLBHDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLBHDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBHDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBHDataSet.xss">
+      <DependentUpon>QLBHDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
