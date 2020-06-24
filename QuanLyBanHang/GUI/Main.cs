@@ -164,5 +164,11 @@ namespace GUI
             dn.Show();
             this.Close();
         }
+
+        private void mnstDangKy_Click(object sender, EventArgs e)
+        {
+            DangKy dk = new DangKy();
+            dk.Show();
+        }
     }
 }
